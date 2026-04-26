@@ -581,100 +581,6 @@
         "lazy": true
       }
     },
-    "shop_the_look_iAwDmG": {
-      "type": "shop-the-look",
-      "blocks": {
-        "slide_RnjNdf": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/22_3df34f4e-4d29-4e3e-8486-8f809baf3602.png",
-            "product_1": "hooded-faux-fur-bomber-black",
-            "product_2": "baggy-barrel-jeans-vintage-blue",
-            "product_3": "ocean-stars-sneaker-copy-1"
-          }
-        },
-        "slide_iDCKfr": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/09__gen-1763523832-SrNkW9FO3aH8PN8aHYDm.png",
-            "product_1": "no-regrets-knitted-sweater-1",
-            "product_2": "camouflage-wide-leg-pants-2",
-            "product_3": "triple-white-star-sneaker-copy"
-          }
-        },
-        "slide_w3xMk9": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/30.png",
-            "product_1": "structure-graphic-knitted-sweater-black",
-            "product_2": "oversized-washed-blue-jeans-blue",
-            "product_3": "ocean-stars-sneaker-copy-1"
-          }
-        },
-        "slide_kPwqpg": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/38.png",
-            "product_1": "denim-fur-hooded-jacket-deep-blue",
-            "product_2": "denim-floral-print-jeans-blue",
-            "product_3": "ocean-stars-sneaker-copy-1"
-          }
-        },
-        "slide_JwgMKt": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/36.png",
-            "product_1": "y2k-puffer-jacket-button-up-beige-brown",
-            "product_2": "embroidered-striped-baggy-jeans-black-white",
-            "product_3": "ocean-stars-sneaker-copy-1"
-          }
-        },
-        "slide_WQMHmj": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/42.png",
-            "product_1": "vibrations-graphic-knitted-sweater-moss-green",
-            "product_2": "vanguard-jeans-copy",
-            "product_3": "ocean-stars-sneaker-copy-1"
-          }
-        },
-        "slide_7wPcVU": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/01__gen-1763525194-kmKuBXGHNcbcGhP3iZLi.png",
-            "product_1": "waffle-knit-graphic-print-crewneck-sweatshirt",
-            "product_2": "retro-patchwork-barrel-jeans-blue",
-            "product_3": "ocean-stars-sneaker-copy-1"
-          }
-        },
-        "slide_YdYL6q": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/2_93138266-8e89-4c06-92a1-c38d21bc50b9.png",
-            "product_1": "skeleton-waffle-sweatshirt-black",
-            "product_2": "real-tree-pants-copy",
-            "product_3": "ocean-stars-sneaker-copy-1"
-          }
-        }
-      },
-      "block_order": [
-        "slide_RnjNdf",
-        "slide_iDCKfr",
-        "slide_w3xMk9",
-        "slide_kPwqpg",
-        "slide_JwgMKt",
-        "slide_WQMHmj",
-        "slide_7wPcVU",
-        "slide_YdYL6q"
-      ],
-      "disabled": true,
-      "name": "Shop the Look",
-      "settings": {
-        "title": "Shop the Look",
-        "slides_per_view": "4",
-        "autoplay_speed": 3
-      }
-    },
     "shop_the_look_dNWgGc": {
       "type": "shop-the-look",
       "blocks": {
@@ -802,32 +708,6 @@
         "lazyload_images": false
       }
     },
-    "1762475916ee80746a": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_9f55737_9Qjggd": {
-          "type": "ai_gen_block_9f55737",
-          "settings": {
-            "promo_text": "1+1 FREE: ADD 2 TO CART PAY FOR 1!",
-            "show_icon": true,
-            "background_color": "#e6e6e6",
-            "text_color": "#000000",
-            "text_size": 14,
-            "text_weight": "600",
-            "icon_color": "#000000",
-            "icon_size": 24,
-            "padding_vertical": 12,
-            "padding_horizontal": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_9f55737_9Qjggd"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
     "sub": {
       "type": "product-full-width",
       "disabled": true,
@@ -849,72 +729,6 @@
       "disabled": true,
       "settings": {
         "recent_count": 5
-      }
-    },
-    "text_and_image_JQBnAg": {
-      "type": "text-and-image",
-      "disabled": true,
-      "settings": {
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "",
-        "text": "<h1>BECOME PART OF THE COMMUNITY...</h1>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "center",
-        "image_width": "66",
-        "layout": "right",
-        "divider": false,
-        "top_padding": false,
-        "bottom_padding": false,
-        "lazyload_images": true
-      }
-    },
-    "background-image-text": {
-      "type": "background-image-text",
-      "disabled": true,
-      "custom_css": [
-        ".background-media-text__inner a {background: #000;}"
-      ],
-      "settings": {
-        "subtitle": "ABOUT US",
-        "title": "Stand out from the crowd",
-        "text": "<p>In just a few years, the Amsterdam-based label is now part of the Dutch capital’s burgeoning streetwear scene and a leading global destination for the latest unique items!</p>",
-        "button_label": "",
-        "button_link": "shopify://collections/spring-sale",
-        "layout": "left",
-        "height": 550,
-        "framed": true,
-        "parallax": false,
-        "parallax_direction": "top",
-        "lazyload_images": false
-      }
-    },
-    "174175614057da1cbf": {
-      "type": "apps",
-      "disabled": true,
-      "settings": {
-        "full_width": false,
-        "space_around": false
-      }
-    },
-    "pp_custom_liquid_v1_0_0_k7DDiF": {
-      "type": "pp-custom-liquid-v1-0-0",
-      "disabled": true,
-      "name": "PP Custom Liquid",
-      "settings": {
-        "custom_liquid": "<style>\n  .pill-container {\n    padding: 6px 12px;\n    background: #FAFAFA; /* Updated background color */\n    border-radius: 20px; /* Adjust as needed to give the pill shape */\n    display: inline-block; /* Ensure it wraps content properly */\n    position: relative; /* Add position relative for centering */\n    box-shadow: inset 0 0 0 #000000 35%; /* Inner shadow effect */\n    border: 1px solid #000000; /* Add a 1px black border */\n  }\n\n  .pill-container img {\n    vertical-align: middle; /* Align the image vertically */\n  }\n\n  .pill-container span {\n    margin-left: 8px; /* Adjust as needed to give space between image and text */\n  }\n\n  /* Center the pill horizontally */\n  .center {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n</style>\n\n<div class=\"center\">\n  <div class=\"pill-container\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0801/6320/9559/files/image_78.png?v=1710258017\" alt=\"TikTok Logo\">\n    <span>75K+ FOLLOWERS AND 255M+ VIEWS ON TIKTOK</span>\n  </div>\n</div>",
-        "section_background": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "margin_top_mobile": 0,
-        "margin_bottom_mobile": 0
       }
     },
     "collection-return": {
@@ -949,18 +763,12 @@
     "main",
     "shopable_videos_pe3gBH",
     "instafeed_HpYKfA",
-    "shop_the_look_iAwDmG",
     "shop_the_look_dNWgGc",
     "featured_collection_VPLyYb",
     "background_image_text_TFmzn9",
-    "1762475916ee80746a",
     "sub",
     "product-recommendations",
     "recently-viewed",
-    "text_and_image_JQBnAg",
-    "background-image-text",
-    "174175614057da1cbf",
-    "pp_custom_liquid_v1_0_0_k7DDiF",
     "collection-return",
     "17625122157a2a7edd"
   ]
