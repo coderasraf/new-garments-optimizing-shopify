@@ -467,6 +467,22 @@
         "lazy": true
       }
     },
+    "animated_heading_7JEdNU": {
+      "type": "animated-heading",
+      "name": "Animated Heading",
+      "settings": {
+        "heading": "Featured on",
+        "underlined_text": "instagram",
+        "text_color": "#000000",
+        "underline_color": "#000000",
+        "font_size_desktop": 30,
+        "alignment_desktop": "center",
+        "font_size_mobile": 24,
+        "alignment_mobile": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "instafeed_HpYKfA": {
       "type": "instafeed",
       "blocks": {
@@ -531,7 +547,7 @@
       ],
       "name": "SS - Scrolling Images",
       "settings": {
-        "heading": "<h3>Featured on instagram</h3>",
+        "heading": "",
         "heading_custom": false,
         "heading_font": "josefin_sans_n4",
         "heading_size": 24,
@@ -540,7 +556,7 @@
         "slider_speed": 18,
         "slider_gap": 10,
         "slider_gap_mobile": 10,
-        "slider_mt": 50,
+        "slider_mt": 0,
         "slider_direction": "left",
         "pause_hover": false,
         "image_width_desktop": 300,
@@ -764,6 +780,7 @@
     "176317079332aa6095",
     "main",
     "shopable_videos_pe3gBH",
+    "animated_heading_7JEdNU",
     "instafeed_HpYKfA",
     "shop_the_look_dNWgGc",
     "featured_collection_VPLyYb",
