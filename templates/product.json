@@ -483,9 +483,9 @@
         "underlined_text": "The Feed",
         "text_color": "#000000",
         "underline_color": "#000000",
-        "font_size_desktop": 30,
+        "font_size_desktop": 40,
         "alignment_desktop": "center",
-        "font_size_mobile": 24,
+        "font_size_mobile": 30,
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
@@ -614,9 +614,9 @@
         "underlined_text": "That",
         "text_color": "#000000",
         "underline_color": "#000000",
-        "font_size_desktop": 30,
+        "font_size_desktop": 40,
         "alignment_desktop": "center",
-        "font_size_mobile": 24,
+        "font_size_mobile": 30,
         "alignment_mobile": "center",
         "padding_top": 56,
         "padding_bottom": 0
