@@ -512,103 +512,85 @@ span.cu-ratting {
   </style>
 
 
-  {% when 'video_gallery_block' %}
+{% when 'video_gallery_block' %}
 <div class="dec-gallery-wrapper" {{ block.shopify_attributes }}>
   <h2 class="dec-gallery-title">{{ block.settings.block_heading }}</h2>
   
-  <div class="dec-video-scroll-container">
-    {%- assign video_ids = "video_1,video_2,video_3,video_4,video_5,video_6,video_7,video_8,video_9,video_10" | split: ',' -%}
-    
-    {%- for vid_id in video_ids -%}
-      {%- assign video_obj = block.settings[vid_id] -%}
-      {%- if video_obj != blank -%}
-        <div class="dec-video-item" onclick="openDecModal('{{ video_obj.sources[1].url | default: video_obj.sources[0].url }}')">
-          {{ video_obj | video_tag: 
-            autoplay: true, 
-            loop: true, 
-            muted: true, 
-            controls: false, 
-            playsinline: true,
-            class: 'dec-video-element' 
-          }}
-        </div>
-      {%- endif -%}
-    {%- endfor -%}
-  </div>
-</div>
-
-<div id="decVideoModal" class="dec-modal" onclick="closeDecModal()">
-  <div class="dec-modal-content">
-    <video id="decModalPlayer" controls autoplay playsinline></video>
+  <div class="dec-slider-viewport" id="decSlider">
+    <div class="dec-slider-track">
+      {%- assign video_ids = "video_1,video_2,video_3,video_4,video_5,video_6,video_7,video_8,video_9,video_10" | split: ',' -%}
+      
+      {%- for vid_id in video_ids -%}
+        {%- assign video_obj = block.settings[vid_id] -%}
+        {%- if video_obj != blank -%}
+          <div class="dec-video-item" onclick="openDecModal('{{ video_obj.sources[1].url | default: video_obj.sources[0].url }}')">
+            {{ video_obj | video_tag: 
+              autoplay: true, 
+              loop: true, 
+              muted: true, 
+              controls: false, 
+              playsinline: true,
+              class: 'dec-video-element' 
+            }}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
   </div>
 </div>
 
 <style>
-  .dec-gallery-wrapper { margin: 20px 0; overflow: hidden; }
-  .dec-gallery-title { font-size: 24px; font-weight: 800; margin-bottom: 15px; padding: 0 10px; }
-  
-  /* Horizontal Scrolling */
-  .dec-video-scroll-container {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+  :root {
+    --dec-desktop-items: 6.2;
+    --dec-mobile-items: 3.2; /* Adjusted for better mobile visibility than 5.2 */
+    --dec-gap: 12px;
   }
-  .dec-video-scroll-container::-webkit-scrollbar { display: none; }
+
+  .dec-gallery-wrapper { margin: 30px 0; user-select: none; }
+  .dec-gallery-title { font-size: 24px; font-weight: 800; margin-bottom: 20px; padding: 0 10px; }
+
+  .dec-slider-viewport {
+    overflow: hidden;
+    cursor: grab;
+    padding: 0 10px;
+  }
+
+  .dec-slider-viewport:active { cursor: grabbing; }
+
+  .dec-slider-track {
+    display: flex;
+    gap: var(--dec-gap);
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+  }
 
   .dec-video-item {
-    flex: 0 0 140px; /* Width of the thumbnails */
+    /* Calculation for fractional visibility */
+    flex: 0 0 calc((100% / var(--dec-desktop-items)) - var(--dec-gap));
     aspect-ratio: 4/5;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    cursor: pointer;
-    background: #f0f0f0;
-    scroll-snap-align: start;
+    background: #000;
   }
+
   .dec-video-element {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    pointer-events: none; /* Allows click to pass to parent div */
+    pointer-events: none;
   }
 
-  /* Modal Styles */
-  .dec-modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    align-items: center; justify-content: center;
+  @media (max-width: 767px) {
+    .dec-video-item {
+      flex: 0 0 calc((100% / var(--dec-mobile-items)) - var(--dec-gap));
+    }
   }
-  .dec-modal-content {
-    width: 90%;
-    max-width: 400px;
-    aspect-ratio: 9/16;
-  }
-  #decModalPlayer { width: 100%; height: 100%; border-radius: 12px; }
+
+  /* Modal (Same as before) */
+  .dec-modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; }
+  .dec-modal-content { width: 90%; max-width: 400px; aspect-ratio: 9/16; }
+  #decModalPlayer { width: 100%; height: 100%; border-radius: 12px; border: 1px solid #333; }
 </style>
-
-<script>
-  function openDecModal(videoSrc) {
-    const modal = document.getElementById('decVideoModal');
-    const player = document.getElementById('decModalPlayer');
-    player.src = videoSrc;
-    modal.style.display = 'flex';
-    player.play();
-  }
-
-  function closeDecModal() {
-    const modal = document.getElementById('decVideoModal');
-    const player = document.getElementById('decModalPlayer');
-    modal.style.display = 'none';
-    player.pause();
-    player.src = "";
-  }
-</script>
 
 
 {% when  'shipping' %}
@@ -917,3 +899,47 @@ span.cu-ratting {
     </div>
   </div>
 </div>
+
+
+<script>
+  const slider = document.getElementById('decSlider');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // Mouse Events
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => { isDown = false; });
+  slider.addEventListener('mouseup', () => { isDown = false; });
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll Speed
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Modal Functions
+  function openDecModal(videoSrc) {
+    // Prevent opening modal if the user was just dragging
+    if(isDown) return; 
+    const modal = document.getElementById('decVideoModal');
+    const player = document.getElementById('decModalPlayer');
+    player.src = videoSrc;
+    modal.style.display = 'flex';
+    player.play();
+  }
+
+  function closeDecModal() {
+    const modal = document.getElementById('decVideoModal');
+    const player = document.getElementById('decModalPlayer');
+    modal.style.display = 'none';
+    player.pause();
+    player.src = "";
+  }
+</script>
