@@ -610,7 +610,7 @@
         "alignment_desktop": "center",
         "font_size_mobile": 24,
         "alignment_mobile": "center",
-        "padding_top": 36,
+        "padding_top": 56,
         "padding_bottom": 0
       }
     },
