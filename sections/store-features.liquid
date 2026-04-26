@@ -1,0 +1,294 @@
+{% liquid
+  assign blocks = section.blocks
+%}
+<div class="store-features-section color-{{ section.settings.color_scheme }}" style="
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-top: {{ section.settings.margin_top }}px;
+  margin-bottom: {{ section.settings.margin_bottom }}px;
+">
+  <div class="page-width">
+    <div class="store-features-grid store-features-carousel" data-mc-carousel>
+      {% for block in blocks %}
+        <div class="store-feature-item" {{ block.shopify_attributes }}>
+          {% if block.settings.custom_svg != blank %}
+            <div class="store-feature-icon">
+              <span class="custom-svg-wrapper feature-icon-svg">
+                {{ block.settings.custom_svg }}
+              </span>
+            </div>
+          {% elsif block.settings.custom_image != blank or block.settings.icon != 'none' %}
+            <div class="store-feature-icon">
+              {% render 'icon-or-image', icon: block.settings.icon, image_upload: block.settings.custom_image, width: 24, class_name: 'feature-icon-svg' %}
+            </div>
+          {% endif %}
+          <div class="store-feature-content">
+            <h4 class="store-feature-title">{{ block.settings.title }}</h4>
+            <div class="store-feature-text">{{ block.settings.text }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <div class="store-features-dots">
+      {% for block in blocks %}
+         <button class="store-features-dot {% if forloop.first %}is-active{% endif %}" aria-label="{{ 'general.slider.next_slide' | t }}"></button>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .store-features-section {
+    overflow: hidden;
+  }
+  .store-features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+  .store-feature-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 32px 16px;
+    text-align: center;
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .store-features-grid .store-feature-item:last-child {
+    border-right: none;
+  }
+  .store-feature-icon {
+    margin-bottom: 12px;
+    color: var(--color-foreground);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .feature-icon-svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+  .custom-svg-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .custom-svg-wrapper svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+  .store-feature-title {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-foreground);
+    line-height: normal;
+  }
+  .store-feature-text {
+    margin: 0;
+    font-size: 14px;
+    color: var(--color-foreground);
+  }
+  .store-features-dots {
+    display: none;
+  }
+  
+  @media screen and (max-width: 749px) {
+    .store-features-grid {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .store-features-grid::-webkit-scrollbar {
+      display: none;
+    }
+    .store-feature-item {
+      flex: 0 0 100%;
+      width: 100%;
+      border-right: none;
+      scroll-snap-align: center;
+      padding: 32px 16px 20px;
+    }
+    .store-features-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding-bottom: 24px;
+      align-items: center;
+    }
+    .store-features-dot {
+      width: 8px;
+      height: 1px;
+      background-color: var(--color-foreground);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+      opacity: 0.3;
+    }
+    .store-features-dot.is-active {
+      opacity: 1;
+      width: 12px;
+      height: 2px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.store-features-section');
+    sections.forEach(section => {
+      const carousel = section.querySelector('.store-features-carousel');
+      const dots = section.querySelectorAll('.store-features-dot');
+      
+      if (!carousel || dots.length === 0) return;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = Array.from(carousel.children).indexOf(entry.target);
+            dots.forEach((dot, i) => {
+              if (i === index) {
+                dot.classList.add('is-active');
+              } else {
+                dot.classList.remove('is-active');
+              }
+            });
+          }
+        });
+      }, {
+        root: carousel,
+        threshold: 0.5
+      });
+      
+      Array.from(carousel.children).forEach(item => observer.observe(item));
+      
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          const item = carousel.children[index];
+          if (item) {
+            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Store features",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "apple", "label": "Apple" },
+            { "value": "box", "label": "Box" },
+            { "value": "chat_bubble", "label": "Chat bubble" },
+            { "value": "check_box", "label": "Check box" },
+            { "value": "clipboard", "label": "Clipboard" },
+            { "value": "error", "label": "Error" },
+            { "value": "eye", "label": "Eye" },
+            { "value": "globe", "label": "Globe (if available)" },
+            { "value": "headphone", "label": "Headphone (if available)" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "lightning_bolt", "label": "Lightning bolt" },
+            { "value": "lock", "label": "Lock" },
+            { "value": "map_pin", "label": "Map pin" },
+            { "value": "plane", "label": "Plane" },
+            { "value": "plant", "label": "Plant" },
+            { "value": "price_tag", "label": "Price Tag" },
+            { "value": "question_mark", "label": "Question Mark" },
+            { "value": "return", "label": "Return" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "star", "label": "Star" },
+            { "value": "stopwatch", "label": "Stopwatch" },
+            { "value": "truck", "label": "Truck" }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom image",
+          "info": "Overrides the icon if set."
+        },
+        {
+          "type": "html",
+          "id": "custom_svg",
+          "label": "Custom SVG or HTML code",
+          "info": "Overrides both the icon and custom image if set."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Feature heading"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Feature description text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store features",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "globe", "title": "Worldwide delivery", "text": "Ships anywhere, fast & tracked" } },
+        { "type": "feature", "settings": { "icon": "box", "title": "Fast Dispatch", "text": "Orders out within 48 hours" } },
+        { "type": "feature", "settings": { "icon": "headphone", "title": "Real-Time Help", "text": "Talk to our team on WhatsApp" } },
+        { "type": "feature", "settings": { "icon": "lock", "title": "Secure Checkout", "text": "Your order, encrypted & protected" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
