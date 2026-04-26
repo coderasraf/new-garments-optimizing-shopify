@@ -84,8 +84,8 @@
           "type": "tab",
           "settings": {
             "title": "FAQ'S",
-            "content": "<p>This product is currently being purchased by many users. Based on the sales volume from the past 6 hours, this product is <strong>likely to sell out today.</strong></p>",
-            "page": ""
+            "content": "",
+            "page": "faqs"
           }
         },
         "video_gallery_block_QAq3cG": {
