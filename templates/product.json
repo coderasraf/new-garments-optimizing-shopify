@@ -129,7 +129,8 @@
       "custom_css": [
         ".promo-banner {gap: 15px;}",
         ".promo-banner-right-size-guide {height: 20px; margin-top: -15px;}",
-        ".model_text-destiop {font-size: 12px;}"
+        ".model_text-destiop {font-size: 12px;}",
+        ".collapsibles-wrapper.collapsibles-wrapper--border-bottom {border-bottom: none; background: transparent; margin-bottom: 36px !important; border: 1.5px solid #000;}"
       ],
       "settings": {
         "sku_enable": false,
