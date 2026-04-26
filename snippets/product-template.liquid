@@ -523,9 +523,7 @@ span.cu-ratting {
       {%- for vid_id in video_ids -%}
         {%- assign video_obj = block.settings[vid_id] -%}
         {%- if video_obj != blank -%}
-          <div class="dec-video-item" 
-               data-video-url="{{ video_obj.sources[1].url | default: video_obj.sources[0].url }}"
-               style="cursor: pointer;">
+          <div class="dec-video-item" onclick="openDecModal('{{ video_obj.sources[1].url | default: video_obj.sources[0].url }}')">
             {{ video_obj | video_tag: 
               autoplay: true, 
               loop: true, 
@@ -541,99 +539,61 @@ span.cu-ratting {
   </div>
 </div>
 
-<div id="decVideoModal" class="dec-modal">
-  <span class="dec-close" onclick="closeDecModal()">&times;</span>
-  <div class="dec-modal-content">
-    <video id="decModalPlayer" controls playsinline autocomplete="off"></video>
-  </div>
-</div>
-
 <style>
-  :root { --dec-desktop-items: 6.2; --dec-mobile-items: 3.2; --dec-gap: 12px; }
-  .dec-gallery-wrapper { margin: 30px 0; }
-  .dec-gallery-title { font-size: 24px; font-weight: 800; margin-bottom: 20px; }
-  
-  .dec-slider-viewport { overflow-x: auto; cursor: grab; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
-  .dec-slider-viewport::-webkit-scrollbar { display: none; }
+  :root {
+    --dec-desktop-items: 6.2;
+    --dec-mobile-items: 3.2; /* Adjusted for better mobile visibility than 5.2 */
+    --dec-gap: 12px;
+  }
+
+  .dec-gallery-wrapper { margin: 30px 0; user-select: none; }
+  .dec-gallery-title { font-size: 24px; font-weight: 800; margin-bottom: 20px; padding: 0 10px; }
+
+  .dec-slider-viewport {
+    overflow: hidden;
+    cursor: grab;
+    padding: 0 10px;
+  }
+
   .dec-slider-viewport:active { cursor: grabbing; }
 
-  .dec-slider-track { display: flex; gap: var(--dec-gap); width: max-content; padding: 10px; }
+  .dec-slider-track {
+    display: flex;
+    gap: var(--dec-gap);
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+  }
 
   .dec-video-item {
-    flex: 0 0 calc((100vw / var(--dec-desktop-items)) - var(--dec-gap));
+    /* Calculation for fractional visibility */
+    flex: 0 0 calc((100% / var(--dec-desktop-items)) - var(--dec-gap));
     aspect-ratio: 4/5;
     border-radius: 12px;
     overflow: hidden;
     background: #000;
   }
 
-  .dec-video-element { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-
-  /* Modal Fixes */
-  .dec-modal { 
-    display: none; 
-    position: fixed; 
-    inset: 0; 
-    background: rgba(0,0,0,0.9); 
-    z-index: 99999; 
-    align-items: center; 
-    justify-content: center; 
+  .dec-video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
   }
-  .dec-modal-content { width: 90%; max-width: 450px; position: relative; }
-  #decModalPlayer { width: 100%; border-radius: 8px; background: #000; }
-  .dec-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; z-index: 100000; }
 
   @media (max-width: 767px) {
-    .dec-video-item { flex: 0 0 calc((100vw / var(--dec-mobile-items)) - var(--dec-gap)); }
+    .dec-video-item {
+      flex: 0 0 calc((100% / var(--dec-mobile-items)) - var(--dec-gap));
+    }
   }
+
+  /* Modal (Same as before) */
+  .dec-modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; }
+  .dec-modal-content { width: 90%; max-width: 400px; aspect-ratio: 9/16; }
+  #decModalPlayer { width: 100%; height: 100%; border-radius: 12px; border: 1px solid #333; }
 </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const slider = document.getElementById('decSlider');
-  const modal = document.getElementById('decVideoModal');
-  const player = document.getElementById('decModalPlayer');
-  let isDragging = false;
-  let startX, scrollLeft;
 
-  // Drag to scroll logic
-  slider.addEventListener('mousedown', (e) => {
-    isDragging = false; 
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
 
-  slider.addEventListener('mousemove', (e) => {
-    if (e.buttons !== 1) return;
-    isDragging = true;
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-
-  // Open Modal Logic
-  document.querySelectorAll('.dec-video-item').forEach(item => {
-    item.addEventListener('click', function(e) {
-      if (isDragging) return; // Don't open if user was just dragging
-      const url = this.getAttribute('data-video-url');
-      player.src = url;
-      modal.style.display = 'flex';
-      player.play();
-    });
-  });
-
-  // Close Modal Logic
-  window.closeDecModal = function() {
-    modal.style.display = 'none';
-    player.pause();
-    player.src = "";
-  };
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeDecModal();
-  });
-});
-</script>
 
 
 {% when  'shipping' %}
