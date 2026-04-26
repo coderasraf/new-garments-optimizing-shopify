@@ -908,6 +908,7 @@
           "type": "feature",
           "settings": {
             "icon": "globe",
+            "custom_image": "shopify://shop_images/globe_1.svg",
             "custom_svg": "",
             "title": "Worldwide delivery",
             "text": "Ships anywhere, fast & tracked"
@@ -917,6 +918,7 @@
           "type": "feature",
           "settings": {
             "icon": "box",
+            "custom_image": "shopify://shop_images/fast.svg",
             "custom_svg": "",
             "title": "Fast Dispatch",
             "text": "Orders out within 48 hours"
@@ -926,6 +928,7 @@
           "type": "feature",
           "settings": {
             "icon": "headphone",
+            "custom_image": "shopify://shop_images/realtime.svg",
             "custom_svg": "",
             "title": "Real-Time Help",
             "text": "Talk to our team on WhatsApp"
@@ -935,6 +938,7 @@
           "type": "feature",
           "settings": {
             "icon": "lock",
+            "custom_image": "shopify://shop_images/secure-checkout.svg",
             "custom_svg": "",
             "title": "Secure Checkout",
             "text": "Your order, encrypted & protected"
