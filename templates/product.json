@@ -89,6 +89,22 @@
             "page": ""
           }
         },
+        "video_gallery_block_QAq3cG": {
+          "type": "video_gallery_block",
+          "settings": {
+            "block_heading": "Decarba On You",
+            "video_1": "shopify://files/videos/1213(5).mov",
+            "video_2": "shopify://files/videos/1213(2).mov",
+            "video_3": "shopify://files/videos/1213(1).mov",
+            "video_4": "shopify://files/videos/1213(3).mov",
+            "video_5": "shopify://files/videos/From KlickPin CF Stopmotion by Cold Culture [Video] _ T-shirt photography Photoshoot video Fashion videos.mp4",
+            "video_6": "shopify://files/videos/5cba58d0c6d54219909b9f20fc3e7bdc.HD-720p-1.6Mbps-43966974.mp4",
+            "video_7": "shopify://files/videos/071d9ac9398f4f0782ae7d617692cc9d.HD-1080p-2.5Mbps-43966794_a5f5bf8c-0de7-4cb6-98b5-1e6083d213ea.mp4",
+            "video_8": "shopify://files/videos/904e56c9146646f193ce41a6dbf1d6cc.HD-720p-1.6Mbps-43966689.mp4",
+            "video_9": "shopify://files/videos/071d9ac9398f4f0782ae7d617692cc9d.HD-1080p-2.5Mbps-43966794.mp4",
+            "video_10": "shopify://files/videos/WhatsApp Video 2025-09-25 at 12.07.04_a820a9d6.mp4"
+          }
+        },
         "custom_gWtVrK": {
           "type": "custom",
           "settings": {
@@ -107,6 +123,7 @@
         "tab",
         "tab_fNKwpz",
         "tab_KtwiRK",
+        "video_gallery_block_QAq3cG",
         "custom_gWtVrK"
       ],
       "custom_css": [
