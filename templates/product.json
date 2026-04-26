@@ -825,6 +825,10 @@
     },
     "featured_collection_VPLyYb": {
       "type": "featured-collection",
+      "custom_css": [
+        ".page-width.page-width--flush-small {max-width: 100%;}",
+        ".page-width {max-width: 100%;}"
+      ],
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "bg_color": "#ffffff",
@@ -834,7 +838,7 @@
         "per_row": 4,
         "rows": 1,
         "mobile_scrollable": true,
-        "view_all": true,
+        "view_all": false,
         "divider": false
       }
     },
