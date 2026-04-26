@@ -9,14 +9,6 @@
  */
 {
   "sections": {
-    "1763819211ca610086": {
-      "type": "_blocks",
-      "settings": {}
-    },
-    "176317079332aa6095": {
-      "type": "_blocks",
-      "settings": {}
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -911,8 +903,6 @@
     }
   },
   "order": [
-    "1763819211ca610086",
-    "176317079332aa6095",
     "main",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
