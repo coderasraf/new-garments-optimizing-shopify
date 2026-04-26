@@ -831,6 +831,22 @@
         "autoplay_speed": 3
       }
     },
+    "animated_heading_D3b4fA": {
+      "type": "animated-heading",
+      "name": "Animated Heading",
+      "settings": {
+        "heading": "Other Popular",
+        "underlined_text": "Items",
+        "text_color": "#000000",
+        "underline_color": "#000000",
+        "font_size_desktop": 40,
+        "alignment_desktop": "center",
+        "font_size_mobile": 30,
+        "alignment_mobile": "center",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
     "featured_collection_VPLyYb": {
       "type": "featured-collection",
       "custom_css": [
@@ -840,8 +856,8 @@
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "bg_color": "#ffffff",
-        "padding": 40,
-        "title": "OTHER POPULAR ITEMS",
+        "padding": 0,
+        "title": "",
         "home_featured_products": "warehouse-sale",
         "per_row": 4,
         "rows": 1,
@@ -982,6 +998,7 @@
     "animated_heading_7JEdNU",
     "instafeed_HpYKfA",
     "shop_the_look_dNWgGc",
+    "animated_heading_D3b4fA",
     "featured_collection_VPLyYb",
     "background_image_text_TFmzn9",
     "sub",
