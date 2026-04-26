@@ -58,6 +58,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
   }
   .store-features-grid .store-feature-item:last-child {
     border-right: none;
@@ -107,6 +108,7 @@
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
     }
     .store-features-grid::-webkit-scrollbar {
       display: none;
@@ -114,39 +116,52 @@
     .store-feature-item {
       flex: 0 0 100%;
       width: 100%;
+      max-width: 100%;
       border-right: none;
       scroll-snap-align: center;
       padding: 32px 16px 20px;
+      box-sizing: border-box;
     }
     .store-features-dots {
       display: flex;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       padding-bottom: 24px;
       align-items: center;
     }
     .store-features-dot {
-      width: 8px;
-      height: 1px;
-      background-color: var(--color-foreground);
+      width: 12px;
+      height: 2px;
+      background-color: var(--color-foreground, #121212);
       border: none;
       padding: 0;
       cursor: pointer;
-      transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+      transition: opacity 0.3s ease, width 0.3s ease;
       opacity: 0.3;
+      border-radius: 2px;
+      position: relative;
+    }
+    /* Invisible pseudo-element to increase tap target size on mobile */
+    .store-features-dot::after {
+      content: '';
+      position: absolute;
+      top: -15px;
+      bottom: -15px;
+      left: -10px;
+      right: -10px;
     }
     .store-features-dot.is-active {
       opacity: 1;
-      width: 12px;
-      height: 2px;
+      width: 24px;
     }
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.store-features-section');
+  function initStoreFeaturesCarousel() {
+    const sections = document.querySelectorAll('.store-features-section:not(.carousel-initialized)');
     sections.forEach(section => {
+      section.classList.add('carousel-initialized');
       const carousel = section.querySelector('.store-features-carousel');
       const dots = section.querySelectorAll('.store-features-dot');
       
@@ -181,7 +196,12 @@
         });
       });
     });
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', initStoreFeaturesCarousel);
+  document.addEventListener('shopify:section:load', initStoreFeaturesCarousel);
+  // Run immediately in case the script loads after DOMContentLoaded
+  initStoreFeaturesCarousel();
 </script>
 
 {% schema %}
