@@ -1,0 +1,809 @@
+{%- style -%}
+  .shop-the-look {
+    padding: 60px 0;
+  }
+  
+  .shop-the-look__title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .shop-the-look__carousel {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .shop-the-look__slide {
+    width: 100%;
+  }
+
+
+  .shop-the-look__slide img {
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 768px) {
+    .shop-the-look__slide {
+      width: {{ 100 | divided_by: section.settings.slides_per_view }}%;
+    }
+  }
+
+  .flickity-enabled.is-draggable .flickity-viewport {
+    cursor: move;
+    cursor: grab;
+  }
+
+  .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+    cursor: grabbing;
+  }
+
+.shop-the-look__slide img {
+    object-fit: cover !important;
+    cursor: pointer;
+}
+
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .carousel-arrow:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .carousel-arrow--prev {
+    left: 20px;
+  }
+
+  .carousel-arrow--next {
+    right: 20px;
+  }
+
+  .carousel-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .flickity-page-dots {
+    bottom: -30px;
+  }
+
+  .flickity-page-dots .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ddd;
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    background: #000;
+  }
+
+  .progress-bar {
+    height: 2px;
+    width: 100%;
+    background: #f0f0f0;
+    margin-top: 30px;
+  }
+
+  .progress-bar__indicator {
+    width: 0;
+    height: 100%;
+    background: #000;
+    transition: width 0.3s ease-out;
+  }
+
+  /* Modal Styles */
+  .product-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .product-modal.active {
+    display: flex;
+  }
+
+  .product-modal__content {
+    background: white;
+    border-radius: 8px;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+  }
+
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .product-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #efefef;
+    sticky: top 0;
+    background: white;
+    z-index: 1;
+  }
+
+  .product-modal__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .product-modal__close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+
+  .product-modal__close:hover {
+    background: #f5f5f5;
+  }
+
+  .product-modal__body {
+    padding: 30px;
+  }
+
+  .product-modal__featured-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+
+  .shop-the-look__slide {
+    border: 2px solid #fff;
+}
+
+  .product-modal__products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .rz-product-card {
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
+  }
+
+  .rz-product-card:hover {
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  }
+
+  .rz-product-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+.rz-product-card__title {
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+  .rz-product-card__price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  .rz-product-card__variant-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .rz-product-card__add-to-cart {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .rz-product-card__add-to-cart:hover {
+    background: #333;
+  }
+
+  .rz-product-card__add-to-cart:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+
+  .rz-product-card__add-to-cart.loading {
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 768px) {
+    .product-modal__products {
+      grid-template-columns: 1fr;
+    }
+
+    .product-modal__header {
+      padding: 15px 20px;
+    }
+
+    .product-modal__body {
+      padding: 20px;
+    }
+  }
+
+  .shop-the-look-modal-button {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%,50%);
+    border: 1px solid #fff;
+    color: #fff;
+    z-index:9;
+    padding: 10px 20px;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+.shop-the-look__slide:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: rgba(0,0,0,.3);
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.shop-the-look__slide:hover:after {
+  opacity:1;
+  visibility:visible;
+}
+
+ .shop-the-look__slide:hover   .shop-the-look-modal-button {
+  opacity:1;
+  visibility:visible;
+}
+
+.product-modal__products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.progress-bar {
+    display: none;
+}
+
+@media(min-width:1000px){
+  .product-modal__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+}
+
+svg.flickity-button-icon {
+    width: 16px !important;
+    left: 15px !important;
+}
+
+button.flickity-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media(max-width:768px){
+  .shop-the-look__slide {
+    width: calc((100% / 1.2));
+}
+.shop-the-look__image {
+    height: auto;
+}
+/* .flickity-button {
+    display: none !important;
+} */
+
+.flickity-prev-next-button {
+    width: 31px !important;
+    height: 31px !important;
+}
+svg.flickity-button-icon {
+    width: 16px !important;
+    left: 7px !important;
+    opacity: .7;
+}
+
+.icon-btn img {
+    width: 26px;
+}
+
+}
+
+
+.rz-product-card__price {
+    display: none;
+}
+
+{%- endstyle -%}
+
+    {{ 'flickcity.min.css' | asset_url | stylesheet_tag: preload: true }}
+
+<shop-the-look>
+  <div class="shop-the-look">
+    {% if section.settings.title != blank %}
+      <h2 class="shop-the-look__title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="shop-the-look__carousel" data-flickity data-autoplay-speed="{{ section.settings.autoplay_speed | default: 3 }}">
+      {%- for block in section.blocks -%}
+        <div class="shop-the-look__slide" 
+             {{ block.shopify_attributes }}
+             data-slide-index="{{ forloop.index0 }}"
+             data-block-id="{{ block.id }}">
+
+             <div class="shop-the-look-modal-button">
+              SHOP THE LOOK
+             </div>
+
+          {%- if block.settings.image != blank -%}
+            <img 
+              src="{{ block.settings.image | image_url: width: 800 }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              class="shop-the-look__image"
+              loading="lazy"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+            >
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'shop-the-look__image placeholder' }}
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-bar__indicator"></div>
+    </div>
+  </div>
+</shop-the-look>
+
+<!-- Product Modal -->
+<div class="product-modal" id="productModal">
+  <div class="product-modal__content">
+    <div class="product-modal__header">
+      <h3 class="product-modal__title">Shop This Look</h3>
+      <button class="product-modal__close" aria-label="Close modal">&times;</button>
+    </div>
+    <div class="product-modal__body">
+      <img class="product-modal__featured-image" id="modalFeaturedImage" src="" alt="">
+      <div class="product-modal__products" id="modalProducts"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Store block data -->
+<script type="application/json" id="slideBlockData">
+  {
+    {%- for block in section.blocks -%}
+      "{{ block.id }}": {
+        "image": {% if block.settings.image != blank %}"{{ block.settings.image | image_url: width: 800 }}"{% else %}null{% endif %},
+        "products": [
+          {%- for i in (1..3) -%}
+            {%- assign product_key = 'product_' | append: i -%}
+            {%- if block.settings[product_key] != blank -%}
+              {%- assign product = block.settings[product_key] -%}
+              {
+                "id": {{ product.id }},
+                "title": {{ product.title | json }},
+                "url": {{ product.url | json }},
+                "featured_image": {% if product.featured_image %}"{{ product.featured_image | image_url: width: 400 }}"{% else %}null{% endif %},
+                "price": {{ product.price | json }},
+                "compare_at_price": {{ product.compare_at_price | json }},
+                "available": {{ product.available | json }},
+                "variants": [
+                  {%- for variant in product.variants -%}
+                    {
+                      "id": {{ variant.id }},
+                      "title": {{ variant.title | json }},
+                      "price": {{ variant.price | json }},
+                      "available": {{ variant.available | json }}
+                    }{% unless forloop.last %},{% endunless %}
+                  {%- endfor -%}
+                ]
+              }{% unless forloop.last %},{% endunless %}
+            {%- endif -%}
+          {%- endfor -%}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  }
+</script>
+
+
+
+      <script src="{{ 'flickcity.min.js' | asset_url }}" defer></script>
+
+<script>
+  class ShopTheLookCarousel extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => this.init());
+      } else {
+        this.init();
+      }
+    }
+
+    init() {
+      this.carousel = this.querySelector('[data-flickity]');
+      this.progressBar = this.querySelector('.progress-bar__indicator');
+      
+      if (!this.carousel) return;
+      
+      this.autoplaySpeed = this.carousel.dataset.autoplaySpeed ? parseInt(this.carousel.dataset.autoplaySpeed) * 1000 : 3000;
+      
+      const blockDataElement = document.getElementById('slideBlockData');
+      if (blockDataElement) {
+        this.blockData = JSON.parse(blockDataElement.textContent);
+      }
+      
+      this.modal = document.getElementById('productModal');
+      this.initCarousel();
+      this.initModal();
+    }
+
+    initCarousel() {
+      const flickityOptions = {
+        cellAlign: 'left',
+        contain: false,
+        wrapAround: true,
+        pageDots: true,
+        prevNextButtons: true
+      };
+
+      this.flkty = new Flickity(this.carousel, flickityOptions);
+      this.isAutoScrolling = false;
+      this.autoScrollSpeed = 1.5;
+      
+      {% comment %} this.flkty.on('scroll', () => {
+        const progress = Math.max(0, Math.min(1, this.flkty.x * -1 / (this.flkty.slidesWidth - this.flkty.size.width)));
+        this.progressBar.style.width = `${progress * 100}%`;
+      }); {% endcomment %}
+
+      this.flkty.on('dragEnd', () => {
+        this.isAutoScrolling = true;
+        this.autoScroll();
+      });
+
+      this.carousel.addEventListener('mousedown', () => {
+        this.isAutoScrolling = false;
+      });
+      this.carousel.addEventListener('touchstart', () => {
+        this.isAutoScrolling = false;
+      });
+
+      // Add click handler to slides
+      this.carousel.querySelectorAll('.shop-the-look__slide').forEach(slide => {
+        console.log("Adding click listener to slide:", slide);
+        slide.addEventListener('click', (e) => {
+          console.log("Slide clicked:", slide);
+          const blockId = slide.dataset.blockId;
+          this.openModal(blockId);
+        });
+      });
+    }
+
+    autoScroll() {
+      if (!this.isAutoScrolling) return;
+
+      const x = this.flkty.x - this.autoScrollSpeed;
+      
+      if (-x >= this.flkty.slidesWidth) {
+        this.flkty.x = 0;
+      } else {
+        this.flkty.x = x;
+      }
+      
+      this.flkty.settle(this.flkty.x);
+      requestAnimationFrame(() => this.autoScroll());
+    }
+
+    initModal() {
+      const closeBtn = this.modal.querySelector('.product-modal__close');
+      
+      closeBtn.addEventListener('click', () => {
+        this.closeModal();
+      });
+
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) {
+          this.closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+          this.closeModal();
+        }
+      });
+    }
+
+    openModal(blockId) {
+      const blockData = this.blockData[blockId];
+      if (!blockData) return;
+
+      // Set featured image
+      const featuredImage = this.modal.querySelector('#modalFeaturedImage');
+      if (blockData.image) {
+        featuredImage.src = blockData.image;
+        featuredImage.style.display = 'block';
+      } else {
+        featuredImage.style.display = 'none';
+      }
+
+      // Render products
+      const productsContainer = this.modal.querySelector('#modalProducts');
+      productsContainer.innerHTML = '';
+
+      blockData.products.forEach(product => {
+        const productCard = this.createProductCard(product);
+        productsContainer.appendChild(productCard);
+      });
+
+      this.modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    closeModal() {
+      this.modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    createProductCard(product) {
+      const card = document.createElement('div');
+      card.className = 'rz-product-card';
+
+      const price = (product.price / 100).toFixed(2);
+      const comparePrice = product.compare_at_price ? (product.compare_at_price / 100).toFixed(2) : null;
+
+      card.innerHTML = `
+        ${product.featured_image ? `<img src="${product.featured_image}" alt="${product.title}" class="rz-product-card__image">` : ''}
+        <h4 class="rz-product-card__title">${product.title}</h4>
+        <div class="rz-product-card__price">
+          ${comparePrice ? `<s style="color: #999; margin-right: 8px;">$${comparePrice}</s>` : ''}
+          $${price}
+        </div>
+        ${product.variants.length > 1 ? `
+          <select class="rz-product-card__variant-select">
+            ${product.variants.map(variant => `
+              <option value="${variant.id}" ${!variant.available ? 'disabled' : ''}>
+                ${variant.title} ${!variant.available ? '- Sold Out' : ''}
+              </option>
+            `).join('')}
+          </select>
+        ` : ''}
+        <button class="rz-product-card__add-to-cart" data-product-id="${product.id}">
+          ${product.available ? 'Add to Cart' : 'Sold Out'}
+        </button>
+      `;
+
+      const addToCartBtn = card.querySelector('.rz-product-card__add-to-cart');
+      if (product.available) {
+        addToCartBtn.addEventListener('click', () => {
+          const variantSelect = card.querySelector('.rz-product-card__variant-select');
+          const variantId = variantSelect ? variantSelect.value : product.variants[0].id;
+          this.addToCart(variantId, addToCartBtn);
+
+          
+        });
+      } else {
+        addToCartBtn.disabled = true;
+      }
+
+      return card;
+    }
+
+    async addToCart(variantId, button) {
+      button.classList.add('loading');
+      button.textContent = 'Adding...';
+      button.disabled = true;
+
+      try {
+        const response = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1
+          })
+        });
+
+        if (response.ok) {
+          button.textContent = '✓ Added!';
+          setTimeout(() => {
+            button.textContent = 'Add to Cart';
+            button.disabled = false;
+            button.classList.remove('loading');
+          }, 2000);
+
+          // Trigger cart update event
+          document.dispatchEvent(new CustomEvent('cart:updated'));
+        } else {
+          throw new Error('Failed to add to cart');
+        }
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+        button.textContent = 'Error - Try Again';
+        button.disabled = false;
+        button.classList.remove('loading');
+      }
+    }
+  }
+
+  customElements.define('shop-the-look', ShopTheLookCarousel);
+</script>
+
+{% schema %}
+{
+  "name": "Shop the Look",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop the Look"
+    },
+    {
+      "type": "select",
+      "id": "slides_per_view",
+      "label": "Slides per view (Desktop)",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 slide"
+        },
+        {
+          "value": "2",
+          "label": "2 slides"
+        },
+        {
+          "value": "3",
+          "label": "3 slides"
+        },
+        {
+          "value": "4",
+          "label": "4 slides"
+        },
+        {
+          "value": "5",
+          "label": "5 slides"
+        },
+        {
+          "value": "6",
+          "label": "6 slides"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed (seconds, 0 to disable)",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "info": "Set to 0 to disable autoplay.",
+      "default": 3
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Product 3"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop the Look",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

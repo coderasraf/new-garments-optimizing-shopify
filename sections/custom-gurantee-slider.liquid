@@ -1,0 +1,144 @@
+<section class="custom-gurantee">
+  <div class="wrapper page-width">
+    <h2 class="section-heading-e">Product Qualities</h2>
+  <div class="my-slider">
+   {% for block in section.blocks %}
+      <div class="single-gurantee-item">
+        {% if block.settings.image != blank %}
+        <img src="{{ block.settings.image | img_url:"master" }}" />
+          {% endif %}
+
+        <h3 class="snle-title">{{ block.settings.title }}</h3>
+
+        {{ block.settings.text }}
+      </div>
+     {% endfor %}
+    </div>
+</div>
+</section>
+
+
+<style>
+  .custom-gurantee{
+    padding:10px 0;
+    overflow-x:hidden;
+  }
+
+.slick-initialized .slick-slide{
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.slick-next, .slick-prev{
+  z-index: 5;
+}
+.slick-next{
+  right: 15px;
+}
+.slick-prev{
+  left: 15px;
+}
+.slick-next:before, .slick-prev:before{
+  color: #000;
+  font-size: 26px;
+}
+  
+.single-gurantee-item  img {
+    width: 60px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.single-gurantee-item {
+    display: flex;
+     padding:20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+  h3.snle-title {
+    font-size: 14px;
+    margin-top: 14px;
+    margin-bottom: 9px;
+}
+  h2.section-heading-e {
+    text-align: center;
+    margin-bottom: 30px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+      $('.my-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        speed: 300,
+        infinite: true,
+        autoplaySpeed: 5000,
+        autoplay: true,
+        responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+      });
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "GURANTEE SLIDER",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "gurantee",
+        "name":"gurantee",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id":"title",
+            "default":"title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default":"<p>Text<p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name":"Gurantee slider",
+        "category":"Gurantee"
+      }
+    ]
+  }
+{% endschema %}

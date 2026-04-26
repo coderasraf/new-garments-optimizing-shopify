@@ -1,0 +1,591 @@
+{% doc %}
+  @prompt
+    i want an interactive panel where they can choose between 4 collections; comy, clean, graphic, throwback, its for gen z so make it shny, i will include the images myself, i want you t omake the interface nice, i need to be abble to connect a collection to each image 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-collection-chooser-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: 40px 20px;
+    background: {{ block.settings.background_color }};
+  }
+
+  .ai-collection-chooser__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-collection-chooser__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ai-collection-chooser__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .ai-collection-chooser__subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  .ai-collection-chooser__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  @media (min-width: 750px) {
+    .ai-collection-chooser__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ block.settings.border_radius }}px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    aspect-ratio: 1;
+    background: {{ block.settings.card_background }};
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }}:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }}:hover::before {
+    opacity: 1;
+  }
+
+  .ai-collection-chooser__link-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .ai-collection-chooser__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .ai-collection-chooser__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }}:hover .ai-collection-chooser__image-{{ ai_gen_id }} {
+    transform: scale(1.1);
+  }
+
+  .ai-collection-chooser__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-collection-chooser__placeholder-{{ ai_gen_id }} svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.3;
+  }
+
+  .ai-collection-chooser__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, {{ block.settings.overlay_opacity }}), transparent);
+    padding: 24px 16px;
+    z-index: 3;
+    transition: all 0.4s ease;
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }}:hover .ai-collection-chooser__overlay-{{ ai_gen_id }} {
+    padding-bottom: 32px;
+  }
+
+  .ai-collection-chooser__label-{{ ai_gen_id }} {
+    color: {{ block.settings.label_color }};
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }}:hover .ai-collection-chooser__label-{{ ai_gen_id }} {
+    transform: translateY(-4px);
+    letter-spacing: 2px;
+  }
+
+  .ai-collection-chooser__shine-{{ ai_gen_id }} {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  .ai-collection-chooser__item-{{ ai_gen_id }}:hover .ai-collection-chooser__shine-{{ ai_gen_id }} {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+
+  .ai-collection-chooser__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    pointer-events: none;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 749px) {
+    .ai-collection-chooser-{{ ai_gen_id }} {
+      padding: 30px 16px;
+    }
+
+    .ai-collection-chooser__header-{{ ai_gen_id }} {
+      margin-bottom: 30px;
+    }
+
+    .ai-collection-chooser__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.8);
+    }
+
+    .ai-collection-chooser__subtitle-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtitle_size }}px * 0.9);
+    }
+
+    .ai-collection-chooser__label-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.label_size }}px * 0.85);
+    }
+  }
+{% endstyle %}
+
+<collection-chooser-{{ ai_gen_id }} class="ai-collection-chooser-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-collection-chooser__container-{{ ai_gen_id }}">
+    {% if block.settings.title != blank or block.settings.subtitle != blank %}
+      <div class="ai-collection-chooser__header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-collection-chooser__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <p class="ai-collection-chooser__subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-collection-chooser__grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign collection_key = 'collection_' | append: i
+          assign label_key = 'label_' | append: i
+          assign image_key = 'image_' | append: i
+          
+          assign collection = block.settings[collection_key]
+          assign label = block.settings[label_key]
+          assign image = block.settings[image_key]
+        %}
+
+        <div class="ai-collection-chooser__item-{{ ai_gen_id }}">
+          {% if collection != blank %}
+            <a href="{{ collection.url }}" class="ai-collection-chooser__link-{{ ai_gen_id }}">
+              <div class="ai-collection-chooser__image-wrapper-{{ ai_gen_id }}">
+                {% if image != blank %}
+                  <img
+                    src="{{ image | image_url: width: 600 }}"
+                    alt="{{ label | escape }}"
+                    class="ai-collection-chooser__image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% elsif collection.image %}
+                  <img
+                    src="{{ collection.image | image_url: width: 600 }}"
+                    alt="{{ collection.title | escape }}"
+                    class="ai-collection-chooser__image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% else %}
+                  <div class="ai-collection-chooser__placeholder-{{ ai_gen_id }}">
+                    {{ 'collection-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="ai-collection-chooser__overlay-{{ ai_gen_id }}">
+                <h3 class="ai-collection-chooser__label-{{ ai_gen_id }}">
+                  {% if label != blank %}
+                    {{ label }}
+                  {% else %}
+                    {{ collection.title }}
+                  {% endif %}
+                </h3>
+              </div>
+              <div class="ai-collection-chooser__shine-{{ ai_gen_id }}"></div>
+            </a>
+          {% else %}
+            <div class="ai-collection-chooser__link-{{ ai_gen_id }}">
+              <div class="ai-collection-chooser__image-wrapper-{{ ai_gen_id }}">
+                {% if image != blank %}
+                  <img
+                    src="{{ image | image_url: width: 600 }}"
+                    alt="{{ label | escape }}"
+                    class="ai-collection-chooser__image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% else %}
+                  <div class="ai-collection-chooser__placeholder-{{ ai_gen_id }}">
+                    {{ 'collection-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="ai-collection-chooser__overlay-{{ ai_gen_id }}">
+                <h3 class="ai-collection-chooser__label-{{ ai_gen_id }}">
+                  {% if label != blank %}
+                    {{ label }}
+                  {% else %}
+                    Style {{ i }}
+                  {% endif %}
+                </h3>
+              </div>
+              <div class="ai-collection-chooser__empty-state-{{ ai_gen_id }}">
+                Add collection
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</collection-chooser-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CollectionChooser{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.items = this.querySelectorAll('.ai-collection-chooser__item-{{ ai_gen_id }}');
+        this.addRippleEffect();
+      }
+
+      addRippleEffect() {
+        this.items.forEach(item => {
+          item.addEventListener('mouseenter', (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const ripple = document.createElement('div');
+            ripple.style.cssText = `
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.4);
+              pointer-events: none;
+              transform: translate(-50%, -50%) scale(0);
+              animation: ripple-{{ ai_gen_id }} 0.6s ease-out;
+              left: ${x}px;
+              top: ${y}px;
+              z-index: 10;
+            `;
+            
+            item.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+          });
+        });
+        
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes ripple-{{ ai_gen_id }} {
+            to {
+              transform: translate(-50%, -50%) scale(20);
+              opacity: 0;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    }
+
+    customElements.define('collection-chooser-{{ ai_gen_id }}', CollectionChooser{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Collection chooser",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Choose Your Style"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Pick your vibe"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Collection 1 - Comy"
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "label_1",
+      "label": "Label",
+      "default": "Comy"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 2 - Clean"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "label_2",
+      "label": "Label",
+      "default": "Clean"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 3 - Graphic"
+    },
+    {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "label_3",
+      "label": "Label",
+      "default": "Graphic"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 4 - Throwback"
+    },
+    {
+      "type": "collection",
+      "id": "collection_4",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "label_4",
+      "label": "Label",
+      "default": "Throwback"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection chooser"
+    }
+  ]
+}
+{% endschema %}

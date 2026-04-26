@@ -1,0 +1,74 @@
+<style>
+@font-face {
+        font-family: "everett";
+        src: url('//www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Light.woff2?v=178258735604406726951760105106') format("woff2");
+        font-weight: 300;
+        font-style:normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "everett";
+        src: url('//www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Regular.woff2?v=133912816607792724571760105108') format("woff2");
+        font-weight: 400;
+        font-style:normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "everett";
+        src: url('//www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Medium.woff2?v=48720387712956866881760105107') format("woff2");
+        font-weight: 500;
+        font-style:normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "everett";
+        src: url('//www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Medium.woff2?v=48720387712956866881760105107') format("woff2");
+        font-weight: 700;
+        font-style:normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: "gt-pressura";
+        src: url('//www.vicinityclo.de/cdn/shop/t/177/assets/GT-Pressura-Mono-Light.woff2?v=113554791281948729661760105121') format("woff2");
+        font-weight: 300;
+        font-style:normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "gt-pressura";
+        src: url('//www.vicinityclo.de/cdn/shop/t/177/assets/GT-Pressura-Mono.woff2?v=22343846887747008991760105122') format("woff2");
+        font-weight: 400;
+        font-style:normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family:"roc";
+        src: url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/Genera_Grotesk_Heavy.woff2?v=1732116436');
+        font-weight:1000;
+        font-style:normal;
+        font-display:swap;
+      }
+
+
+</style>
+
+{%- assign header_font = settings.type_header_font_family -%}
+{%- assign base_font = settings.type_base_font_family -%}
+{%- assign base_font_bold = base_font | font_modify: 'weight', '600' -%}
+{%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
+{%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
+
+{%- style -%}
+  {{ header_font | font_face: font_display: 'swap' }}
+  {{ base_font | font_face: font_display: 'swap' }}
+
+  {{ base_font_bold | font_face: font_display: 'swap' }}
+  {{ base_font_italic | font_face: font_display: 'swap' }}
+  {{ base_font_bold_italic | font_face: font_display: 'swap' }}
+{%- endstyle -%}

@@ -1,0 +1,78 @@
+<div class="kopstorm_tabs kopstorm_el">
+    
+      {% for block in section.blocks %}
+             <a class="kopstorm_tab_item " href="{{ block.settings.url }}">{{ block.settings.collection_title }}</a>
+      {% endfor %}
+</div>
+
+
+<style>
+.kopstorm_tabs.kopstorm_el {
+    gap: 28px;
+    background: #f2f2f2;
+    border-top: 0px solid #ebebeb;
+    border-bottom: 0px solid #ebebeb;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .kopstorm_tabs .kopstorm_tab_item {
+    padding: 20px 16px 18px;
+    white-space: nowrap;
+    border-bottom: solid 2px transparent;
+    color: #00000080;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .2s ease;
+}
+.kopstorm_tabs .kopstorm_tab_item {
+    color: #000000a8!important;
+    font-weight: 500!important;
+    padding: 0;    text-decoration: none;
+}
+
+
+@media(max-width:768px){
+.kopstorm_tabs.kopstorm_el {
+    overflow: scroll;
+    justify-content: start!important;
+}
+}
+</style>
+
+{% schema %}
+  {
+    "name": "Kopstrom tab item",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection item",
+        "settings": [
+          {
+            "type": "text",
+            "id":"collection_title",
+            "label": "Collection title",
+            "default": "Mens"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection scroll",
+        "category":"Collection"
+      }
+    ]
+  }
+{% endschema %}

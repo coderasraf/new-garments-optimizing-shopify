@@ -1,0 +1,155 @@
+<section class="custom-announcement-bar">
+  <div class="announcement-container">
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+      {% when 'slider_block' %}
+        <div class="announce-slider announce-slider-{{ forloop.index }}" data-slider="{{ block.id }}">
+          <div class="slider-track">
+
+            {% if block.settings.text_1 != blank %}
+              <div class="slide">{{ block.settings.text_1 }}</div>
+            {% endif %}
+
+            {% if block.settings.text_2 != blank %}
+              <div class="slide">{{ block.settings.text_2 }}</div>
+            {% endif %}
+
+            {% if block.settings.text_3 != blank %}
+              <div class="slide">{{ block.settings.text_3 }}</div>
+            {% endif %}
+
+            {% if block.settings.text_4 != blank %}
+              <div class="slide">{{ block.settings.text_4 }}</div>
+            {% endif %}
+
+            {% if block.settings.text_5 != blank %}
+              <div class="slide">{{ block.settings.text_5 }}</div>
+            {% endif %}
+
+          </div>
+        </div>
+
+      {% when 'static_block' %}
+        <div class="announce-static">
+          {{ block.settings.static_text }}
+        </div>
+        
+    {% endcase %}
+  {% endfor %}
+
+  </div>
+</section>
+
+<style>
+.custom-announcement-bar {
+  background: #111111;
+  color: #fff;
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.announcement-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  text-align: center;
+}
+
+/* Slider */
+.announce-slider {
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.slider-track {
+  display: inline-flex;
+  animation: scroll 10s linear infinite;
+}
+
+.slide {
+  padding: 0 30px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Static */
+.announce-static {
+  white-space: nowrap;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
+}
+
+@media(max-width:768px){
+.announce-slider.announce-slider-3 {
+    display: none;
+}
+.announcement-container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".announce-slider").forEach(slider => {
+    const track = slider.querySelector(".slider-track");
+    track.innerHTML += track.innerHTML; // duplicate items for infinite loop
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "3-Column Announcement Bar",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "slider_block",
+      "name": "Scrolling Text Column",
+      "settings": [
+        { "type": "text", "id": "text_1", "label": "Slide #1", "default": "@vicinity_de 620k" },
+        { "type": "text", "id": "text_2", "label": "Slide #2", "default": "Welcome to our store" },
+        { "type": "text", "id": "text_3", "label": "Slide #3", "default": "New drops weekly" },
+        { "type": "text", "id": "text_4", "label": "Slide #4 (optional)" },
+        { "type": "text", "id": "text_5", "label": "Slide #5 (optional)" }
+      ]
+    },
+    {
+      "type": "static_block",
+      "name": "Static Text Column",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "static_text",
+          "label": "Static Text",
+          "default": "Worldwide Shipping"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "3-Column Announcement Bar",
+      "blocks": [
+        { "type": "slider_block" },
+        { "type": "slider_block" },
+        { "type": "static_block" }
+      ]
+    }
+  ]
+}
+{% endschema %}

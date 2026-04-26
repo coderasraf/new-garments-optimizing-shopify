@@ -1,0 +1,438 @@
+{% doc %}
+  @prompt
+    create a blog like section optimized for mobile view, where i can add an image with a bit of context and a small place to link an item and the date that i can change, make the image bigger
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-blog-card-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-blog-card__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: {{ block.settings.image_aspect_ratio }};
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-blog-card__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-blog-card__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    position: relative;
+  }
+
+  .ai-blog-card__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .ai-blog-card__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-blog-card__content-{{ ai_gen_id }} {
+    padding: {{ block.settings.content_padding }}px;
+  }
+
+  .ai-blog-card__date-{{ ai_gen_id }} {
+    font-size: {{ block.settings.date_size }}px;
+    color: {{ block.settings.date_color }};
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .ai-blog-card__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .ai-blog-card__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .ai-blog-card__link-section-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid {{ block.settings.divider_color }};
+  }
+
+  .ai-blog-card__product-image-{{ ai_gen_id }} {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .ai-blog-card__product-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-blog-card__product-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-blog-card__product-placeholder-{{ ai_gen_id }} svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ai-blog-card__product-info-{{ ai_gen_id }} {
+    flex-grow: 1;
+  }
+
+  .ai-blog-card__product-label-{{ ai_gen_id }} {
+    font-size: 11px;
+    color: {{ block.settings.label_color }};
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .ai-blog-card__product-title-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.link_color }};
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    display: block;
+  }
+
+  .ai-blog-card__product-title-{{ ai_gen_id }}:hover {
+    text-decoration: underline;
+  }
+
+  .ai-blog-card__empty-product-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    padding: 8px 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-blog-card__content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding | times: 0.8 }}px;
+    }
+
+    .ai-blog-card__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-blog-card-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-blog-card__image-wrapper-{{ ai_gen_id }}">
+    {% if block.settings.image %}
+      <img
+        src="{{ block.settings.image | image_url: width: 800 }}"
+        alt="{{ block.settings.image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.image.width }}"
+        height="{{ block.settings.image.height }}"
+        class="ai-blog-card__image-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-blog-card__image-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+        <div class="ai-blog-card__empty-state-{{ ai_gen_id }}">
+          Add an image
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-blog-card__content-{{ ai_gen_id }}">
+    {% if block.settings.date != blank %}
+      <span class="ai-blog-card__date-{{ ai_gen_id }}">{{ block.settings.date }}</span>
+    {% endif %}
+
+    {% if block.settings.title != blank %}
+      <h3 class="ai-blog-card__title-{{ ai_gen_id }}">{{ block.settings.title }}</h3>
+    {% endif %}
+
+    {% if block.settings.text != blank %}
+      <div class="ai-blog-card__text-{{ ai_gen_id }}">{{ block.settings.text }}</div>
+    {% endif %}
+
+    {% if block.settings.show_product_link %}
+      <div class="ai-blog-card__link-section-{{ ai_gen_id }}">
+        {% if block.settings.linked_product != blank %}
+          <div class="ai-blog-card__product-image-{{ ai_gen_id }}">
+            {% if block.settings.linked_product.featured_image %}
+              <img
+                src="{{ block.settings.linked_product.featured_image | image_url: width: 120 }}"
+                alt="{{ block.settings.linked_product.featured_image.alt | escape }}"
+                width="120"
+                height="120"
+                loading="lazy"
+              >
+            {% else %}
+              <div class="ai-blog-card__product-placeholder-{{ ai_gen_id }}">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="ai-blog-card__product-info-{{ ai_gen_id }}">
+            <span class="ai-blog-card__product-label-{{ ai_gen_id }}">{{ block.settings.link_label }}</span>
+            <a
+              href="{{ block.settings.linked_product.url }}"
+              class="ai-blog-card__product-title-{{ ai_gen_id }}"
+            >
+              {{ block.settings.linked_product.title }}
+            </a>
+          </div>
+        {% else %}
+          <div class="ai-blog-card__empty-product-{{ ai_gen_id }}">
+            Add a product to link
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog card",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        {
+          "value": "4 / 3",
+          "label": "4:3 (Landscape)"
+        },
+        {
+          "value": "16 / 9",
+          "label": "16:9 (Wide)"
+        },
+        {
+          "value": "3 / 2",
+          "label": "3:2 (Standard)"
+        },
+        {
+          "value": "1 / 1",
+          "label": "1:1 (Square)"
+        },
+        {
+          "value": "3 / 4",
+          "label": "3:4 (Portrait)"
+        }
+      ],
+      "default": "4 / 3"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "date",
+      "label": "Date",
+      "default": "January 17, 2026"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Your blog post title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Add a short description or excerpt from your blog post. Keep it concise and engaging for mobile readers.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Linked product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_link",
+      "label": "Show product link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Featured item"
+    },
+    {
+      "type": "product",
+      "id": "linked_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "date_color",
+      "label": "Date",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Link label",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Product link",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider",
+      "default": "#e8e8e1"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "min": 12,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "Content padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "date_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Date size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog card"
+    }
+  ]
+}
+{% endschema %}

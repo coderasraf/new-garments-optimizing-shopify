@@ -1,0 +1,115 @@
+<style>
+  
+    .pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  animation-fill-mode: forwards;
+  background: #54c63a;
+  animation: pulse 2s linear infinite; 
+  animation: pulse 2s linear infinite;
+    -webkit-animation: pulse 2s linear infinite;
+    -ms-animation: pulse 2s linear infinite;
+    -o-animation: pulse 2s linear infinite;
+    -moz-animation: pulse 2s linear infinite; 
+}
+.stock-wrapper {
+    display: flex;
+    align-items: center;
+  margin-left:5px;
+  margin-top:10px;
+}
+
+.stock-wrapper .pulse {
+    margin-right: 10px;
+}
+
+/* .stock-wrapper span {
+    display: flex;
+    color: #55C539;
+    margin-left: 4px;
+    letter-spacing: 0;
+} */
+  .stock-wrapper span {
+    display: flex;
+
+    margin-left: 4px;
+    letter-spacing: 0;
+}
+  .stock-wrapper span span {
+    margin-right: 5px;
+    margin-left:2px;
+    font-weight:bold;
+}
+.stock-wrapper span p{
+  margin:0;
+}
+  .pulse.active {
+    background: #BF0000 !important;
+    width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  animation-fill-mode: forwards;
+  animation: pulse2 2s linear infinite; 
+  animation: pulse2 2s linear infinite;
+    -webkit-animation: pulse2 2s linear infinite;
+    -ms-animation: pulse2 2s linear infinite;
+    -o-animation: pulse2 2s linear infinite;
+    -moz-animation: pulse2 2s linear infinite; 
+    
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #83ea6bc7;
+    transform:scale(.9);
+  }
+  100% {
+    box-shadow: 0 0 0 7px #83ea6bc7;
+    transform:scale(1.1);
+  }
+}
+
+  @keyframes pulse2 {
+  0% {
+    box-shadow: 0 0 0 0 #bf000059  ;
+    transform:scale(.9);
+  }
+  100% {
+    box-shadow: 0 0 0 7px #bf000059  ;
+    transform:scale(1.1);
+  }
+}
+
+</style>
+
+
+<div class="stock-wrapper">
+          <div class="pulse active" style="display:block"></div>
+
+          
+          <span class="main-stock-text active">
+           Last pieces, No restock!
+            {% comment %}
+            {{ section.settings.stock_text2 }}
+            {% endcomment %}
+           </span>
+        </div>
+
+         <script>
+              function getRandomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+              }
+        
+              function updateCountdown() {
+                var countdownElem = document.getElementById("countdown");
+                var randomNumber = getRandomNumber(10, 19);
+                countdownElem.innerHTML = randomNumber;
+                // setTimeout(updateCountdown, 4000); // update every 4 seconds
+              }
+
+              document.addEventListener('DOMContentLoaded', function(){
+                 updateCountdown(); // start the countdown
+              })
+             
+          </script>

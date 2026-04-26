@@ -1,0 +1,557 @@
+{% layout none %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta name="description" content="StarSign Graphic Sneaker — 3 free gifts included. Limited drop."/>
+<title>newgarments — starsign drop</title>
+{{ content_for_header }}
+{% raw %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "bg": "#f5f5f0",
+        "fg": "#0a0a0a",
+        "muted": "#71717a",
+        "subtle": "#a1a1aa",
+        "lime": "#c8ff00",
+        "surface": "#e8e8e4",
+      },
+      fontFamily: {
+        "sans": ["Inter", "system-ui", "sans-serif"],
+        "display": ["Space Grotesk", "sans-serif"],
+      }
+    }
+  }
+}
+</script>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #f5f5f0; color: #0a0a0a; font-family: 'Inter', sans-serif; overflow-x: hidden; text-transform: lowercase; -webkit-font-smoothing: antialiased; }
+
+  /* Grain overlay */
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: #c8ff00; z-index: 200; width: 0%; transition: width .1s linear; }
+  .reveal { opacity: 0; transform: translateY(30px); }
+  .reveal-left { opacity: 0; transform: translateX(-40px); }
+  .reveal-right { opacity: 0; transform: translateX(40px); }
+  .gift-card { opacity: 0; transform: translateX(60px) rotate(2deg); }
+
+  .color-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .color-carousel::-webkit-scrollbar { display: none; }
+  .color-carousel > div { scroll-snap-align: center; flex: 0 0 85%; }
+
+  .size-btn { min-width: 52px; min-height: 52px; display: flex; align-items: center; justify-content: center;
+    background: #e8e8e4; color: #0a0a0a; font-weight: 600; font-size: 14px; transition: all .2s ease; user-select: none; -webkit-tap-highlight-color: transparent; cursor: pointer; border: none; }
+  .size-btn.active { background: #0a0a0a; color: #f5f5f0; }
+  .size-btn:active { transform: scale(.95); }
+
+  .color-dot { width: 32px; height: 32px; border-radius: 50%; border: 2px solid transparent; transition: all .2s ease; -webkit-tap-highlight-color: transparent; cursor: pointer; }
+  .color-dot.active { border-color: #0a0a0a; box-shadow: 0 0 0 2px #f5f5f0, 0 0 0 4px #0a0a0a; }
+
+  @keyframes ctaPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(200,255,0,.4); } 50% { box-shadow: 0 0 20px 4px rgba(200,255,0,.2); } }
+  .cta-pulse { animation: ctaPulse 3s ease-in-out infinite; }
+
+  .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; padding: 12px 16px;
+    background: linear-gradient(transparent, #f5f5f0 30%);
+    transform: translateY(100%); transition: transform .4s cubic-bezier(.16,1,.3,1); pointer-events: none; }
+  .sticky-cta.visible { transform: translateY(0); pointer-events: auto; }
+
+  .counter { font-variant-numeric: tabular-nums; }
+
+  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .ticker-track { display: flex; gap: 24px; animation: tickerScroll 25s linear infinite; width: max-content; }
+  .ticker-track:active { animation-play-state: paused; }
+
+  @keyframes starShimmer { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
+  .star-shimmer { animation: starShimmer 2s ease-in-out infinite; }
+
+  @keyframes popIn { 0% { transform: scale(0) rotate(-12deg); } 50% { transform: scale(1.1) rotate(2deg); } 100% { transform: scale(1) rotate(0); } }
+  .pop-in { animation: popIn .5s cubic-bezier(.16,1,.3,1) forwards; }
+
+  .tap-feedback:active { transform: scale(.97); transition: transform .1s; }
+  section { padding: 0 20px; }
+  .divider { height: 1px; background: #e0e0dc; margin: 0 20px; }
+
+  /* Loading state */
+  .cta-loading { opacity: .6; pointer-events: none; }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============================================= -->
+<!-- SECTION 1: HERO — everything above the fold -->
+<!-- ============================================= -->
+<section class="pt-6 pb-4 relative" id="hero">
+  <div class="text-center mb-3">
+    <span class="text-[10px] font-bold tracking-[.3em] text-fg/60 uppercase">newgarments™</span>
+    <div class="flex items-center justify-center gap-1.5 mt-1.5">
+      <span class="star-shimmer text-fg text-[11px]">★★★★★</span>
+      <span class="text-[10px] text-muted">rated by <strong class="text-fg">42,500+</strong> customers</span>
+    </div>
+  </div>
+
+  <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page1.jpg?v=1768821434&width=800"
+       alt="StarSign Graphic Sneaker" class="w-full" id="heroImg"/>
+
+  <div class="mt-3 space-y-2">
+    <h1 class="text-[28px] font-black tracking-[-0.04em] leading-[1] font-display">sneaker drop + 3 free gifts</h1>
+    <p class="text-[13px] text-muted leading-snug">limited bundle. the sneaker + belt + beanie + ring. ships free worldwide.</p>
+
+    <div class="flex items-center gap-2 mt-2">
+      <img src="https://newgarments.store/cdn/shop/files/S21ade5a3758d4804b5d2b4352e211fffg.webp?v=1766508825&width=100"
+           alt="Belt" class="w-[44px] h-[44px] object-cover"/>
+      <img src="https://newgarments.store/cdn/shop/files/bonnet-ecriture-arabe-9684730.jpg?v=1766458465&width=100"
+           alt="Beanie" class="w-[44px] h-[44px] object-cover"/>
+      <img src="https://newgarments.store/cdn/shop/files/bague-8-ball-4427611.jpg?v=1766507861&width=100"
+           alt="Ring" class="w-[44px] h-[44px] object-cover"/>
+      <span class="text-[11px] font-bold text-fg bg-lime px-2 py-1 ml-1">3× FREE</span>
+    </div>
+
+    <div class="flex items-baseline gap-2 mt-2">
+      <span class="font-black text-[28px] font-display tracking-tight">$66.95</span>
+      <span class="line-through text-subtle text-[14px]">$268.00</span>
+      <span class="text-[11px] font-bold text-fg bg-lime px-1.5 py-0.5">SAVE $201</span>
+    </div>
+
+    <button onclick="addBundleToCart()" class="block w-full bg-fg text-bg text-center font-bold text-[15px] py-4 mt-3 tap-feedback cta-pulse border-none cursor-pointer" id="heroCta">
+      secure the drop — free gifts included
+    </button>
+    <p class="text-center text-subtle text-[10px] mt-1.5 tracking-wide">free worldwide shipping · ships in 48h · secure checkout</p>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SECTION 2: COLOR CAROUSEL -->
+<!-- ============================================= -->
+<section class="py-16" id="colors">
+  <div class="mb-6 reveal">
+    <h2 class="text-[22px] font-black tracking-tight font-display leading-tight">pick your color.</h2>
+    <p class="text-[12px] text-muted mt-1">swipe to explore all 4.</p>
+  </div>
+
+  <div class="color-carousel -mx-5 px-5 gap-4 mb-6" id="colorCarousel">
+    <div data-color="blue">
+      <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page1.jpg?v=1768821434&width=600" alt="Blue" class="w-full"/>
+    </div>
+    <div data-color="pink">
+      <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page2.jpg?v=1768821434&width=600" alt="Pink" class="w-full"/>
+    </div>
+    <div data-color="white">
+      <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page3.jpg?v=1768821434&width=600" alt="White" class="w-full"/>
+    </div>
+    <div data-color="green">
+      <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page5.jpg?v=1768821434&width=600" alt="Green" class="w-full"/>
+    </div>
+  </div>
+
+  <div class="flex justify-center gap-3" id="colorDots">
+    <button class="color-dot active" style="background:#4a6fa5" data-idx="0" aria-label="Blue"></button>
+    <button class="color-dot" style="background:#d4829c" data-idx="1" aria-label="Pink"></button>
+    <button class="color-dot" style="background:#e8e8e4; border-color:#ccc" data-idx="2" aria-label="White"></button>
+    <button class="color-dot" style="background:#6b8e5a" data-idx="3" aria-label="Green"></button>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================= -->
+<!-- SECTION 3: FREE GIFTS BUNDLE -->
+<!-- ============================================= -->
+<section class="py-16" id="bundle">
+  <div class="mb-2 reveal">
+    <h2 class="text-[22px] font-black tracking-tight font-display leading-tight">you're not just getting sneakers.</h2>
+    <p class="text-muted text-[14px] mt-1">you're getting the full fit.</p>
+  </div>
+
+  <div class="mt-8 space-y-0">
+    <div class="flex items-center gap-4 py-4 border-b border-black/5 gift-card">
+      <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page1.jpg?v=1768821434&width=200" alt="StarSign" class="w-[72px] h-[72px] object-cover"/>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-[14px] truncate">starsign graphic sneaker</p>
+        <p class="text-[12px] mt-0.5"><span class="line-through text-subtle">$151.00</span> <span class="font-bold">$66.95</span></p>
+        <span class="text-[9px] font-bold tracking-[.15em] text-muted uppercase">the drop</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 py-4 border-b border-black/5 gift-card">
+      <img src="https://newgarments.store/cdn/shop/files/S21ade5a3758d4804b5d2b4352e211fffg.webp?v=1766508825&width=200" alt="Belt" class="w-[72px] h-[72px] object-cover"/>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-[14px] truncate">y2k star graphic belt</p>
+        <p class="text-[12px] mt-0.5"><span class="line-through text-subtle">$40.00</span> <span class="font-bold text-[#0a0a0a] bg-lime px-1.5 py-0.5 text-[11px] ml-1">FREE</span></p>
+        <span class="text-[9px] font-bold tracking-[.15em] text-muted uppercase">gift 1</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 py-4 border-b border-black/5 gift-card">
+      <img src="https://newgarments.store/cdn/shop/files/bonnet-ecriture-arabe-9684730.jpg?v=1766458465&width=200" alt="Beanie" class="w-[72px] h-[72px] object-cover"/>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-[14px] truncate">arabic script beanie</p>
+        <p class="text-[12px] mt-0.5"><span class="line-through text-subtle">$42.00</span> <span class="font-bold text-[#0a0a0a] bg-lime px-1.5 py-0.5 text-[11px] ml-1">FREE</span></p>
+        <span class="text-[9px] font-bold tracking-[.15em] text-muted uppercase">gift 2</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 py-4 gift-card">
+      <img src="https://newgarments.store/cdn/shop/files/bague-8-ball-4427611.jpg?v=1766507861&width=200" alt="Ring" class="w-[72px] h-[72px] object-cover"/>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-[14px] truncate">8-ball ring</p>
+        <p class="text-[12px] mt-0.5"><span class="line-through text-subtle">$35.00</span> <span class="font-bold text-[#0a0a0a] bg-lime px-1.5 py-0.5 text-[11px] ml-1">FREE</span></p>
+        <span class="text-[9px] font-bold tracking-[.15em] text-muted uppercase">gift 3</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 border-t border-black/10 pt-4 reveal" id="savingsBlock">
+    <div class="flex justify-between items-center">
+      <span class="text-muted text-[12px]">total value</span>
+      <span class="line-through text-subtle text-[14px]">$268.00</span>
+    </div>
+    <div class="flex justify-between items-center mt-1">
+      <span class="font-bold text-[14px]">you pay</span>
+      <span class="font-black text-[28px] font-display tracking-tight">$66.95</span>
+    </div>
+    <div class="flex justify-between items-center mt-1">
+      <span class="text-[12px] font-bold text-fg bg-lime px-2 py-1 inline-block" id="savingsBadge">you save $201.05 today</span>
+    </div>
+  </div>
+
+  <button onclick="addBundleToCart()" class="block w-full bg-fg text-bg text-center font-bold text-[15px] py-4 mt-6 tap-feedback cta-pulse border-none cursor-pointer">
+    secure the drop — 3 free gifts included
+  </button>
+  <p class="text-center text-subtle text-[10px] mt-2 tracking-wide">free worldwide shipping · ships in 48h</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================= -->
+<!-- SECTION 4: REVIEW TICKER + SOCIAL PROOF -->
+<!-- ============================================= -->
+<section class="py-16 overflow-hidden" id="proof">
+  <div class="reveal px-0">
+    <h2 class="text-[22px] font-black tracking-tight font-display leading-tight">don't take our word for it.</h2>
+  </div>
+
+  <div class="mt-8 -mx-5 overflow-hidden">
+    <div class="ticker-track" id="ticker">
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"ordered on impulse. zero regrets. quality is stupid good for the price."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— emma, netherlands</p>
+      </div>
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"the free belt and ring? didn't expect them to actually be nice. pleasantly surprised."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— jayden, germany</p>
+      </div>
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"shipped friday, wore them monday. go with literally everything."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— lucas, belgium</p>
+      </div>
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"my third pair from newgarments. these might be the best ones yet."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— sarah, france</p>
+      </div>
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"refreshed at midnight and copped the last pair in my size. no regrets."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— mike, uk</p>
+      </div>
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"ordered on impulse. zero regrets. quality is stupid good for the price."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— emma, netherlands</p>
+      </div>
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"the free belt and ring? didn't expect them to actually be nice. pleasantly surprised."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— jayden, germany</p>
+      </div>
+      <div class="bg-white p-5 min-w-[280px] max-w-[280px] flex flex-col justify-between border border-black/5">
+        <div><div class="text-lime text-[11px] mb-2">★★★★★</div><p class="text-[13px] leading-snug">"shipped friday, wore them monday. go with literally everything."</p></div>
+        <p class="text-subtle text-[10px] mt-3">— lucas, belgium</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-4 mt-10 text-center reveal">
+    <div>
+      <span class="text-[24px] font-black font-display counter" data-target="42500">0</span><span class="text-[24px] font-black font-display">+</span>
+      <p class="text-[10px] text-muted mt-0.5">customers</p>
+    </div>
+    <div>
+      <span class="text-[24px] font-black font-display">4.7</span><span class="text-[24px] font-black font-display text-lime">★</span>
+      <p class="text-[10px] text-muted mt-0.5">avg rating</p>
+    </div>
+    <div>
+      <span class="text-[24px] font-black font-display counter" data-target="30">0</span><span class="text-[24px] font-black font-display">+</span>
+      <p class="text-[10px] text-muted mt-0.5">countries</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================= -->
+<!-- SECTION 5: PRODUCT FEATURES -->
+<!-- ============================================= -->
+<section class="py-16" id="features">
+  <div class="space-y-8">
+    <div class="flex items-start gap-4 reveal-left">
+      <div class="w-[100px] h-[100px] overflow-hidden shrink-0">
+        <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page2.jpg?v=1768821434&width=300" alt="detail" class="w-full h-full object-cover"/>
+      </div>
+      <div>
+        <h3 class="font-bold text-[15px]">2026 streetwear silhouette.</h3>
+        <p class="text-muted text-[12px] mt-1 leading-relaxed">built for the current wave. chunky soles. graphic details. not last season's leftovers.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 flex-row-reverse reveal-right">
+      <div class="w-[100px] h-[100px] overflow-hidden shrink-0">
+        <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page3.jpg?v=1768821434&width=300" alt="comfort" class="w-full h-full object-cover"/>
+      </div>
+      <div class="text-right">
+        <h3 class="font-bold text-[15px]">padded like slippers.</h3>
+        <p class="text-muted text-[12px] mt-1 leading-relaxed">padded tongue. cushioned interior. all-day comfort without breaking them in.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 reveal-left">
+      <div class="w-[100px] h-[100px] overflow-hidden shrink-0">
+        <img src="https://newgarments.store/cdn/shop/files/1_58d4a960-621d-44c9-97f9-08d3ad47f792.jpg?v=1768821433&width=300" alt="versatile" class="w-full h-full object-cover"/>
+      </div>
+      <div>
+        <h3 class="font-bold text-[15px]">pairs with everything.</h3>
+        <p class="text-muted text-[12px] mt-1 leading-relaxed">cargos. denim. joggers. sweats. one sneaker, every fit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================= -->
+<!-- SECTION 6: SIZE SELECTOR + FINAL CTA -->
+<!-- ============================================= -->
+<section class="py-16 pb-40" id="buy">
+  <div class="text-center mb-8 reveal">
+    <img src="https://newgarments.store/cdn/shop/files/SHOES_WINSOR_page1.jpg?v=1768821434&width=500" alt="StarSign" class="w-[200px] mx-auto mb-4"/>
+    <h2 class="text-[22px] font-black tracking-tight font-display">starsign graphic sneaker</h2>
+    <div class="flex items-baseline justify-center gap-2 mt-1">
+      <span class="line-through text-subtle text-[14px]">$151.00</span>
+      <span class="font-black text-[28px] font-display tracking-tight">$66.95</span>
+    </div>
+    <p class="text-[11px] text-fg font-bold bg-lime inline-block px-2 py-0.5 mt-1">3 free gifts included</p>
+  </div>
+
+  <div class="mb-6 reveal">
+    <p class="font-bold text-[13px] mb-3">color</p>
+    <div class="flex gap-3" id="buyColorDots">
+      <button class="color-dot active" style="background:#4a6fa5" data-color="blue" aria-label="Blue"></button>
+      <button class="color-dot" style="background:#d4829c" data-color="pink" aria-label="Pink"></button>
+      <button class="color-dot" style="background:#e8e8e4; border-color:#ccc" data-color="white" aria-label="White"></button>
+      <button class="color-dot" style="background:#6b8e5a" data-color="green" aria-label="Green"></button>
+    </div>
+  </div>
+
+  <div class="mb-8 reveal">
+    <p class="font-bold text-[13px] mb-3">size</p>
+    <div class="grid grid-cols-5 gap-2" id="sizeGrid">
+      <button class="size-btn" data-size="36">36</button>
+      <button class="size-btn" data-size="37">37</button>
+      <button class="size-btn" data-size="38">38</button>
+      <button class="size-btn" data-size="39">39</button>
+      <button class="size-btn active" data-size="40">40</button>
+      <button class="size-btn" data-size="41">41</button>
+      <button class="size-btn" data-size="42">42</button>
+      <button class="size-btn" data-size="43">43</button>
+      <button class="size-btn" data-size="44">44</button>
+      <button class="size-btn" data-size="45">45</button>
+    </div>
+  </div>
+
+  <button onclick="addBundleToCart()" class="block w-full bg-lime text-fg text-center font-black text-[16px] py-4 tap-feedback cta-pulse border-none cursor-pointer" id="mainCta">
+    secure the drop
+  </button>
+
+  <div class="text-center mt-4 space-y-1">
+    <p class="text-subtle text-[10px] tracking-wide">free worldwide shipping · ships in 48h</p>
+    <p class="text-subtle text-[10px] tracking-wide">secure checkout · easy returns</p>
+  </div>
+
+  <div class="text-center mt-12 reveal">
+    <p class="text-muted text-[11px] italic">"the fit starts with the right pair."</p>
+    <p class="text-subtle text-[9px] tracking-[.3em] mt-4 uppercase">newgarments™</p>
+  </div>
+</section>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <button onclick="addBundleToCart()" class="flex items-center justify-between w-full bg-fg text-bg px-5 py-3.5 tap-feedback border-none cursor-pointer">
+    <div>
+      <span class="font-black text-[15px]">$66.95</span>
+      <span class="line-through text-bg/40 text-[11px] ml-1.5">$151</span>
+    </div>
+    <span class="bg-lime text-fg font-bold text-[13px] px-4 py-2">secure the drop</span>
+  </button>
+</div>
+
+<!-- ============================================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================================= -->
+<script>
+// ──── VARIANT MAP: color → size → variant ID ────
+const variants = {
+  blue:  { 36:56521115664761, 37:56521115697529, 38:56521115730297, 39:56521115763065, 40:56521115795833, 41:56521115828601, 42:56521115861369, 43:56521115894137, 44:56521115926905, 45:56521115959673 },
+  pink:  { 36:56521115992441, 37:56521116025209, 38:56521116057977, 39:56521116090745, 40:56521116123513, 41:56521116156281, 42:56521116189049, 43:56521116221817, 44:56521116254585, 45:56521116287353 },
+  white: { 36:56521116320121, 37:56521116352889, 38:56521116385657, 39:56521116418425, 40:56521116451193, 41:56521116483961, 42:56521116516729, 43:56521116549497, 44:56521116582265, 45:56521116615033 },
+  green: { 36:56521116647801, 37:56521116680569, 38:56521116713337, 39:56521116746105, 40:56521116778873, 41:56521116811641, 42:56521116844409, 43:56521116877177, 44:56521116909945, 45:56521116942713 }
+};
+
+// Default free gift variants (first available variant of each)
+const giftVariants = {
+  belt:   56349372776825,  // Silvery / 110cm
+  beanie: 56349647536505,  // Black
+  ring:   56349678436729   // Size 9
+};
+
+let selectedColor = 'blue';
+let selectedSize = '40';
+
+// ──── ADD BUNDLE TO CART via Shopify /cart/add.js ────
+async function addBundleToCart() {
+  const sneakerVariant = variants[selectedColor]?.[selectedSize];
+  if (!sneakerVariant) { alert('select a size and color'); return; }
+
+  // Disable all CTAs during loading
+  document.querySelectorAll('.tap-feedback, .cta-pulse').forEach(el => el.classList.add('cta-loading'));
+
+  try {
+    const response = await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: [
+          { id: sneakerVariant, quantity: 1 },
+          { id: giftVariants.belt, quantity: 1 },
+          { id: giftVariants.beanie, quantity: 1 },
+          { id: giftVariants.ring, quantity: 1 }
+        ]
+      })
+    });
+
+    if (response.ok) {
+      // Redirect to checkout
+      window.location.href = '/checkout';
+    } else {
+      alert('something went wrong. try again.');
+    }
+  } catch (e) {
+    alert('something went wrong. try again.');
+  }
+
+  document.querySelectorAll('.cta-loading').forEach(el => el.classList.remove('cta-loading'));
+}
+
+// ──── GSAP ────
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('progressBar').style.width = (window.scrollY / h * 100) + '%';
+});
+
+gsap.utils.toArray('.reveal').forEach(el => {
+  gsap.to(el, { opacity: 1, y: 0, duration: .8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+});
+gsap.utils.toArray('.reveal-left').forEach(el => {
+  gsap.to(el, { opacity: 1, x: 0, duration: .7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+});
+gsap.utils.toArray('.reveal-right').forEach(el => {
+  gsap.to(el, { opacity: 1, x: 0, duration: .7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+});
+gsap.utils.toArray('.gift-card').forEach((el, i) => {
+  gsap.to(el, { opacity: 1, x: 0, rotation: 0, duration: .6, delay: i * .1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+});
+
+ScrollTrigger.create({ trigger: '#savingsBadge', start: 'top 85%', once: true,
+  onEnter: () => document.getElementById('savingsBadge').classList.add('pop-in')
+});
+
+document.querySelectorAll('.counter[data-target]').forEach(el => {
+  const target = parseInt(el.dataset.target);
+  ScrollTrigger.create({ trigger: el, start: 'top 85%', once: true, onEnter: () => {
+    const duration = target > 1000 ? 2000 : 1200; const start = Date.now();
+    const tick = () => { const p = Math.min((Date.now()-start)/duration,1); el.textContent = Math.floor((1-Math.pow(1-p,3))*target).toLocaleString(); if(p<1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }});
+});
+
+const stickyCta = document.getElementById('stickyCta');
+ScrollTrigger.create({ trigger: '#hero', start: 'bottom top', endTrigger: '#buy', end: 'top 80%',
+  onEnter: () => stickyCta.classList.add('visible'), onLeaveBack: () => stickyCta.classList.remove('visible'),
+  onLeave: () => stickyCta.classList.remove('visible'), onEnterBack: () => stickyCta.classList.add('visible'),
+});
+
+// ──── COLOR CAROUSEL ────
+const carousel = document.getElementById('colorCarousel');
+const dots = document.querySelectorAll('#colorDots .color-dot');
+const colorNames = ['blue','pink','white','green'];
+
+carousel.addEventListener('scroll', () => {
+  const idx = Math.round(carousel.scrollLeft / (carousel.children[0].offsetWidth + 16));
+  if (colorNames[idx] && colorNames[idx] !== selectedColor) {
+    selectedColor = colorNames[idx];
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    // Sync buy section color dots
+    document.querySelectorAll('#buyColorDots .color-dot').forEach(d => d.classList.toggle('active', d.dataset.color === selectedColor));
+    if (navigator.vibrate) navigator.vibrate(5);
+  }
+});
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    carousel.scrollTo({ left: (carousel.children[0].offsetWidth + 16) * i, behavior: 'smooth' });
+    if (navigator.vibrate) navigator.vibrate(10);
+  });
+});
+
+// ──── SIZE SELECTOR ────
+document.querySelectorAll('.size-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedSize = btn.dataset.size;
+    if (navigator.vibrate) navigator.vibrate(10);
+  });
+});
+
+// ──── BUY COLOR DOTS ────
+document.querySelectorAll('#buyColorDots .color-dot').forEach(dot => {
+  dot.addEventListener('click', () => {
+    document.querySelectorAll('#buyColorDots .color-dot').forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+    selectedColor = dot.dataset.color;
+    // Sync carousel
+    const idx = colorNames.indexOf(selectedColor);
+    if (idx >= 0) carousel.scrollTo({ left: (carousel.children[0].offsetWidth + 16) * idx, behavior: 'smooth' });
+    if (navigator.vibrate) navigator.vibrate(10);
+  });
+});
+
+// ──── HAPTIC ────
+document.querySelectorAll('.tap-feedback').forEach(el => {
+  el.addEventListener('touchstart', () => { if (navigator.vibrate) navigator.vibrate(15); });
+});
+</script>
+{% endraw %}
+</body>
+</html>

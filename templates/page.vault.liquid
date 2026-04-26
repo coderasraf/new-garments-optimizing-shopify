@@ -1,0 +1,449 @@
+{% layout none %}
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta name="description" content="THE ARCHIVE VAULT — free item when you join. 25% off everything. sneaker raffles."/>
+<title>newgarments — the archive vault</title>
+{{ content_for_header }}
+{% raw %}
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#0a0a0a",
+        "surface": "#1a1a1a",
+        "on-surface": "#ffffff",
+        "on-surface-variant": "#a1a1aa",
+        "brand-lime": "#c8ff00",
+      },
+      fontFamily: {
+        "headline": ["Public Sans"],
+        "body": ["Inter"],
+        "label": ["Space Grotesk"]
+      },
+      borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+    },
+  },
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-size: 14px; }
+  html, body { height: 100%; overflow: hidden; background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; text-transform: lowercase; }
+  .slide { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; flex-direction: column; opacity: 0; pointer-events: none; transform: translateY(30px) scale(0.98); transition: opacity .5s ease, transform .5s ease; z-index: 1; overflow: hidden; }
+  .slide--active { opacity: 1; pointer-events: auto; z-index: 2; transform: none; }
+  .slide--exit { opacity: 0; transform: translateY(-30px) scale(0.98); }
+  .slide-inner { display: flex; flex-direction: column; justify-content: center; gap: 2.5vh; height: 100%; width: 100%; max-width: 28rem; margin: 0 auto; padding: 2vh 1.25rem; overflow: hidden; }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .4s ease, transform .4s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-d1 { transition-delay: .08s; } .reveal-d2 { transition-delay: .16s; } .reveal-d3 { transition-delay: .24s; } .reveal-d4 { transition-delay: .32s; } .reveal-d5 { transition-delay: .4s; }
+  @keyframes glow { 0%,100% { box-shadow: 0 0 12px rgba(200,255,0,.15), 0 0 24px rgba(200,255,0,.08); } 50% { box-shadow: 0 0 24px rgba(200,255,0,.5), 0 0 48px rgba(200,255,0,.25), 0 0 72px rgba(200,255,0,.1); } }
+  .cta-glow { animation: glow 2s ease-in-out infinite; }
+  @keyframes valueGlow { 0%,100% { box-shadow: 0 0 8px rgba(200,255,0,.15); } 50% { box-shadow: 0 0 20px rgba(200,255,0,.45), 0 0 40px rgba(200,255,0,.15); } }
+  .value-glow { animation: valueGlow 2.5s ease-in-out infinite; }
+  @keyframes limeGlow { 0%,100% { text-shadow: 0 0 4px rgba(200,255,0,.15); } 50% { text-shadow: 0 0 14px rgba(200,255,0,.5), 0 0 24px rgba(200,255,0,.2); } }
+  .lime-glow { animation: limeGlow 2s ease-in-out infinite; }
+  @keyframes starPulse { 0%,100% { text-shadow: 0 0 3px rgba(200,255,0,.2); } 50% { text-shadow: 0 0 10px rgba(200,255,0,.7); } }
+  .star-glow { animation: starPulse 2s ease-in-out infinite; }
+  @keyframes borderGlow { 0%,100% { border-color: rgba(200,255,0,.15); } 50% { border-color: rgba(200,255,0,.5); box-shadow: 0 0 12px rgba(200,255,0,.1); } }
+  .border-glow { animation: borderGlow 2.5s ease-in-out infinite; }
+  @keyframes countdownPulse { 0%,100% { opacity: 1; } 50% { opacity: .5; } }
+  .countdown-pulse { animation: countdownPulse 1.5s ease-in-out infinite; }
+  @keyframes ping { 75%,100% { transform: scale(2); opacity: 0; } }
+  .urgency-ping { position: relative; }
+  .urgency-ping::after { content:''; position:absolute; inset:0; border-radius:50%; background:#c8ff00; animation: ping 1.5s cubic-bezier(0,0,.2,1) infinite; }
+  .top-progress { position:fixed; top:0; left:0; height:2px; background:#c8ff00; z-index:300; transition: width .5s ease; }
+  input[type=range] { -webkit-appearance:none; width:100%; background:transparent; }
+  input[type=range]:focus { outline:none; }
+  input[type=range]::-webkit-slider-runnable-track { height:2px; background:#27272a; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:32px; height:32px; border-radius:50%; background:#c8ff00; margin-top:-15px; border:3px solid #0a0a0a; box-shadow: 0 0 12px rgba(200,255,0,.4); }
+  input[type=range]::-moz-range-track { height:2px; background:#27272a; border:none; }
+  input[type=range]::-moz-range-thumb { width:32px; height:32px; border-radius:50%; background:#c8ff00; border:3px solid #0a0a0a; box-shadow: 0 0 12px rgba(200,255,0,.4); }
+  .dim-text { color: rgba(255,255,255,.35); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HERO -->
+<section class="slide" data-slide="0">
+  <div class="slide-inner items-center text-center">
+    <img alt="newgarments™" class="w-[160px] mx-auto" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <div class="flex flex-col items-center reveal reveal-d1">
+      <div class="bg-zinc-900 text-white px-3 py-1 rounded-full mb-3 flex items-center gap-2 border border-zinc-800">
+        <span class="w-1.5 h-1.5 bg-brand-lime rounded-full animate-pulse urgency-ping"></span>
+        <span class="text-[8px] font-black uppercase tracking-widest">early access — price increases soon</span>
+      </div>
+      <h1 class="text-4xl font-black tracking-tighter leading-[.88] mb-3 text-white font-headline reveal reveal-d2">
+        you're either <span class="relative inline-block">in the vault.<span class="absolute bottom-0.5 left-0 w-full h-1.5 bg-brand-lime -z-10"></span></span> or you're not.
+      </h1>
+      <p class="text-zinc-400 text-[15px] font-light mb-3 tracking-tight max-w-xs reveal reveal-d3">
+        exclusive archive drops. free items. 25% off everything. members only.
+      </p>
+      <div class="flex items-center gap-2 text-[8px] font-black uppercase tracking-widest text-white reveal reveal-d4">
+        <span><span class="text-brand-lime">77.6k</span> followers</span>
+        <span class="text-zinc-700">/</span>
+        <span><span class="text-brand-lime">189M+</span> views</span>
+        <span class="text-zinc-700">/</span>
+        <span><span class="text-brand-lime">4.9★</span> rated</span>
+      </div>
+    </div>
+    <div class="w-full max-w-xs mx-auto reveal reveal-d5">
+      <button class="slide-next w-full bg-brand-lime text-black py-3.5 text-[11px] font-black tracking-[.2em] uppercase cta-glow active:scale-[.97] transition-transform">see what you get</button>
+      <p class="dim-text text-[8px] tracking-widest mt-1.5 text-center">cancel anytime · free worldwide shipping</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 2: IDENTITY -->
+<section class="slide" data-slide="1">
+  <div class="slide-inner" style="justify-content:center; gap:1.5vh;">
+    <img alt="newgarments™" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <div class="overflow-hidden" style="margin:0 -1.25rem;">
+      <img alt="newgarments lifestyle" class="w-full object-cover" style="max-height:52vh;" src="https://newgarments-landing-pages.vercel.app/images/brand-identity.png"/>
+    </div>
+    <h2 class="text-[22px] font-black tracking-tighter leading-[1.05] font-headline shrink-0">
+      42,500 people stopped <span class="text-brand-lime">blending in.</span>
+    </h2>
+    <div class="flex items-center gap-2 text-[9px] text-zinc-500 tracking-wide shrink-0">
+      <span>sold out 12x this year</span>
+      <span class="text-zinc-700">·</span>
+      <span>30+ countries</span>
+      <span class="text-zinc-700">·</span>
+      <span>4.9★ avg</span>
+    </div>
+    <button class="slide-next w-full bg-brand-lime text-black py-3 text-base font-black tracking-tight font-headline cta-glow active:scale-[.97] transition-transform shrink-0">see what's inside</button>
+  </div>
+</section>
+
+<!-- SLIDE 3: FREE MYSTERY ITEM -->
+<section class="slide" data-slide="2">
+  <div class="slide-inner" style="justify-content:center; gap:1.5vh;">
+    <img alt="newgarments™" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <h2 class="text-[22px] font-black tracking-tighter leading-none font-headline shrink-0">
+      first, you get a <span class="relative inline-block">mystery item.<span class="absolute left-0 bottom-0.5 w-full h-1 bg-brand-lime -z-10"></span></span>
+    </h2>
+    <p class="text-zinc-400 text-[12px] leading-snug shrink-0">join the vault and we ship you a mystery item from the archive. worth <span class="text-brand-lime font-black">€39 - €79</span>. on us.</p>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="overflow-hidden flex flex-col">
+        <img alt="bracelet" class="w-full aspect-square object-cover" src="https://newgarments-landing-pages.vercel.app/images/mystery-1.webp"/>
+        <span class="text-[9px] text-zinc-500 pt-1 text-center">bracelet</span>
+      </div>
+      <div class="overflow-hidden flex flex-col">
+        <img alt="sneakers + tote" class="w-full aspect-square object-cover" src="https://newgarments-landing-pages.vercel.app/images/mystery-2.png"/>
+        <span class="text-[9px] text-zinc-500 pt-1 text-center">sneakers + tote</span>
+      </div>
+      <div class="overflow-hidden flex flex-col">
+        <img alt="zipper hoodie" class="w-full aspect-square object-cover" src="https://newgarments-landing-pages.vercel.app/images/mystery-3.png"/>
+        <span class="text-[9px] text-zinc-500 pt-1 text-center">zipper hoodie</span>
+      </div>
+      <div class="bg-surface flex items-center justify-center aspect-square">
+        <div class="text-center">
+          <span class="text-brand-lime text-3xl font-black">?</span>
+          <p class="text-zinc-500 text-[9px] mt-1">and more...</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-zinc-600 text-[10px] text-center shrink-0">no filler. no leftovers. real archive pieces that already sold out.</p>
+    <button class="slide-next w-full bg-brand-lime text-black py-3 text-base font-black tracking-tight font-headline cta-glow active:scale-[.97] transition-transform shrink-0">what else is in the vault?</button>
+  </div>
+</section>
+
+<!-- SLIDE 4: STORE CREDIT EXAMPLE -->
+<section class="slide" data-slide="3">
+  <div class="slide-inner" style="justify-content:center; gap:1.5vh;">
+    <img alt="newgarments™" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <h2 class="text-[24px] font-black tracking-tighter leading-[1.05] font-headline shrink-0">
+      €15 credit + 25% extra discount. <span class="text-brand-lime">every month.</span>
+    </h2>
+    <p class="text-zinc-400 text-[14px] leading-snug shrink-0">real example from our store — see how fast it adds up.</p>
+    <div class="bg-surface border border-white/10 p-3 shrink-0">
+      <div class="flex items-center gap-3 mb-2">
+        <img alt="zip hoodie" class="w-[56px] h-[56px] object-cover" src="https://newgarments-landing-pages.vercel.app/images/credit-product.png"/>
+        <div>
+          <h3 class="text-white text-[16px] font-headline font-black leading-tight">checkered zipped hoodie - grey</h3>
+          <p class="text-zinc-500 text-[10px]">heavyweight · checkered lined · archive drop</p>
+        </div>
+      </div>
+      <div class="space-y-1.5">
+        <div class="flex justify-between items-center">
+          <span class="text-zinc-400 text-[12px]">retail price</span>
+          <span class="text-white font-headline font-bold text-[13px]">€39.95</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-zinc-400 text-[12px]">25% vault discount</span>
+          <span class="text-brand-lime font-headline font-bold text-[13px]">- €9.99</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-zinc-400 text-[12px]">€15 monthly credit</span>
+          <span class="text-brand-lime font-headline font-bold text-[13px]">- €15.00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-zinc-400 text-[12px]">shipping</span>
+          <span class="text-brand-lime font-headline font-bold text-[13px]">FREE</span>
+        </div>
+        <div class="border-t border-white/10 pt-1.5 flex justify-between items-center">
+          <span class="text-white text-[13px] font-headline font-black">you pay</span>
+          <span class="text-brand-lime text-2xl font-headline font-black lime-glow">€14.96</span>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#111] border border-brand-lime/20 p-2.5 shrink-0">
+      <p class="text-brand-lime text-[11px] font-headline font-bold text-center">a €39.95 hoodie for €14.96 — that's 63% off.</p>
+      <p class="text-zinc-500 text-[9px] text-center mt-0.5">free worldwide shipping on every vault order.</p>
+    </div>
+    <button class="slide-next w-full bg-brand-lime text-black py-3 text-base font-black tracking-tight font-headline cta-glow active:scale-[.97] transition-transform shrink-0">keep going</button>
+  </div>
+</section>
+
+<!-- SLIDE 5: YOU'RE JOINING SOMETHING BIGGER -->
+<section class="slide" data-slide="4">
+  <div class="slide-inner" style="justify-content:center; gap:1.8vh;">
+    <img alt="newgarments™" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <div class="shrink-0">
+      <h2 class="text-[22px] font-black tracking-tighter leading-[1.05] font-headline">you're not subscribing.</h2>
+      <h2 class="text-[22px] font-black tracking-tighter leading-[1.05] font-headline text-brand-lime">you're joining a community.</h2>
+    </div>
+    <div class="flex flex-col min-h-0">
+      <div class="py-3 border-t border-white/10 flex justify-between items-center gap-3">
+        <div><h3 class="text-[16px] font-black text-white font-headline leading-tight">monthly sneaker + outfit raffle.</h3><p class="text-zinc-500 text-[11px] mt-0.5">€120+ value. you're in automatically. every month.</p></div>
+        <span class="text-brand-lime text-xl font-black font-headline shrink-0">€120+</span>
+      </div>
+      <div class="py-3 border-t border-white/10 flex justify-between items-center gap-3">
+        <div><h3 class="text-[16px] font-black text-white font-headline leading-tight">24h early access to every drop.</h3><p class="text-zinc-500 text-[11px] mt-0.5">cop sold-out pieces before the public even knows.</p></div>
+        <span class="text-brand-lime text-xl font-black font-headline shrink-0">FIRST</span>
+      </div>
+      <div class="py-3 border-t border-white/10 flex justify-between items-center gap-3">
+        <div><h3 class="text-[16px] font-black text-white font-headline leading-tight">private vault discord.</h3><p class="text-zinc-500 text-[11px] mt-0.5">connect with 42,500+ members. style advice. vote on upcoming drops.</p></div>
+        <span class="text-brand-lime text-xl font-black font-headline shrink-0">🔒</span>
+      </div>
+      <div class="py-3 border-t border-b border-white/10 flex justify-between items-center gap-3">
+        <div><h3 class="text-[16px] font-black text-white font-headline leading-tight">free worldwide shipping. always.</h3><p class="text-zinc-500 text-[11px] mt-0.5">every order. no minimum. no exceptions.</p></div>
+        <span class="text-brand-lime text-xl font-black font-headline shrink-0">FREE</span>
+      </div>
+    </div>
+    <button class="slide-next w-full bg-brand-lime text-black py-3 text-base font-black tracking-tight font-headline cta-glow active:scale-[.97] transition-transform shrink-0">keep going</button>
+  </div>
+</section>
+
+<!-- SLIDE 6: CUSTOMER STORIES -->
+<section class="slide" data-slide="5">
+  <div class="slide-inner" style="justify-content:flex-start; gap:1.5vh; overflow-y:auto; padding-top:3vh;">
+    <img alt="newgarments" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <h2 class="font-headline font-extrabold text-2xl text-white leading-[1.1] tracking-tighter shrink-0">members don't just wear it.</h2>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="overflow-hidden"><img alt="member wearing NG" class="w-full aspect-[3/4] object-cover" src="https://newgarments-landing-pages.vercel.app/images/wear-1.jpeg"/></div>
+      <div class="overflow-hidden"><img alt="member wearing NG" class="w-full aspect-[3/4] object-cover" src="https://newgarments-landing-pages.vercel.app/images/wear-2.png"/></div>
+    </div>
+    <h2 class="font-headline font-extrabold text-2xl text-white leading-[1.1] tracking-tighter shrink-0">they flip it.</h2>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="overflow-hidden">
+        <img alt="flat lay outfit" class="w-full aspect-[3/4] object-cover" src="https://newgarments-landing-pages.vercel.app/images/flat-1.jpeg"/>
+        <p class="text-brand-lime text-[12px] italic mt-1 leading-tight font-bold">('sold my vault hoodie for €67 on grailed')</p>
+      </div>
+      <div class="overflow-hidden">
+        <img alt="flat lay sneakers" class="w-full aspect-[3/4] object-cover" src="https://newgarments-landing-pages.vercel.app/images/flat-2.jpeg"/>
+        <p class="text-brand-lime text-[12px] italic mt-1 leading-tight font-bold">('flipped the sneakers for €95 in one day')</p>
+      </div>
+    </div>
+    <div class="shrink-0 text-center">
+      <div class="flex justify-center items-center gap-1.5 mb-1">
+        <div class="flex text-brand-lime text-[11px] star-glow">★★★★★</div>
+        <span class="text-[10px] font-label text-white">4.9 average</span>
+      </div>
+      <p class="text-[10px] text-zinc-500 mb-2">trusted by creators, resellers &amp; streetwear heads</p>
+      <button class="slide-next w-full bg-brand-lime text-black font-label font-bold py-3 text-base tracking-tighter cta-glow active:scale-[.97] transition-transform">keep going</button>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: ESTIMATED VALUE -->
+<section class="slide" data-slide="6">
+  <div class="slide-inner items-center text-center" style="justify-content:center; gap:2vh;">
+    <img alt="newgarments" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <h2 class="text-[24px] font-black tracking-tighter leading-[1.05] text-white font-headline">so let's add it up.</h2>
+    <div class="w-full space-y-2">
+      <div class="flex justify-between items-center py-2 border-b border-white/10">
+        <span class="text-zinc-400 text-[13px]">free mystery item</span>
+        <span class="text-brand-lime font-headline font-bold text-[14px]">€39 - €79</span>
+      </div>
+      <div class="flex justify-between items-center py-2 border-b border-white/10">
+        <span class="text-zinc-400 text-[13px]">€15 store credit</span>
+        <span class="text-brand-lime font-headline font-bold text-[14px]">€15</span>
+      </div>
+      <div class="flex justify-between items-center py-2 border-b border-white/10">
+        <span class="text-zinc-400 text-[13px]">25% off everything</span>
+        <span class="text-brand-lime font-headline font-bold text-[14px]">€30 - €50+</span>
+      </div>
+      <div class="flex justify-between items-center py-2 border-b border-white/10">
+        <span class="text-zinc-400 text-[13px]">monthly raffle entry</span>
+        <span class="text-brand-lime font-headline font-bold text-[14px]">€120+</span>
+      </div>
+      <div class="flex justify-between items-center py-2 border-b border-white/10">
+        <span class="text-zinc-400 text-[13px]">early access + discord</span>
+        <span class="text-brand-lime font-headline font-bold text-[14px]">VIP</span>
+      </div>
+      <div class="flex justify-between items-center py-2 border-b border-white/10">
+        <span class="text-zinc-400 text-[13px]">free worldwide shipping</span>
+        <span class="text-brand-lime font-headline font-bold text-[14px]">FREE</span>
+      </div>
+    </div>
+    <div>
+      <span class="text-[9px] font-bold tracking-[.15em] text-zinc-400 uppercase">your estimated value per month</span>
+      <div class="bg-brand-lime text-black px-4 py-2 text-2xl font-black tracking-tighter text-center font-headline value-glow mt-1">€109 - €179+</div>
+    </div>
+    <button class="slide-next w-full bg-brand-lime text-black py-3 text-base font-black tracking-tight font-headline cta-glow active:scale-[.97] transition-transform shrink-0">so what does it cost?</button>
+  </div>
+</section>
+
+<!-- SLIDE 8: GUESS THE PRICE -->
+<section class="slide" data-slide="7">
+  <div class="slide-inner items-center text-center" style="justify-content:center; gap:1.5vh;">
+    <img alt="newgarments" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <div class="flex flex-col items-center min-h-0">
+      <h2 class="text-3xl font-black tracking-tighter leading-tight text-white font-headline mb-2">so... what do you think this costs?</h2>
+      <p class="text-zinc-500 text-base max-w-[280px] mb-6">free item. €15 credit. 25% off. raffles. take a guess.</p>
+      <span class="inline-block bg-zinc-800 text-brand-lime px-4 py-1.5 text-xl font-black tracking-tight font-headline mb-4" id="sliderLabel">€49/mo</span>
+      <div class="relative w-full mb-2">
+        <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[2px] bg-brand-lime transition-all duration-100" id="sliderFill" style="width:36%"></div>
+        <input class="relative z-10 w-full" id="priceSlider" max="99" min="20" type="range" value="49"/>
+      </div>
+      <div class="flex justify-between w-full text-zinc-600 text-[9px] font-bold tracking-widest"><span>€20/mo</span><span>€99/mo</span></div>
+    </div>
+    <div class="w-full shrink-0">
+      <button class="slide-next w-full bg-brand-lime text-black py-3.5 text-base font-black tracking-tighter font-headline cta-glow active:scale-[.97] transition-transform">show me the real price</button>
+      <p class="italic text-zinc-500 text-[11px] mt-1.5">hint: it's less than you think.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: IDENTITY COMPARISON -->
+<section class="slide" data-slide="8">
+
+  <div class="slide-inner" style="justify-content:center; gap:1.5vh;">
+    <img alt="newgarments" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <div class="flex flex-col min-h-0 gap-3">
+      <h2 class="font-headline font-black text-xl text-white tracking-tight leading-tight">you spend more on things that matter less.</h2>
+      <div class="space-y-1">
+        <div class="bg-surface p-2.5 flex justify-between items-center">
+          <div><span class="text-white/50 text-[10px] font-label uppercase tracking-widest">netflix</span><p class="text-zinc-500 text-[11px]">to watch what everyone watches</p></div>
+          <span class="text-white font-headline font-bold text-[13px] shrink-0 ml-2">€30/mo</span>
+        </div>
+        <div class="bg-surface p-2.5 flex justify-between items-center">
+          <div><span class="text-white/50 text-[10px] font-label uppercase tracking-widest">spotify</span><p class="text-zinc-500 text-[11px]">to hear what everyone hears</p></div>
+          <span class="text-white font-headline font-bold text-[13px] shrink-0 ml-2">€20/mo</span>
+        </div>
+        <div class="bg-surface p-2.5 flex justify-between items-center">
+          <div><span class="text-white/50 text-[10px] font-label uppercase tracking-widest">zara hoodie</span><p class="text-zinc-500 text-[11px]">that 200 people in your city own</p></div>
+          <span class="text-white font-headline font-bold text-[13px] shrink-0 ml-2">€50</span>
+        </div>
+        <div class="bg-[#111] p-4 border-l-2 border-brand-lime flex justify-between items-center">
+          <div><span class="text-brand-lime font-label text-[11px] uppercase tracking-widest font-bold">archive vault</span><p class="text-brand-lime/80 text-[12px] mt-0.5">wear what nobody else can — and profit from it.</p></div>
+          <span class="text-brand-lime font-headline font-black text-[18px] shrink-0 ml-2">€19.95/mo</span>
+        </div>
+      </div>
+      <div>
+        <p class="font-headline font-extrabold text-lg text-white leading-tight">everyone scrolls the same feeds. wears the same fits. blends in.</p>
+        <p class="text-zinc-500 text-sm mt-1">some people are fine with that. <span class="font-headline font-black text-brand-lime text-2xl">you're not.</span></p>
+      </div>
+    </div>
+    <button class="slide-next w-full bg-brand-lime text-black font-headline font-black py-3.5 text-[13px] uppercase tracking-tighter cta-glow active:scale-[.97] transition-transform shrink-0">i'm not blending in</button>
+  </div>
+</section>
+
+<!-- SLIDE 10: CLOSER -->
+<section class="slide" data-slide="9">
+  <div class="slide-inner items-center text-center">
+    <img alt="newgarments™" class="w-[160px] mx-auto shrink-0" src="https://newgarments-landing-pages.vercel.app/images/logo.webp"/>
+    <div class="flex flex-col items-center">
+      <h1 class="font-headline font-bold text-2xl text-white tracking-tight leading-tight mb-3">the archive vault is open for you. for now.</h1>
+      <div class="flex items-baseline gap-2 mb-1">
+        <span class="text-white/35 line-through font-label text-sm">€49.95/mo</span>
+        <span class="text-brand-lime font-bold font-headline text-2xl lime-glow">€19.95/mo</span>
+      </div>
+      <p class="text-zinc-400 text-[12px] mb-1 leading-snug max-w-xs">€15 store credit + 25% extra off + mystery piece + raffles.<br/><span class="text-brand-lime font-bold">it costs you nothing. literally.</span></p>
+      <p class="text-zinc-500 text-[11px] mb-3 leading-snug max-w-xs">that's why we need to increase our price soon.<br/><span class="text-white font-bold">but if you join now, your monthly price will be locked.</span></p>
+      <div class="bg-zinc-900 border border-zinc-800 rounded-full px-3 py-1 flex items-center gap-1.5 border-glow">
+        <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
+        <span class="text-white text-[10px] font-bold">price goes back to €49.95/mo in <span class="text-brand-lime font-black countdown-pulse" id="countdown">17:00:00</span></span>
+      </div>
+    </div>
+    <div class="w-full">
+      <p class="text-zinc-400 text-[12px] text-center mb-3">skip any month and cancel anytime — in one click.</p>
+    </div>
+    <div class="w-full shrink-0">
+      <button onclick="addVaultToCart()" class="block w-full bg-brand-lime text-black font-headline font-bold h-12 text-lg leading-[48px] text-center tracking-tight cta-glow active:scale-[.97] transition-transform uppercase border-none cursor-pointer">i'm in</button>
+      <p class="dim-text text-[8px] font-label tracking-wider mt-1.5">billed monthly · free worldwide shipping · no contracts</p>
+    </div>
+  </div>
+</section>
+
+<div class="top-progress" id="topProgress" style="width:0%"></div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const topProgress = document.getElementById('topProgress');
+let current = 0, transitioning = false;
+
+function goTo(idx) {
+  if (idx < 0 || idx >= slides.length || idx === current || transitioning) return;
+  transitioning = true;
+  const prev = current; current = idx;
+  slides[prev].classList.add('slide--exit');
+  slides[prev].classList.remove('slide--active');
+  setTimeout(function() {
+    slides[prev].classList.remove('slide--exit');
+    slides[idx].classList.add('slide--active');
+    slides[idx].querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+    transitioning = false;
+  }, 150);
+  topProgress.style.width = ((idx + 1) / slides.length * 100) + '%';
+  if (navigator.vibrate) navigator.vibrate(10);
+  if (idx === 7) resetSlider();
+}
+
+var slider = document.getElementById('priceSlider'), label = document.getElementById('sliderLabel'), fill = document.getElementById('sliderFill');
+function updateSlider() { if (!slider) return; fill.style.width = ((slider.value-20)/79*100)+'%'; label.textContent = '\u20AC'+slider.value+'/mo'; }
+function resetSlider() { if (!slider) return; slider.value = 49; updateSlider(); }
+if (slider) slider.addEventListener('input', function() { updateSlider(); if (navigator.vibrate) navigator.vibrate(5); });
+
+document.querySelectorAll('.slide-next').forEach(function(b) { b.addEventListener('click', function(e) { e.preventDefault(); goTo(current+1); }); });
+
+var ce = document.getElementById('countdown');
+if (ce) {
+  var et = localStorage.getItem('vault_countdown_v3');
+  if (!et) { et = String(Date.now() + 17*3600000); localStorage.setItem('vault_countdown_v3', et); }
+  function uc() { var d=Math.max(0,Number(et)-Date.now()), h=Math.floor(d/3600000), m=Math.floor(d%3600000/60000), s=Math.floor(d%60000/1000); ce.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'); }
+  uc(); setInterval(uc,1000);
+}
+
+slides[0].classList.add('slide--active');
+slides[0].querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+topProgress.style.width = (100/slides.length)+'%';
+
+// Vault checkout — add subscription to cart with selling plan
+function addVaultToCart() {
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      items: [{
+        id: 56923884585337,
+        quantity: 1,
+        selling_plan: 712429830521
+      }]
+    })
+  }).then(function(res) {
+    if (res.ok) { window.location.href = '/checkout'; }
+    else { alert('something went wrong. try again.'); }
+  }).catch(function() { alert('something went wrong. try again.'); });
+}
+</script>
+{% endraw %}
+</body>
+</html>

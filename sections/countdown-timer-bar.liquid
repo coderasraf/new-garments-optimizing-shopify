@@ -1,0 +1,267 @@
+{% schema %}
+  {
+    "name": "Countdown Timer Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "countdown_heading",
+        "label": "Heading Text",
+        "default": "Buy 1 Get 1 Free Ends In:"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "Shop now!"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Countdown timer"
+      }
+    ]
+  }
+{% endschema %}
+
+
+
+<div class="countdown-banner">
+  <div class="countdown-banner__text">
+    {% if request.locale.iso_code == 'de' %}
+ <strong>SEIDENBONNET: KAUFEN SIE 2, ERHALTEN SIE 1 GRATIS *endet heute</strong>
+    {% else %}
+    <strong>{{ section.settings.countdown_heading }}</strong>
+    {% endif %}
+  </div>
+  <div class="countdown-banner__timer">
+        <div class="countdown-inner-w">
+          <div class="countdown-banner__time">
+            <span id="days">00</span>
+            <span id="hours">00</span>
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+          </div>
+          <div class="countdown-banner__labels">
+            
+            {% if request.locale.iso_code == 'de' %}
+
+            <span>Tage</span>
+<span>Stunden</span>
+<span>Minuten</span>
+<span>Sekunden</span>
+            {% else %}
+            <span>Days</span>
+            <span>Hrs</span>
+            <span>Mins</span>
+            <span>Secs</span>
+            {% endif %}
+    
+          </div>
+    </div>
+    {% if section.settings.button_link  %}
+       <a href="{{ section.settings.button_link }}" class="countdown-banner__button">
+      {% if request.locale.iso_code == 'de' %}
+      Jetzt kaufen
+       {% else %} 
+{{ section.settings.button_label }}
+        {% endif %}
+       </a>
+    {% endif %}
+    </div> 
+</div>
+
+<style>
+  .countdown-banner {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  .countdown-banner__text {
+    font-weight: 700;
+    font-size: 15px;
+    color: #000;
+  }
+  .countdown-banner__timer {
+    text-align: center;
+  }
+  .countdown-banner__time {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    justify-content: center;
+  }
+  .countdown-banner__time span {
+    min-width: 26px;
+    display: inline-block;
+    text-align: center;
+  }
+  .countdown-banner__labels {
+    display: flex;
+    gap: 20px;
+    font-size: 10px;
+    color: #000;
+    justify-content: center;
+  }
+  .countdown-banner__labels span {
+    min-width: 26px;
+    text-align: center;
+  }
+  .countdown-banner__button {
+    padding: 10px 20px;
+    background: #000;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .countdown-banner__timer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+                     {% if request.locale.iso_code == 'de' %}
+
+.countdown-banner__time {
+    display: flex;
+    gap: 34px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    justify-content: center;
+}
+    
+              {% endif %}     
+  
+  @media(max-width:768px){
+.countdown-banner {
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  flex-direction:column;
+}
+    .countdown-banner__time {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+}
+    .countdown-banner__labels {
+    gap: 10px;
+    font-size: 10px;
+}
+    .countdown-banner__text {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+}
+  {% if request.locale.iso_code == 'de' %}
+    .countdown-banner__time {
+    display: flex;
+    gap: 21px;
+    font-size: 16px;
+}
+
+    {% endif %}
+.countdown-banner__text {
+    text-align: center;
+}
+  }
+
+
+  .countdown-banner {
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px;
+  z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.countdown-banner.visible {
+  transform: translateY(0);
+    position: fixed;
+}
+
+.countdown-banner.hidden {
+  transform: translateY(-100%);
+}
+  
+</style>
+
+
+
+<script>
+  function startAutoResetCountdown(duration) {
+    function getResetTime() {
+      const now = new Date();
+      const start = new Date(now);
+      start.setMinutes(Math.floor(now.getMinutes() / 120) * 120);
+      start.setSeconds(0);
+      start.setMilliseconds(0);
+      return new Date(start.getTime() + duration);
+    }
+
+    const endTime = getResetTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      let distance = endTime - now;
+
+      if (distance < 0) {
+        location.reload();
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, '0:');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0:');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0:');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0:');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const twoHours = 1000 * 60 * 60 * 12.8;
+    startAutoResetCountdown(twoHours);
+  });
+</script>
+
+<script>
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   var bar = document.querySelector('.countdown-banner');
+
+  //   window.addEventListener('scroll', function () {
+  //     if (window.scrollY > 200) {
+  //       bar.classList.add('visible');
+  //       bar.classList.remove('hidden');
+  //     } else {
+  //       bar.classList.remove('visible');
+  //       bar.classList.remove('hidden');
+  //     }
+  //   });
+  // });
+</script>
