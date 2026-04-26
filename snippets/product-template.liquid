@@ -593,6 +593,49 @@ span.cu-ratting {
 </style>
 
 
+<script>
+  const slider = document.getElementById('decSlider');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // Mouse Events
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => { isDown = false; });
+  slider.addEventListener('mouseup', () => { isDown = false; });
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll Speed
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Modal Functions
+  function openDecModal(videoSrc) {
+    // Prevent opening modal if the user was just dragging
+    if(isDown) return; 
+    const modal = document.getElementById('decVideoModal');
+    const player = document.getElementById('decModalPlayer');
+    player.src = videoSrc;
+    modal.style.display = 'flex';
+    player.play();
+  }
+
+  function closeDecModal() {
+    const modal = document.getElementById('decVideoModal');
+    const player = document.getElementById('decModalPlayer');
+    modal.style.display = 'none';
+    player.pause();
+    player.src = "";
+  }
+</script>
+
 {% when  'shipping' %}
 <div class="single-gurentee-item">
 <div class="icon">
@@ -901,45 +944,3 @@ span.cu-ratting {
 </div>
 
 
-<script>
-  const slider = document.getElementById('decSlider');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  // Mouse Events
-  slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
-  slider.addEventListener('mouseleave', () => { isDown = false; });
-  slider.addEventListener('mouseup', () => { isDown = false; });
-  slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll Speed
-    slider.scrollLeft = scrollLeft - walk;
-  });
-
-  // Modal Functions
-  function openDecModal(videoSrc) {
-    // Prevent opening modal if the user was just dragging
-    if(isDown) return; 
-    const modal = document.getElementById('decVideoModal');
-    const player = document.getElementById('decModalPlayer');
-    player.src = videoSrc;
-    modal.style.display = 'flex';
-    player.play();
-  }
-
-  function closeDecModal() {
-    const modal = document.getElementById('decVideoModal');
-    const player = document.getElementById('decModalPlayer');
-    modal.style.display = 'none';
-    player.pause();
-    player.src = "";
-  }
-</script>
