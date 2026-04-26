@@ -535,15 +535,16 @@
         "look_jpULfi": {
           "type": "look",
           "settings": {
+            "image": "shopify://shop_images/9_1fd3b025-ed3b-45c9-9715-898cd0039ffc.jpg",
             "look_title": "Sherpa Winter Fit",
-            "main_product": "",
+            "main_product": "drift-washed-denim-jacket-copy",
             "custom_price": "£110.42",
             "custom_compare_price": "£129.90",
             "collection_link": "",
-            "product_1": "",
-            "top_1": 30,
+            "product_1": "anti-streetwear-hoodie-black",
+            "top_1": 10,
             "left_1": 50,
-            "product_2": "",
+            "product_2": "blossom-embroidered-jeans-2",
             "top_2": 50,
             "left_2": 30,
             "product_3": "",
@@ -557,6 +558,7 @@
         "look_JgjGNz": {
           "type": "look",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design_-_2026-03-18T104640.438.png",
             "look_title": "Sherpa Winter Fit",
             "main_product": "",
             "custom_price": "£110.42",
