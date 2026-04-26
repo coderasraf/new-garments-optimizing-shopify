@@ -467,6 +467,133 @@
         "lazy": true
       }
     },
+    "animated_heading_thNfBH": {
+      "type": "animated-heading",
+      "name": "Animated Heading",
+      "settings": {
+        "heading": "Live From",
+        "underlined_text": "The Feed",
+        "text_color": "#000000",
+        "underline_color": "#000000",
+        "font_size_desktop": 30,
+        "alignment_desktop": "center",
+        "font_size_mobile": 24,
+        "alignment_mobile": "center",
+        "padding_top": 36,
+        "padding_bottom": 32
+      }
+    },
+    "shoppable_lookbook_grid_aYpzjr": {
+      "type": "shoppable-lookbook-grid",
+      "blocks": {
+        "look_AeKWPL": {
+          "type": "look",
+          "settings": {
+            "look_title": "Sherpa Winter Fit",
+            "main_product": "",
+            "custom_price": "£110.42",
+            "custom_compare_price": "£129.90",
+            "collection_link": "",
+            "product_1": "",
+            "top_1": 30,
+            "left_1": 50,
+            "product_2": "",
+            "top_2": 50,
+            "left_2": 30,
+            "product_3": "",
+            "top_3": 70,
+            "left_3": 70,
+            "product_4": "",
+            "top_4": 90,
+            "left_4": 50
+          }
+        },
+        "look_kr8YdV": {
+          "type": "look",
+          "settings": {
+            "look_title": "Sherpa Winter Fit",
+            "main_product": "",
+            "custom_price": "£110.42",
+            "custom_compare_price": "£129.90",
+            "collection_link": "",
+            "product_1": "",
+            "top_1": 30,
+            "left_1": 50,
+            "product_2": "",
+            "top_2": 50,
+            "left_2": 30,
+            "product_3": "",
+            "top_3": 70,
+            "left_3": 70,
+            "product_4": "",
+            "top_4": 90,
+            "left_4": 50
+          }
+        },
+        "look_jpULfi": {
+          "type": "look",
+          "settings": {
+            "look_title": "Sherpa Winter Fit",
+            "main_product": "",
+            "custom_price": "£110.42",
+            "custom_compare_price": "£129.90",
+            "collection_link": "",
+            "product_1": "",
+            "top_1": 30,
+            "left_1": 50,
+            "product_2": "",
+            "top_2": 50,
+            "left_2": 30,
+            "product_3": "",
+            "top_3": 70,
+            "left_3": 70,
+            "product_4": "",
+            "top_4": 90,
+            "left_4": 50
+          }
+        },
+        "look_JgjGNz": {
+          "type": "look",
+          "settings": {
+            "look_title": "Sherpa Winter Fit",
+            "main_product": "",
+            "custom_price": "£110.42",
+            "custom_compare_price": "£129.90",
+            "collection_link": "",
+            "product_1": "",
+            "top_1": 30,
+            "left_1": 50,
+            "product_2": "",
+            "top_2": 50,
+            "left_2": 30,
+            "product_3": "",
+            "top_3": 70,
+            "left_3": 70,
+            "product_4": "",
+            "top_4": 90,
+            "left_4": 50
+          }
+        }
+      },
+      "block_order": [
+        "look_AeKWPL",
+        "look_kr8YdV",
+        "look_jpULfi",
+        "look_JgjGNz"
+      ],
+      "name": "Shoppable Lookbook",
+      "settings": {
+        "heading": "",
+        "heading_alignment": "left",
+        "desktop_columns": 4,
+        "desktop_gap": 20,
+        "corner_radius": 0,
+        "image_ratio": 135,
+        "max_width": 1400,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
       "name": "Animated Heading",
@@ -780,6 +907,8 @@
     "176317079332aa6095",
     "main",
     "shopable_videos_pe3gBH",
+    "animated_heading_thNfBH",
+    "shoppable_lookbook_grid_aYpzjr",
     "animated_heading_7JEdNU",
     "instafeed_HpYKfA",
     "shop_the_look_dNWgGc",
