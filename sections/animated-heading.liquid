@@ -1,0 +1,208 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .animated-heading-{{ section.id }} {
+    font-size: {{ section.settings.font_size_mobile }}px;
+    text-align: {{ section.settings.alignment_mobile }};
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+    color: {{ section.settings.text_color }};
+  }
+
+  @media screen and (min-width: 768px) {
+    .animated-heading-{{ section.id }} {
+      font-size: {{ section.settings.font_size_desktop }}px;
+      text-align: {{ section.settings.alignment_desktop }};
+    }
+  }
+
+  .underline-wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    white-space: nowrap;
+  }
+
+  .zig-zag-underline {
+    position: absolute;
+    bottom: -0.2em; /* Adjust to move line closer/further from text */
+    left: 0;
+    width: 100%;
+    height: 0.35em; 
+    z-index: -1;
+    overflow: visible;
+  }
+
+  .zig-zag-underline path {
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth draw animation */
+  }
+{%- endstyle -%}
+
+<div class="custom-animated-heading-section section-{{ section.id }}-padding">
+  <div class="page-width">
+    <h2 class="animated-heading-{{ section.id }}">
+      {{ section.settings.heading }}
+      {% if section.settings.underlined_text != blank %}
+        <span class="underline-wrapper">
+          {{ section.settings.underlined_text }}
+          <svg class="zig-zag-underline" part="shape underline-shape" preserveAspectRatio="none" viewBox="0 0 215 14" fill="none">
+            <path part="path" stroke="{{ section.settings.underline_color }}" stroke-linecap="round" stroke-width="3" vector-effect="non-scaling-stroke" d="M1 1c20.54 2.356 41.237 2.634 61.957 2.703 25.31.085 50.625.028 75.928-.467 19.199-.376 38.386-1.092 57.584-1.503 5.836-.125 11.686-.278 17.526-.278.17 0-4.327.618-4.547.644-29.274 3.52-58.822 5.58-88.31 7.542-26.569 1.768-53.22 2.055-79.861 2.552-2.122.039-4.269.06-6.388.176-2.502.137 4.997.4 7.505.443 46.458.782 92.838-1.125 139.285-1.125" stroke-dasharray="427.05828046000516" stroke-dashoffset="427.05828046000516"></path>
+          </svg>
+        </span>
+      {% endif %}
+    </h2>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+
+    const underlineObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const path = entry.target.querySelector('path');
+          if (path) {
+            // Read length to force reflow if necessary, then set offset to 0 to draw it
+            path.style.strokeDashoffset = '0';
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const underlines = document.querySelectorAll('.custom-animated-heading-section .zig-zag-underline');
+    underlines.forEach(underline => {
+      underlineObserver.observe(underline);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Animated Heading",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Text",
+      "default": "Live From"
+    },
+    {
+      "type": "text",
+      "id": "underlined_text",
+      "label": "Underlined Text",
+      "default": "The Feed"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "underline_color",
+      "label": "Underline Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "min": 16,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "alignment_desktop",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "alignment_mobile",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Animated Heading",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
