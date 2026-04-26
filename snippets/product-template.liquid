@@ -593,7 +593,52 @@ span.cu-ratting {
 </style>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const slider = document.getElementById('decSlider');
+  const modal = document.getElementById('decVideoModal');
+  const player = document.getElementById('decModalPlayer');
+  let isDragging = false;
+  let startX, scrollLeft;
 
+  // Drag to scroll logic
+  slider.addEventListener('mousedown', (e) => {
+    isDragging = false; 
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (e.buttons !== 1) return;
+    isDragging = true;
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Open Modal Logic
+  document.querySelectorAll('.dec-video-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      if (isDragging) return; // Don't open if user was just dragging
+      const url = this.getAttribute('data-video-url');
+      player.src = url;
+      modal.style.display = 'flex';
+      player.play();
+    });
+  });
+
+  // Close Modal Logic
+  window.closeDecModal = function() {
+    modal.style.display = 'none';
+    player.pause();
+    player.src = "";
+  };
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeDecModal();
+  });
+});
+</script>
 
 
 {% when  'shipping' %}
