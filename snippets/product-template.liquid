@@ -965,3 +965,19 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 
+
+<script>
+    // Exclusive Accordion Logic
+    const details = document.querySelectorAll(".ng-faq-item");
+
+    details.forEach((targetDetail) => {
+        targetDetail.addEventListener("click", () => {
+            // Close all other details except the one clicked
+            details.forEach((detail) => {
+                if (detail !== targetDetail) {
+                    detail.removeAttribute("open");
+                }
+            });
+        });
+    });
+</script>
