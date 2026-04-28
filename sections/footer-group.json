@@ -1,1 +1,88 @@
-{"type":"footer","name":"t:sections.footer-group.name","sections":{"footer-promotions":{"type":"footer-promotions","settings":{"hide_homepage":false}},"footer":{"type":"footer","blocks":{"footer2":{"type":"newsletter","settings":{"show_footer_title":false,"title":"JOIN THE CLUB","text":"<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>","container_width":30}},"menu_4hyUwm":{"type":"menu","disabled":true,"settings":{"show_footer_title":true,"menu":"main-menu","container_width":20}},"menu_Ef4ynM":{"type":"menu","settings":{"show_footer_title":true,"menu":"","container_width":20}},"menu_c9xRNx":{"type":"menu","settings":{"show_footer_title":false,"menu":"footer","container_width":25}},"custom_Qg4q8F":{"type":"custom","settings":{"show_footer_title":true,"title":"RELIABLE CUSTOMER SUPPORT","text":"<p><strong>Business Hours<\/strong><br\/>Monday – Friday: 9:00 AM – 6:00 PM (GMT−6)<br\/>Saturday and Sunday: Closed<br\/>Public Holidays: Closed<\/p><p>Business Address: H.W. Mesdagstraat 21A, 9718HB, GR, NL<br\/>Email: support@newgarments.store<br\/>Phone: +19033192501<\/p><p><\/p>","container_width":30}}},"block_order":["footer2","menu_4hyUwm","menu_Ef4ynM","menu_c9xRNx","custom_Qg4q8F"],"settings":{"show_locale_selector":true,"show_currency_selector":true,"show_currency_flags":true,"show_payment_icons":true,"show_copyright":true,"copyright_text":""}}},"order":["footer-promotions","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "settings": {
+        "hide_homepage": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "menu_c9xRNx": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "footer",
+            "container_width": 25
+          }
+        },
+        "custom_Qg4q8F": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "RELIABLE CUSTOMER SUPPORT",
+            "text": "<p><strong>Business Hours</strong><br/>Monday – Friday: 9:00 AM – 6:00 PM (GMT−6)<br/>Saturday and Sunday: Closed<br/>Public Holidays: Closed</p><p>Business Address: H.W. Mesdagstraat 21A, 9718HB, GR, NL<br/>Email: support@newgarments.store<br/>Phone: +19033192501</p><p></p>",
+            "container_width": 30
+          }
+        },
+        "footer2": {
+          "type": "newsletter",
+          "settings": {
+            "show_footer_title": true,
+            "title": "JOIN THE CLUB",
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>",
+            "container_width": 30
+          }
+        },
+        "menu_4hyUwm": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "show_footer_title": true,
+            "menu": "main-menu",
+            "container_width": 20
+          }
+        },
+        "menu_Ef4ynM": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "",
+            "container_width": 20
+          }
+        }
+      },
+      "block_order": [
+        "menu_c9xRNx",
+        "custom_Qg4q8F",
+        "footer2",
+        "menu_4hyUwm",
+        "menu_Ef4ynM"
+      ],
+      "settings": {
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "show_currency_flags": true,
+        "show_payment_icons": true,
+        "show_copyright": true,
+        "copyright_text": ""
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}
