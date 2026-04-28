@@ -984,6 +984,7 @@
         "feature_tibT6H",
         "feature_PP9Vpm"
       ],
+      "disabled": true,
       "name": "Store features",
       "settings": {
         "margin_top": 36,
