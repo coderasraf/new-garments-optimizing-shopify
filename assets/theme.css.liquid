@@ -9557,21 +9557,25 @@ html[dir=rtl] .grid-product__content{
 }
 
 .quick-product__btn{
-  background-color:var(--colorBtnPrimary);
-  bottom:10px;
-  color:var(--colorBtnPrimaryText);
+  background-color:#000;
+  bottom:0px;
+  color:#fff;
   cursor:pointer;
-  font-size:calc(var(--typeBaseSize)*0.85);
-  left:10px;
-  opacity:0;
+  font-size:24px;
+  opacity:1;
   overflow:hidden;
-  padding:8px 5px;
+  padding:0;
   position:absolute;
-  right:10px;
+  right:0px;
+  left:auto;
   text-align:center;
-  transform:translateY(5px);
-  transition:opacity 0.25s ease,transform 0.25s ease-out,background 0.4s ease;
-  width:calc(100% - 20px);
+  transform:none;
+  transition:background 0.4s ease;
+  width:35px;
+  height:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   z-index:2;
 }
 
@@ -9581,18 +9585,16 @@ html[dir=rtl] .grid-product__content{
 
 .grid-product__content:hover .quick-product__btn{
     opacity:1;
-    transform:translateY(0);
-    transition:opacity 0.25s ease,transform 0.25s ease-out;
+    transform:none;
 }
 
 .supports-touch .quick-product__btn{
-    display:none;
+    display:flex;
 }
 
 .grid-product:focus-within .quick-product__btn{
     opacity:1;
-    transform:translateY(0);
-    transition:opacity 0.25s ease,transform 0.25s ease-out;
+    transform:none;
 }
 
 .quick-product__btn--not-ready{
