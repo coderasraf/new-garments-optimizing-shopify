@@ -53,13 +53,22 @@
             "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>",
             "container_width": 35
           }
+        },
+        "logo_social_VyKpza": {
+          "type": "logo_social",
+          "settings": {
+            "logo": "shopify://shop_images/1_2da9adc4-94f1-4b1d-8283-c136fa93d3ab.png",
+            "desktop_logo_height": 120,
+            "container_width": 95
+          }
         }
       },
       "block_order": [
         "menu_4hyUwm",
         "menu_c9xRNx",
         "custom_Qg4q8F",
-        "footer2"
+        "footer2",
+        "logo_social_VyKpza"
       ],
       "custom_css": [
         ".site-footer {border-top: none !important;}"
