@@ -862,7 +862,7 @@
         "home_featured_products": "warehouse-sale",
         "per_row": 4,
         "rows": 1,
-        "mobile_scrollable": true,
+        "mobile_scrollable": false,
         "view_all": false,
         "divider": false
       }
