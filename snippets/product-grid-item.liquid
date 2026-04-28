@@ -213,7 +213,7 @@ Arguments
       <div class="grid-product-swatch-info-wrapper">
   <a href="{{ product.url | within: collection }}" class="grid-product__link">
         <div class="grid-product__meta">
-          <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{{ product.title |  truncate: 20 }}</div>
+          <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{{ product.title |  truncate: 30 }}</div>
           {%- if settings.vendor_enable -%}
             <div class="grid-product__vendor">{{ product.vendor }}</div>
           {%- endif -%}
