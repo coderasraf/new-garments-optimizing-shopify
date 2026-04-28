@@ -11,6 +11,62 @@
   "type": "footer",
   "name": "t:sections.footer-group.name",
   "sections": {
+    "store_features_mGHfFQ": {
+      "type": "store-features",
+      "blocks": {
+        "feature_BkYYAR": {
+          "type": "feature",
+          "settings": {
+            "icon": "globe",
+            "custom_image": "shopify://shop_images/globe_1.svg",
+            "custom_svg": "",
+            "title": "Worldwide delivery",
+            "text": "Ships anywhere, fast & tracked"
+          }
+        },
+        "feature_TBmG9f": {
+          "type": "feature",
+          "settings": {
+            "icon": "box",
+            "custom_image": "shopify://shop_images/fast.svg",
+            "custom_svg": "",
+            "title": "Fast Dispatch",
+            "text": "Orders out within 48 hours"
+          }
+        },
+        "feature_rgFMq3": {
+          "type": "feature",
+          "settings": {
+            "icon": "headphone",
+            "custom_image": "shopify://shop_images/realtime.svg",
+            "custom_svg": "",
+            "title": "Real-Time Help",
+            "text": "Talk to our team on WhatsApp"
+          }
+        },
+        "feature_WtGQTm": {
+          "type": "feature",
+          "settings": {
+            "icon": "lock",
+            "custom_image": "shopify://shop_images/secure-checkout.svg",
+            "custom_svg": "",
+            "title": "Secure Checkout",
+            "text": "Your order, encrypted & protected"
+          }
+        }
+      },
+      "block_order": [
+        "feature_BkYYAR",
+        "feature_TBmG9f",
+        "feature_rgFMq3",
+        "feature_WtGQTm"
+      ],
+      "name": "Store features",
+      "settings": {
+        "margin_top": 36,
+        "margin_bottom": 0
+      }
+    },
     "footer-promotions": {
       "type": "footer-promotions",
       "settings": {
@@ -84,6 +140,7 @@
     }
   },
   "order": [
+    "store_features_mGHfFQ",
     "footer-promotions",
     "footer"
   ]
