@@ -61,6 +61,9 @@
         "custom_Qg4q8F",
         "footer2"
       ],
+      "custom_css": [
+        ".site-footer {border-top: none !important;}"
+      ],
       "settings": {
         "show_locale_selector": true,
         "show_currency_selector": true,
