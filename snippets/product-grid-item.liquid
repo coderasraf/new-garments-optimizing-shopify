@@ -355,7 +355,7 @@ Arguments
         {%- assign option_index = forloop.index0 -%}
         {%- assign values = '' -%}
         <div class="grid-product__colors grid-product__colors--{{ product.id }}">
-          {%- assign swatch_limit = 4 -%}
+          {%- assign swatch_limit = 3 -%}
           {%- assign more_count = 0 -%}
           {%- for variant in product.variants -%}
             {%- assign value = variant.options[option_index] %}
