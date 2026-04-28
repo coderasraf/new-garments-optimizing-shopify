@@ -3117,27 +3117,37 @@ theme.recentlyViewed = {
     products.forEach(product => {
       product.addEventListener('mouseover', productMouseover);
       product.addEventListener('focusin', productMouseover);
+
+      var btn = product.querySelector('.quick-product__btn');
+      if (btn) {
+        btn.addEventListener('click', function(evt) {
+          var modalId = 'QuickShopModal-' + product.dataset.productId;
+          if (!document.getElementById(modalId)) {
+             evt.preventDefault();
+             btn.classList.add('btn--loading');
+             var productId = product.dataset.productId;
+             var handle = product.dataset.productHandle;
+             theme.preloadProductModal(handle, productId, btn, true);
+          }
+        });
+      }
     });
   
     function productMouseover(evt) {
       var el = evt.currentTarget;
-      // No quick view on mobile breakpoint
-      if (!theme.config.bpSmall) {
-        el.removeEventListener('mouseover', productMouseover);
-        el.removeEventListener('focusin', productMouseover);
-        if (!el || !el.dataset.productId) {
-          // Onboarding product, no real data
-          return;
-        }
-        var productId = el.dataset.productId;
-        var handle = el.dataset.productHandle;
-        var btn = el.querySelector('.quick-product__btn');
-        theme.preloadProductModal(handle, productId, btn);
+      el.removeEventListener('mouseover', productMouseover);
+      el.removeEventListener('focusin', productMouseover);
+      if (!el || !el.dataset.productId) {
+        return;
       }
+      var productId = el.dataset.productId;
+      var handle = el.dataset.productHandle;
+      var btn = el.querySelector('.quick-product__btn');
+      theme.preloadProductModal(handle, productId, btn);
     }
   };
   
-  theme.preloadProductModal = function(handle, productId, btn) {
+  theme.preloadProductModal = function(handle, productId, btn, openNow) {
     var holder = document.getElementById('QuickShopHolder-' + handle);
     var url = theme.routes.home + '/products/' + handle + '?view=modal';
   
@@ -3161,7 +3171,7 @@ theme.recentlyViewed = {
       // Setup quick view modal
       var modalId = 'QuickShopModal-' + productId;
       var name = 'quick-modal-' + productId;
-      new theme.Modals(modalId, name);
+      var modal = new theme.Modals(modalId, name);
   
       // Register product template inside quick view
       theme.sections.register('product', theme.Product, holder);
@@ -3174,6 +3184,11 @@ theme.recentlyViewed = {
   
       if (btn) {
         btn.classList.remove('quick-product__btn--not-ready');
+        btn.classList.remove('btn--loading');
+      }
+
+      if (openNow) {
+        modal.open();
       }
     });
   }
