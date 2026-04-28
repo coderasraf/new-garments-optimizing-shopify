@@ -280,6 +280,8 @@ Arguments
                 {%- assign option_index = forloop.index0 -%}
                 {%- assign values = '' -%}
                 <div class="grid-product__colors grid-product__colors--{{ product.id }}">
+                  {%- assign swatch_limit = 4 -%}
+                  {%- assign more_count = 0 -%}
                   {%- for variant in product.variants -%}
                     {%- assign value = variant.options[option_index] %}
                     {%- unless values contains value -%}
@@ -292,18 +294,28 @@ Arguments
                         assign color_count = color_count | plus: 1
                       -%}
 
-                      <span
-                        class="color-swatch color-swatch--small color-swatch--{{ value | handle }}{% if variant.image %} color-swatch--with-image{% endif %}"
-                        {% if variant.image %}
-                          data-variant-id="{{ variant.id }}"
-                          data-variant-image="{{ variant.image | img_url: '400x' }}"
-                        {% endif %}
-                        aria-label="{{ product.title }} - {{ value }}"
-                        style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}">
-                        <span class="visually-hidden">{{ value }}</span>
-                      </span>
+                      {%- if color_count <= swatch_limit -%}
+                        <span
+                          class="color-swatch color-swatch--small color-swatch--{{ value | handle }}{% if variant.image %} color-swatch--with-image{% endif %}"
+                          {% if variant.image %}
+                            data-variant-id="{{ variant.id }}"
+                            data-variant-image="{{ variant.image | img_url: '400x' }}"
+                          {% endif %}
+                          aria-label="{{ product.title }} - {{ value }}"
+                          style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}">
+                          <span class="visually-hidden">{{ value }}</span>
+                        </span>
+                      {%- else -%}
+                        {%- assign more_count = more_count | plus: 1 -%}
+                      {%- endif -%}
                     {%- endunless -%}
                   {%- endfor -%}
+
+                  {%- if more_count > 0 -%}
+                    <span class="color-swatch color-swatch--small color-swatch--more" style="background-color: #f4f4f4; color: #333; display: flex; align-items: center; justify-content: center; font-size: 10px; text-decoration: none; text-indent: 0;">
+                      +{{ more_count }}
+                    </span>
+                  {%- endif -%}
                 </div>
                 {%- if color_count < 2 -%}
                   {%- style -%}
@@ -343,6 +355,8 @@ Arguments
         {%- assign option_index = forloop.index0 -%}
         {%- assign values = '' -%}
         <div class="grid-product__colors grid-product__colors--{{ product.id }}">
+          {%- assign swatch_limit = 4 -%}
+          {%- assign more_count = 0 -%}
           {%- for variant in product.variants -%}
             {%- assign value = variant.options[option_index] %}
             {%- unless values contains value -%}
@@ -355,19 +369,29 @@ Arguments
                 assign color_count = color_count | plus: 1
               -%}
 
-              <a
-                href="{{ variant.url | within: collection }}"
-                class="color-swatch color-swatch--small color-swatch--{{ value | handle }}{% if variant.image %} color-swatch--with-image{% endif %}"
-                {% if variant.image %}
-                  data-variant-id="{{ variant.id }}"
-                  data-variant-image="{{ variant.image | img_url: '400x' }}"
-                {% endif %}
-                aria-label="{{ product.title }} - {{ value }}"
-                style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}">
-                <span class="visually-hidden">{{ value }}</span>
-              </a>
+              {%- if color_count <= swatch_limit -%}
+                <a
+                  href="{{ variant.url | within: collection }}"
+                  class="color-swatch color-swatch--small color-swatch--{{ value | handle }}{% if variant.image %} color-swatch--with-image{% endif %}"
+                  {% if variant.image %}
+                    data-variant-id="{{ variant.id }}"
+                    data-variant-image="{{ variant.image | img_url: '400x' }}"
+                  {% endif %}
+                  aria-label="{{ product.title }} - {{ value }}"
+                  style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}">
+                  <span class="visually-hidden">{{ value }}</span>
+                </a>
+              {%- else -%}
+                {%- assign more_count = more_count | plus: 1 -%}
+              {%- endif -%}
             {%- endunless -%}
           {%- endfor -%}
+
+          {%- if more_count > 0 -%}
+            <a href="{{ product.url | within: collection }}" class="color-swatch color-swatch--small color-swatch--more" style="background-color: #f4f4f4; color: #333; display: flex; align-items: center; justify-content: center; font-size: 10px; text-decoration: none; text-indent: 0;">
+              +{{ more_count }}
+            </a>
+          {%- endif -%}
         </div>
         {%- if color_count < 2 -%}
           {%- style -%}
