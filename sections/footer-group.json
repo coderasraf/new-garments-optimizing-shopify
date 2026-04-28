@@ -20,12 +20,20 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "menu_4hyUwm": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "main-menu",
+            "container_width": 15
+          }
+        },
         "menu_c9xRNx": {
           "type": "menu",
           "settings": {
             "show_footer_title": true,
             "menu": "footer",
-            "container_width": 25
+            "container_width": 20
           }
         },
         "custom_Qg4q8F": {
@@ -41,35 +49,17 @@
           "type": "newsletter",
           "settings": {
             "show_footer_title": true,
-            "title": "JOIN THE CLUB",
+            "title": "Newsletter",
             "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>",
-            "container_width": 30
-          }
-        },
-        "menu_4hyUwm": {
-          "type": "menu",
-          "disabled": true,
-          "settings": {
-            "show_footer_title": true,
-            "menu": "main-menu",
-            "container_width": 20
-          }
-        },
-        "menu_Ef4ynM": {
-          "type": "menu",
-          "settings": {
-            "show_footer_title": true,
-            "menu": "",
-            "container_width": 20
+            "container_width": 35
           }
         }
       },
       "block_order": [
+        "menu_4hyUwm",
         "menu_c9xRNx",
         "custom_Qg4q8F",
-        "footer2",
-        "menu_4hyUwm",
-        "menu_Ef4ynM"
+        "footer2"
       ],
       "settings": {
         "show_locale_selector": true,
