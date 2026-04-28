@@ -987,7 +987,7 @@
       "name": "Store features",
       "settings": {
         "margin_top": 36,
-        "margin_bottom": 36
+        "margin_bottom": 0
       }
     }
   },
