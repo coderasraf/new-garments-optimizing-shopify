@@ -108,7 +108,7 @@ Arguments
             {%- endif -%}
           </a>
         {%- else -%}
-          <div class="image-wrap"
+          <a href="{{product.url }}" class="image-wrap"
             {% if preview_image != blank %}
               style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
             {% endif %}
@@ -129,7 +129,7 @@ Arguments
               {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
               <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
             {%- endif -%}
-          </div>
+          </a>
         {%- endif -%}
 
   {%- for media in product.media offset: 1 limit: 1 -%}
