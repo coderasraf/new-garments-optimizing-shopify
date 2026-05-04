@@ -88,7 +88,7 @@ Arguments
     <div class="grid__item-image-wrapper">
       <div class="grid-product__image-mask">
         {%- if fixed_aspect_ratio -%}
-          <div
+          <a href="{{product.url }}"
             class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
             {%- capture image_classes -%}
               {% unless settings.product_grid_image_fill %} grid__image-contain{% endunless %} image-style--{{ image_style }}
@@ -106,7 +106,7 @@ Arguments
               {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
               <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
             {%- endif -%}
-          </div>
+          </a>
         {%- else -%}
           <div class="image-wrap"
             {% if preview_image != blank %}
