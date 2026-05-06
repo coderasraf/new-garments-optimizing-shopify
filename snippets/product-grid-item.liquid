@@ -95,7 +95,7 @@ a.image-wrap.loaded {
     <div class="grid__item-image-wrapper">
       <div class="grid-product__image-mask">
         {%- if fixed_aspect_ratio -%}
-          <a href="{{product.url }}"
+          <div  data-url="{{product.url }}"
             class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
             {%- capture image_classes -%}
               {% unless settings.product_grid_image_fill %} grid__image-contain{% endunless %} image-style--{{ image_style }}
@@ -113,9 +113,9 @@ a.image-wrap.loaded {
               {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
               <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
             {%- endif -%}
-          </a>
+          </div>
         {%- else -%}
-          <a href="{{product.url }}" class="image-wrap"
+          <div data-url="{{product.url }}" class="image-wrap"
             {% if preview_image != blank %}
               style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
             {% endif %}
@@ -136,7 +136,7 @@ a.image-wrap.loaded {
               {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
               <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
             {%- endif -%}
-          </a>
+          </div>
         {%- endif -%}
 
   {%- for media in product.media offset: 1 limit: 1 -%}
