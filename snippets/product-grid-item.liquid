@@ -115,7 +115,7 @@ a.image-wrap.loaded {
             {%- endif -%}
           </a>
         {%- else -%}
-          <div href="{{product.url }}" class="image-wrap"
+          <a href="{{product.url }}" class="image-wrap"
             {% if preview_image != blank %}
               style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
             {% endif %}
