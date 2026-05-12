@@ -1,19 +1,44 @@
-{% capture description %}
+{%- capture description -%}
   {%- if product.empty? -%}
     {{ 'home_page.onboarding.product_description' | t }}
   {%- else -%}
     {{ product.description }}
   {%- endif -%}
-{% endcapture %}
-{% capture size_chart_content %}
+{%- endcapture -%}
+{%- capture size_chart_content -%}
   {%- assign sc = product.metafields.custom.size_chart.value -%}
   {%- if sc != blank -%}
-    <div class="size-chart-metafield" style="margin:24px 0">
+    <div class="size-chart-auto" style="margin:24px 0">
       <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;font-weight:600">Size Chart</h3>
-      <div id="sc-table-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table id="sc-table" style="width:100%;border-collapse:collapse;font-size:13px;min-width:320px">
-          <thead><tr id="sc-head" style="border-bottom:2px solid #222"></tr></thead>
-          <tbody id="sc-body"></tbody>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:320px">
+          <thead>
+            <tr style="border-bottom:2px solid #222">
+              <th style="text-align:left;padding:8px 12px;font-weight:600">Size</th>
+              {%- assign first_entry = sc[0] -%}
+              {%- for pair in first_entry -%}
+                {%- unless pair[0] == 'size' -%}
+                  {%- assign col_label = pair[0] | capitalize -%}
+                  <th style="text-align:center;padding:8px 12px;font-weight:600">{{ col_label }}</th>
+                {%- endunless -%}
+              {%- endfor -%}
+            </tr>
+          </thead>
+          <tbody>
+            {%- for entry in sc -%}
+              {%- assign row_bg = '#fff' -%}
+              {%- assign mod = forloop.index0 | modulo: 2 -%}
+              {%- if mod == 0 -%}{%- assign row_bg = '#f9f9f9' -%}{%- endif -%}
+              <tr style="background:{{ row_bg }};border-bottom:1px solid #eee">
+                <td style="padding:8px 12px;font-weight:600">{{ entry.size }}</td>
+                {%- for pair in entry -%}
+                  {%- unless pair[0] == 'size' -%}
+                    <td style="text-align:center;padding:8px 12px">{{ pair[1] | default: '-' }}</td>
+                  {%- endunless -%}
+                {%- endfor -%}
+              </tr>
+            {%- endfor -%}
+          </tbody>
         </table>
       </div>
       <p style="font-size:11px;color:#888;margin-top:8px">All measurements in cm. Measured flat. Allow 1-3cm tolerance.</p>
@@ -21,26 +46,11 @@
         <p style="font-size:12px;color:#666;margin-top:4px">{{ product.metafields.custom.model_size.value }}</p>
       {%- endif -%}
     </div>
-    <script>
-    (function(){
-      try {
-        var c={{ product.metafields.custom.size_chart.value | json }};
-        if(!c||!c.length)return;
-        var L={chest:"Chest",length:"Length",shoulder:"Shoulder",sleeve:"Sleeve",waist:"Waist",hip:"Hip",thigh:"Thigh",hem:"Hem"};
-        var K=[];
-        c.forEach(function(r){Object.keys(r).forEach(function(k){if(k!=="size"&&K.indexOf(k)===-1&&r[k]!=null)K.push(k)})});
-        var h=document.getElementById("sc-head");
-        h.innerHTML="<th style='text-align:left;padding:8px 12px;font-weight:600'>Size</th>"+K.map(function(k){return"<th style='text-align:center;padding:8px 12px;font-weight:600'>"+(L[k]||k)+"</th>"}).join("");
-        var b=document.getElementById("sc-body");
-        b.innerHTML=c.map(function(r,i){var bg=i%2===0?"#f9f9f9":"#fff";return"<tr style='background:"+bg+";border-bottom:1px solid #eee'><td style='padding:8px 12px;font-weight:600'>"+r.size+"</td>"+K.map(function(k){return"<td style='text-align:center;padding:8px 12px'>"+(r[k]!=null?r[k]:"-")+"</td>"}).join("")+"</tr>"}).join("");
-      }catch(e){console.warn("SC err:",e)}
-    })();
-    </script>
   {%- endif -%}
-{% endcapture %}
+{%- endcapture -%}
 {%- if is_tab -%}
-  {% assign title = 'products.product.description' | t %}
-  {% assign full_desc = description | append: size_chart_content %}
+  {%- assign title = 'products.product.description' | t -%}
+  {%- assign full_desc = description | append: size_chart_content -%}
   {%- render 'tab', id: id, title: title, content: full_desc -%}
 {%- else -%}
   <div class="rte">
