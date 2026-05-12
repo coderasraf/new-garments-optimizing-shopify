@@ -5,56 +5,11 @@
     {{ product.description }}
   {%- endif -%}
 {%- endcapture -%}
-{%- capture size_chart_content -%}
-  {%- assign sc = product.metafields.custom.size_chart.value -%}
-  {%- if sc != blank -%}
-    <div class="size-chart-auto" style="margin:24px 0">
-      <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;font-weight:600">Size Chart</h3>
-      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:320px">
-          <thead>
-            <tr style="border-bottom:2px solid #222">
-              <th style="text-align:left;padding:8px 12px;font-weight:600">Size</th>
-              {%- assign first_entry = sc[0] -%}
-              {%- for pair in first_entry -%}
-                {%- unless pair[0] == 'size' -%}
-                  {%- assign col_label = pair[0] | capitalize -%}
-                  <th style="text-align:center;padding:8px 12px;font-weight:600">{{ col_label }}</th>
-                {%- endunless -%}
-              {%- endfor -%}
-            </tr>
-          </thead>
-          <tbody>
-            {%- for entry in sc -%}
-              {%- assign row_bg = '#fff' -%}
-              {%- assign mod = forloop.index0 | modulo: 2 -%}
-              {%- if mod == 0 -%}{%- assign row_bg = '#f9f9f9' -%}{%- endif -%}
-              <tr style="background:{{ row_bg }};border-bottom:1px solid #eee">
-                <td style="padding:8px 12px;font-weight:600">{{ entry.size }}</td>
-                {%- for pair in entry -%}
-                  {%- unless pair[0] == 'size' -%}
-                    <td style="text-align:center;padding:8px 12px">{{ pair[1] | default: '-' }}</td>
-                  {%- endunless -%}
-                {%- endfor -%}
-              </tr>
-            {%- endfor -%}
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:11px;color:#888;margin-top:8px">All measurements in cm. Measured flat. Allow 1-3cm tolerance.</p>
-      {%- if product.metafields.custom.model_size.value != blank -%}
-        <p style="font-size:12px;color:#666;margin-top:4px">{{ product.metafields.custom.model_size.value }}</p>
-      {%- endif -%}
-    </div>
-  {%- endif -%}
-{%- endcapture -%}
 {%- if is_tab -%}
   {%- assign title = 'products.product.description' | t -%}
-  {%- assign full_desc = description | append: size_chart_content -%}
-  {%- render 'tab', id: id, title: title, content: full_desc -%}
+  {%- render 'tab', id: id, title: title, content: description -%}
 {%- else -%}
   <div class="rte">
     {{ description }}
-    {{ size_chart_content }}
   </div>
 {%- endif -%}
