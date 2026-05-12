@@ -690,6 +690,11 @@ document.addEventListener("DOMContentLoaded", function() {
                       {%- assign id = block.id | append: product.id -%}
                       {%- render 'product-description', id: id, product: product, is_tab: block.settings.is_tab -%}
                     </div>
+                    {%- if block.settings.is_tab and product.metafields.custom.size_chart.value != blank -%}
+                      <div class="product-block product-block--tab">
+                        {%- render 'size-chart-tab', product: product -%}
+                      </div>
+                    {%- endif -%}
                   {%- when 'price' -%}
                     <div class="product-block product-block--price" {{ block.shopify_attributes }}>
                       {%- assign hide_sale_price = true -%}
