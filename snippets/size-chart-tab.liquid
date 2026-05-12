@@ -1,41 +1,51 @@
 {%- assign sc = product.metafields.custom.size_chart.value -%}
 {%- if sc != blank -%}
-  {%- capture size_chart_content -%}
-    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-      <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:320px">
-        <thead>
-          <tr style="border-bottom:2px solid #222">
-            <th style="text-align:left;padding:8px 12px;font-weight:600">Size</th>
-            {%- assign first_entry = sc[0] -%}
-            {%- for pair in first_entry -%}
-              {%- unless pair[0] == 'size' -%}
-                {%- assign col_label = pair[0] | capitalize -%}
-                <th style="text-align:center;padding:8px 12px;font-weight:600">{{ col_label }}</th>
-              {%- endunless -%}
-            {%- endfor -%}
-          </tr>
-        </thead>
-        <tbody>
-          {%- for entry in sc -%}
-            {%- assign row_bg = '#fff' -%}
-            {%- assign mod = forloop.index0 | modulo: 2 -%}
-            {%- if mod == 0 -%}{%- assign row_bg = '#f9f9f9' -%}{%- endif -%}
-            <tr style="background:{{ row_bg }};border-bottom:1px solid #eee">
-              <td style="padding:8px 12px;font-weight:600">{{ entry.size }}</td>
-              {%- for pair in entry -%}
-                {%- unless pair[0] == 'size' -%}
-                  <td style="text-align:center;padding:8px 12px">{{ pair[1] | default: '-' }}</td>
-                {%- endunless -%}
+  <div class="collapsibles-wrapper collapsibles-wrapper--border-bottom">
+    <button type="button"
+      class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height"
+      aria-controls="Product-content-size-chart">
+      Size Chart
+      {%- render 'collapsible-icons' -%}
+    </button>
+    <div id="Product-content-size-chart"
+      class="collapsible-content collapsible-content--all">
+      <div class="collapsible-content__inner rte">
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:320px">
+            <thead>
+              <tr style="border-bottom:2px solid #222">
+                <th style="text-align:left;padding:8px 12px;font-weight:600">Size</th>
+                {%- assign first_entry = sc[0] -%}
+                {%- for pair in first_entry -%}
+                  {%- unless pair[0] == 'size' -%}
+                    {%- assign col_label = pair[0] | capitalize -%}
+                    <th style="text-align:center;padding:8px 12px;font-weight:600">{{ col_label }}</th>
+                  {%- endunless -%}
+                {%- endfor -%}
+              </tr>
+            </thead>
+            <tbody>
+              {%- for entry in sc -%}
+                {%- assign row_bg = '#fff' -%}
+                {%- assign mod = forloop.index0 | modulo: 2 -%}
+                {%- if mod == 0 -%}{%- assign row_bg = '#f9f9f9' -%}{%- endif -%}
+                <tr style="background:{{ row_bg }};border-bottom:1px solid #eee">
+                  <td style="padding:8px 12px;font-weight:600">{{ entry.size }}</td>
+                  {%- for pair in entry -%}
+                    {%- unless pair[0] == 'size' -%}
+                      <td style="text-align:center;padding:8px 12px">{{ pair[1] | default: '-' }}</td>
+                    {%- endunless -%}
+                  {%- endfor -%}
+                </tr>
               {%- endfor -%}
-            </tr>
-          {%- endfor -%}
-        </tbody>
-      </table>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:8px">All measurements in cm. Measured flat. Allow 1-3cm tolerance.</p>
+        {%- if product.metafields.custom.model_size.value != blank -%}
+          <p style="font-size:12px;color:#666;margin-top:4px">{{ product.metafields.custom.model_size.value }}</p>
+        {%- endif -%}
+      </div>
     </div>
-    <p style="font-size:11px;color:#888;margin-top:8px">All measurements in cm. Measured flat. Allow 1-3cm tolerance.</p>
-    {%- if product.metafields.custom.model_size.value != blank -%}
-      <p style="font-size:12px;color:#666;margin-top:4px">{{ product.metafields.custom.model_size.value }}</p>
-    {%- endif -%}
-  {%- endcapture -%}
-  {%- render 'tab', id: 'size-chart', title: 'Size Chart', content: size_chart_content -%}
+  </div>
 {%- endif -%}
