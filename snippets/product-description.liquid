@@ -5,16 +5,46 @@
     {{ product.description }}
   {%- endif -%}
 {% endcapture %}
-{% capture size_chart_html %}
-  {%- render 'size-chart-metafield' -%}
+{% capture size_chart_content %}
+  {%- assign sc = product.metafields.custom.size_chart.value -%}
+  {%- if sc != blank -%}
+    <div class="size-chart-metafield" style="margin:24px 0">
+      <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;font-weight:600">Size Chart</h3>
+      <div id="sc-table-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+        <table id="sc-table" style="width:100%;border-collapse:collapse;font-size:13px;min-width:320px">
+          <thead><tr id="sc-head" style="border-bottom:2px solid #222"></tr></thead>
+          <tbody id="sc-body"></tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:#888;margin-top:8px">All measurements in cm. Measured flat. Allow 1-3cm tolerance.</p>
+      {%- if product.metafields.custom.model_size.value != blank -%}
+        <p style="font-size:12px;color:#666;margin-top:4px">{{ product.metafields.custom.model_size.value }}</p>
+      {%- endif -%}
+    </div>
+    <script>
+    (function(){
+      try {
+        var c={{ product.metafields.custom.size_chart.value | json }};
+        if(!c||!c.length)return;
+        var L={chest:"Chest",length:"Length",shoulder:"Shoulder",sleeve:"Sleeve",waist:"Waist",hip:"Hip",thigh:"Thigh",hem:"Hem"};
+        var K=[];
+        c.forEach(function(r){Object.keys(r).forEach(function(k){if(k!=="size"&&K.indexOf(k)===-1&&r[k]!=null)K.push(k)})});
+        var h=document.getElementById("sc-head");
+        h.innerHTML="<th style='text-align:left;padding:8px 12px;font-weight:600'>Size</th>"+K.map(function(k){return"<th style='text-align:center;padding:8px 12px;font-weight:600'>"+(L[k]||k)+"</th>"}).join("");
+        var b=document.getElementById("sc-body");
+        b.innerHTML=c.map(function(r,i){var bg=i%2===0?"#f9f9f9":"#fff";return"<tr style='background:"+bg+";border-bottom:1px solid #eee'><td style='padding:8px 12px;font-weight:600'>"+r.size+"</td>"+K.map(function(k){return"<td style='text-align:center;padding:8px 12px'>"+(r[k]!=null?r[k]:"-")+"</td>"}).join("")+"</tr>"}).join("");
+      }catch(e){console.warn("SC err:",e)}
+    })();
+    </script>
+  {%- endif -%}
 {% endcapture %}
 {%- if is_tab -%}
   {% assign title = 'products.product.description' | t %}
-  {% assign full_content = description | append: size_chart_html %}
-  {%- render 'tab', id: id, title: title, content: full_content -%}
+  {% assign full_desc = description | append: size_chart_content %}
+  {%- render 'tab', id: id, title: title, content: full_desc -%}
 {%- else -%}
   <div class="rte">
     {{ description }}
+    {{ size_chart_content }}
   </div>
-  {%- render 'size-chart-metafield' -%}
 {%- endif -%}
