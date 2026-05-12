@@ -5,9 +5,13 @@
     {{ product.description }}
   {%- endif -%}
 {% endcapture %}
+{% capture size_chart_html %}
+  {%- render 'size-chart-metafield' -%}
+{% endcapture %}
 {%- if is_tab -%}
   {% assign title = 'products.product.description' | t %}
-  {%- render 'tab', id: id, title: title, content: description -%}
+  {% assign full_content = description | append: size_chart_html %}
+  {%- render 'tab', id: id, title: title, content: full_content -%}
 {%- else -%}
   <div class="rte">
     {{ description }}
