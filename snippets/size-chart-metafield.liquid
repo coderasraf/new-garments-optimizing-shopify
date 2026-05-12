@@ -1,0 +1,45 @@
+{%- assign size_chart_json = product.metafields.custom.size_chart.value -%}
+{%- if size_chart_json != blank -%}
+<div class="size-chart-metafield" style="margin:24px 0">
+  <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;font-weight:600">Size Chart</h3>
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:320px">
+      <thead>
+        <tr id="size-chart-header" style="border-bottom:2px solid #222"></tr>
+      </thead>
+      <tbody id="size-chart-body"></tbody>
+    </table>
+  </div>
+  <p style="font-size:11px;color:#888;margin-top:8px">All measurements in cm. Measured flat. Allow 1-3cm tolerance.</p>
+  {%- if product.metafields.custom.model_size.value != blank -%}
+    <p style="font-size:12px;color:#666;margin-top:4px">{{ product.metafields.custom.model_size.value }}</p>
+  {%- endif -%}
+</div>
+
+<script>
+(function() {
+  try {
+    var chart = {{ product.metafields.custom.size_chart.value | json }};
+    if (!chart || !chart.length) return;
+    var labels = {chest:"Chest",length:"Length",shoulder:"Shoulder",sleeve:"Sleeve",waist:"Waist",hip:"Hip",thigh:"Thigh",hem:"Hem"};
+    var keys = [];
+    chart.forEach(function(row) {
+      Object.keys(row).forEach(function(k) {
+        if (k !== "size" && keys.indexOf(k) === -1 && row[k] !== undefined) keys.push(k);
+      });
+    });
+    var header = document.getElementById("size-chart-header");
+    header.innerHTML = "<th style=\"text-align:left;padding:8px 12px;font-weight:600\">Size</th>" + keys.map(function(k) {
+      return "<th style=\"text-align:center;padding:8px 12px;font-weight:600\">" + (labels[k] || k) + "</th>";
+    }).join("");
+    var body = document.getElementById("size-chart-body");
+    body.innerHTML = chart.map(function(row, i) {
+      var bg = i % 2 === 0 ? "#f9f9f9" : "#fff";
+      return "<tr style=\"background:" + bg + ";border-bottom:1px solid #eee\"><td style=\"padding:8px 12px;font-weight:600\">" + row.size + "</td>" + keys.map(function(k) {
+        return "<td style=\"text-align:center;padding:8px 12px\">" + (row[k] != null ? row[k] : "-") + "</td>";
+      }).join("") + "</tr>";
+    }).join("");
+  } catch(e) { console.warn("Size chart render error:", e); }
+})();
+</script>
+{%- endif -%}
