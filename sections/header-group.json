@@ -1,1 +1,130 @@
-{"type":"header","name":"t:sections.header-group.name","sections":{"countdown_timer_bar_BaPibK":{"type":"countdown-timer-bar","disabled":true,"name":"Custom Countdown timer","settings":{"countdown_heading":"OUR BIGGEST SALE EVER - S\/S 2025","button_label":"","button_link":""}},"custom_announcement_bar_slider_JXGWfg":{"type":"custom-announcement-bar-slider","blocks":{"slider_block_itQ9QN":{"type":"slider_block","settings":{"text_1":"@MYGARMENTS 75K FOLLOWERS","text_2":"","text_3":"","text_4":"","text_5":""}},"static_block_KFdKYY":{"type":"static_block","settings":{"static_text":"BECOME PART OF THE MOVEMENT"}},"slider_block_VwjWEq":{"type":"slider_block","settings":{"text_1":"@UNOWNLABEL 75K+ FOLLOWERS","text_2":"Welcome to our store","text_3":"New drops weekly","text_4":"","text_5":""}}},"block_order":["slider_block_itQ9QN","static_block_KFdKYY","slider_block_VwjWEq"],"disabled":true,"name":"3-Column Announcement Bar","settings":{}},"announcement":{"type":"announcement","blocks":{"announcement-0":{"type":"announcement","disabled":true,"settings":{"text":"","link_text":"FREE SHIPPING ABOVE 99$€","link":""}},"announcement_NUVrh7":{"type":"announcement","settings":{"text":"PAGE CLOSES WHEN STOCK IS GONE. ACT FAST","link_text":"SEASON CHANGE CLEARANCE","link":"shopify:\/\/collections\/nicos-pieces-1-1"}}},"block_order":["announcement-0","announcement_NUVrh7"],"settings":{"announcement_compact":true}},"header":{"type":"header","blocks":{"header-0":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/Untitled_design_-_2025-12-23T153055.070.png","logo-inverted":"shopify:\/\/shop_images\/Untitled_design_-_2025-12-23T153243.353.png","desktop_logo_width":140,"mobile_logo_width":180}}},"block_order":["header-0"],"settings":{"main_menu_link_list":"main-menu","hover_menu":true,"mega_menu_images":true,"main_menu_alignment":"center-left","header_style":"sticky","sticky_index":true,"sticky_collection":false,"toolbar_menu":"","toolbar_social":false,"show_locale_selector":false,"show_currency_selector":false,"show_currency_flags":false}}},"order":["countdown_timer_bar_BaPibK","custom_announcement_bar_slider_JXGWfg","announcement","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "countdown_timer_bar_BaPibK": {
+      "type": "countdown-timer-bar",
+      "disabled": true,
+      "name": "Custom Countdown timer",
+      "settings": {
+        "countdown_heading": "OUR BIGGEST SALE EVER - S/S 2025",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "custom_announcement_bar_slider_JXGWfg": {
+      "type": "custom-announcement-bar-slider",
+      "blocks": {
+        "slider_block_itQ9QN": {
+          "type": "slider_block",
+          "settings": {
+            "text_1": "@MYGARMENTS 75K FOLLOWERS",
+            "text_2": "",
+            "text_3": "",
+            "text_4": "",
+            "text_5": ""
+          }
+        },
+        "static_block_KFdKYY": {
+          "type": "static_block",
+          "settings": {
+            "static_text": "BECOME PART OF THE MOVEMENT"
+          }
+        },
+        "slider_block_VwjWEq": {
+          "type": "slider_block",
+          "settings": {
+            "text_1": "@UNOWNLABEL 75K+ FOLLOWERS",
+            "text_2": "Welcome to our store",
+            "text_3": "New drops weekly",
+            "text_4": "",
+            "text_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_block_itQ9QN",
+        "static_block_KFdKYY",
+        "slider_block_VwjWEq"
+      ],
+      "disabled": true,
+      "name": "3-Column Announcement Bar",
+      "settings": {}
+    },
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "announcement-0": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "link_text": "FREE SHIPPING ABOVE 99$€",
+            "link": ""
+          }
+        },
+        "announcement_NUVrh7": {
+          "type": "announcement",
+          "settings": {
+            "text": "PAGE CLOSES WHEN STOCK IS GONE. ACT FAST",
+            "link_text": "S/S 2026 DROP",
+            "link": "shopify://collections/nicos-pieces-1-1"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-0",
+        "announcement_NUVrh7"
+      ],
+      "settings": {
+        "announcement_compact": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "header-0": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Untitled_design_-_2025-12-23T153055.070.png",
+            "logo-inverted": "shopify://shop_images/Untitled_design_-_2025-12-23T153243.353.png",
+            "desktop_logo_width": 140,
+            "mobile_logo_width": 180
+          }
+        }
+      },
+      "block_order": [
+        "header-0"
+      ],
+      "settings": {
+        "main_menu_link_list": "main-menu",
+        "hover_menu": true,
+        "mega_menu_images": true,
+        "main_menu_alignment": "center-left",
+        "header_style": "sticky",
+        "sticky_index": true,
+        "sticky_collection": false,
+        "toolbar_menu": "",
+        "toolbar_social": false,
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false
+      }
+    }
+  },
+  "order": [
+    "countdown_timer_bar_BaPibK",
+    "custom_announcement_bar_slider_JXGWfg",
+    "announcement",
+    "header"
+  ]
+}
