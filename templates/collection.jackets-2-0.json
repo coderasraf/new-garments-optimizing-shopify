@@ -1,1 +1,266 @@
-{"sections":{"collection-header":{"type":"collection-header","disabled":true,"settings":{"collection_banner":"shopify:\/\/shop_images\/Your_paragraph_text_5.png","enable":true,"collection_image_enable":false,"parallax":false,"parallax_direction":"top"}},"slideshow_A8K9b7":{"type":"slideshow","blocks":{"image_M4FgD7":{"type":"image","settings":{"video_url":"","video_url_mobile":"","top_subheading":"WHAT’S LEFT WON’T LAST","badge_text":"","badge_bg":"#e8e8e1","badge_color":"#ffffff","title":"BUY 2 → 20% OFF\nBUY 3 → 30% OFF\nBUY 4 → 30% OFF + FREE GIFT","title_size":40,"subheading":"","check_text1":"Heavyweight pieces that hold shape.","check_text2":"Archive pieces don’t come back","rating_text":"","link":"","link_text":"","link_2":"","link_text_2":"","color_accent":"#ffffff","text_align":"vertical-center horizontal-center","image":"shopify:\/\/shop_images\/pinterest_mygarments.png","image_mobile":"shopify:\/\/shop_images\/10_ecdf254c-5cfc-4adf-b023-5fe674ac7606.png","parallax_direction":"top","overlay_opacity":0}}},"block_order":["image_M4FgD7"],"custom_css":["@media (max-width: 768px) {h2.h1.hero__title * {font-size: 20px !important; margin-top: 3px; }}"],"settings":{"section_height":"750px","mobile_height":"400px","parallax":false,"style":"dots","autoplay":false,"autoplay_speed":10,"lazyload_images":false}},"scrolling_announcement_bar_8bffBB":{"type":"scrolling-announcement-bar","blocks":{"text_a98xKE":{"type":"text","settings":{"text":"Built with Premium Fabric"}},"text_rz66VN":{"type":"text","settings":{"text":"Designed around the world"}},"text_pfbLnT":{"type":"text","settings":{"text":"Free Shipping"}},"text_HnQGmk":{"type":"text","settings":{"text":"Proudly Independent and Community-Driven"}},"text_MwEpqE":{"type":"text","settings":{"text":"Confidence Woven into Every Thread"}}},"block_order":["text_a98xKE","text_rz66VN","text_pfbLnT","text_HnQGmk","text_MwEpqE"],"disabled":true,"name":"Scrolling Announcement Bar","settings":{"insert_css_class_target":"","text_size":12,"ss_font_family":"montserrat_n4","link":"","animation_duration":138,"animation_direction":"right","pause_hover":false,"bg":"#ffffff","text_color":"#000000","hover_opacity":90,"padding_horizontal":2,"padding_vertical":1}},"17656405430f4d2f07":{"type":"_blocks","settings":{}},"ss_circle_menu_aBXAzn":{"type":"ss-circle-menu","blocks":{"image_rzAtAC":{"type":"Image","settings":{"bubble_img":"shopify:\/\/shop_images\/Untitled_design_82.png","bubble_text":"PANTS","bubble_link":"shopify:\/\/collections\/pants"}},"image_HJXPmr":{"type":"Image","settings":{"bubble_img":"shopify:\/\/shop_images\/Untitled_design_83.png","bubble_text":"SWEATERS","bubble_link":"shopify:\/\/collections\/sweaters"}},"image_Q8rqgA":{"type":"Image","settings":{"bubble_img":"shopify:\/\/shop_images\/Untitled_design_84.png","bubble_text":"JACKETS","bubble_link":"shopify:\/\/collections\/jackets"}},"image_zgDz7K":{"type":"Image","settings":{"bubble_img":"shopify:\/\/shop_images\/Untitled_design_86.png","bubble_text":"ZIP-THROUGH HOODIES","bubble_link":"shopify:\/\/collections\/zip-through-hoodies"}},"image_yCqdWq":{"type":"Image","settings":{"bubble_img":"shopify:\/\/shop_images\/Untitled_design_85.png","bubble_text":"SHOES","bubble_link":"shopify:\/\/collections\/shoes"}},"image_KEnYbH":{"type":"Image","settings":{"bubble_img":"shopify:\/\/shop_images\/Untitled_design_88.png","bubble_text":"Accessories","bubble_link":"shopify:\/\/collections\/accessories"}},"image_a3qQYg":{"type":"Image","settings":{"bubble_img":"shopify:\/\/shop_images\/Untitled_design_87.png","bubble_text":"PUFFER JACKETS","bubble_link":"shopify:\/\/collections\/puffer-jackets"}}},"block_order":["image_rzAtAC","image_HJXPmr","image_Q8rqgA","image_zgDz7K","image_yCqdWq","image_KEnYbH","image_a3qQYg"],"settings":{"hide_mobile":false,"hide_desktop":false,"mobile_content_alignment":"start","icon_size":100,"icon_size_mobile":80,"text_size":14,"text_color":"#121212","heading_custom":false,"heading_font":"assistant_n4","border_size":2,"ring_color":"#121212","background_gradient":"","square_image":false,"background-color":"#ffffff","padding_top":28,"padding_bottom":0}},"main-collection":{"type":"main-collection","blocks":{"collection_description":{"type":"collection_description","settings":{}},"subcollections":{"type":"subcollections","settings":{"subcollections_per_row":5}},"product_grid":{"type":"product_grid","settings":{"enable_collection_count":true,"per_row":4,"rows_per_page":7,"mobile_flush_grid":false}}},"block_order":["collection_description","subcollections","product_grid"],"settings":{"enable_sidebar":false,"collapsed":false,"filter_style":"sidebar","enable_color_swatches":false,"enable_swatch_labels":true,"enable_sort":true}}},"order":["collection-header","slideshow_A8K9b7","scrolling_announcement_bar_8bffBB","17656405430f4d2f07","ss_circle_menu_aBXAzn","main-collection"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "disabled": true,
+      "settings": {
+        "collection_banner": "shopify://shop_images/Your_paragraph_text_5.png",
+        "enable": true,
+        "collection_image_enable": false,
+        "parallax": false,
+        "parallax_direction": "top"
+      }
+    },
+    "slideshow_A8K9b7": {
+      "type": "slideshow",
+      "blocks": {
+        "image_M4FgD7": {
+          "type": "image",
+          "settings": {
+            "video_url": "",
+            "video_url_mobile": "",
+            "top_subheading": "WHAT’S LEFT WON’T LAST",
+            "badge_text": "",
+            "badge_bg": "#e8e8e1",
+            "badge_color": "#ffffff",
+            "title": "BUY 2 → 20% OFF\nBUY 3 → 30% OFF\nBUY 4 → 30% OFF + FREE GIFT",
+            "title_size": 40,
+            "subheading": "",
+            "check_text1": "Heavyweight pieces that hold shape.",
+            "check_text2": "Archive pieces don’t come back",
+            "rating_text": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/pinterest_mygarments.png",
+            "image_mobile": "shopify://shop_images/10_ecdf254c-5cfc-4adf-b023-5fe674ac7606.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_M4FgD7"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {h2.h1.hero__title * {font-size: 20px !important; margin-top: 3px; }}"
+      ],
+      "settings": {
+        "section_height": "450px",
+        "mobile_height": "250px",
+        "parallax": false,
+        "style": "dots",
+        "autoplay": false,
+        "autoplay_speed": 10,
+        "lazyload_images": false
+      }
+    },
+    "scrolling_announcement_bar_8bffBB": {
+      "type": "scrolling-announcement-bar",
+      "blocks": {
+        "text_a98xKE": {
+          "type": "text",
+          "settings": {
+            "text": "Built with Premium Fabric"
+          }
+        },
+        "text_rz66VN": {
+          "type": "text",
+          "settings": {
+            "text": "Designed around the world"
+          }
+        },
+        "text_pfbLnT": {
+          "type": "text",
+          "settings": {
+            "text": "Free Shipping"
+          }
+        },
+        "text_HnQGmk": {
+          "type": "text",
+          "settings": {
+            "text": "Proudly Independent and Community-Driven"
+          }
+        },
+        "text_MwEpqE": {
+          "type": "text",
+          "settings": {
+            "text": "Confidence Woven into Every Thread"
+          }
+        }
+      },
+      "block_order": [
+        "text_a98xKE",
+        "text_rz66VN",
+        "text_pfbLnT",
+        "text_HnQGmk",
+        "text_MwEpqE"
+      ],
+      "disabled": true,
+      "name": "Scrolling Announcement Bar",
+      "settings": {
+        "insert_css_class_target": "",
+        "text_size": 12,
+        "ss_font_family": "montserrat_n4",
+        "link": "",
+        "animation_duration": 138,
+        "animation_direction": "right",
+        "pause_hover": false,
+        "bg": "#ffffff",
+        "text_color": "#000000",
+        "hover_opacity": 90,
+        "padding_horizontal": 2,
+        "padding_vertical": 1
+      }
+    },
+    "17656405430f4d2f07": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "ss_circle_menu_aBXAzn": {
+      "type": "ss-circle-menu",
+      "blocks": {
+        "image_rzAtAC": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Untitled_design_82.png",
+            "bubble_text": "PANTS",
+            "bubble_link": "shopify://collections/pants"
+          }
+        },
+        "image_HJXPmr": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Untitled_design_83.png",
+            "bubble_text": "SWEATERS",
+            "bubble_link": "shopify://collections/sweaters"
+          }
+        },
+        "image_Q8rqgA": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Untitled_design_84.png",
+            "bubble_text": "JACKETS",
+            "bubble_link": "shopify://collections/jackets"
+          }
+        },
+        "image_zgDz7K": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Untitled_design_86.png",
+            "bubble_text": "ZIP-THROUGH HOODIES",
+            "bubble_link": "shopify://collections/zip-through-hoodies"
+          }
+        },
+        "image_yCqdWq": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Untitled_design_85.png",
+            "bubble_text": "SHOES",
+            "bubble_link": "shopify://collections/shoes"
+          }
+        },
+        "image_KEnYbH": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Untitled_design_88.png",
+            "bubble_text": "Accessories",
+            "bubble_link": "shopify://collections/accessories"
+          }
+        },
+        "image_a3qQYg": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Untitled_design_87.png",
+            "bubble_text": "PUFFER JACKETS",
+            "bubble_link": "shopify://collections/puffer-jackets"
+          }
+        }
+      },
+      "block_order": [
+        "image_rzAtAC",
+        "image_HJXPmr",
+        "image_Q8rqgA",
+        "image_zgDz7K",
+        "image_yCqdWq",
+        "image_KEnYbH",
+        "image_a3qQYg"
+      ],
+      "settings": {
+        "hide_mobile": false,
+        "hide_desktop": false,
+        "mobile_content_alignment": "start",
+        "icon_size": 100,
+        "icon_size_mobile": 80,
+        "text_size": 14,
+        "text_color": "#121212",
+        "heading_custom": false,
+        "heading_font": "assistant_n4",
+        "border_size": 2,
+        "ring_color": "#121212",
+        "background_gradient": "",
+        "square_image": false,
+        "background-color": "#ffffff",
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        },
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {
+            "subcollections_per_row": 5
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "enable_collection_count": true,
+            "per_row": 4,
+            "rows_per_page": 7,
+            "mobile_flush_grid": false
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "subcollections",
+        "product_grid"
+      ],
+      "settings": {
+        "enable_sidebar": false,
+        "collapsed": false,
+        "filter_style": "sidebar",
+        "enable_color_swatches": false,
+        "enable_swatch_labels": true,
+        "enable_sort": true
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "slideshow_A8K9b7",
+    "scrolling_announcement_bar_8bffBB",
+    "17656405430f4d2f07",
+    "ss_circle_menu_aBXAzn",
+    "main-collection"
+  ]
+}
