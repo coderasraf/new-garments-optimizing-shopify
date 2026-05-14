@@ -168,121 +168,85 @@
     "shopable_videos_pe3gBH": {
       "type": "shopable-videos",
       "blocks": {
-        "item_Xczccm": {
+        "item_ss26_0": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/1216 (1).mov",
+            "video": "shopify://files/videos/ss26_outfit1_equestrian_pearl_white.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "autoplay": true,
-            "product": "raw-edge-baggy-pants-copy",
+            "product": "equestrian-longsleeve-pearl-white",
             "use_variants": true,
             "modal_heading": "",
             "modal_text": ""
           }
         },
-        "item_HgCcfY": {
+        "item_ss26_1": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/1213(5).mov",
+            "video": "shopify://files/videos/ss26_outfit2_vertical_moss_green.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "autoplay": true,
-            "product": "denim-fur-hooded-jacket-deep-blue",
+            "product": "vertical-signature-longsleeve-moss-green",
             "use_variants": true,
             "modal_heading": "",
             "modal_text": ""
           }
         },
-        "item_4N8rii": {
+        "item_ss26_2": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/WhatsApp Video 2025-03-11 at 00.55.05_53587584.mp4",
+            "video": "shopify://files/videos/ss26_outfit3_vertical_ash_pink.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "autoplay": true,
-            "product": "stellar-splash-knitted-sweater-gray",
+            "product": "vertical-signature-longsleeve-ash-pink",
             "use_variants": true,
             "modal_heading": "",
             "modal_text": ""
           }
         },
-        "item_6BBJPL": {
+        "item_ss26_3": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/1213(4).mov",
+            "video": "shopify://files/videos/ss26_outfit6_basic_2piece.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "autoplay": true,
-            "product": "retro-unique-metal-button-suede-lapel-bomber-jacket",
+            "product": "2-piece-basic-longsleeve",
             "use_variants": true,
             "modal_heading": "",
             "modal_text": ""
           }
         },
-        "item_K7fbG4": {
+        "item_ss26_4": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/5cba58d0c6d54219909b9f20fc3e7bdc.HD-720p-1.6Mbps-43966974.mp4",
+            "video": "shopify://files/videos/ss26_capcut_0504.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "autoplay": true,
-            "product": "break-free-knitted-sweater-copy",
+            "product": "denim-washed-barrel-jeans",
             "use_variants": true,
             "modal_heading": "",
             "modal_text": ""
           }
         },
-        "item_Tyf7GM": {
+        "item_ss26_5": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/WhatsApp Video 2025-03-11 at 00.51.33_6082a730 (1).mp4",
+            "video": "shopify://files/videos/ss26_outfit2_moss_green_v1.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "autoplay": true,
-            "product": "harajuku-knitted-sweater-copy",
+            "product": "newgrmnts-baggy-flower-denim-jeans",
             "use_variants": true,
             "modal_heading": "",
             "modal_text": ""
           }
         },
-        "item_zJRGDf": {
+        "item_ss26_6": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/50cd77987728418c9495a4009075747b.HD-720p-2.1Mbps-29379280 (1).mp4",
+            "video": "shopify://files/videos/ss26_outfit3_ash_pink_v1.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "autoplay": true,
-            "product": "no-regrets-knitted-sweater-1",
-            "use_variants": true,
-            "modal_heading": "",
-            "modal_text": "<p>Modal Text</p>"
-          }
-        },
-        "item_eLhT3i": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/1215.mov",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "autoplay": true,
-            "product": "vibrations-graphic-knitted-sweater-ocean-blue",
-            "use_variants": true,
-            "modal_heading": "",
-            "modal_text": ""
-          }
-        },
-        "item_ra4Nft": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/071d9ac9398f4f0782ae7d617692cc9d.HD-1080p-2.5Mbps-43966794.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "autoplay": true,
-            "product": "y2k-stars-knitted-sweater-white",
-            "use_variants": true,
-            "modal_heading": "",
-            "modal_text": ""
-          }
-        },
-        "item_4VVPF9": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/904e56c9146646f193ce41a6dbf1d6cc.HD-720p-1.6Mbps-43966689.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "autoplay": true,
-            "product": "no-regrets-knitted-sweater-1",
+            "product": "newgrmnts-striped-barrel-denim-jean",
             "use_variants": true,
             "modal_heading": "",
             "modal_text": ""
@@ -290,16 +254,13 @@
         }
       },
       "block_order": [
-        "item_Xczccm",
-        "item_HgCcfY",
-        "item_4N8rii",
-        "item_6BBJPL",
-        "item_K7fbG4",
-        "item_Tyf7GM",
-        "item_zJRGDf",
-        "item_eLhT3i",
-        "item_ra4Nft",
-        "item_4VVPF9"
+        "item_ss26_0",
+        "item_ss26_1",
+        "item_ss26_2",
+        "item_ss26_3",
+        "item_ss26_4",
+        "item_ss26_5",
+        "item_ss26_6"
       ],
       "disabled": true,
       "name": "Shoppable Video",
