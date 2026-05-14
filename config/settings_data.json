@@ -621,7 +621,8 @@
   "platform_customizations": {
     "custom_css": [
       "@media (min-width: 768px) {.doubly-wrapper.doubly-header {margin-bottom: -5px; margin-top: 13px; margin-right: -34px; margin-left: 22px; }}",
-      "[data-essential-upsell-element=\"title\"] {text-align: left; margin-left: 0 !important;}"
+      "[data-essential-upsell-element=\"title\"] {text-align: left; margin-left: 0 !important;}",
+      ".variant-input-wrap label.disabled {color: #000;}"
     ]
   }
 }
