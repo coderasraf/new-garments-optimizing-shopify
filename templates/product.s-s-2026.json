@@ -50,8 +50,8 @@
           "settings": {
             "promo_image": "shopify://shop_images/newgrmnts_graphic_belt_promo.jpg",
             "headline": "FREE: NEWGRMNTS GRAPHIC BELT",
-            "subtext": "If your order value is over $99 / €99",
-            "old_price": "€17.10",
+            "subtext": "If your order value is over $99 / â‚¬99",
+            "old_price": "â‚¬17.10",
             "new_price": "",
             "bg_color": "#ffffff",
             "text_color": "#222222",
@@ -68,7 +68,7 @@
           "type": "tab",
           "settings": {
             "title": "Shipping information",
-            "content": "<p><strong>USA</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>United Kingdom: </strong>Shipped out within 1-2 days - Order before 23:59 </p><p><strong>Netherlands/Belgium</strong>: Shipped out within 1-2 days  - Order before 23:59 </p><p><strong>Germany/Austria</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>France</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>Rest of Europe</strong>: Shipped out within 1-3 working days - Order before 23:59 </p><p><strong>Rest of the world: </strong>shipped out within 2-3 working days </p><p>NEWGARMENTS® express orders are sent out with FedEx or DHL couriers. A tracking number is supplied via email after the order is processed.</p>",
+            "content": "<p><strong>USA</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>United Kingdom: </strong>Shipped out within 1-2 days - Order before 23:59 </p><p><strong>Netherlands/Belgium</strong>:Â Shipped out within 1-2 days Â - Order before 23:59 </p><p><strong>Germany/Austria</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>France</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>Rest of Europe</strong>: Shipped out within 1-3 working days - Order before 23:59 </p><p><strong>Rest of the world:Â </strong>shipped out within 2-3 working days </p><p>NEWGARMENTSÂ® express orders are sent out with FedExÂ or DHLÂ couriers. A tracking number is supplied via email after the order is processed.</p>",
             "page": ""
           }
         },
@@ -135,10 +135,10 @@
         "sku_enable": false,
         "image_position": "left",
         "image_size": "large",
-        "title-1": "I’ll definitely come back to this store!",
-        "review-1": "<p>Just received the hoodies I ordered. Really happy with how they look like and the quality of it. I’ll definitely come back to this store.</p>",
+        "title-1": "Iâ€™ll definitely come back to this store!",
+        "review-1": "<p>Just received the hoodies I ordered. Really happy with how they look like and the quality of it. Iâ€™ll definitely come back to this store.</p>",
         "name-1": "Jack Santino",
-        "title-2": "Great quality hoodies & delivery was on…",
+        "title-2": "Great quality hoodies & delivery was onâ€¦",
         "review-2": "<p>Great quality hoodies & delivery was on time!</p>",
         "name-2": "Reitze Douma",
         "title-3": "Shipping was good",
@@ -469,9 +469,9 @@
             "product_2": "newgrmnts-distressed-denim-jorts",
             "top_2": 65,
             "left_2": 45,
-            "product_3": "",
-            "top_3": 70,
-            "left_3": 70,
+            "product_3": "newgrmnts-raw-denim-sneakers",
+            "top_3": 88,
+            "left_3": 48,
             "product_4": "",
             "top_4": 90,
             "left_4": 50
