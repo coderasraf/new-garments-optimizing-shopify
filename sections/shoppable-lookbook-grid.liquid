@@ -367,12 +367,28 @@ button.look-hotspot svg {
               <div class="look-title">{{ block.settings.look_title | default: 'Collection Outfit' }}</div>
               
               <div class="look-price-wrap">
-                {%- if block.settings.main_product != blank -%}
-                  <span class="look-price">{{ block.settings.main_product.price | money }}</span>
-                  {%- if block.settings.main_product.compare_at_price > block.settings.main_product.price -%}
-                    <span class="look-compare-price">{{ block.settings.main_product.compare_at_price | money }}</span>
+                {%- assign total_price = 0 -%}
+                {%- assign total_compare = 0 -%}
+                {%- assign has_compare = false -%}
+                {%- for i in (1..4) -%}
+                  {%- capture pk -%}product_{{ i }}{%- endcapture -%}
+                  {%- assign hp = block.settings[pk] -%}
+                  {%- if hp != blank -%}
+                    {%- assign total_price = total_price | plus: hp.price -%}
+                    {%- if hp.compare_at_price > hp.price -%}
+                      {%- assign total_compare = total_compare | plus: hp.compare_at_price -%}
+                      {%- assign has_compare = true -%}
+                    {%- else -%}
+                      {%- assign total_compare = total_compare | plus: hp.price -%}
+                    {%- endif -%}
                   {%- endif -%}
-                {%- else -%}
+                {%- endfor -%}
+                {%- if total_price > 0 -%}
+                  <span class="look-price">{{ total_price | money }}</span>
+                  {%- if has_compare and total_compare > total_price -%}
+                    <span class="look-compare-price">{{ total_compare | money }}</span>
+                  {%- endif -%}
+                {%- elsif block.settings.custom_price != blank -%}
                   <span class="look-price">{{ block.settings.custom_price }}</span>
                   {%- if block.settings.custom_compare_price != blank -%}
                     <span class="look-compare-price">{{ block.settings.custom_compare_price }}</span>
@@ -381,19 +397,11 @@ button.look-hotspot svg {
               </div>
             </div>
             
-            {%- if block.settings.main_product != blank -%}
-              <a href="{{ block.settings.main_product.url }}" class="look-link-button" aria-label="View product">
-                 <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                   <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                 </svg>
-              </a>
-            {%- else -%}
-              <a href="{{ block.settings.collection_link | default: '#' }}" class="look-link-button" aria-label="View collection">
-                 <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                   <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                 </svg>
-              </a>
-            {%- endif -%}
+            <button type="button" class="look-add-button look-add-all" aria-label="Add all to cart" data-variants="{%- for i in (1..4) -%}{%- capture pk -%}product_{{ i }}{%- endcapture -%}{%- assign hp = block.settings[pk] -%}{%- if hp != blank -%}{{ hp.selected_or_first_available_variant.id }}{%- unless forloop.last -%},{%- endunless -%}{%- endif -%}{%- endfor -%}">
+                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
           </div>
         </div>
       {%- endfor -%}
@@ -456,6 +464,47 @@ button.look-hotspot svg {
           targetPopup.classList.add('active');
           btn.classList.add('active');
           btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    
+    // Add All To Cart
+    document.querySelectorAll('#swiper-{{ section.id }} .look-add-all').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const ids = btn.dataset.variants.split(',').filter(id => id && id.trim() && id !== '');
+        if (ids.length === 0) return;
+
+        const origHTML = btn.innerHTML;
+        btn.style.pointerEvents = 'none';
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="40"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.6s" repeatCount="indefinite"/></circle></svg>';
+
+        try {
+          const items = ids.map(id => ({ id: parseInt(id), quantity: 1 }));
+          const resp = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items })
+          });
+
+          if (resp.ok) {
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            // Trigger cart update event for theme
+            document.dispatchEvent(new CustomEvent('cart:refresh'));
+            // Try to update cart bubble
+            fetch('/cart.js').then(r => r.json()).then(cart => {
+              document.querySelectorAll('.cart-count-bubble span[aria-hidden], .cart-count').forEach(el => {
+                el.textContent = cart.item_count;
+              });
+            });
+            setTimeout(() => { btn.innerHTML = origHTML; btn.style.pointerEvents = ''; }, 2500);
+          } else {
+            btn.innerHTML = origHTML; btn.style.pointerEvents = '';
+          }
+        } catch (err) {
+          btn.innerHTML = origHTML; btn.style.pointerEvents = '';
         }
       });
     });
