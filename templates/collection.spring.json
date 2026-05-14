@@ -58,8 +58,8 @@
         "@media (max-width: 768px) {h2.h1.hero__title * {font-size: 20px !important; margin-top: 3px; }}"
       ],
       "settings": {
-        "section_height": "750px",
-        "mobile_height": "400px",
+        "section_height": "450px",
+        "mobile_height": "250px",
         "parallax": false,
         "style": "dots",
         "autoplay": false,
