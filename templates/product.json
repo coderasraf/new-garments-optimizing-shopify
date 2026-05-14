@@ -48,10 +48,10 @@
         "free_elastic_promo_Ktmkq3": {
           "type": "free_elastic_promo",
           "settings": {
-            "promo_image": "shopify://shop_images/bonnet-ecriture-arabe-9684730.jpg",
-            "headline": "FREE: GRAPHIC BEANIE",
+            "promo_image": "shopify://shop_images/newgrmnts_graphic_belt_promo.jpg",
+            "headline": "FREE: NEWGRMNTS GRAPHIC BELT",
             "subtext": "If your order value is over $99 / €99",
-            "old_price": "€39.95",
+            "old_price": "€17.10",
             "new_price": "",
             "bg_color": "#ffffff",
             "text_color": "#222222",
