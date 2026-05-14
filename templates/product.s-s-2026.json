@@ -157,7 +157,7 @@
         "review-7": "<p>Ordered here a number of times now. Nice store with great prices, happy with it</p>",
         "name-7": "Emma",
         "product_zoom_enable": false,
-        "thumbnail_position": "beside",
+        "thumbnail_position": "below",
         "thumbnail_height": "fixed",
         "thumbnail_arrows": true,
         "mobile_layout": "full",
