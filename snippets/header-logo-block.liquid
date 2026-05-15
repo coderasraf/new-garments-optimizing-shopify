@@ -52,7 +52,7 @@
         .logo--has-inverted is only applied to the default logo if the inverted logo exists. That way it'll only be hidden on the slider when it has a backup.
       {% endcomment %}
       <a
-        href="{{ routes.root_url }}"
+        href="/collections/spring-collection"
         itemprop="url"
         class="site-header__logo-link{% if block.settings.logo-inverted %} logo--has-inverted{% endif %}"
         style="padding-top: {{ 100 | divided_by: block.settings.logo.aspect_ratio }}%">
@@ -95,7 +95,7 @@
       </a>
       {%- if block.settings.logo-inverted -%}
         <a
-          href="{{ routes.root_url }}"
+          href="/collections/spring-collection"
           itemprop="url"
           class="site-header__logo-link logo--inverted"
           style="padding-top: {{ 100 | divided_by: block.settings.logo-inverted.aspect_ratio }}%">
@@ -138,7 +138,7 @@
         </a>
       {%- endif -%}
     {%- else -%}
-      <a href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
+      <a href="/collections/spring-collection" itemprop="url">{{ shop.name }}</a>
     {%- endif -%}
     {%- if template == 'index' -%}
       </h1>
@@ -161,7 +161,7 @@
   {%- else -%}
     <div class="h1 site-header__logo" itemscope itemtype="http://schema.org/Organization">
   {%- endif -%}
-  <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link">
+  <a href="/collections/spring-collection" itemprop="url" class="site-header__logo-link">
     {{ shop.name }}
   </a>
   {%- if template == 'index' -%}
