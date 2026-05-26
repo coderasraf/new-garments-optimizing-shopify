@@ -62,7 +62,11 @@ a.image-wrap.loaded {
   <div class="grid-product__content">
        {%- if product.price < product.compare_at_price -%}
       <div class="grid-product__tag grid-product__tag--custom">
-       SELLING FAST
+        {%- if collection.handle == 'spring-collection' -%}
+          1+1 FREE
+        {%- else -%}
+          SELLING FAST
+        {%- endif -%}
       </div>
       {%endif %}
     {%- if has_custom_label  -%}
