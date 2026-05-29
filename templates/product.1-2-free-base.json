@@ -93,6 +93,14 @@
           "settings": {
             "code": "<style>\n  .pill-container {\n    padding: 6px 12px;\n    background: #FAFAFA; /* Updated background color */\n    border-radius: 20px; /* Adjust as needed to give the pill shape */\n    display: inline-block; /* Ensure it wraps content properly */\n    position: relative; /* Add position relative for centering */\n    box-shadow: inset 0 0 0 #000000 35%; /* Inner shadow effect */\n    border: 1px solid #000000; /* Add a 1px black border */\n  }\n\n  .pill-container img {\n    vertical-align: middle; /* Align the image vertically */\n  }\n\n  .pill-container span {\n    margin-left: 8px; /* Adjust as needed to give space between image and text */\n  }\n\n  /* Center the pill horizontally */\n  .center {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n</style>\n\n<div class=\"center\">\n  <div class=\"pill-container\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0801/6320/9559/files/image_78.png?v=1710258017\" alt=\"TikTok Logo\">\n    <span>75K+ FOLLOWERS AND 255M+ VIEWS ON TIKTOK</span>\n  </div>\n</div>"
           }
+        },
+        "tab_fit_sizing": {
+          "type": "tab",
+          "settings": {
+            "title": "Fit & Sizing",
+            "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -103,6 +111,7 @@
         "buy_buttons",
         "free_elastic_promo_xyHJAb",
         "description",
+        "tab_fit_sizing",
         "tab",
         "tab_KtwiRK",
         "custom_gWtVrK"

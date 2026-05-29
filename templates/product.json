@@ -109,6 +109,14 @@
           "settings": {
             "code": "<section class=\"pdp-details-wrapper\">\n        <h2 class=\"pdp-title-main\">Details</h2>\n        \n        <div class=\"pdp-features-grid\">\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\">\n                        <path d=\"M3 9h18M3 15h18M9 3v18M15 3v18\"/>\n                        <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"1\" opacity=\"0.2\"/>\n                    </svg>\n                </div>\n                Premium Fabric\n            </div>\n\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n                        <path d=\"M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\"/>\n                    </svg>\n                </div>\n                Minimal Branding\n            </div>\n\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\">\n                        <circle cx=\"12\" cy=\"12\" r=\"10\"/>\n                        <path d=\"M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20M2 12h20\"/>\n                    </svg>\n                </div>\n                Responsibly Made\n            </div>\n\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <polyline points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/>\n                    </svg>\n                </div>\n                Limited Drops\n            </div>\n        </div>\n    </section>\n\n<style>\n        /* Unique namespace prefix 'pdp-' to prevent style bleeding */\n        .pdp-details-wrapper {\n            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Arial, sans-serif;\n            color: #000000;\n            max-width: 500px;\n            padding: 20px;\n        }\n\n        .pdp-title-main {\n            font-size: 24px;\n            font-weight: 700;\n            margin: 0 0 24px 0;\n            letter-spacing: -0.5px;\n        }\n\n        .pdp-features-grid {\n            display: grid;\n            grid-template-columns: repeat(2, 1fr);\n            row-gap: 18px;\n            column-gap: 32px;\n        }\n\n        .pdp-feature-node {\n            display: flex;\n            align-items: center;\n            gap: 12px;\n            font-size: 15px;\n            font-weight: 500;\n            line-height: 1.2;\n        }\n\n        .pdp-icon-box {\n            width: 24px;\n            height: 24px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            flex-shrink: 0;\n        }\n\n        .pdp-svg-asset {\n            width: 100%;\n            height: 100%;\n        }\nh2.pdp-title-main {\n    text-align: left;\n}\nsection.pdp-details-wrapper {\n    padding: 0;\n    margin-top: 30px;\n}\n.pdp-feature-node {\n    display: flex;\n    align-items: center;\n    gap: 6px;\nfont-weight:normal;\n    font-size: 15px;\n    line-height: 1.2;\n}\n    </style>"
           }
+        },
+        "tab_fit_sizing": {
+          "type": "tab",
+          "settings": {
+            "title": "Fit & Sizing",
+            "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -119,6 +127,7 @@
         "buy_buttons",
         "free_elastic_promo_Ktmkq3",
         "description",
+        "tab_fit_sizing",
         "tab",
         "tab_fNKwpz",
         "tab_KtwiRK",
