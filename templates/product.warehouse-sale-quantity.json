@@ -1,1 +1,1105 @@
-{"sections":{"1763819211ca610086":{"type":"_blocks","settings":{}},"176317079332aa6095":{"type":"_blocks","settings":{}},"main":{"type":"main-product","blocks":{"price":{"type":"price","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"variant_labels":true,"picker_type":"button","product_dynamic_variants_enable":true,"color_swatches":true}},"model_size_7RVcCE":{"type":"model_size","settings":{"model_text":"<p>{{ product.metafields.custom.model_size.value }}<\/p>"}},"custom_AFKA4J":{"type":"custom","settings":{"code":"<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 24 24\">\n        <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"><\/path>\n      <\/svg>\nBUY 2 GET 20% OFF | BUY 3 GET 30% OFF\n<\/div>\n<div class=\"promo-banner-right-size-guide\"><\/div>\n<\/div>\n\n<style>\n  .promo-banner {\n    background-color: #e6e6e6;\n    padding: 8px 12px;\n    display: flex;\n    align-items: center;\n    font-family: monospace;\n    font-weight: 700;\n    font-size: 10px;\n    color: #000;\n  }\n\n  .promo-banner img {\n    width: 16px;\n    height: 16px;\n    margin-right: 8px;\n  }\n.promo-banner svg {\n    width: 20px;\n    margin-right: 10px;\n}\n\n.promo-banner {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    max-width: max-content;\n    margin: 10px auto;\n}\n.promo-banner-left {\n    display: flex;\n    align-items: center;\n}\n<\/style>"}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"surface_pickup_enable":false,"show_gift_card_recipient":false}},"description":{"type":"description","settings":{"is_tab":true}},"tab":{"type":"tab","settings":{"title":"Shipping information","content":"<p><strong>USA<\/strong>: Shipped out within 1-2 working days - Order before 23:59 <\/p><p><strong>United Kingdom: <\/strong>Shipped out within 1-2 days - Order before 23:59 <\/p><p><strong>Netherlands\/Belgium<\/strong>: Shipped out within 1-2 days  - Order before 23:59 <\/p><p><strong>Germany\/Austria<\/strong>: Shipped out within 1-2 working days - Order before 23:59 <\/p><p><strong>France<\/strong>: Shipped out within 1-2 working days - Order before 23:59 <\/p><p><strong>Rest of Europe<\/strong>: Shipped out within 1-3 working days - Order before 23:59 <\/p><p><strong>Rest of the world: <\/strong>shipped out within 2-3 working days <\/p><p>NEWGARMENTS® express orders are sent out with FedEx or DHL couriers. A tracking number is supplied via email after the order is processed.<\/p>","page":""}},"custom_gWtVrK":{"type":"custom","disabled":true,"settings":{"code":"<style>\n  .pill-container {\n    padding: 6px 12px;\n    background: #FAFAFA; \/* Updated background color *\/\n    border-radius: 20px; \/* Adjust as needed to give the pill shape *\/\n    display: inline-block; \/* Ensure it wraps content properly *\/\n    position: relative; \/* Add position relative for centering *\/\n    box-shadow: inset 0 0 0 #000000 35%; \/* Inner shadow effect *\/\n    border: 1px solid #000000; \/* Add a 1px black border *\/\n  }\n\n  .pill-container img {\n    vertical-align: middle; \/* Align the image vertically *\/\n  }\n\n  .pill-container span {\n    margin-left: 8px; \/* Adjust as needed to give space between image and text *\/\n  }\n\n  \/* Center the pill horizontally *\/\n  .center {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n<\/style>\n\n<div class=\"center\">\n  <div class=\"pill-container\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0801\/6320\/9559\/files\/image_78.png?v=1710258017\" alt=\"TikTok Logo\">\n    <span>75K+ FOLLOWERS AND 255M+ VIEWS ON TIKTOK @newgarments<\/span>\n  <\/div>\n<\/div>"}}},"block_order":["price","variant_picker","model_size_7RVcCE","custom_AFKA4J","buy_buttons","description","tab","custom_gWtVrK"],"custom_css":[".promo-banner {gap: 15px;}",".promo-banner-right-size-guide {height: 20px; margin-top: -15px;}",".model_text-destiop {font-size: 12px;}"],"settings":{"sku_enable":false,"image_position":"left","image_size":"large","title-1":"I’ll definitely come back to this store!","review-1":"<p>Just received the hoodies I ordered. Really happy with how they look like and the quality of it. I’ll definitely come back to this store.<\/p>","name-1":"Jack Santino","title-2":"Great quality hoodies & delivery was on…","review-2":"<p>Great quality hoodies & delivery was on time!<\/p>","name-2":"Reitze Douma","title-3":"Shipping was good","review-3":"<p>Shipping was good, and the quality of the pieces are as expected for the price<\/p>","name-3":"Sten Reinhart","title-4":"Nice clothes and comfortable","review-4":"<p>Beautiful clothes and fit well, I'm curious about the next drop!<\/p>","name-4":"David van den Brink","title-5":"Satisfied","review-5":"<p>I actually didn't expect the stuff to be this good for that price. It's not that cheap crap either, just good quality. Very satisfied<\/p>","name-5":"Amber Smidt","title-6":"Very happy with my purchases","review-6":"<p>I was very satisfied with the products I ordered and the delivery was fast. Come back here more often<\/p>","name-6":"Jeffery Ali","title-7":"Good customer service and fast delivery","review-7":"<p>Ordered here a number of times now. Nice store with great prices, happy with it<\/p>","name-7":"Emma","product_zoom_enable":true,"thumbnail_position":"below","thumbnail_height":"fixed","thumbnail_arrows":true,"mobile_layout":"full","enable_video_looping":true,"product_video_style":"muted"}},"1774240140aa3f726f":{"type":"_blocks","blocks":{"ai_gen_block_dfed11d_9Gnj8n":{"type":"ai_gen_block_dfed11d","settings":{"header_text":"ESTIMATED TIME STOCK LASTS:","header_size":16,"header_spacing":8,"header_color":"#000000","days_label":"Days","hours_label":"Hrs","minutes_label":"Mins","seconds_label":"Secs","separator":":","number_size":24,"label_size":10,"gap":8,"padding":12,"border_radius":4,"desktop_width_percent":100,"background_color":"#ffffff","number_color":"#000000","label_color":"#666666","separator_color":"#000000"},"blocks":{}}},"block_order":["ai_gen_block_dfed11d_9Gnj8n"],"settings":{}},"shop_the_look_RqEpU4":{"type":"shop-the-look","blocks":{"slide_tRcnWp":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/6_b6161de5-6a05-4fa1-9994-e43a4163b7c0.png","product_1":"knitted-tribe-sweater-black","product_2":"retro-denim-full-rhinestone-design-baggy-jeans","product_3":"ocean-stars-sneaker-copy-1"}},"slide_JVJqYj":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/10_ecdf254c-5cfc-4adf-b023-5fe674ac7606.png","product_1":"streetwear-metal-clip-faux-fur-hooded-suede-bomber-jacket","product_2":"embroidered-striped-baggy-jeans-black-white","product_3":"ocean-stars-sneaker-copy-1"}},"slide_Yw3V4G":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/5_86157ee7-2961-480f-a620-38b32766e926.png","product_1":"vibrations-graphic-knitted-sweater-moss-green","product_2":"vortex-graphic-sweatshirt-purple","product_3":"ocean-stars-sneaker-copy-1"}},"slide_7t9e7i":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/pinterest_mygarments_24.png","product_1":"y2k-puffer-jacket-button-up-black","product_2":"retro-rhinestone-letter-embroidery-distressed-wide-leg-jeans","product_3":""}},"slide_w43QeG":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/1_f149778f-0107-4653-adab-56e0416643e3.png","product_1":"anti-streetwear-hoodie-black","product_2":"graphic-lining-baggy-jeans-copy-1","product_3":"ocean-stars-sneaker-copy-1"}},"slide_kDNRbJ":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/4_70a94c7a-887c-40e3-92ae-7528a50b1e96.png","product_1":"vibrations-graphic-knitted-sweater-ocean-blue","product_2":"retro-patchwork-barrel-jeans-blue","product_3":"ocean-stars-sneaker-copy-1"}}},"block_order":["slide_tRcnWp","slide_JVJqYj","slide_Yw3V4G","slide_7t9e7i","slide_w43QeG","slide_kDNRbJ"],"name":"Shop the Look","settings":{"title":"BRAND SHOOTS W\/S 2026","slides_per_view":"4","autoplay_speed":3}},"featured_collection_zKKm8e":{"type":"featured-collection","disabled":true,"name":"t:sections.featured-collection.presets.featured_collection.name","settings":{"bg_color":"#ffffff","padding":40,"title":"OTHER POPULAR ITEMS","home_featured_products":"warehouse-sale","per_row":4,"rows":1,"mobile_scrollable":true,"view_all":true,"divider":false}},"shopable_videos_cNhMVx":{"type":"shopable-videos","blocks":{"item_YefgK3":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/1216 (1).mov","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"raw-edge-baggy-pants-copy","use_variants":true,"modal_heading":"","modal_text":""}},"item_qh64mb":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/1213(5).mov","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"denim-fur-hooded-jacket-deep-blue","use_variants":true,"modal_heading":"","modal_text":""}},"item_az7cCq":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-03-11 at 00.55.05_53587584.mp4","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"stellar-splash-knitted-sweater-gray","use_variants":true,"modal_heading":"","modal_text":""}},"item_wKFqmT":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/1213(4).mov","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"retro-unique-metal-button-suede-lapel-bomber-jacket","use_variants":true,"modal_heading":"","modal_text":""}},"item_7ccyRC":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/5cba58d0c6d54219909b9f20fc3e7bdc.HD-720p-1.6Mbps-43966974.mp4","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"break-free-knitted-sweater-copy","use_variants":true,"modal_heading":"","modal_text":""}},"item_LjieEX":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-03-11 at 00.51.33_6082a730 (1).mp4","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"harajuku-knitted-sweater-copy","use_variants":true,"modal_heading":"","modal_text":""}},"item_MfbBJV":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/50cd77987728418c9495a4009075747b.HD-720p-2.1Mbps-29379280 (1).mp4","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"no-regrets-knitted-sweater-1","use_variants":true,"modal_heading":"","modal_text":"<p>Modal Text<\/p>"}},"item_mV7krJ":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/1215.mov","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"vibrations-graphic-knitted-sweater-ocean-blue","use_variants":true,"modal_heading":"","modal_text":""}},"item_xr9kDq":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/071d9ac9398f4f0782ae7d617692cc9d.HD-1080p-2.5Mbps-43966794.mp4","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"y2k-stars-knitted-sweater-white","use_variants":true,"modal_heading":"","modal_text":""}},"item_PFgTpc":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/904e56c9146646f193ce41a6dbf1d6cc.HD-720p-1.6Mbps-43966689.mp4","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","autoplay":true,"product":"no-regrets-knitted-sweater-1","use_variants":true,"modal_heading":"","modal_text":""}}},"block_order":["item_YefgK3","item_qh64mb","item_az7cCq","item_wKFqmT","item_7ccyRC","item_LjieEX","item_MfbBJV","item_mV7krJ","item_xr9kDq","item_PFgTpc"],"disabled":true,"name":"Shoppable Video","settings":{"heading":"<p><strong>Thousands of members wearing NEWGARMENTS<\/strong>® <strong>🫶<\/strong><\/p>","heading_custom":false,"heading_font":"josefin_sans_n4","heading_size":18,"heading_size_mobile":18,"heading_height":130,"heading_align":"center","heading_align_mobile":"center","slider_view":5,"slider_view_mobile":1.3,"slider_gap":16,"slider_gap_mobile":16,"slider_mt":20,"card_radius":10,"card_border_thickness":0,"card_shadow":true,"video_ratio":"portrait","video_ratio_mobile":"portrait","video_overlay":0,"image_width":44,"image_width_mobile":44,"image_radius":6,"image_border_thickness":0,"title_custom":false,"title_font":"josefin_sans_n4","title_size":6,"title_size_mobile":9,"title_height":130,"title_uppercase":false,"price_custom":false,"price_font":"josefin_sans_n4","price_size":14,"price_size_mobile":14,"price_height":130,"button":"Add To Cart","button_soldout":"Sold Out","button_custom":false,"button_font":"josefin_sans_n4","button_size":16,"button_size_mobile":16,"button_padding_vertical":10,"button_padding_vertical_mobile":10,"button_padding_horizontal":10,"button_padding_horizontal_mobile":10,"reload_after_adding":false,"redirect_after_adding":false,"option_custom":false,"option_font":"josefin_sans_n4","option_size":12,"option_size_mobile":12,"option_height":100,"option_mt":24,"variants_price_custom":false,"variants_price_font":"josefin_sans_n4","variants_price_size":14,"variants_price_size_mobile":14,"variants_price_height":100,"variants_price_mt":10,"variants_price_align":"center","variants_price_align_mobile":"center","modal_width":740,"modal_width_mobile":100,"modal_radius":16,"modal_border_thickness":0,"modal_overlay":50,"close_size":42,"close_size_mobile":42,"close_radius":8,"close_border_thickness":0,"buttons_size":48,"buttons_size_mobile":48,"buttons_radius":8,"buttons_border_thickness":0,"modal_video_radius":0,"modal_video_border_thickness":0,"modal_video_ratio":"portrait","modal_video_ratio_mobile":"portrait","modal_heading_custom":false,"modal_heading_font":"josefin_sans_n4","modal_heading_size":28,"modal_heading_size_mobile":28,"modal_heading_height":130,"modal_heading_align":"center","modal_heading_align_mobile":"center","modal_text_custom":false,"modal_text_font":"josefin_sans_n4","modal_text_size":16,"modal_text_size_mobile":16,"modal_text_height":130,"modal_text_align":"center","modal_text_align_mobile":"center","modal_text_mt":16,"use_modal_product":true,"modal_image_width":70,"modal_image_width_mobile":66,"modal_image_radius":12,"modal_title_custom":false,"modal_title_font":"josefin_sans_n4","modal_title_size":16,"modal_title_size_mobile":16,"modal_title_height":130,"modal_title_uppercase":false,"modal_price_custom":false,"modal_price_font":"josefin_sans_n4","modal_price_size":14,"modal_price_size_mobile":14,"modal_price_height":130,"modal_button":"Add To Cart","modal_button_soldout":"Sold Out","modal_button_custom":false,"modal_button_font":"josefin_sans_n4","modal_button_size":16,"modal_button_size_mobile":16,"modal_button_radius":8,"modal_button_border_thickness":1,"modal_button_mt":16,"modal_button_align":"center","modal_button_align_mobile":"center","card_bg_color":"#ffffff","card_border_color":"#000000","card_shadow_color":"#000000","video_border_color":"#000000","video_overlay_color":"#000000","image_border_color":"#000000","title_color":"#ffffff","price_color":"#ffffff","button_color":"#ffffff","button_hover_color":"#ffffff","button_bg_color":"#000000","button_bg_hover_color":"#000000","arrow_bg_color":"#000000","arrow_border_color":"#ffffff","arrow_icon_color":"#ffffff","option_color":"#000000","variants_price_color":"#000000","modal_bg_color":"#ffffff","modal_border_color":"#000000","close_bg_color":"#ffffff","close_border_color":"#000000","close_icon_color":"#ffffff","buttons_bg_color":"#ffffff","buttons_border_color":"#000000","buttons_icon_color":"#ffffff","modal_video_border_color":"#000000","modal_content_bg_color":"#ffffff","modal_heading_color":"#000000","modal_text_color":"#000000","modal_title_color":"#000000","modal_price_color":"#000000","modal_button_color":"#ffffff","modal_button_hover_color":"#000000","modal_button_bg_color":"#000000","modal_button_bg_hover_color":"#ffffff","modal_button_border_color":"#000000","modal_button_border_hover_color":"#000000","heading_color":"#000000","background_color":"#ffffff","background_gradient":"","border_color":"#000000","margin_top":0,"margin_bottom":0,"padding_top":36,"padding_bottom":36,"padding_horizontal":5,"padding_horizontal_mobile":1.5,"full_width":false,"content_width":140,"border_thickness":0,"lazy":true}},"instafeed_zMrTkM":{"type":"instafeed","blocks":{"image_wifQRB":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Untitled_design_92.png","url":""}},"image_94JwnF":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/unnamed_-_2025-12-17T211422.990.jpg","url":""}},"image_ACPNJT":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Untitled_design_93.png","url":""}},"image_jUtxpK":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/unnamed_-_2025-12-17T211534.946.jpg","url":""}},"image_wNhfiC":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Untitled_design_94.png","url":""}},"image_iRNeTe":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Untitled_design_96.png","url":""}},"image_AKt7xE":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Untitled_design_97.png","url":""}}},"block_order":["image_wifQRB","image_94JwnF","image_ACPNJT","image_jUtxpK","image_wNhfiC","image_iRNeTe","image_AKt7xE"],"disabled":true,"name":"SS - Scrolling Images","settings":{"heading":"<h3>COMMUNITY STORIES<\/h3>","heading_custom":false,"heading_font":"josefin_sans_n4","heading_size":20,"heading_height":130,"heading_align":"center","slider_speed":18,"slider_gap":10,"slider_gap_mobile":10,"slider_mt":50,"slider_direction":"left","pause_hover":false,"image_width_desktop":300,"image_width_mobile":150,"image_height_desktop":400,"image_height_mobile":300,"image_radius":10,"use_content":false,"content_position":"center","content_max_width":340,"content_max_width_mobile":340,"content_padding_vertical":30,"content_padding_horizontal":30,"content_distance":60,"content_radius":10,"content_border_thickness":0,"use_shadow":true,"text":"","text_custom":false,"text_font":"assistant_n4","text_size":24,"text_height":130,"heading_color":"#000000","content_bg":"#ffffff","content_border_color":"#000000","text_color":"#000000","background_color":"#ffffff","background_gradient":"","border_color":"#000000","margin_top":0,"margin_bottom":0,"padding_top":36,"padding_bottom":36,"padding_horizontal":0,"padding_horizontal_mobile":0,"full_width":true,"content_width":120,"border_thickness":0,"lazy":true}},"instafeed_mhfXXw":{"type":"instafeed","blocks":{"image_DtKxHr":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/WhatsApp_Image_2025-03-11_at_00.45.43_c6e0bdff.jpg","url":""}},"image_QgpLVT":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/WhatsApp_Image_2025-03-11_at_00.44.58_51a4c308_1.jpg","url":""}},"image_Y33Ap4":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/WhatsApp_Image_2025-03-11_at_00.44.15_a583e293.jpg","url":""}},"image_EbVmLQ":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/WhatsApp_Image_2025-03-11_at_00.50.55_32df32ce.jpg","url":""}},"image_FhFxLX":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-03-11_at_12.53.40.png","url":""}},"image_V3GWMb":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-03-11_at_13.08.16.png","url":""}},"image_jDi7Ja":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/WhatsApp_Image_2025-03-11_at_00.46.33_2ed15785.jpg","url":""}}},"block_order":["image_DtKxHr","image_QgpLVT","image_Y33Ap4","image_EbVmLQ","image_FhFxLX","image_V3GWMb","image_jDi7Ja"],"disabled":true,"name":"SS - Scrolling Images","settings":{"heading":"<h3>INSTAGRAM STORIES <\/h3>","heading_custom":false,"heading_font":"josefin_sans_n4","heading_size":24,"heading_height":130,"heading_align":"center","slider_speed":18,"slider_gap":10,"slider_gap_mobile":10,"slider_mt":50,"slider_direction":"left","pause_hover":false,"image_width_desktop":300,"image_width_mobile":120,"image_height_desktop":400,"image_height_mobile":240,"image_radius":10,"use_content":false,"content_position":"center","content_max_width":340,"content_max_width_mobile":340,"content_padding_vertical":30,"content_padding_horizontal":30,"content_distance":60,"content_radius":10,"content_border_thickness":0,"use_shadow":true,"text":"<p>+29.000 people love our product<\/p>","text_custom":false,"text_font":"assistant_n4","text_size":24,"text_height":130,"heading_color":"#000000","content_bg":"#ffffff","content_border_color":"#000000","text_color":"#000000","background_color":"#ffffff","background_gradient":"","border_color":"#000000","margin_top":0,"margin_bottom":0,"padding_top":36,"padding_bottom":36,"padding_horizontal":0,"padding_horizontal_mobile":0,"full_width":true,"content_width":120,"border_thickness":0,"lazy":true}},"1762475916ee80746a":{"type":"_blocks","blocks":{"ai_gen_block_9f55737_9Qjggd":{"type":"ai_gen_block_9f55737","settings":{"promo_text":"1+1 FREE: ADD 2 TO CART PAY FOR 1!","show_icon":true,"background_color":"#e6e6e6","text_color":"#000000","text_size":14,"text_weight":"600","icon_color":"#000000","icon_size":24,"padding_vertical":12,"padding_horizontal":20},"blocks":{}}},"block_order":["ai_gen_block_9f55737_9Qjggd"],"disabled":true,"settings":{}},"sub":{"type":"product-full-width","disabled":true,"settings":{"max_width":true}},"featured_collection_W93WrP":{"type":"featured-collection","name":"t:sections.featured-collection.presets.featured_collection.name","settings":{"bg_color":"#ffffff","padding":40,"title":"Iconic Longsleeve Collection","home_featured_products":"new-longsleeves","per_row":5,"rows":4,"mobile_scrollable":true,"view_all":true,"divider":false}},"product-recommendations":{"type":"product-recommendations","disabled":true,"settings":{"product_recommendations_heading":"You may also like","related_count":6,"products_per_row":5}},"recently-viewed":{"type":"recently-viewed","disabled":true,"settings":{"recent_count":5}},"text_and_image_JQBnAg":{"type":"text-and-image","disabled":true,"settings":{"image_mask":"none","image2_mask":"none","subtitle":"","title":"","text":"<h1>BECOME PART OF THE COMMUNITY...<\/h1>","button_label":"","button_link":"","button_style":"primary","align_text":"center","image_width":"66","layout":"right","divider":false,"top_padding":false,"bottom_padding":false,"lazyload_images":true}},"background-image-text":{"type":"background-image-text","disabled":true,"custom_css":[".background-media-text__inner a {background: #000;}"],"settings":{"subtitle":"ABOUT US","title":"Stand out from the crowd","text":"<p>In just a few years, the Amsterdam-based label is now part of the Dutch capital’s burgeoning streetwear scene and a leading global destination for the latest unique items!<\/p>","button_label":"","button_link":"shopify:\/\/collections\/spring-sale","layout":"left","height":550,"framed":true,"parallax":false,"parallax_direction":"top","lazyload_images":false}},"174175614057da1cbf":{"type":"apps","disabled":true,"settings":{"full_width":false,"space_around":false}},"pp_custom_liquid_v1_0_0_k7DDiF":{"type":"pp-custom-liquid-v1-0-0","disabled":true,"name":"PP Custom Liquid","settings":{"custom_liquid":"<style>\n  .pill-container {\n    padding: 6px 12px;\n    background: #FAFAFA; \/* Updated background color *\/\n    border-radius: 20px; \/* Adjust as needed to give the pill shape *\/\n    display: inline-block; \/* Ensure it wraps content properly *\/\n    position: relative; \/* Add position relative for centering *\/\n    box-shadow: inset 0 0 0 #000000 35%; \/* Inner shadow effect *\/\n    border: 1px solid #000000; \/* Add a 1px black border *\/\n  }\n\n  .pill-container img {\n    vertical-align: middle; \/* Align the image vertically *\/\n  }\n\n  .pill-container span {\n    margin-left: 8px; \/* Adjust as needed to give space between image and text *\/\n  }\n\n  \/* Center the pill horizontally *\/\n  .center {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n<\/style>\n\n<div class=\"center\">\n  <div class=\"pill-container\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0801\/6320\/9559\/files\/image_78.png?v=1710258017\" alt=\"TikTok Logo\">\n    <span>75K+ FOLLOWERS AND 255M+ VIEWS ON TIKTOK<\/span>\n  <\/div>\n<\/div>","section_background":"","padding_top":0,"padding_bottom":0,"padding_top_mobile":0,"padding_bottom_mobile":0,"margin_top":0,"margin_bottom":0,"margin_top_mobile":0,"margin_bottom_mobile":0}},"collection-return":{"type":"collection-return","disabled":true,"settings":{}},"17625122157a2a7edd":{"type":"apps","blocks":{"kiwi_size_chart_recommender_kiwi_sizing_n9TCyA":{"type":"shopify:\/\/apps\/kiwi-size-chart-recommender\/blocks\/kiwiSizing\/b7369922-bf15-44ce-a121-a22a8fcbc4b0","settings":{"fallbackToBlockPosition":false,"waitForElementSelector":"","waitForElementDelay":5}}},"block_order":["kiwi_size_chart_recommender_kiwi_sizing_n9TCyA"],"settings":{"full_width":false,"space_around":true}},"176858016057ad176f":{"type":"_blocks","settings":{}},"1768639442c165310a":{"type":"_blocks","settings":{}},"1768639563884272d2":{"type":"_blocks","blocks":{"ai_gen_block_f840019_eRaHVm":{"type":"ai_gen_block_f840019","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1_092f2997-8e37-4bc0-9fce-2fdb4a9e1b8e.png","image_aspect_ratio":"4 \/ 3","date":"Januari 2, 2026","title":"London, UK","text":"<p>Zipper half-done. No one told him this was a look — he just wore what felt right. <\/p>","show_product_link":true,"link_label":"Featured item","linked_product":"checkered-inside-out-zipper-gray","card_background":"#ffffff","title_color":"#000000","text_color":"#666666","date_color":"#999999","label_color":"#999999","link_color":"#000000","divider_color":"#e8e8e1","border_radius":8,"content_padding":20,"title_size":20,"text_size":14,"date_size":12,"desktop_width_percent":100},"blocks":{}},"ai_gen_block_f840019_CKBUfN":{"type":"ai_gen_block_f840019","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/pinterest_mygarments_24.png","image_aspect_ratio":"4 \/ 3","date":"January 11, 2026","title":"Los angeles, US","text":"<p>Haven’t left the couch today. Jeans still on. Fit still matters — even at home.<\/p>","show_product_link":true,"link_label":"Featured item","linked_product":"retro-rhinestone-letter-embroidery-distressed-wide-leg-jeans","card_background":"#ffffff","title_color":"#000000","text_color":"#666666","date_color":"#999999","label_color":"#999999","link_color":"#000000","divider_color":"#e8e8e1","border_radius":8,"content_padding":20,"title_size":20,"text_size":14,"date_size":12,"desktop_width_percent":100},"blocks":{}},"ai_gen_block_f840019_UXgQkH":{"type":"ai_gen_block_f840019","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/3_b0478e55-7d37-4f60-8c86-631d97de7858.png","image_aspect_ratio":"4 \/ 3","date":"January 16, 2026","title":"Tokyo, JP","text":"<p>Pulled up like she owns the night. Pink on Pink. No words needed — <\/p>","show_product_link":true,"link_label":"Featured item","linked_product":"heavyweight-zipped-hoodie-pink","card_background":"#ffffff","title_color":"#000000","text_color":"#666666","date_color":"#999999","label_color":"#999999","link_color":"#000000","divider_color":"#e8e8e1","border_radius":8,"content_padding":20,"title_size":20,"text_size":14,"date_size":12,"desktop_width_percent":100},"blocks":{}}},"block_order":["ai_gen_block_f840019_eRaHVm","ai_gen_block_f840019_CKBUfN","ai_gen_block_f840019_UXgQkH"],"settings":{}},"background_image_text_iYL8MB":{"type":"background-image-text","disabled":true,"name":"t:sections.background-image-text.presets.large_image_with_text_box.name","settings":{"subtitle":"","title":"You’re not just buying clothes. You’re joining the movement.","text":"<p>Every order comes with custom hangtags, signature packaging, and a personal thank-you card with a surprise, crafted to represent more than just an outfit.<\/p>","button_label":"","button_link":"","image":"shopify:\/\/shop_images\/pinterest_mygarments_1.png","layout":"left","height":550,"framed":false,"parallax":false,"parallax_direction":"top","lazyload_images":false}}},"order":["1763819211ca610086","176317079332aa6095","main","1774240140aa3f726f","shop_the_look_RqEpU4","featured_collection_zKKm8e","shopable_videos_cNhMVx","instafeed_zMrTkM","instafeed_mhfXXw","1762475916ee80746a","sub","featured_collection_W93WrP","product-recommendations","recently-viewed","text_and_image_JQBnAg","background-image-text","174175614057da1cbf","pp_custom_liquid_v1_0_0_k7DDiF","collection-return","17625122157a2a7edd","176858016057ad176f","1768639442c165310a","1768639563884272d2","background_image_text_iYL8MB"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1763819211ca610086": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "176317079332aa6095": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
+          }
+        },
+        "model_size_7RVcCE": {
+          "type": "model_size",
+          "settings": {
+            "model_text": "<p>{{ product.metafields.custom.model_size.value }}</p>"
+          }
+        },
+        "custom_AFKA4J": {
+          "type": "custom",
+          "settings": {
+            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n        <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"></path>\n      </svg>\nBUY 2 GET 20% OFF | BUY 3 GET 30% OFF\n</div>\n<div class=\"promo-banner-right-size-guide\"></div>\n</div>\n\n<style>\n  .promo-banner {\n    background-color: #e6e6e6;\n    padding: 8px 12px;\n    display: flex;\n    align-items: center;\n    font-family: monospace;\n    font-weight: 700;\n    font-size: 10px;\n    color: #000;\n  }\n\n  .promo-banner img {\n    width: 16px;\n    height: 16px;\n    margin-right: 8px;\n  }\n.promo-banner svg {\n    width: 20px;\n    margin-right: 10px;\n}\n\n.promo-banner {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    max-width: max-content;\n    margin: 10px auto;\n}\n.promo-banner-left {\n    display: flex;\n    align-items: center;\n}\n</style>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p><strong>USA</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>United Kingdom: </strong>Shipped out within 1-2 days - Order before 23:59 </p><p><strong>Netherlands/Belgium</strong>: Shipped out within 1-2 days  - Order before 23:59 </p><p><strong>Germany/Austria</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>France</strong>: Shipped out within 1-2 working days - Order before 23:59 </p><p><strong>Rest of Europe</strong>: Shipped out within 1-3 working days - Order before 23:59 </p><p><strong>Rest of the world: </strong>shipped out within 2-3 working days </p><p>NEWGARMENTS® express orders are sent out with FedEx or DHL couriers. A tracking number is supplied via email after the order is processed.</p>",
+            "page": ""
+          }
+        },
+        "custom_gWtVrK": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "<style>\n  .pill-container {\n    padding: 6px 12px;\n    background: #FAFAFA; /* Updated background color */\n    border-radius: 20px; /* Adjust as needed to give the pill shape */\n    display: inline-block; /* Ensure it wraps content properly */\n    position: relative; /* Add position relative for centering */\n    box-shadow: inset 0 0 0 #000000 35%; /* Inner shadow effect */\n    border: 1px solid #000000; /* Add a 1px black border */\n  }\n\n  .pill-container img {\n    vertical-align: middle; /* Align the image vertically */\n  }\n\n  .pill-container span {\n    margin-left: 8px; /* Adjust as needed to give space between image and text */\n  }\n\n  /* Center the pill horizontally */\n  .center {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n</style>\n\n<div class=\"center\">\n  <div class=\"pill-container\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0801/6320/9559/files/image_78.png?v=1710258017\" alt=\"TikTok Logo\">\n    <span>75K+ FOLLOWERS AND 255M+ VIEWS ON TIKTOK @newgarments</span>\n  </div>\n</div>"
+          }
+        },
+        "tab_fit_sizing": {
+          "type": "tab",
+          "settings": {
+            "title": "Fit & Sizing",
+            "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "variant_picker",
+        "model_size_7RVcCE",
+        "custom_AFKA4J",
+        "buy_buttons",
+        "description",
+        "tab_fit_sizing",
+        "tab",
+        "custom_gWtVrK"
+      ],
+      "custom_css": [
+        ".promo-banner {gap: 15px;}",
+        ".promo-banner-right-size-guide {height: 20px; margin-top: -15px;}",
+        ".model_text-destiop {font-size: 12px;}"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "large",
+        "title-1": "I’ll definitely come back to this store!",
+        "review-1": "<p>Just received the hoodies I ordered. Really happy with how they look like and the quality of it. I’ll definitely come back to this store.</p>",
+        "name-1": "Jack Santino",
+        "title-2": "Great quality hoodies & delivery was on…",
+        "review-2": "<p>Great quality hoodies & delivery was on time!</p>",
+        "name-2": "Reitze Douma",
+        "title-3": "Shipping was good",
+        "review-3": "<p>Shipping was good, and the quality of the pieces are as expected for the price</p>",
+        "name-3": "Sten Reinhart",
+        "title-4": "Nice clothes and comfortable",
+        "review-4": "<p>Beautiful clothes and fit well, I'm curious about the next drop!</p>",
+        "name-4": "David van den Brink",
+        "title-5": "Satisfied",
+        "review-5": "<p>I actually didn't expect the stuff to be this good for that price. It's not that cheap crap either, just good quality. Very satisfied</p>",
+        "name-5": "Amber Smidt",
+        "title-6": "Very happy with my purchases",
+        "review-6": "<p>I was very satisfied with the products I ordered and the delivery was fast. Come back here more often</p>",
+        "name-6": "Jeffery Ali",
+        "title-7": "Good customer service and fast delivery",
+        "review-7": "<p>Ordered here a number of times now. Nice store with great prices, happy with it</p>",
+        "name-7": "Emma",
+        "product_zoom_enable": true,
+        "thumbnail_position": "below",
+        "thumbnail_height": "fixed",
+        "thumbnail_arrows": true,
+        "mobile_layout": "full",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "1774240140aa3f726f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_dfed11d_9Gnj8n": {
+          "type": "ai_gen_block_dfed11d",
+          "settings": {
+            "header_text": "ESTIMATED TIME STOCK LASTS:",
+            "header_size": 16,
+            "header_spacing": 8,
+            "header_color": "#000000",
+            "days_label": "Days",
+            "hours_label": "Hrs",
+            "minutes_label": "Mins",
+            "seconds_label": "Secs",
+            "separator": ":",
+            "number_size": 24,
+            "label_size": 10,
+            "gap": 8,
+            "padding": 12,
+            "border_radius": 4,
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff",
+            "number_color": "#000000",
+            "label_color": "#666666",
+            "separator_color": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_dfed11d_9Gnj8n"
+      ],
+      "settings": {}
+    },
+    "shop_the_look_RqEpU4": {
+      "type": "shop-the-look",
+      "blocks": {
+        "slide_tRcnWp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6_b6161de5-6a05-4fa1-9994-e43a4163b7c0.png",
+            "product_1": "knitted-tribe-sweater-black",
+            "product_2": "retro-denim-full-rhinestone-design-baggy-jeans",
+            "product_3": "ocean-stars-sneaker-copy-1"
+          }
+        },
+        "slide_JVJqYj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/10_ecdf254c-5cfc-4adf-b023-5fe674ac7606.png",
+            "product_1": "streetwear-metal-clip-faux-fur-hooded-suede-bomber-jacket",
+            "product_2": "embroidered-striped-baggy-jeans-black-white",
+            "product_3": "ocean-stars-sneaker-copy-1"
+          }
+        },
+        "slide_Yw3V4G": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/5_86157ee7-2961-480f-a620-38b32766e926.png",
+            "product_1": "vibrations-graphic-knitted-sweater-moss-green",
+            "product_2": "vortex-graphic-sweatshirt-purple",
+            "product_3": "ocean-stars-sneaker-copy-1"
+          }
+        },
+        "slide_7t9e7i": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/pinterest_mygarments_24.png",
+            "product_1": "y2k-puffer-jacket-button-up-black",
+            "product_2": "retro-rhinestone-letter-embroidery-distressed-wide-leg-jeans",
+            "product_3": ""
+          }
+        },
+        "slide_w43QeG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1_f149778f-0107-4653-adab-56e0416643e3.png",
+            "product_1": "anti-streetwear-hoodie-black",
+            "product_2": "graphic-lining-baggy-jeans-copy-1",
+            "product_3": "ocean-stars-sneaker-copy-1"
+          }
+        },
+        "slide_kDNRbJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/4_70a94c7a-887c-40e3-92ae-7528a50b1e96.png",
+            "product_1": "vibrations-graphic-knitted-sweater-ocean-blue",
+            "product_2": "retro-patchwork-barrel-jeans-blue",
+            "product_3": "ocean-stars-sneaker-copy-1"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tRcnWp",
+        "slide_JVJqYj",
+        "slide_Yw3V4G",
+        "slide_7t9e7i",
+        "slide_w43QeG",
+        "slide_kDNRbJ"
+      ],
+      "name": "Shop the Look",
+      "settings": {
+        "title": "BRAND SHOOTS W/S 2026",
+        "slides_per_view": "4",
+        "autoplay_speed": 3
+      }
+    },
+    "featured_collection_zKKm8e": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "bg_color": "#ffffff",
+        "padding": 40,
+        "title": "OTHER POPULAR ITEMS",
+        "home_featured_products": "warehouse-sale",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "shopable_videos_cNhMVx": {
+      "type": "shopable-videos",
+      "blocks": {
+        "item_YefgK3": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/1216 (1).mov",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "raw-edge-baggy-pants-copy",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_qh64mb": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/1213(5).mov",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "denim-fur-hooded-jacket-deep-blue",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_az7cCq": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-03-11 at 00.55.05_53587584.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "stellar-splash-knitted-sweater-gray",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_wKFqmT": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/1213(4).mov",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "retro-unique-metal-button-suede-lapel-bomber-jacket",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_7ccyRC": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/5cba58d0c6d54219909b9f20fc3e7bdc.HD-720p-1.6Mbps-43966974.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "break-free-knitted-sweater-copy",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_LjieEX": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-03-11 at 00.51.33_6082a730 (1).mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "harajuku-knitted-sweater-copy",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_MfbBJV": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/50cd77987728418c9495a4009075747b.HD-720p-2.1Mbps-29379280 (1).mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "no-regrets-knitted-sweater-1",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": "<p>Modal Text</p>"
+          }
+        },
+        "item_mV7krJ": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/1215.mov",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "vibrations-graphic-knitted-sweater-ocean-blue",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_xr9kDq": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/071d9ac9398f4f0782ae7d617692cc9d.HD-1080p-2.5Mbps-43966794.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "y2k-stars-knitted-sweater-white",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        },
+        "item_PFgTpc": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/904e56c9146646f193ce41a6dbf1d6cc.HD-720p-1.6Mbps-43966689.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "product": "no-regrets-knitted-sweater-1",
+            "use_variants": true,
+            "modal_heading": "",
+            "modal_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_YefgK3",
+        "item_qh64mb",
+        "item_az7cCq",
+        "item_wKFqmT",
+        "item_7ccyRC",
+        "item_LjieEX",
+        "item_MfbBJV",
+        "item_mV7krJ",
+        "item_xr9kDq",
+        "item_PFgTpc"
+      ],
+      "disabled": true,
+      "name": "Shoppable Video",
+      "settings": {
+        "heading": "<p><strong>Thousands of members wearing NEWGARMENTS</strong>® <strong>🫶</strong></p>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "slider_view": 5,
+        "slider_view_mobile": 1.3,
+        "slider_gap": 16,
+        "slider_gap_mobile": 16,
+        "slider_mt": 20,
+        "card_radius": 10,
+        "card_border_thickness": 0,
+        "card_shadow": true,
+        "video_ratio": "portrait",
+        "video_ratio_mobile": "portrait",
+        "video_overlay": 0,
+        "image_width": 44,
+        "image_width_mobile": 44,
+        "image_radius": 6,
+        "image_border_thickness": 0,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 6,
+        "title_size_mobile": 9,
+        "title_height": 130,
+        "title_uppercase": false,
+        "price_custom": false,
+        "price_font": "josefin_sans_n4",
+        "price_size": 14,
+        "price_size_mobile": 14,
+        "price_height": 130,
+        "button": "Add To Cart",
+        "button_soldout": "Sold Out",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 16,
+        "button_size_mobile": 16,
+        "button_padding_vertical": 10,
+        "button_padding_vertical_mobile": 10,
+        "button_padding_horizontal": 10,
+        "button_padding_horizontal_mobile": 10,
+        "reload_after_adding": false,
+        "redirect_after_adding": false,
+        "option_custom": false,
+        "option_font": "josefin_sans_n4",
+        "option_size": 12,
+        "option_size_mobile": 12,
+        "option_height": 100,
+        "option_mt": 24,
+        "variants_price_custom": false,
+        "variants_price_font": "josefin_sans_n4",
+        "variants_price_size": 14,
+        "variants_price_size_mobile": 14,
+        "variants_price_height": 100,
+        "variants_price_mt": 10,
+        "variants_price_align": "center",
+        "variants_price_align_mobile": "center",
+        "modal_width": 740,
+        "modal_width_mobile": 100,
+        "modal_radius": 16,
+        "modal_border_thickness": 0,
+        "modal_overlay": 50,
+        "close_size": 42,
+        "close_size_mobile": 42,
+        "close_radius": 8,
+        "close_border_thickness": 0,
+        "buttons_size": 48,
+        "buttons_size_mobile": 48,
+        "buttons_radius": 8,
+        "buttons_border_thickness": 0,
+        "modal_video_radius": 0,
+        "modal_video_border_thickness": 0,
+        "modal_video_ratio": "portrait",
+        "modal_video_ratio_mobile": "portrait",
+        "modal_heading_custom": false,
+        "modal_heading_font": "josefin_sans_n4",
+        "modal_heading_size": 28,
+        "modal_heading_size_mobile": 28,
+        "modal_heading_height": 130,
+        "modal_heading_align": "center",
+        "modal_heading_align_mobile": "center",
+        "modal_text_custom": false,
+        "modal_text_font": "josefin_sans_n4",
+        "modal_text_size": 16,
+        "modal_text_size_mobile": 16,
+        "modal_text_height": 130,
+        "modal_text_align": "center",
+        "modal_text_align_mobile": "center",
+        "modal_text_mt": 16,
+        "use_modal_product": true,
+        "modal_image_width": 70,
+        "modal_image_width_mobile": 66,
+        "modal_image_radius": 12,
+        "modal_title_custom": false,
+        "modal_title_font": "josefin_sans_n4",
+        "modal_title_size": 16,
+        "modal_title_size_mobile": 16,
+        "modal_title_height": 130,
+        "modal_title_uppercase": false,
+        "modal_price_custom": false,
+        "modal_price_font": "josefin_sans_n4",
+        "modal_price_size": 14,
+        "modal_price_size_mobile": 14,
+        "modal_price_height": 130,
+        "modal_button": "Add To Cart",
+        "modal_button_soldout": "Sold Out",
+        "modal_button_custom": false,
+        "modal_button_font": "josefin_sans_n4",
+        "modal_button_size": 16,
+        "modal_button_size_mobile": 16,
+        "modal_button_radius": 8,
+        "modal_button_border_thickness": 1,
+        "modal_button_mt": 16,
+        "modal_button_align": "center",
+        "modal_button_align_mobile": "center",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#000000",
+        "card_shadow_color": "#000000",
+        "video_border_color": "#000000",
+        "video_overlay_color": "#000000",
+        "image_border_color": "#000000",
+        "title_color": "#ffffff",
+        "price_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_hover_color": "#ffffff",
+        "button_bg_color": "#000000",
+        "button_bg_hover_color": "#000000",
+        "arrow_bg_color": "#000000",
+        "arrow_border_color": "#ffffff",
+        "arrow_icon_color": "#ffffff",
+        "option_color": "#000000",
+        "variants_price_color": "#000000",
+        "modal_bg_color": "#ffffff",
+        "modal_border_color": "#000000",
+        "close_bg_color": "#ffffff",
+        "close_border_color": "#000000",
+        "close_icon_color": "#ffffff",
+        "buttons_bg_color": "#ffffff",
+        "buttons_border_color": "#000000",
+        "buttons_icon_color": "#ffffff",
+        "modal_video_border_color": "#000000",
+        "modal_content_bg_color": "#ffffff",
+        "modal_heading_color": "#000000",
+        "modal_text_color": "#000000",
+        "modal_title_color": "#000000",
+        "modal_price_color": "#000000",
+        "modal_button_color": "#ffffff",
+        "modal_button_hover_color": "#000000",
+        "modal_button_bg_color": "#000000",
+        "modal_button_bg_hover_color": "#ffffff",
+        "modal_button_border_color": "#000000",
+        "modal_button_border_hover_color": "#000000",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 140,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "instafeed_zMrTkM": {
+      "type": "instafeed",
+      "blocks": {
+        "image_wifQRB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_92.png",
+            "url": ""
+          }
+        },
+        "image_94JwnF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/unnamed_-_2025-12-17T211422.990.jpg",
+            "url": ""
+          }
+        },
+        "image_ACPNJT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_93.png",
+            "url": ""
+          }
+        },
+        "image_jUtxpK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/unnamed_-_2025-12-17T211534.946.jpg",
+            "url": ""
+          }
+        },
+        "image_wNhfiC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_94.png",
+            "url": ""
+          }
+        },
+        "image_iRNeTe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_96.png",
+            "url": ""
+          }
+        },
+        "image_AKt7xE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_97.png",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_wifQRB",
+        "image_94JwnF",
+        "image_ACPNJT",
+        "image_jUtxpK",
+        "image_wNhfiC",
+        "image_iRNeTe",
+        "image_AKt7xE"
+      ],
+      "disabled": true,
+      "name": "SS - Scrolling Images",
+      "settings": {
+        "heading": "<h3>COMMUNITY STORIES</h3>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 20,
+        "heading_height": 130,
+        "heading_align": "center",
+        "slider_speed": 18,
+        "slider_gap": 10,
+        "slider_gap_mobile": 10,
+        "slider_mt": 50,
+        "slider_direction": "left",
+        "pause_hover": false,
+        "image_width_desktop": 300,
+        "image_width_mobile": 150,
+        "image_height_desktop": 400,
+        "image_height_mobile": 300,
+        "image_radius": 10,
+        "use_content": false,
+        "content_position": "center",
+        "content_max_width": 340,
+        "content_max_width_mobile": 340,
+        "content_padding_vertical": 30,
+        "content_padding_horizontal": 30,
+        "content_distance": 60,
+        "content_radius": 10,
+        "content_border_thickness": 0,
+        "use_shadow": true,
+        "text": "",
+        "text_custom": false,
+        "text_font": "assistant_n4",
+        "text_size": 24,
+        "text_height": 130,
+        "heading_color": "#000000",
+        "content_bg": "#ffffff",
+        "content_border_color": "#000000",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "instafeed_mhfXXw": {
+      "type": "instafeed",
+      "blocks": {
+        "image_DtKxHr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-03-11_at_00.45.43_c6e0bdff.jpg",
+            "url": ""
+          }
+        },
+        "image_QgpLVT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-03-11_at_00.44.58_51a4c308_1.jpg",
+            "url": ""
+          }
+        },
+        "image_Y33Ap4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-03-11_at_00.44.15_a583e293.jpg",
+            "url": ""
+          }
+        },
+        "image_EbVmLQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-03-11_at_00.50.55_32df32ce.jpg",
+            "url": ""
+          }
+        },
+        "image_FhFxLX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-03-11_at_12.53.40.png",
+            "url": ""
+          }
+        },
+        "image_V3GWMb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-03-11_at_13.08.16.png",
+            "url": ""
+          }
+        },
+        "image_jDi7Ja": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-03-11_at_00.46.33_2ed15785.jpg",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_DtKxHr",
+        "image_QgpLVT",
+        "image_Y33Ap4",
+        "image_EbVmLQ",
+        "image_FhFxLX",
+        "image_V3GWMb",
+        "image_jDi7Ja"
+      ],
+      "disabled": true,
+      "name": "SS - Scrolling Images",
+      "settings": {
+        "heading": "<h3>INSTAGRAM STORIES </h3>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 24,
+        "heading_height": 130,
+        "heading_align": "center",
+        "slider_speed": 18,
+        "slider_gap": 10,
+        "slider_gap_mobile": 10,
+        "slider_mt": 50,
+        "slider_direction": "left",
+        "pause_hover": false,
+        "image_width_desktop": 300,
+        "image_width_mobile": 120,
+        "image_height_desktop": 400,
+        "image_height_mobile": 240,
+        "image_radius": 10,
+        "use_content": false,
+        "content_position": "center",
+        "content_max_width": 340,
+        "content_max_width_mobile": 340,
+        "content_padding_vertical": 30,
+        "content_padding_horizontal": 30,
+        "content_distance": 60,
+        "content_radius": 10,
+        "content_border_thickness": 0,
+        "use_shadow": true,
+        "text": "<p>+29.000 people love our product</p>",
+        "text_custom": false,
+        "text_font": "assistant_n4",
+        "text_size": 24,
+        "text_height": 130,
+        "heading_color": "#000000",
+        "content_bg": "#ffffff",
+        "content_border_color": "#000000",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "1762475916ee80746a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9f55737_9Qjggd": {
+          "type": "ai_gen_block_9f55737",
+          "settings": {
+            "promo_text": "1+1 FREE: ADD 2 TO CART PAY FOR 1!",
+            "show_icon": true,
+            "background_color": "#e6e6e6",
+            "text_color": "#000000",
+            "text_size": 14,
+            "text_weight": "600",
+            "icon_color": "#000000",
+            "icon_size": 24,
+            "padding_vertical": 12,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9f55737_9Qjggd"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "featured_collection_W93WrP": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "bg_color": "#ffffff",
+        "padding": 40,
+        "title": "Iconic Longsleeve Collection",
+        "home_featured_products": "new-longsleeves",
+        "per_row": 5,
+        "rows": 4,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 6,
+        "products_per_row": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "recent_count": 5
+      }
+    },
+    "text_and_image_JQBnAg": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "",
+        "text": "<h1>BECOME PART OF THE COMMUNITY...</h1>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "center",
+        "image_width": "66",
+        "layout": "right",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": true
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "custom_css": [
+        ".background-media-text__inner a {background: #000;}"
+      ],
+      "settings": {
+        "subtitle": "ABOUT US",
+        "title": "Stand out from the crowd",
+        "text": "<p>In just a few years, the Amsterdam-based label is now part of the Dutch capital’s burgeoning streetwear scene and a leading global destination for the latest unique items!</p>",
+        "button_label": "",
+        "button_link": "shopify://collections/spring-sale",
+        "layout": "left",
+        "height": 550,
+        "framed": true,
+        "parallax": false,
+        "parallax_direction": "top",
+        "lazyload_images": false
+      }
+    },
+    "174175614057da1cbf": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "pp_custom_liquid_v1_0_0_k7DDiF": {
+      "type": "pp-custom-liquid-v1-0-0",
+      "disabled": true,
+      "name": "PP Custom Liquid",
+      "settings": {
+        "custom_liquid": "<style>\n  .pill-container {\n    padding: 6px 12px;\n    background: #FAFAFA; /* Updated background color */\n    border-radius: 20px; /* Adjust as needed to give the pill shape */\n    display: inline-block; /* Ensure it wraps content properly */\n    position: relative; /* Add position relative for centering */\n    box-shadow: inset 0 0 0 #000000 35%; /* Inner shadow effect */\n    border: 1px solid #000000; /* Add a 1px black border */\n  }\n\n  .pill-container img {\n    vertical-align: middle; /* Align the image vertically */\n  }\n\n  .pill-container span {\n    margin-left: 8px; /* Adjust as needed to give space between image and text */\n  }\n\n  /* Center the pill horizontally */\n  .center {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n</style>\n\n<div class=\"center\">\n  <div class=\"pill-container\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0801/6320/9559/files/image_78.png?v=1710258017\" alt=\"TikTok Logo\">\n    <span>75K+ FOLLOWERS AND 255M+ VIEWS ON TIKTOK</span>\n  </div>\n</div>",
+        "section_background": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    },
+    "17625122157a2a7edd": {
+      "type": "apps",
+      "blocks": {
+        "kiwi_size_chart_recommender_kiwi_sizing_n9TCyA": {
+          "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
+          "settings": {
+            "fallbackToBlockPosition": false,
+            "waitForElementSelector": "",
+            "waitForElementDelay": 5
+          }
+        }
+      },
+      "block_order": [
+        "kiwi_size_chart_recommender_kiwi_sizing_n9TCyA"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "176858016057ad176f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1768639442c165310a": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1768639563884272d2": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f840019_eRaHVm": {
+          "type": "ai_gen_block_f840019",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1_092f2997-8e37-4bc0-9fce-2fdb4a9e1b8e.png",
+            "image_aspect_ratio": "4 / 3",
+            "date": "Januari 2, 2026",
+            "title": "London, UK",
+            "text": "<p>Zipper half-done. No one told him this was a look — he just wore what felt right. </p>",
+            "show_product_link": true,
+            "link_label": "Featured item",
+            "linked_product": "checkered-inside-out-zipper-gray",
+            "card_background": "#ffffff",
+            "title_color": "#000000",
+            "text_color": "#666666",
+            "date_color": "#999999",
+            "label_color": "#999999",
+            "link_color": "#000000",
+            "divider_color": "#e8e8e1",
+            "border_radius": 8,
+            "content_padding": 20,
+            "title_size": 20,
+            "text_size": 14,
+            "date_size": 12,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_f840019_CKBUfN": {
+          "type": "ai_gen_block_f840019",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/pinterest_mygarments_24.png",
+            "image_aspect_ratio": "4 / 3",
+            "date": "January 11, 2026",
+            "title": "Los angeles, US",
+            "text": "<p>Haven’t left the couch today. Jeans still on. Fit still matters — even at home.</p>",
+            "show_product_link": true,
+            "link_label": "Featured item",
+            "linked_product": "retro-rhinestone-letter-embroidery-distressed-wide-leg-jeans",
+            "card_background": "#ffffff",
+            "title_color": "#000000",
+            "text_color": "#666666",
+            "date_color": "#999999",
+            "label_color": "#999999",
+            "link_color": "#000000",
+            "divider_color": "#e8e8e1",
+            "border_radius": 8,
+            "content_padding": 20,
+            "title_size": 20,
+            "text_size": 14,
+            "date_size": 12,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_f840019_UXgQkH": {
+          "type": "ai_gen_block_f840019",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/3_b0478e55-7d37-4f60-8c86-631d97de7858.png",
+            "image_aspect_ratio": "4 / 3",
+            "date": "January 16, 2026",
+            "title": "Tokyo, JP",
+            "text": "<p>Pulled up like she owns the night. Pink on Pink. No words needed — </p>",
+            "show_product_link": true,
+            "link_label": "Featured item",
+            "linked_product": "heavyweight-zipped-hoodie-pink",
+            "card_background": "#ffffff",
+            "title_color": "#000000",
+            "text_color": "#666666",
+            "date_color": "#999999",
+            "label_color": "#999999",
+            "link_color": "#000000",
+            "divider_color": "#e8e8e1",
+            "border_radius": 8,
+            "content_padding": 20,
+            "title_size": 20,
+            "text_size": 14,
+            "date_size": 12,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f840019_eRaHVm",
+        "ai_gen_block_f840019_CKBUfN",
+        "ai_gen_block_f840019_UXgQkH"
+      ],
+      "settings": {}
+    },
+    "background_image_text_iYL8MB": {
+      "type": "background-image-text",
+      "disabled": true,
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "",
+        "title": "You’re not just buying clothes. You’re joining the movement.",
+        "text": "<p>Every order comes with custom hangtags, signature packaging, and a personal thank-you card with a surprise, crafted to represent more than just an outfit.</p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/pinterest_mygarments_1.png",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": false,
+        "parallax_direction": "top",
+        "lazyload_images": false
+      }
+    }
+  },
+  "order": [
+    "1763819211ca610086",
+    "176317079332aa6095",
+    "main",
+    "1774240140aa3f726f",
+    "shop_the_look_RqEpU4",
+    "featured_collection_zKKm8e",
+    "shopable_videos_cNhMVx",
+    "instafeed_zMrTkM",
+    "instafeed_mhfXXw",
+    "1762475916ee80746a",
+    "sub",
+    "featured_collection_W93WrP",
+    "product-recommendations",
+    "recently-viewed",
+    "text_and_image_JQBnAg",
+    "background-image-text",
+    "174175614057da1cbf",
+    "pp_custom_liquid_v1_0_0_k7DDiF",
+    "collection-return",
+    "17625122157a2a7edd",
+    "176858016057ad176f",
+    "1768639442c165310a",
+    "1768639563884272d2",
+    "background_image_text_iYL8MB"
+  ]
+}
