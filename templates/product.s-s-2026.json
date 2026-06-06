@@ -92,10 +92,10 @@
           "type": "video_gallery_block",
           "settings": {
             "block_heading": "Newgarments On You",
-            "video_1": "shopify://files/videos/sneaker_creme_closeup.mp4",
-            "video_2": "shopify://files/videos/sneaker_creme_floor.mp4",
-            "video_3": "shopify://files/videos/sneaker_black_spring26.mp4",
-            "video_4": "shopify://files/videos/sneaker_creme_onfeet.mp4"
+            "video_1": "shopify://files/videos/sneaker_creme_closeup_98a737ae-76c9-4f13-8789-3906d9a426fb.mp4",
+            "video_2": "shopify://files/videos/sneaker_creme_floor_7e9e3a2d-ea84-48fe-a123-42d1cd03ee01.mp4",
+            "video_3": "shopify://files/videos/sneaker_black_spring26_377fa9e9-6bea-4d4c-9856-79963043c2c9.mp4",
+            "video_4": "shopify://files/videos/sneaker_creme_onfeet_8c7f52a2-2104-4921-9c4d-8c14aec53878.mp4"
           }
         },
         "custom_gWtVrK": {
@@ -1007,8 +1007,8 @@
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/25_b3837f93-6bc9-479e-b8e3-960f1f0dbffd.jpg?v=1779705982",
             "rating": 5,
-            "review_text": "Super impressed with comfort and build. The raw denim design looks even better in person.",
-            "author": "Dylan M.",
+            "review_text": "Super impressed with comfort and build. The raw denim design looks even better in person. Love styling them with wide leg pants.",
+            "author": "Sophie M.",
             "location": "Belgium"
           }
         },
@@ -1027,8 +1027,8 @@
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/22_7b358ee7-82c1-4b1f-b65d-c4564c34ed3e.jpg?v=1777299845",
             "rating": 5,
-            "review_text": "Unreal in person. Lightweight, comfortable and the frayed denim details make them stand out.",
-            "author": "Theo H.",
+            "review_text": "Unreal in person. Lightweight, comfortable and the frayed denim details make them stand out. Go with literally everything.",
+            "author": "Olivia H.",
             "location": "United Kingdom"
           }
         },
