@@ -34,7 +34,7 @@
         "custom_nXyhBx": {
           "type": "custom",
           "settings": {
-            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n        <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"></path>\n      </svg>\nADD 2 TO CART PAY FOR 1\n</div>\n<div class=\"promo-banner-right-size-guide\"></div>\n</div>\n\n<style>\n  .promo-banner {\n    background-color: #f5f5f5;\n    padding: 8px 12px;\n    display: flex;\n    align-items: center;\n    font-family: monospace;\n    font-weight: 700;\n    font-size: 10px;\n    color: #000;\n  }\n\n  .promo-banner img {\n    width: 16px;\n    height: 16px;\n    margin-right: 8px;\n  }\n.promo-banner svg {\n    width: 20px;\n    margin-right: 10px;\n}\n\n.promo-banner {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    max-width: max-content;\n    margin: 10px auto;\n}\n.promo-banner-left {\n    display: flex;\n    align-items: center;\n}\n</style>"
+            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n        <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"></path>\n      </svg>\nADD 2 TO CART PAY FOR 1\n</div>\n<div class=\"promo-banner-right-size-guide\"></div>\n</div>\n\n<style>\n  .promo-banner {\n    background-color: #f7f7f7;\n    padding: 8px 12px;\n    display: flex;\n    align-items: center;\n    font-family: monospace;\n    font-weight: 700;\n    font-size: 10px;\n    color: #000;\n  }\n\n  .promo-banner img {\n    width: 16px;\n    height: 16px;\n    margin-right: 8px;\n  }\n.promo-banner svg {\n    width: 20px;\n    margin-right: 10px;\n}\n\n.promo-banner {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    max-width: max-content;\n    margin: 10px auto;\n}\n.promo-banner-left {\n    display: flex;\n    align-items: center;\n}\n</style>"
           }
         },
         "buy_buttons": {
@@ -92,12 +92,10 @@
           "type": "video_gallery_block",
           "settings": {
             "block_heading": "Newgarments On You",
-            "video_1": "shopify://files/videos/shoe_vid1.mp4",
-            "video_2": "shopify://files/videos/shoe_vid2.mp4",
-            "video_3": "shopify://files/videos/shoe_57ad.mp4",
-            "video_4": "shopify://files/videos/shoe_a083.mp4",
-            "video_5": "shopify://files/videos/shoe_d130.mp4",
-            "video_6": "shopify://files/videos/shoe_94a1.mp4"
+            "video_1": "shopify://files/videos/sneaker_creme_closeup.mp4",
+            "video_2": "shopify://files/videos/sneaker_creme_floor.mp4",
+            "video_3": "shopify://files/videos/sneaker_black_spring26.mp4",
+            "video_4": "shopify://files/videos/sneaker_creme_onfeet.mp4"
           }
         },
         "custom_gWtVrK": {
@@ -131,11 +129,11 @@
         "custom_gWtVrK"
       ],
       "custom_css": [
-        ".promo-banner {gap: 15px;}",
-        ".promo-banner-right-size-guide {height: 20px; margin-top: -15px;}",
-        ".model_text-destiop {font-size: 12px;}",
-        ".collapsibles-wrapper.collapsibles-wrapper--border-bottom {background: #f3f3f3 !important; border-bottom: none !important; margin-bottom: 20px !important;}",
-        ".collapsible-trigger-btn--borders {border: none !important;}"
+        ".promo-banner {gap:15px;}",
+        ".promo-banner-right-size-guide {height:20px;margin-top:-15px;}",
+        ".model_text-destiop {font-size:12px;}",
+        ".collapsibles-wrapper--border-bottom {background:#f7f7f7 !important;border:none !important;}",
+        ".collapsible-trigger-btn--borders {border:none !important;}"
       ],
       "settings": {
         "sku_enable": false,
@@ -984,74 +982,74 @@
     "photo_reviews": {
       "type": "photo-reviews",
       "blocks": {
-        "photo_rev_0": {
+        "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_aiden.jpg?v=1780056925",
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/19_aa4ecc86-5ae9-4673-a409-bd1e78f48d7e.jpg?v=1777299846",
             "rating": 5,
-            "review_text": "These became my go-to sneakers instantly. The broken denim detail is insane and the chunky silhouette gets compliments all the time.",
+            "review_text": "These became my go-to sneakers instantly. The broken denim detail is insane and gets compliments all the time.",
             "author": "Aiden B.",
             "location": "Netherlands"
           }
         },
-        "photo_rev_1": {
+        "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_theo_s.jpg?v=1780056927",
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/13_72a37cdc-7908-41c6-b7e6-eff374c7cfd3.jpg?v=1779701201",
             "rating": 5,
-            "review_text": "Love the distressed look. They feel crazy comfortable for all day wear and look fire with baggy fits.",
+            "review_text": "Love the distressed denim look. Crazy comfortable for all day wear and look fire with baggy fits.",
             "author": "Theo S.",
             "location": "Germany"
           }
         },
-        "photo_rev_2": {
+        "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_dylan.jpg?v=1780056928",
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/25_b3837f93-6bc9-479e-b8e3-960f1f0dbffd.jpg?v=1779705982",
             "rating": 5,
-            "review_text": "Super impressed with comfort and build. Cushioned sole, breathable and the raw denim design looks even better in person.",
+            "review_text": "Super impressed with comfort and build. The raw denim design looks even better in person.",
             "author": "Dylan M.",
             "location": "Belgium"
           }
         },
-        "photo_rev_3": {
+        "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_levi.jpg?v=1780056929",
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/30_b8385a7a-aaf5-456f-a230-71eea706a725.jpg?v=1779705982",
             "rating": 5,
-            "review_text": "One of my best pickups lately. That rare deconstructed streetwear look while still being insanely practical.",
+            "review_text": "One of my best pickups lately. Rare deconstructed streetwear look while still being insanely practical.",
             "author": "Levi Y.",
             "location": "France"
           }
         },
-        "photo_rev_4": {
+        "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_theo_h.jpg?v=1780056930",
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/22_7b358ee7-82c1-4b1f-b65d-c4564c34ed3e.jpg?v=1777299845",
             "rating": 5,
-            "review_text": "Unreal in person. Super lightweight, insanely comfortable and the frayed denim details make them stand out from regular sneakers.",
+            "review_text": "Unreal in person. Lightweight, comfortable and the frayed denim details make them stand out.",
             "author": "Theo H.",
             "location": "United Kingdom"
           }
         },
-        "photo_rev_5": {
+        "pr5": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_finn.jpg?v=1780056932",
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/8_7af509f1-8d5c-40e4-9d1c-92d2d5026386.jpg?v=1767643803",
             "rating": 5,
-            "review_text": "Love how bold these look without sacrificing comfort. Perfect for everyday wear, the two colorways are both fire.",
+            "review_text": "Both the Sky Blue and Creme colorway are fire. Bold look without sacrificing comfort.",
             "author": "Finn Q.",
             "location": "Sweden"
           }
         }
       },
       "block_order": [
-        "photo_rev_0",
-        "photo_rev_1",
-        "photo_rev_2",
-        "photo_rev_3",
-        "photo_rev_4",
-        "photo_rev_5"
+        "pr0",
+        "pr1",
+        "pr2",
+        "pr3",
+        "pr4",
+        "pr5"
       ],
       "settings": {
         "title": "What Our Customers Say",
