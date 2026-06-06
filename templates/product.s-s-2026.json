@@ -134,11 +134,8 @@
         ".promo-banner {gap: 15px;}",
         ".promo-banner-right-size-guide {height: 20px; margin-top: -15px;}",
         ".model_text-destiop {font-size: 12px;}",
-        "button.label.collapsible-trigger {}",
-        ".collapsible-trigger {border-color: #e8e8e8 !important;}",
-        ".collapsible-content {border-color: #e8e8e8 !important;}",
-        ".collapsible-trigger-layout {border-color: #e8e8e8 !important;}",
-        ".product-block--tab {border-color: #e8e8e8 !important;}"
+        ".collapsibles-wrapper.collapsibles-wrapper--border-bottom {background: #f3f3f3 !important; border-bottom: none !important; margin-bottom: 20px !important;}",
+        ".collapsible-trigger-btn--borders {border: none !important;}"
       ],
       "settings": {
         "sku_enable": false,
@@ -983,10 +980,88 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "photo_reviews": {
+      "type": "photo-reviews",
+      "blocks": {
+        "photo_rev_0": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_aiden.jpg?v=1780056925",
+            "rating": 5,
+            "review_text": "These became my go-to sneakers instantly. The broken denim detail is insane and the chunky silhouette gets compliments all the time.",
+            "author": "Aiden B.",
+            "location": "Netherlands"
+          }
+        },
+        "photo_rev_1": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_theo_s.jpg?v=1780056927",
+            "rating": 5,
+            "review_text": "Love the distressed look. They feel crazy comfortable for all day wear and look fire with baggy fits.",
+            "author": "Theo S.",
+            "location": "Germany"
+          }
+        },
+        "photo_rev_2": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_dylan.jpg?v=1780056928",
+            "rating": 5,
+            "review_text": "Super impressed with comfort and build. Cushioned sole, breathable and the raw denim design looks even better in person.",
+            "author": "Dylan M.",
+            "location": "Belgium"
+          }
+        },
+        "photo_rev_3": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_levi.jpg?v=1780056929",
+            "rating": 5,
+            "review_text": "One of my best pickups lately. That rare deconstructed streetwear look while still being insanely practical.",
+            "author": "Levi Y.",
+            "location": "France"
+          }
+        },
+        "photo_rev_4": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_theo_h.jpg?v=1780056930",
+            "rating": 5,
+            "review_text": "Unreal in person. Super lightweight, insanely comfortable and the frayed denim details make them stand out from regular sneakers.",
+            "author": "Theo H.",
+            "location": "United Kingdom"
+          }
+        },
+        "photo_rev_5": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_finn.jpg?v=1780056932",
+            "rating": 5,
+            "review_text": "Love how bold these look without sacrificing comfort. Perfect for everyday wear, the two colorways are both fire.",
+            "author": "Finn Q.",
+            "location": "Sweden"
+          }
+        }
+      },
+      "block_order": [
+        "photo_rev_0",
+        "photo_rev_1",
+        "photo_rev_2",
+        "photo_rev_3",
+        "photo_rev_4",
+        "photo_rev_5"
+      ],
+      "settings": {
+        "title": "What Our Customers Say",
+        "subtitle": "4.8 ★ average from 120+ reviews"
+      }
     }
   },
   "order": [
     "main",
+    "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
     "shoppable_lookbook_grid_aYpzjr",
