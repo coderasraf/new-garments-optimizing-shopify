@@ -34,7 +34,7 @@
         "custom_nXyhBx": {
           "type": "custom",
           "settings": {
-            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n        <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"></path>\n      </svg>\nADD 2 TO CART PAY FOR 1\n</div>\n<div class=\"promo-banner-right-size-guide\"></div>\n</div>\n\n<style>\n  .promo-banner {\n    background-color: #f7f7f7;\n    padding: 8px 12px;\n    display: flex;\n    align-items: center;\n    font-family: monospace;\n    font-weight: 700;\n    font-size: 10px;\n    color: #000;\n  }\n\n  .promo-banner img {\n    width: 16px;\n    height: 16px;\n    margin-right: 8px;\n  }\n.promo-banner svg {\n    width: 20px;\n    margin-right: 10px;\n}\n\n.promo-banner {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    max-width: max-content;\n    margin: 10px auto;\n}\n.promo-banner-left {\n    display: flex;\n    align-items: center;\n}\n</style>"
+            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n  <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"/>\n</svg>\nBUY 2 PAIRS GET 30% OFF + FREE GIFT\n</div>\n</div>\n<style>\n.promo-banner{background:#f7f7f7;padding:8px 12px;display:flex;align-items:center;font-family:monospace;font-weight:700;font-size:10px;color:#000;justify-content:center;max-width:max-content;margin:10px auto;}\n.promo-banner svg{width:20px;margin-right:10px;}\n.promo-banner-left{display:flex;align-items:center;}\n</style>"
           }
         },
         "buy_buttons": {
@@ -117,9 +117,16 @@
             "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
             "page": ""
           }
+        },
+        "countdown_timer_top": {
+          "type": "custom",
+          "settings": {
+            "code": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-icon\">🔥</span>\n<span id=\"ng-cd-text\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\">\n<span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span>\n</span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:8px;background:#000;color:#fff;padding:10px 16px;font-family:monospace;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:12px;border-radius:4px;}\n#ng-cd-timer{background:#fff;color:#000;padding:4px 10px;border-radius:3px;font-size:14px;letter-spacing:2px;}\n#ng-cd-text{font-size:11px;}\n</style>\n<script>\n(function(){\nvar k='ng_cd_end',d=3600000;\nvar e=localStorage.getItem(k);\nif(!e||parseInt(e)<Date.now()){e=Date.now()+d;localStorage.setItem(k,e);}\nfunction u(){\nvar r=parseInt(e)-Date.now();\nif(r<=0){e=Date.now()+d;localStorage.setItem(k,e);r=d;}\nvar h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);\ndocument.getElementById('ng-cd-h').textContent=String(h).padStart(2,'0');\ndocument.getElementById('ng-cd-m').textContent=String(m).padStart(2,'0');\ndocument.getElementById('ng-cd-s').textContent=String(s).padStart(2,'0');\n}\nu();setInterval(u,1000);\n})();\n</script>"
+          }
         }
       },
       "block_order": [
+        "countdown_timer_top",
         "price",
         "variant_picker",
         "model_size_7RVcCE",
