@@ -136,10 +136,10 @@
       ],
       "custom_css": [
         ".promo-banner {gap:15px;}",
-        ".promo-banner-right-size-guide {height:20px;margin-top:-15px;}",
         ".model_text-destiop {font-size:12px;}",
         ".collapsibles-wrapper--border-bottom {background:#f7f7f7 !important;}",
-        ".collapsible-trigger-btn--borders {border:none !important;}"
+        ".collapsible-trigger-btn--borders {border:none !important;}",
+        ".custom-shipping-container {background:#f7f7f7 !important;}"
       ],
       "settings": {
         "sku_enable": false,
