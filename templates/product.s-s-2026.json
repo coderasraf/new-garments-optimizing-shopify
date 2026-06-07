@@ -34,7 +34,7 @@
         "custom_nXyhBx": {
           "type": "custom",
           "settings": {
-            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n  <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"/>\n</svg>\nBUY 2 PAIRS GET 30% OFF + FREE GIFT\n</div>\n</div>\n<style>\n.promo-banner{background:#f7f7f7;padding:9px 15px;display:flex;align-items:center;font-family:var(--font-stack-header,var(--font-stack-body));font-weight:700;font-size:12px;letter-spacing:1px;color:#000;justify-content:center;max-width:max-content;margin:10px auto;}\n.promo-banner svg{width:20px;margin-right:9px;}\n.promo-banner-left{display:flex;align-items:center;}\n</style>"
+            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n  <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"/>\n</svg>\nBUY 1, GET 2ND 50% OFF\n</div>\n</div>\n<style>\n.promo-banner{background:#f7f7f7;padding:9px 15px;display:flex;align-items:center;font-family:var(--font-stack-header,var(--font-stack-body));font-weight:700;font-size:12px;letter-spacing:2px;color:#000;justify-content:center;max-width:max-content;margin:10px auto;}\n.promo-banner svg{width:20px;margin-right:9px;}\n.promo-banner-left{display:flex;align-items:center;}\n</style>"
           }
         },
         "buy_buttons": {
@@ -117,10 +117,17 @@
             "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
             "page": ""
           }
+        },
+        "instock_ng": {
+          "type": "custom",
+          "settings": {
+            "code": "<div class=\"ng-instock\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#37A471\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg> IN STOCK — READY TO SHIP</div>\n<style>\n.ng-instock{display:flex;align-items:center;gap:10px;font-family:var(--font-stack-header,var(--font-stack-body));font-size:16px;font-weight:700;color:#37A471;letter-spacing:1.5px;text-transform:uppercase;margin:8px 0 4px;}\n.ng-instock svg{flex-shrink:0;}\n</style>"
+          }
         }
       },
       "block_order": [
         "price",
+        "instock_ng",
         "variant_picker",
         "model_size_7RVcCE",
         "custom_nXyhBx",
@@ -1058,14 +1065,14 @@
         "pr5"
       ],
       "settings": {
-        "title": "What Our Customers Say",
+        "title": "WHY WE'RE LOVED",
         "subtitle": "4.8 ★ average from 120+ reviews"
       }
     },
     "countdown_bar": {
       "type": "pp-custom-liquid-v1-0-0",
       "settings": {
-        "custom_liquid": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-label\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\"><span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span></span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:#000;color:#fff;padding:12px 0;font-family:var(--font-stack-header,var(--font-stack-body));font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}\n#ng-cd-timer{font-size:15px;letter-spacing:3.5px;font-variant-numeric:tabular-nums;}\n</style>\n<script>\n(function(){var end=1780848489059,d=3600000;function u(){var r=end-Date.now();while(r<=0){end+=d;r=end-Date.now();}var h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);document.getElementById(\"ng-cd-h\").textContent=String(h).padStart(2,\"0\");document.getElementById(\"ng-cd-m\").textContent=String(m).padStart(2,\"0\");document.getElementById(\"ng-cd-s\").textContent=String(s).padStart(2,\"0\");}u();setInterval(u,1000);})();\n</script>\n<style>\n.pagepilot-review-slider .review-cards{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:16px;padding-bottom:10px;}\n.pagepilot-review-slider .review-cards::-webkit-scrollbar{display:none;}\n.pagepilot-review-slider .review-card{scroll-snap-align:start;flex:0 0 85%;max-width:85%;}\n@media(min-width:768px){.pagepilot-review-slider .review-card{flex:0 0 30%;max-width:30%;}}\n</style>",
+        "custom_liquid": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-label\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\"><span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span></span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:#000;color:#fff;padding:12px 0;font-family:var(--font-stack-header,var(--font-stack-body));font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}\n#ng-cd-timer{font-size:22px;letter-spacing:3.5px;font-variant-numeric:tabular-nums;}\n</style>\n<script>\n(function(){var end=1780848489059,d=3600000;function u(){var r=end-Date.now();while(r<=0){end+=d;r=end-Date.now();}var h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);document.getElementById(\"ng-cd-h\").textContent=String(h).padStart(2,\"0\");document.getElementById(\"ng-cd-m\").textContent=String(m).padStart(2,\"0\");document.getElementById(\"ng-cd-s\").textContent=String(s).padStart(2,\"0\");}u();setInterval(u,1000);})();\n</script>\n<style>\n.pagepilot-review-slider .review-cards{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:18px;padding-bottom:10px;}\n.pagepilot-review-slider .review-cards::-webkit-scrollbar{display:none;}\n.pagepilot-review-slider .review-card{scroll-snap-align:start;flex:0 0 85%;max-width:85%;}\n@media(min-width:768px){.pagepilot-review-slider .review-card{flex:0 0 30%;max-width:30%;}}\n</style>",
         "padding_top": 0,
         "padding_bottom": 0,
         "margin_top": 0,
