@@ -20,7 +20,7 @@
           "type": "variant_picker",
           "settings": {
             "variant_labels": true,
-            "picker_type": "button",
+            "picker_type": "dropdown",
             "product_dynamic_variants_enable": true,
             "color_swatches": true
           }
@@ -117,16 +117,9 @@
             "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
             "page": ""
           }
-        },
-        "countdown_timer_top": {
-          "type": "custom",
-          "settings": {
-            "code": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-icon\">🔥</span>\n<span id=\"ng-cd-text\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\">\n<span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span>\n</span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:8px;background:#000;color:#fff;padding:10px 16px;font-family:monospace;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:12px;border-radius:4px;}\n#ng-cd-timer{background:#fff;color:#000;padding:4px 10px;border-radius:3px;font-size:14px;letter-spacing:2px;}\n#ng-cd-text{font-size:11px;}\n</style>\n<script>\n(function(){\nvar k='ng_cd_end',d=3600000;\nvar e=localStorage.getItem(k);\nif(!e||parseInt(e)<Date.now()){e=Date.now()+d;localStorage.setItem(k,e);}\nfunction u(){\nvar r=parseInt(e)-Date.now();\nif(r<=0){e=Date.now()+d;localStorage.setItem(k,e);r=d;}\nvar h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);\ndocument.getElementById('ng-cd-h').textContent=String(h).padStart(2,'0');\ndocument.getElementById('ng-cd-m').textContent=String(m).padStart(2,'0');\ndocument.getElementById('ng-cd-s').textContent=String(s).padStart(2,'0');\n}\nu();setInterval(u,1000);\n})();\n</script>"
-          }
         }
       },
       "block_order": [
-        "countdown_timer_top",
         "price",
         "variant_picker",
         "model_size_7RVcCE",
@@ -1072,7 +1065,7 @@
     "countdown_bar": {
       "type": "pp-custom-liquid-v1-0-0",
       "settings": {
-        "custom_liquid": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-label\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\"><span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span></span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:#000;color:#fff;padding:10px 0;font-family:var(--font-stack-body, -apple-system,BlinkMacSystemFont,sans-serif);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}\n#ng-cd-timer{font-size:13px;letter-spacing:3px;font-variant-numeric:tabular-nums;}\n</style>\n<script>\n(function(){var k='ng_cd_end',d=3600000,e=localStorage.getItem(k);if(!e||parseInt(e)<Date.now()){e=Date.now()+d;localStorage.setItem(k,e);}function u(){var r=parseInt(e)-Date.now();if(r<=0){e=Date.now()+d;localStorage.setItem(k,e);r=d;}var h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);document.getElementById('ng-cd-h').textContent=String(h).padStart(2,'0');document.getElementById('ng-cd-m').textContent=String(m).padStart(2,'0');document.getElementById('ng-cd-s').textContent=String(s).padStart(2,'0');}u();setInterval(u,1000);})();\n</script>",
+        "custom_liquid": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-label\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\"><span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span></span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:#000;color:#fff;padding:10px 0;font-family:var(--font-stack-header, var(--font-stack-body));font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}\n#ng-cd-timer{font-size:13px;letter-spacing:3px;font-variant-numeric:tabular-nums;}\n</style>\n<script>\n(function(){var k='ng_cd_end',d=3600000,e=localStorage.getItem(k);if(!e||parseInt(e)<Date.now()){e=Date.now()+d;localStorage.setItem(k,e);}function u(){var r=parseInt(e)-Date.now();if(r<=0){e=Date.now()+d;localStorage.setItem(k,e);r=d;}var h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);document.getElementById('ng-cd-h').textContent=String(h).padStart(2,'0');document.getElementById('ng-cd-m').textContent=String(m).padStart(2,'0');document.getElementById('ng-cd-s').textContent=String(s).padStart(2,'0');}u();setInterval(u,1000);})();\n</script>",
         "padding_top": 0,
         "padding_bottom": 0,
         "margin_top": 0,
