@@ -2,9 +2,9 @@
 .photo-reviews { padding: 40px 0; background: #fff; }
 .photo-reviews__title { text-align: center; font-size: 1.5em; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
 .photo-reviews__subtitle { text-align: center; font-size: 0.9em; color: #888; margin-bottom: 24px; }
-.photo-reviews__grid { display: flex; gap: 12px; overflow-x: auto; padding: 0 16px 12px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.photo-reviews__grid { display: flex; gap: 12px; overflow-x: scroll; padding: 0 16px 12px; -webkit-overflow-scrolling: touch; touch-action: pan-x; scrollbar-width: none; cursor: grab; }
 .photo-reviews__grid::-webkit-scrollbar { display: none; }
-.photo-reviews__card { flex: 0 0 280px; background: #fafafa; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.photo-reviews__card { flex: 0 0 280px; background: #fafafa; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); touch-action: pan-x; }
 .photo-reviews__img { width: 100%; height: 280px; object-fit: cover; display: block; }
 .photo-reviews__body { padding: 14px 16px; }
 .photo-reviews__stars { color: #000; font-size: 14px; letter-spacing: 2px; margin-bottom: 6px; }
@@ -51,6 +51,34 @@
   </div>
 </div>
 {% endif %}
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var grid = document.querySelector('.photo-reviews__grid');
+  if (!grid) return;
+  var isDragging = false, startX, scrollLeft;
+  grid.addEventListener('mousedown', function(e) {
+    isDragging = false;
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
+  });
+  grid.addEventListener('mousemove', function(e) {
+    if (e.buttons !== 1) return;
+    isDragging = true;
+    grid.scrollLeft = scrollLeft - ((e.pageX - grid.offsetLeft) - startX) * 2;
+  });
+  grid.addEventListener('touchstart', function(e) {
+    isDragging = false;
+    startX = e.touches[0].pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
+  }, {passive: true});
+  grid.addEventListener('touchmove', function(e) {
+    isDragging = true;
+    grid.scrollLeft = scrollLeft - ((e.touches[0].pageX - grid.offsetLeft) - startX);
+  }, {passive: true});
+});
+</script>
 
 {% schema %}
 {
