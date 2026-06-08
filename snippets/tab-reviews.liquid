@@ -303,7 +303,9 @@
       slidesPerGroupSkip: 1,
       grabCursor: true,
       loop: true,
-      touchEventsTarget: 'container',
+      touchEventsTarget: 'wrapper',
+      observer: true,
+      observeParents: true,
       simulateTouch: true,
       allowTouchMove: true,
       keyboard: {
@@ -345,14 +347,14 @@
      background-color: white;
       border-radius: 2px;
       box-shadow: 0 1px 0 0 rgb(182 196 210 / 40%);
-      display: inline-block;
+      display: flex;
       height: auto;
       line-height: 16px;
-      margin: 0 24px 0 0;
-
+      margin: 0 !important;
       position: relative;
       vertical-align: middle;
       white-space: normal;
+      touch-action: pan-x;
       }
       .swiper-button-next:after, .swiper-button-prev:after {
             border: 1px solid #707070;
