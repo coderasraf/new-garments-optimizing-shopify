@@ -38,6 +38,14 @@
 </div>
 
 <style>
+  /* Override collapsible parent overflow that blocks horizontal scroll */
+  .collapsible-content--all.is-open,
+  .collapsible-content.is-open,
+  .collapsible-content__inner,
+  .collapsible-content__inner.rte {
+    overflow: visible !important;
+  }
+
   .rev-scroll-wrapper {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
