@@ -1,419 +1,163 @@
-{{ 'trustpilot-slider.css' | asset_url | stylesheet_tag }}
-          <div>
-            <div class="swiper mySwiper" id="review">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div style="max-width:100%!important; color: black; padding: 15px;" class="trustpilot-slider-card">
-                    <div class="trustpilot-slider-card-top">
-                      <img
-                        loading="lazy"
-                        width="1250"
-                        src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289"
-                        alt=""
-                        class="trustpilot-stars"
-                      >
-                      <div class="verified-badge-wrapper">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204"
-                          loading="lazy"
-                          alt=""
-                          class="verified-icon"
-                        >
-                        <div class="verified-text">
-                          {% if localization.language.iso_code == 'de' %}
-                            Verifiziert
-                          {% elsif localization.language.iso_code == 'nl' %}
-                            Geverifieerd
-                          {% else %}
-                            Verified
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trustpilot-slider-card-center">
-                      <div class="trustpilot-slider-card-title">{{ section.settings['title-1'] }}</div>
-                      {{ section.settings['review-1'] }}
-                    </div>
-                    <div class="trustpilot-slider-card-author">{{ section.settings['name-1'] }}</div>
-                  </div>
-                </div>
-          
-                <div class="swiper-slide">
-                  <div style="max-width:100%!important; color: black; padding: 15px;" class="trustpilot-slider-card">
-                    <div class="trustpilot-slider-card-top">
-                      <img
-                        loading="lazy"
-                        width="1250"
-                        src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289"
-                        alt=""
-                        class="trustpilot-stars"
-                      >
-                      <div class="verified-badge-wrapper">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204"
-                          loading="lazy"
-                          alt=""
-                          class="verified-icon"
-                        >
-                        <div class="verified-text">
-                          {% if localization.language.iso_code == 'de' %}
-                            Verifiziert
-                          {% elsif localization.language.iso_code == 'nl' %}
-                            Geverifieerd
-                          {% else %}
-                            Verified
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trustpilot-slider-card-center">
-                      <div class="trustpilot-slider-card-title">{{ section.settings['title-2'] }}</div>
-                      {{ section.settings['review-2'] }}
-                    </div>
-                    <div class="trustpilot-slider-card-author">{{ section.settings['name-2'] }}</div>
-                  </div>
-                </div>
-          
-                <div class="swiper-slide">
-                  <div style="max-width:100%!important; color: black; padding: 15px;" class="trustpilot-slider-card">
-                    <div class="trustpilot-slider-card-top">
-                      <img
-                        loading="lazy"
-                        width="1250"
-                        src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289"
-                        alt=""
-                        class="trustpilot-stars"
-                      >
-                      <div class="verified-badge-wrapper">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204"
-                          loading="lazy"
-                          alt=""
-                          class="verified-icon"
-                        >
-                        <div class="verified-text">
-                          {% if localization.language.iso_code == 'de' %}
-                            Verifiziert
-                          {% elsif localization.language.iso_code == 'nl' %}
-                            Geverifieerd
-                          {% else %}
-                            Verified
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trustpilot-slider-card-center">
-                      <div class="trustpilot-slider-card-title">{{ section.settings['title-3'] }}</div>
-                      {{ section.settings['review-3'] }}
-                    </div>
-                    <div class="trustpilot-slider-card-author">{{ section.settings['name-3'] }}</div>
-                  </div>
-                </div>
-          
-                <div class="swiper-slide">
-                  <div style="max-width:100%!important; color: black; padding: 15px;" class="trustpilot-slider-card">
-                    <div class="trustpilot-slider-card-top">
-                      <img
-                        loading="lazy"
-                        width="1250"
-                        src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289"
-                        alt=""
-                        class="trustpilot-stars"
-                      >
-                      <div class="verified-badge-wrapper">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204"
-                          loading="lazy"
-                          alt=""
-                          class="verified-icon"
-                        >
-                        <div class="verified-text">
-                          {% if localization.language.iso_code == 'de' %}
-                            Verifiziert
-                          {% elsif localization.language.iso_code == 'nl' %}
-                            Geverifieerd
-                          {% else %}
-                            Verified
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trustpilot-slider-card-center">
-                      <div class="trustpilot-slider-card-title">{{ section.settings['title-4'] }}</div>
-                      {{ section.settings['review-4'] }}
-                    </div>
-                    <div class="trustpilot-slider-card-author">{{ section.settings['name-4'] }}</div>
-                  </div>
-                </div>
-          
-                <div class="swiper-slide">
-                  <div style="max-width:100%!important; color: black; padding: 15px;" class="trustpilot-slider-card">
-                    <div class="trustpilot-slider-card-top">
-                      <img
-                        loading="lazy"
-                        width="1250"
-                        src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289"
-                        alt=""
-                        class="trustpilot-stars"
-                      >
-                      <div class="verified-badge-wrapper">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204"
-                          loading="lazy"
-                          alt=""
-                          class="verified-icon"
-                        >
-                        <div class="verified-text">
-                          {% if localization.language.iso_code == 'de' %}
-                            Verifiziert
-                          {% elsif localization.language.iso_code == 'nl' %}
-                            Geverifieerd
-                          {% else %}
-                            Verified
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trustpilot-slider-card-center">
-                      <div class="trustpilot-slider-card-title">{{ section.settings['title-5'] }}</div>
-                      {{ section.settings['review-5'] }}
-                    </div>
-                    <div class="trustpilot-slider-card-author">{{ section.settings['name-5'] }}</div>
-                  </div>
-                </div>
-          
-                <div class="swiper-slide">
-                  <div style="max-width:100%!important; color: black; padding: 15px;" class="trustpilot-slider-card">
-                    <div class="trustpilot-slider-card-top">
-                      <img
-                        loading="lazy"
-                        width="1250"
-                        src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289"
-                        alt=""
-                        class="trustpilot-stars"
-                      >
-                      <div class="verified-badge-wrapper">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204"
-                          loading="lazy"
-                          alt=""
-                          class="verified-icon"
-                        >
-                        <div class="verified-text">
-                          {% if localization.language.iso_code == 'de' %}
-                            Verifiziert
-                          {% elsif localization.language.iso_code == 'nl' %}
-                            Geverifieerd
-                          {% else %}
-                            Verified
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trustpilot-slider-card-center">
-                      <div class="trustpilot-slider-card-title">{{ section.settings['title-6'] }}</div>
-                      {{ section.settings['review-6'] }}
-                    </div>
-                    <div class="trustpilot-slider-card-author">{{ section.settings['name-6'] }}</div>
-                  </div>
-                </div>
-          
-                <div class="swiper-slide">
-                  <div style="max-width:100%!important; color: black; padding: 15px;" class="trustpilot-slider-card">
-                    <div class="trustpilot-slider-card-top">
-                      <img
-                        loading="lazy"
-                        width="1250"
-                        src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289"
-                        alt=""
-                        class="trustpilot-stars"
-                      >
-                      <div class="verified-badge-wrapper">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204"
-                          loading="lazy"
-                          alt=""
-                          class="verified-icon"
-                        >
-                        <div class="verified-text">
-                          {% if localization.language.iso_code == 'de' %}
-                            Verifiziert
-                          {% elsif localization.language.iso_code == 'nl' %}
-                            Geverifieerd
-                          {% else %}
-                            Verified
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trustpilot-slider-card-center">
-                      <div class="trustpilot-slider-card-title">{{ section.settings['title-7'] }}</div>
-                      {{ section.settings['review-7'] }}
-                    </div>
-                    <div class="trustpilot-slider-card-author">{{ section.settings['name-7'] }}</div>
-                  </div>
-                </div>
-              </div>
-          
-              <div style="display:block;" class="swiper-button-next"></div>
-              <div style="display:block;" class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-            </div>
-          
-            <div style="text-align: center; margin-top:15px; display: flex; flex-direction: column; align-items: center; justify-content:center;  padding-right: 50px; padding-left: 50px;">
-              <span style="color:black; font-size: 14px; line-height:1.25;"
-                >
-                {% if localization.language.iso_code == 'de' %}
-                  <b>4,7</b>/5 basierend auf <u><b>über 500 Bewertungen</b></u> Verifiziert.
-                {% elsif localization.language.iso_code == 'nl' %}
-                  <b>4,7</b> / 5 gebaseerd op <u><b>500+ beoordelingen</b></u> Geverifieerd.
-                {% else %}
-                  <b>4.7</b> / 5 based on <u><b>500+ reviews</b></u> Verified.
-                {% endif %}
-              </span>
-              <img
-                loading="lazy"
-                style="width:90px; margin-top: 10px; border-radius:0px!important;"
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Trustpilot_Logo_%282022%29.svg"
-              >
-            </div>
+<div class="rev-scroll-wrapper">
+  <div class="rev-scroll-track">
+    {%- for i in (1..7) -%}
+      {%- assign t_key = 'title-' | append: i -%}
+      {%- assign r_key = 'review-' | append: i -%}
+      {%- assign n_key = 'name-' | append: i -%}
+      {%- if section.settings[t_key] != blank -%}
+      <div class="rev-card">
+        <div class="rev-card-top">
+          <img loading="lazy" width="100" src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/stars.svg?v=1667224289" alt="" class="rev-stars">
+          <div class="rev-verified">
+            <img src="https://cdn.shopify.com/s/files/1/0611/7461/2186/files/verified-badge.svg?v=1676968204" loading="lazy" alt="" class="rev-verified-icon">
+            <span class="rev-verified-text">
+              {% if localization.language.iso_code == 'de' %}Verifiziert{% elsif localization.language.iso_code == 'nl' %}Geverifieerd{% else %}Verified{% endif %}
+            </span>
           </div>
+        </div>
+        <div class="rev-card-title">{{ section.settings[t_key] }}</div>
+        <div class="rev-card-body">{{ section.settings[r_key] }}</div>
+        <div class="rev-card-author">{{ section.settings[n_key] }}</div>
+      </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
 
-
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.css"
-  integrity="sha512-xXQQj99PFpHikerkvc6HrA+dFLC14dMyBh0eL8fCan9h3n8Uhxvq5Os8ysEvn3oTLWJTte9kl5FFEftf2KfyHA=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
->
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.js"
-  integrity="sha512-4Ooh3fl4STrmn95ZbS/J6l8csp/FvSKPaeDAH/IaPQGJIx9lmpuxXZTCYKR2W5+Bt7i74exPvAT2PsWnac+sow=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      centeredSlides: false,
-      slidesPerGroupSkip: 1,
-      grabCursor: true,
-      loop: true,
-      touchEventsTarget: 'wrapper',
-      observer: true,
-      observeParents: true,
-      simulateTouch: true,
-      allowTouchMove: true,
-      keyboard: {
-        enabled: true,
-      },
-      autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-       breakpoints: {
-    1: {
-      slidesPerView: 1.15,
-      spaceBetween: 12
-    },
-    500: {
-      slidesPerView: 2,
-      spaceBetween: 20
-    }
-  },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-</script>
-
+<div class="rev-footer">
+  <span class="rev-footer-text">
+    {% if localization.language.iso_code == 'de' %}
+      <b>4,7</b>/5 basierend auf <u><b>über 500 Bewertungen</b></u> Verifiziert.
+    {% elsif localization.language.iso_code == 'nl' %}
+      <b>4,7</b> / 5 gebaseerd op <u><b>500+ beoordelingen</b></u> Geverifieerd.
+    {% else %}
+      <b>4.7</b> / 5 based on <u><b>500+ reviews</b></u> Verified.
+    {% endif %}
+  </span>
+  <img loading="lazy" style="width:90px; margin-top:10px; border-radius:0!important;" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Trustpilot_Logo_%282022%29.svg">
+</div>
 
 <style>
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
+  .rev-scroll-wrapper {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .rev-scroll-wrapper::-webkit-scrollbar { display: none; }
+  .rev-scroll-wrapper:active { cursor: grabbing; }
 
-      .swiper-slide {
-     background-color: white;
-      border-radius: 2px;
-      box-shadow: 0 1px 0 0 rgb(182 196 210 / 40%);
-      display: flex;
-      height: auto;
-      line-height: 16px;
-      margin: 0 !important;
-      position: relative;
-      vertical-align: middle;
-      white-space: normal;
-      touch-action: pan-x;
-      }
-      .swiper-button-next:after, .swiper-button-prev:after {
-            border: 1px solid #707070;
-      border-radius: 500px;
-      font-size: 12px!important;
-      height: 25px;
-      width: 25px;
-      font-weight: 700;
-      display: flex;
-      color: #707070;
-      justify-content: center;
-      align-items: center;
-      }
-      .swiper-button-next, .swiper-rtl .swiper-button-prev {
-               position: relative;
-      float: right;
-      margin-top: 15px;
-               z-index: 9999999;
-        left:0px!important;
-      }
-      .swiper-button-prev, .swiper-rtl .swiper-button-next {
-               position: relative;
-      float: left;
-      margin-top: 15px;
-               z-index: 9999999;
-        left:0px!important;
-      }
-      .review-wrapper {
-        padding: 0px;
-      }
-      .swiper-pagination-bullet-active {
-        background: black;
-      }
-
-      @media(min-width: 769px) {
-        .swiper-button-prev:after, .swiper-button-next:after{
-          display:flex !important;
-        }
-      }
-      @media(max-width: 768px) {
-        .swiper-button-prev, .swiper-button-next {
-          display:none !important;
-        }
-        .swiper-pagination {
-          display:block !important;
-          margin-top: 10px;
-        }
-      }
-  .trustpilot-slider-card-center p {
-      font-size: 13px;
-      line-height: 20px;
-      color: #191919;
-      margin-top: 8px;
+  .rev-scroll-track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    padding: 4px 0;
   }
 
-      .trustpilot-slider-card {
-      background: #F8F9FA;
+  .rev-card {
+    flex: 0 0 280px;
+    background: #F8F9FA;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 1px 0 0 rgb(182 196 210 / 40%);
   }
-      #review2 .swiper-slide {
-      margin-bottom: 5px;
+
+  .rev-card-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  .rev-stars {
+    width: 100px;
+    border-radius: 0 !important;
+  }
+
+  .rev-verified {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: 3px;
+  }
+  .rev-verified-icon { width: 14px; }
+  .rev-verified-text { color: #6c6c85; font-size: 12px; }
+
+  .rev-card-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .rev-card-body,
+  .rev-card-body p {
+    font-size: 13px;
+    line-height: 20px;
+    color: #191919;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .rev-card-author {
+    color: #747474;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+  .rev-footer {
+    text-align: center;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+  }
+  .rev-footer-text {
+    color: black;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  @media (max-width: 768px) {
+    .rev-card { flex: 0 0 260px; }
   }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const wrapper = document.querySelector('.rev-scroll-wrapper');
+  if (!wrapper) return;
+  let isDragging = false, startX, scrollLeft;
+
+  wrapper.addEventListener('mousedown', (e) => {
+    isDragging = false;
+    startX = e.pageX - wrapper.offsetLeft;
+    scrollLeft = wrapper.scrollLeft;
+  });
+  wrapper.addEventListener('mousemove', (e) => {
+    if (e.buttons !== 1) return;
+    isDragging = true;
+    const x = e.pageX - wrapper.offsetLeft;
+    wrapper.scrollLeft = scrollLeft - (x - startX) * 2;
+  });
+  wrapper.addEventListener('touchstart', (e) => {
+    isDragging = false;
+    startX = e.touches[0].pageX - wrapper.offsetLeft;
+    scrollLeft = wrapper.scrollLeft;
+  }, {passive: true});
+  wrapper.addEventListener('touchmove', (e) => {
+    isDragging = true;
+    const x = e.touches[0].pageX - wrapper.offsetLeft;
+    wrapper.scrollLeft = scrollLeft - (x - startX) * 2;
+  }, {passive: true});
+});
+</script>
