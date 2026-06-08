@@ -257,7 +257,7 @@
           
               <div style="display:block;" class="swiper-button-next"></div>
               <div style="display:block;" class="swiper-button-prev"></div>
-              <div style="display:none;" class="swiper-pagination"></div>
+              <div class="swiper-pagination"></div>
             </div>
           
             <div style="text-align: center; margin-top:15px; display: flex; flex-direction: column; align-items: center; justify-content:center;  padding-right: 50px; padding-left: 50px;">
@@ -302,19 +302,22 @@
       centeredSlides: false,
       slidesPerGroupSkip: 1,
       grabCursor: true,
+      loop: true,
+      touchEventsTarget: 'container',
+      simulateTouch: true,
+      allowTouchMove: true,
       keyboard: {
         enabled: true,
       },
       autoplay: {
     delay: 5000,
+    disableOnInteraction: false,
   },
        breakpoints: {
-    // when window width is >= 320px
     1: {
-      slidesPerView: 1,
-      spaceBetween: 20
+      slidesPerView: 1.15,
+      spaceBetween: 12
     },
-    // when window width is >= 480px
     500: {
       slidesPerView: 2,
       spaceBetween: 20
@@ -384,8 +387,19 @@
         background: black;
       }
 
-      .swiper-button-prev:after, .swiper-button-next:after{
-      display:none !important;
+      @media(min-width: 769px) {
+        .swiper-button-prev:after, .swiper-button-next:after{
+          display:flex !important;
+        }
+      }
+      @media(max-width: 768px) {
+        .swiper-button-prev, .swiper-button-next {
+          display:none !important;
+        }
+        .swiper-pagination {
+          display:block !important;
+          margin-top: 10px;
+        }
       }
   .trustpilot-slider-card-center p {
       font-size: 13px;
