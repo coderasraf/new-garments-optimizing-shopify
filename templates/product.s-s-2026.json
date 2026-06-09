@@ -76,7 +76,7 @@
           "type": "tab",
           "settings": {
             "title": "How does the discount work?",
-            "content": "<p>Add 2 of your favourite items to your cart and 1 will be completely free! Ofcourse you can also add 4 and get 2 free, etc!</p>",
+            "content": "<p>Buy 2 items get an extra 20% OFF</p><p>Buy 3 items get an extra 30% OFF</p><p>Discounts will automatically apply when you add the items to cart!</p>",
             "page": ""
           }
         },

@@ -76,7 +76,7 @@
           "type": "announcement",
           "settings": {
             "text": "PAGE CLOSES WHEN STOCK IS GONE. ACT FAST",
-            "link_text": "ADD 2 TO CART PAY FOR 1",
+            "link_text": "BUY 2 GET 20% OFF | BUY 3 GET 30% OFF",
             "link": "shopify://collections/spring-collection-1"
           }
         }
