@@ -1,0 +1,1519 @@
+{% layout none %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWGARMENTS — Wavey Clog | No Restock</title>
+<meta name="description" content="The NEWGRMNTS Wavey Clog. Signature wave silhouette, cushioned footbed, adjustable strap. Limited drop — no restock. Free express shipping.">
+<style>
+/* ---- Brand fonts (newgarments.store) ---- */
+@font-face{font-family:"everett";src:url('https://www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Light.woff2?v=178258735604406726951760105106') format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"everett";src:url('https://www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Regular.woff2?v=133912816607792724571760105108') format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"everett";src:url('https://www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Medium.woff2?v=48720387712956866881760105107') format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"everett";src:url('https://www.vicinityclo.de/cdn/shop/t/177/assets/Everett-Medium.woff2?v=48720387712956866881760105107') format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"roc";src:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/Genera_Grotesk_Heavy.woff2?v=1732116436');font-weight:1000;font-style:normal;font-display:swap}
+
+:root{
+  --bg:#FFFFFF;
+  --bg-soft:#F8F8F8;
+  --ink:#0A0A0A;
+  --gray:#6F6F6F;
+  --line:#EAEAEA;
+  --accent:#FF4E1B;
+  --good:#0FA958;
+  --display:'everett','Helvetica Neue',Arial,sans-serif;
+  --body:'everett','Helvetica Neue',Arial,sans-serif;
+  --mono:'everett','Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:var(--body)}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--ink);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ============ TICKER ============ */
+.ticker{
+  background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;
+  font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;
+  padding:9px 0;position:relative;z-index:50;text-transform:uppercase;
+}
+.ticker__track{display:inline-flex;animation:tick 24s linear infinite}
+.ticker__track span{padding:0 30px;display:inline-flex;align-items:center;gap:30px}
+.ticker__track span::after{content:"✕";font-size:9px;color:var(--accent)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ============ NAV ============ */
+nav{
+  position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:18px 28px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav__logo img{height:28px;width:auto}
+.nav__right{display:flex;align-items:center;gap:20px}
+.nav__live{display:flex;align-items:center;gap:8px;color:var(--gray);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
+.nav__live i{width:7px;height:7px;border-radius:50%;background:var(--good);animation:pulse 1.6s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(15,169,88,.4)}50%{opacity:.6;box-shadow:0 0 0 6px rgba(15,169,88,0)}}
+.nav__cart{display:flex;align-items:center;color:var(--ink);transition:color .2s,transform .2s}
+.nav__cart:hover{color:var(--accent);transform:scale(1.1)}
+
+/* ============ BADGES ============ */
+.badge{
+  display:inline-block;font-size:11.5px;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;padding:7px 13px;
+}
+.badge--orange{background:var(--accent);color:#fff}
+.badge--black{background:var(--ink);color:#fff}
+
+/* ============ SCRIBBLE ============ */
+.scribble{position:relative;display:inline-block;white-space:nowrap}
+.scribble svg{
+  position:absolute;left:-4%;bottom:-.3em;width:108%;height:.4em;overflow:visible;pointer-events:none;
+}
+.scribble svg path{
+  fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;
+  stroke-dasharray:240;stroke-dashoffset:240;
+}
+.in .scribble svg path:nth-child(1),.scribble.draw svg path:nth-child(1){animation:draw .55s .25s cubic-bezier(.6,0,.3,1) forwards}
+.in .scribble svg path:nth-child(2),.scribble.draw svg path:nth-child(2){animation:draw .4s .6s cubic-bezier(.6,0,.3,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.u-doodle{
+  display:inline-block;text-decoration:underline;
+  text-underline-offset:6px;text-decoration-thickness:1.5px;
+}
+.u-doodle svg{display:none}
+
+/* ============ HERO — split, clean, reactive ============ */
+.hero{
+  position:relative;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:30px;
+  padding:54px 6vw 70px;min-height:78vh;overflow:hidden;background:#fff;
+}
+.hero::before{
+  content:"WAVEY";position:absolute;right:-2vw;top:4px;z-index:0;
+  font-family:var(--display);font-weight:700;font-size:clamp(110px,19vw,300px);
+  letter-spacing:-.05em;line-height:1;color:transparent;-webkit-text-stroke:1px #ECECEC;
+  pointer-events:none;user-select:none;
+}
+.hero__copy{position:relative;z-index:4}
+.hero__salebadge{font-size:12.5px;letter-spacing:.12em;padding:10px 18px;transform:rotate(-1.5deg);display:inline-block;animation:rise .7s .05s both}
+.hero h1{
+  font-family:var(--display);font-weight:700;font-size:clamp(46px,6.4vw,96px);
+  line-height:.96;letter-spacing:-.04em;margin:26px 0 0;animation:rise .7s .15s both;
+}
+.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.hero__sub{
+  font-size:clamp(15.5px,1.3vw,18px);color:var(--gray);font-weight:300;
+  margin:20px 0 0;max-width:400px;line-height:1.6;animation:rise .7s .25s both;
+}
+.hero__stars{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--gray);margin:22px 0 0;animation:rise .7s .3s both}
+.hero__stars b{color:var(--ink);letter-spacing:2px;font-weight:400}
+/* color swatches in hero */
+.hero__colors{display:flex;align-items:center;gap:12px;margin:30px 0 0;animation:rise .7s .4s both}
+.swatch{
+  position:relative;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;transition:transform .2s cubic-bezier(.2,1.6,.4,1),border-color .2s,box-shadow .2s;
+}
+.swatch i{width:30px;height:30px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
+.swatch:hover{transform:scale(1.12);border-color:var(--ink)}
+.swatch.active{border-color:var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.swatch.soldout{opacity:.5}
+.swatch.soldout::after{
+  content:"";position:absolute;width:48px;height:1.5px;background:var(--ink);transform:rotate(-45deg);
+}
+.hero__colorname{font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;margin-left:6px}
+.hero__colorname s{color:#C4C4C4;font-weight:400}
+.hero__ctas{display:flex;align-items:center;gap:22px;margin-top:32px;animation:rise .7s .5s both}
+.btn-hero{
+  display:inline-flex;align-items:center;gap:11px;background:var(--ink);color:#fff;
+  font-weight:500;font-size:13.5px;text-transform:uppercase;letter-spacing:.08em;padding:18px 36px;
+  position:relative;overflow:hidden;transition:transform .18s cubic-bezier(.2,1.6,.4,1),background .2s;
+}
+.btn-hero:hover{background:var(--accent);transform:translateY(-2px)}
+.btn-hero:active{transform:scale(.97)}
+.hero__shipnote{font-size:11.5px;font-weight:400;color:var(--gray);text-transform:uppercase;letter-spacing:.06em}
+
+/* hero visual */
+.hero__visual{position:relative;z-index:3;animation:rise .8s .2s both}
+.hero__frame{
+  position:relative;background:var(--bg-soft);aspect-ratio:4/4.5;overflow:hidden;
+  will-change:transform;
+}
+.hero__frame img{
+  width:100%;height:100%;object-fit:cover;transition:opacity .28s;will-change:transform;
+}
+.hero__chip{
+  position:absolute;font-size:11.5px;font-weight:400;letter-spacing:.03em;z-index:5;
+  background:#fff;border:1px solid var(--ink);color:var(--ink);
+  padding:9px 14px;box-shadow:3px 3px 0 var(--ink);pointer-events:none;white-space:nowrap;
+}
+.hero__chip--1{top:7%;left:-14px}
+.hero__chip--2{top:48%;right:-12px}
+.hero__chip--3{bottom:8%;left:-10px;border-color:var(--accent);color:var(--accent);box-shadow:3px 3px 0 var(--accent)}
+.hero__tag{
+  position:absolute;top:14px;right:14px;z-index:6;transform:rotate(3deg);
+  background:var(--ink);color:#fff;padding:11px 16px 10px;text-align:left;
+  box-shadow:4px 4px 0 var(--accent);pointer-events:none;
+}
+.hero__tag b{display:block;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.02em;line-height:1}
+.hero__tag span{display:block;font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-top:5px;color:rgba(255,255,255,.75)}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* ============ LOGO MARQUEE ============ */
+.logos{
+  overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:20px 0;background:#fff;
+}
+.logos__track{display:inline-flex;align-items:center;gap:64px;animation:tick 32s linear infinite}
+.logos__track span{flex:0 0 auto;color:var(--ink)}
+.lv1{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.03em}
+.lv2{font-family:'roc','Arial Black',sans-serif;font-weight:1000;font-size:24px;letter-spacing:-.01em;text-transform:uppercase}
+.lv4{
+  font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.02em;
+  color:transparent;-webkit-text-stroke:1px var(--ink);
+}
+.lv5{font-family:var(--display);font-weight:300;font-size:15px;letter-spacing:.42em;text-transform:uppercase}
+.lv6{font-family:'roc','Arial Black',sans-serif;font-weight:1000;font-size:24px;color:var(--accent);text-transform:uppercase}
+
+/* ============ SECTION BASE ============ */
+section{padding:100px 5vw}
+.kicker{
+  font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:12px;
+}
+.kicker::before{content:"";width:34px;height:1px;background:var(--accent)}
+h2{
+  font-family:var(--display);font-weight:700;font-size:clamp(32px,4.4vw,60px);
+  line-height:1.02;letter-spacing:-.03em;margin-bottom:16px;
+}
+.section-sub{color:var(--gray);font-size:16.5px;font-weight:300;max-width:520px;line-height:1.6}
+.center{text-align:center}
+.center .kicker{justify-content:center}
+.center .kicker::before{display:none}
+.center .section-sub{margin:0 auto}
+
+/* ============ COMMUNITY RAIL (video) ============ */
+.community{background:var(--bg);padding-top:60px}
+.rail{
+  display:flex;gap:18px;margin-top:50px;overflow-x:auto;padding:10px 4px 28px;
+  scroll-snap-type:x mandatory;scrollbar-width:none;
+}
+.rail::-webkit-scrollbar{display:none}
+.tcard{
+  flex:0 0 min(285px,72vw);aspect-ratio:9/14;overflow:hidden;position:relative;
+  scroll-snap-align:start;background:var(--bg-soft);
+  transform:rotate(var(--rot,0deg));transition:transform .35s cubic-bezier(.2,1.4,.4,1);
+  text-align:left;
+}
+.tcard:hover{transform:rotate(0) scale(1.03);z-index:3;box-shadow:0 24px 50px rgba(0,0,0,.18)}
+.tcard img,.tcard video{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tcard:hover img{transform:scale(1.06)}
+.tcard__overlay{
+  position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.16),transparent 28%,transparent 56%,rgba(10,10,10,.82));
+  display:flex;flex-direction:column;justify-content:space-between;padding:16px;color:#fff;pointer-events:none;
+}
+.tcard__views{
+  align-self:flex-end;font-size:11.5px;font-weight:500;
+  background:rgba(10,10,10,.6);backdrop-filter:blur(4px);padding:6px 11px;
+  display:flex;align-items:center;gap:6px;
+}
+.tcard__cap{font-size:13.5px;font-weight:500;line-height:1.45}
+.tcard__cap span{color:rgba(255,255,255,.7);font-weight:300;font-size:11px;display:block;margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.rail-hint{font-size:12px;font-weight:400;color:var(--gray);display:flex;align-items:center;justify-content:center;gap:10px;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.rail-hint::after{content:"→";animation:nudge 1.4s ease infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
+
+/* ============ BUY ============ */
+.buy{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start;background:var(--bg);border-top:1px solid var(--line)}
+.buy__gallery{position:sticky;top:90px}
+.buy__main{
+  overflow:hidden;aspect-ratio:4/4.4;position:relative;background:var(--bg-soft);
+}
+.buy__main img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.buy__main .badge{position:absolute;top:16px;left:16px;z-index:2;transform:rotate(-2deg)}
+.buy__thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
+.buy__thumbs button{
+  aspect-ratio:1;overflow:hidden;border:1px solid transparent;
+  opacity:.55;transition:.25s;padding:0;background:var(--bg-soft);position:relative;
+}
+.buy__thumbs button img{width:100%;height:100%;object-fit:cover}
+.buy__thumbs button.active,.buy__thumbs button:hover{opacity:1;border-color:var(--ink)}
+.buy__thumbs button i{
+  position:absolute;bottom:4px;left:4px;width:9px;height:9px;border-radius:50%;
+  border:1px solid rgba(0,0,0,.2);
+}
+.buy__thumbs button i.grey{background:#B9B7B2}
+.buy__thumbs button i.beige{background:#D8C9B4}
+.buy__thumbs button i.army{background:#6B7256}
+.buy__thumbs button i.pink{background:#E3B7BD}
+
+.details{margin-top:30px}
+.details h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.02em;margin-bottom:18px}
+.details__grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px}
+.details__grid div{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:400}
+.details__grid svg{width:20px;height:20px;stroke:var(--ink);flex:0 0 auto}
+
+.buy__panel h2{font-size:clamp(30px,3.4vw,48px)}
+.buy__rating{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:400;margin:8px 0 22px;color:var(--gray)}
+.buy__rating b{color:var(--ink);letter-spacing:2px;font-weight:400}
+.buy__price{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+.buy__price .now{font-family:var(--display);font-weight:700;font-size:38px;letter-spacing:-.03em}
+.buy__price .was{color:var(--gray);text-decoration:line-through;font-size:16px;font-weight:300}
+.buy__price .off{font-size:11.5px;font-weight:500;background:var(--accent);color:#fff;padding:4px 10px;text-transform:uppercase;letter-spacing:.06em}
+
+.opt-label{
+  font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gray);margin:24px 0 12px;display:flex;justify-content:space-between;
+}
+.opt-label output{color:var(--ink)}
+.colors{display:flex;gap:10px;flex-wrap:wrap}
+.color-btn{
+  display:flex;align-items:center;gap:10px;padding:12px 18px;
+  border:1px solid var(--line);font-size:13.5px;font-weight:400;transition:.2s;background:#fff;
+}
+.color-btn i{width:17px;height:17px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.color-btn[data-color="grey"] i{background:linear-gradient(135deg,#C6C4BF,#9D9B95)}
+.color-btn[data-color="beige"] i{background:linear-gradient(135deg,#E2D5C0,#C5B295)}
+.color-btn[data-color="army"] i{background:linear-gradient(135deg,#7C835F,#565D40)}
+.color-btn[data-color="pink"] i{background:linear-gradient(135deg,#EFC7CD,#D9A3AC)}
+.color-btn.active{border-color:var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.color-btn:hover{border-color:var(--ink)}
+.color-btn.soldout{color:#9b9b9b;background:var(--bg-soft)}
+.color-btn.soldout s{margin-right:2px}
+.color-btn.soldout i{opacity:.5}
+.color-btn.soldout.active{border-color:var(--ink);box-shadow:2px 2px 0 var(--ink);color:var(--ink)}
+.atc.soldout{background:#BDBDBD;pointer-events:none}
+.atc.soldout::after{display:none}
+.size-btn.soldout{
+  color:#C4C4C4;background:var(--bg-soft);cursor:not-allowed;text-decoration:line-through;
+}
+.size-btn.soldout:hover{border-color:var(--line)}
+.sizes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.size-btn{
+  padding:13px 0;border:1px solid var(--line);background:#fff;
+  font-size:13.5px;font-weight:400;transition:.18s;position:relative;
+}
+.size-btn:hover{border-color:var(--ink)}
+.size-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.size-btn.low::after{
+  content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;
+  background:var(--accent);animation:pulse 1.6s infinite;
+}
+.sizes.flash{animation:sizeflash .55s ease 2}
+@keyframes sizeflash{0%,100%{box-shadow:0 0 0 0 transparent}50%{box-shadow:0 0 0 3px var(--accent)}}
+.size-note{font-size:11.5px;font-weight:400;color:var(--gray);margin-top:10px;text-transform:uppercase;letter-spacing:.03em}
+.size-note b{color:var(--accent);font-weight:500}
+
+/* ---- scarcity ---- */
+.scarcity{margin-top:28px;border:1px solid var(--ink);padding:20px 22px;background:#fff}
+.scarcity__row{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.scarcity__row b{color:var(--accent);font-weight:500}
+.scarcity__bar{height:7px;background:var(--bg-soft);margin:12px 0 18px;overflow:hidden}
+.scarcity__fill{
+  height:100%;background:var(--accent);width:35%;transition:width 1s ease;
+  background-image:linear-gradient(90deg,rgba(255,255,255,.25) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.25) 50%,rgba(255,255,255,.25) 75%,transparent 75%);
+  background-size:14px 100%;animation:barber 1.2s linear infinite;
+}
+@keyframes barber{to{background-position:14px 0}}
+.scarcity__label{font-size:11.5px;font-weight:500;color:var(--gray);text-transform:uppercase;letter-spacing:.08em}
+.scarcity__time{
+  position:relative;display:inline-block;font-family:var(--display);font-weight:700;
+  font-size:clamp(34px,3.4vw,46px);letter-spacing:-.02em;line-height:1.1;margin-top:4px;
+  font-variant-numeric:tabular-nums;
+}
+.scarcity__time svg{position:absolute;left:0;bottom:-8px;width:100%;height:9px;overflow:visible}
+.scarcity__time svg path{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+.scarcity__after{font-size:11.5px;font-weight:400;color:var(--gray);margin-top:16px;text-transform:uppercase;letter-spacing:.04em}
+
+/* ---- ship line + ATC + USPs ---- */
+.shipline{
+  display:flex;align-items:center;justify-content:flex-end;gap:8px;
+  font-size:13px;font-weight:400;margin:20px 0 10px;
+}
+.shipline i{width:8px;height:8px;border-radius:50%;background:var(--ink);flex:0 0 auto}
+.shipline b{font-weight:500}
+.atc{
+  width:100%;background:var(--accent);color:#fff;font-weight:500;
+  font-size:16px;text-transform:none;letter-spacing:0;padding:21px;
+  display:flex;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;
+  transition:transform .18s cubic-bezier(.2,1.6,.4,1),background .2s;
+}
+.atc:hover{background:var(--ink);transform:translateY(-2px)}
+.atc:active{transform:scale(.98)}
+.atc::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.25) 50%,transparent 65%);
+  transform:translateX(-110%);animation:shine 3.8s 2s ease infinite;
+}
+@keyframes shine{0%{transform:translateX(-110%)}45%,100%{transform:translateX(110%)}}
+.usps{display:flex;justify-content:center;gap:38px;margin-top:22px;flex-wrap:wrap}
+.usps div{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:400}
+.usps svg{width:18px;height:18px;stroke:var(--ink);flex:0 0 auto}
+
+/* ---- trust row ---- */
+.trust-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.trust-row>div{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center}
+.trust-row svg{width:21px;height:21px;stroke:var(--ink)}
+.trust-row span{font-size:10.5px;font-weight:400;color:var(--gray);line-height:1.5;text-transform:uppercase;letter-spacing:.04em}
+
+/* ============ LOOKBOOK ============ */
+.lookbook{background:var(--bg-soft)}
+.tcard__label{
+  position:absolute;left:14px;bottom:12px;font-size:11px;font-weight:500;letter-spacing:.08em;
+  text-transform:uppercase;color:#fff;background:rgba(10,10,10,.7);padding:7px 12px;backdrop-filter:blur(4px);
+}
+
+/* ============ SPECS ============ */
+.specs{background:#fff;border-top:1px solid var(--line)}
+.specs__inner{display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:center;max-width:1280px;margin:0 auto}
+.specs__visual{
+  position:relative;aspect-ratio:4/4.6;overflow:hidden;background:var(--bg-soft);
+  transform-style:preserve-3d;will-change:transform;
+}
+.specs__visual img{width:104%;height:104%;object-fit:cover;will-change:transform}
+.specs__shine{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);
+  background-size:250% 100%;background-position:var(--shx,80%) 0;
+}
+.specs__tag{position:absolute;top:16px;left:16px;transform:rotate(-2deg)}
+.sline{
+  display:grid;grid-template-columns:54px 1fr;gap:18px;padding:24px 0;
+  border-top:1px solid var(--line);transition:.25s;cursor:default;
+}
+.sline:last-child{border-bottom:1px solid var(--line)}
+.sline:hover{padding-left:10px}
+.sline em{font-style:normal;font-size:12.5px;font-weight:500;color:#BBB;transition:.25s;letter-spacing:.06em;padding-top:3px}
+.sline:hover em{color:var(--accent)}
+.sline h3{font-family:var(--display);font-weight:500;font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.sline p{font-size:14px;line-height:1.6;color:var(--gray);font-weight:300}
+.specs__list .section-sub{margin-bottom:38px}
+
+/* ============ PHOTO REVIEWS ============ */
+.reviews{background:var(--bg-soft)}
+.reviews__head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
+.reviews__score{text-align:right}
+.reviews__score .big{font-family:var(--display);font-weight:700;font-size:62px;line-height:1;letter-spacing:-.03em}
+.reviews__score .stars{letter-spacing:3px;font-size:15px}
+.reviews__score .count{font-size:12px;font-weight:400;color:var(--gray);margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
+.reviews__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+.review{background:#fff;transition:.25s;position:relative;overflow:hidden;text-align:left}
+.review:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.review__photo{aspect-ratio:4/4.2;overflow:hidden;background:var(--bg-soft)}
+.review__photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.review:hover .review__photo img{transform:scale(1.05)}
+.review__body{padding:24px 24px 26px}
+.review .stars{letter-spacing:2.5px;font-size:12.5px;margin-bottom:13px}
+.review p{font-size:14px;line-height:1.65;color:#3c3c3c;font-weight:300;margin-bottom:18px}
+.review__who{display:flex;align-items:center;gap:11px;font-size:12px;font-weight:400}
+.review__avatar{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--bg-soft);color:var(--ink);font-size:12px;font-weight:500;flex:0 0 auto;
+}
+.review__who .v{color:var(--good);font-size:11px;display:flex;align-items:center;gap:4px;margin-top:3px}
+
+/* ============ FINAL ============ */
+.final{background:#fff;border-top:1px solid var(--line);text-align:center;padding:120px 5vw}
+.final .kicker{justify-content:center}
+.final .kicker::before{display:none}
+.final h2{font-size:clamp(40px,5.6vw,76px)}
+.final p{font-size:17px;color:var(--gray);font-weight:300;margin:18px auto 38px;max-width:400px}
+.btn-main{
+  display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;
+  font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.08em;
+  padding:20px 46px;position:relative;overflow:hidden;
+  transition:transform .18s cubic-bezier(.2,1.6,.4,1),background .2s;
+}
+.btn-main:hover{background:var(--accent);transform:translateY(-2px)}
+.btn-main:active{transform:scale(.97)}
+.final__note{margin-top:22px;font-size:11.5px;font-weight:400;color:#9b9b9b;text-transform:uppercase;letter-spacing:.06em}
+
+/* ============ BRAND FOOT ============ */
+.brandfoot{
+  border-top:1px solid var(--line);text-align:center;padding:90px 5vw 70px;background:#fff;
+}
+.brandfoot .kicker{justify-content:center;margin-bottom:24px}
+.brandfoot .kicker::before{display:none}
+.brandfoot__logo{width:min(760px,90vw);height:auto;margin:0 auto 26px}
+.brandfoot__story{max-width:560px;margin:0 auto 30px;font-size:15px;font-weight:300;line-height:1.7;color:var(--gray)}
+.brandfoot__story b{color:var(--ink);font-weight:500}
+.brandfoot__stars{font-size:24px;letter-spacing:8px;color:var(--ink)}
+.brandfoot__text{
+  margin-top:12px;font-size:14px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gray);
+}
+.brandfoot__text b{color:var(--ink);font-weight:700}
+
+footer{
+  border-top:1px solid var(--line);padding:40px 5vw;background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;
+}
+.footer__brand{display:flex;flex-direction:column;align-items:center;gap:12px}
+.footer__brand img{height:22px;width:auto}
+.footer__brand p{font-size:11.5px;font-weight:400;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em}
+.footer__nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;
+  position:static;background:transparent;backdrop-filter:none;border:none;padding:0}
+.footer__nav a{font-size:12.5px;font-weight:400;color:rgba(255,255,255,.85);transition:color .2s;position:relative}
+.footer__nav a:hover{color:#fff}
+.footer__nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--accent);transform:scaleX(0);transition:transform .25s}
+.footer__nav a:hover::after{transform:scaleX(1)}
+.footer__legal{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);width:100%;max-width:760px}
+.footer__legal span{font-size:10.5px;font-weight:400;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em}
+
+/* ============ STICKY BAR ============ */
+.sticky-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:200;display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-top:1.5px solid var(--ink);
+  padding:12px 18px;transform:translateY(110%);transition:transform .4s cubic-bezier(.2,1,.3,1);
+}
+.sticky-bar.show{transform:none}
+.sticky-bar img{width:48px;height:48px;object-fit:cover;background:var(--bg-soft)}
+.sticky-bar__info{flex:1;min-width:0}
+.sticky-bar__info b{display:block;font-size:13.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-bar__info span{font-size:11.5px;font-weight:400;color:var(--gray)}
+.sticky-bar__price{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.02em}
+.sticky-bar__price s{font-size:10.5px;color:var(--gray);display:block;font-weight:400}
+.sticky-bar .btn-bar{
+  background:var(--accent);color:#fff;font-weight:500;font-size:13px;
+  padding:14px 26px;transition:background .2s;
+}
+.sticky-bar .btn-bar:hover{background:var(--ink)}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;left:18px;bottom:90px;z-index:300;display:flex;align-items:center;gap:13px;
+  background:#fff;color:var(--ink);padding:13px 18px 13px 13px;border:1px solid var(--ink);
+  box-shadow:5px 5px 0 var(--ink);max-width:330px;
+  transform:translateX(-130%);transition:transform .5s cubic-bezier(.2,1.2,.3,1);
+}
+.toast.show{transform:none}
+.toast img{width:46px;height:46px;object-fit:cover;background:var(--bg-soft)}
+.toast b{font-size:13px;font-weight:500;display:block}
+.toast span{font-size:11px;font-weight:400;color:var(--gray)}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.08s}.reveal:nth-child(3){transition-delay:.16s}
+.reveal:nth-child(4){transition-delay:.24s}.reveal:nth-child(5){transition-delay:.32s}
+.reveal:nth-child(6){transition-delay:.4s}
+
+/* ============ SCRATCH POPUP ============ */
+.sc-modal{
+  position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(10,10,10,.62);backdrop-filter:blur(6px);
+  opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s;
+}
+.sc-modal.open{opacity:1;visibility:visible}
+.sc-modal__box{
+  position:relative;width:min(440px,94vw);background:#fff;padding:38px 28px 26px;text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);transform:translateY(24px) scale(.96);transition:transform .4s cubic-bezier(.2,1.3,.3,1);
+  display:flex;flex-direction:column;align-items:center;gap:0;
+}
+.sc-modal.open .sc-modal__box{transform:none}
+.sc-modal__x{
+  position:absolute;top:12px;right:14px;width:32px;height:32px;font-size:15px;color:var(--gray);
+  display:grid;place-items:center;transition:color .2s,transform .2s;
+}
+.sc-modal__x:hover{color:var(--ink);transform:scale(1.15)}
+.sc-modal__head h3{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.03em;line-height:1}
+.sc-modal__head p{font-size:14px;color:var(--gray);font-weight:300;margin:10px 0 22px}
+.scratch-card{
+  position:relative;width:min(360px,86vw);aspect-ratio:8/5;border-radius:18px;overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,.18);transition:transform .5s cubic-bezier(.2,1.4,.3,1);
+}
+.scratch-card.win{transform:scale(1.04)}
+.scratch-prize{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:radial-gradient(circle at 50% 35%,#fff,#F1F1F1);text-align:center;padding:20px;
+}
+.scratch-tag{font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);padding:5px 11px;margin-bottom:4px}
+.scratch-off{font-family:var(--display);font-weight:700;font-size:clamp(44px,12vw,64px);letter-spacing:-.03em;color:var(--accent);line-height:.9}
+.scratch-price{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em}
+.scratch-price s{font-size:15px;color:var(--gray);font-weight:400;margin-left:6px}
+.scratch-sub{font-size:11.5px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--gray)}
+.scratch-foil{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:none;transition:opacity .5s}
+.scratch-foil.gone{opacity:0;pointer-events:none}
+.scratch-claim{
+  margin-top:22px;background:var(--accent);color:#fff;font-weight:500;font-size:15px;letter-spacing:.04em;
+  padding:17px 38px;text-transform:uppercase;box-shadow:0 12px 30px rgba(255,78,27,.32);
+  max-height:0;opacity:0;overflow:hidden;transform:translateY(8px);
+  transition:opacity .45s .15s,transform .45s .15s,max-height .45s,background .2s,padding .3s;
+}
+.scratch-claim.show{max-height:80px;opacity:1;transform:none}
+.scratch-claim:hover{background:var(--ink)}
+.scratch-foot{font-size:11px;font-weight:400;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;margin-top:14px}
+/* confetti */
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:400;overflow:hidden}
+.confetti i{position:absolute;top:-12px;width:9px;height:14px;opacity:.95;animation:confFall linear forwards}
+@keyframes confFall{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;min-height:0;padding:34px 6vw 60px;gap:36px}
+  .hero::before{font-size:34vw;right:-4vw;top:0}
+  .hero__visual{order:-1}
+  .hero__chip{font-size:10px;padding:8px 11px}
+  .hero__chip--1{left:-6px}
+  .hero__chip--2{right:-6px}
+  .hero__chip--3{left:-4px}
+  .hero h1{font-size:clamp(40px,11vw,62px);margin-top:20px}
+  .buy{grid-template-columns:1fr;gap:40px}
+  .buy__gallery{position:static}
+  .buy__thumbs{grid-template-columns:repeat(5,1fr)}
+  .specs__inner{grid-template-columns:1fr;gap:44px}
+  .reviews__grid{grid-template-columns:1fr}
+  .trust-row{grid-template-columns:repeat(2,1fr);gap:18px}
+  .usps{gap:20px}
+  section{padding:70px 6vw}
+  .nav__live{display:none}
+  .sticky-bar__price s{display:none}
+  .toast{bottom:84px;max-width:280px}
+  .logos__track{gap:44px}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Page closes when stock is gone</span><span>Free express shipping</span>
+    <span>4.8★ from 120+ reviews</span><span class="tk-deal">Ships out in 1–2 days</span>
+    <span>Page closes when stock is gone</span><span>Free express shipping</span>
+    <span>4.8★ from 120+ reviews</span><span class="tk-deal">Ships out in 1–2 days</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav__logo" href="https://newgarments.store" aria-label="NEWGARMENTS">
+    <img src="https://newgarments.store/cdn/shop/files/Untitled_design_-_2025-12-23T153055.070.png?v=1766500265&width=360" alt="newgarments™">
+  </a>
+  <div class="nav__right">
+    <div class="nav__live"><i></i><span id="liveCount">39</span> viewing now</div>
+    <a class="nav__cart" href="#buy" aria-label="Cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13h-15L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__copy">
+    <span class="badge badge--black hero__salebadge" id="heroSaleBadge">Final drop — no restock</span>
+    <h1>Wavey<br><em>Clog</em></h1>
+    <p class="hero__sub">The signature wave, sculpted into a clog. Cushioned footbed, adjustable strap — made to live in.</p>
+    <div class="hero__stars"><b>★★★★★</b> 4.8 · 120+ reviews</div>
+    <div class="hero__colors" id="heroColors">
+      <button class="swatch active" data-color="grey" aria-label="Grey"><i style="background:linear-gradient(135deg,#C6C4BF,#9D9B95)"></i></button>
+      <button class="swatch" data-color="beige" aria-label="Beige"><i style="background:linear-gradient(135deg,#E2D5C0,#C5B295)"></i></button>
+      <button class="swatch" data-color="army" aria-label="Army Green"><i style="background:linear-gradient(135deg,#7C835F,#565D40)"></i></button>
+      <button class="swatch soldout" data-color="pink" aria-label="Dusty Pink — sold out"><i style="background:linear-gradient(135deg,#EFC7CD,#D9A3AC)"></i></button>
+      <span class="hero__colorname" id="heroColorName">Grey</span>
+    </div>
+    <div class="hero__ctas">
+      <a class="btn-hero" id="heroCta" href="#buy">Shop the drop
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <span class="hero__shipnote">Free express<br>shipping</span>
+    </div>
+  </div>
+  <div class="hero__visual" id="heroVisual">
+    <div class="hero__frame" id="heroFrame">
+      <img id="heroImg" src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/clog_fix_0_01738056-a7b9-4564-8376-e40f84559109.jpg?v=1778752108&width=1100" alt="NEWGRMNTS Wavey Clog in Grey" fetchpriority="high" draggable="false">
+      <div class="hero__tag"><b id="heroPrice">€149,95</b><span id="heroPriceSub">Free express shipping</span></div>
+    </div>
+    <div class="hero__chip hero__chip--1" data-depth="20">✚ Cushioned footbed</div>
+    <div class="hero__chip hero__chip--2" data-depth="30">✚ Adjustable strap</div>
+    <div class="hero__chip hero__chip--3" data-depth="14" id="heroStockChip">🔥 Only <b id="heroStock">34</b> pairs left</div>
+  </div>
+</header>
+
+<!-- LOGO MARQUEE -->
+<div class="logos" aria-hidden="true">
+  <div class="logos__track">
+    <span class="lv1">newgarments™</span>
+    <span class="lv2">NEWGRMNTS</span>
+    <span class="lv5">New Garments®</span>
+    <span class="lv4">newgarments</span>
+    <span class="lv6">NWGRMNTS®</span>
+    <span class="lv1">newgarments™</span>
+    <span class="lv2">NEWGRMNTS</span>
+    <span class="lv5">New Garments®</span>
+    <span class="lv4">newgarments</span>
+    <span class="lv6">NWGRMNTS®</span>
+  </div>
+</div>
+
+<!-- COMMUNITY (video rail) -->
+<section class="community center" id="community">
+  <div class="reveal"><div class="kicker">Viral on TikTok</div></div>
+  <h2 class="reveal">Seen On Your <span class="scribble">FYP<svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M3 6 C 32 1.5, 82 1.5, 117 5"/><path d="M22 12 C 52 8.5, 88 8.5, 104 10.5"/></svg></span></h2>
+  <p class="section-sub reveal">2.1M+ views and counting. Press play — see how they're worn.</p>
+  <div class="rail" id="vidRail"></div>
+  <div class="rail-hint">Swipe for more</div>
+</section>
+
+<!-- SCRATCH POPUP -->
+<div class="sc-modal" id="scModal" aria-hidden="true">
+  <div class="sc-modal__box">
+    <button class="sc-modal__x" id="scClose" aria-label="Close">✕</button>
+    <div class="sc-modal__head">
+      <h3>Try your luck</h3>
+      <p id="scSub">One scratch. Win the biggest discount we drop.</p>
+    </div>
+    <div class="scratch-card" id="scratchCard">
+      <div class="scratch-prize" id="scratchPrize">
+        <span class="scratch-tag">Biggest discount possible</span>
+        <span class="scratch-off">60% OFF</span>
+        <span class="scratch-price">€59,95 <s>€149,95</s></span>
+        <span class="scratch-sub">Locked for 10 minutes</span>
+      </div>
+      <canvas class="scratch-foil" id="scratchCanvas"></canvas>
+    </div>
+    <button class="scratch-claim" id="scratchClaim" hidden>Claim &amp; shop the drop →</button>
+    <p class="scratch-foot" id="scratchFoot">Reward expires 10 min after you win</p>
+  </div>
+</div>
+
+<!-- BUY -->
+<section class="buy" id="buy">
+  <div class="buy__gallery">
+    <div class="buy__main">
+      <span class="badge badge--black">Selling Fast</span>
+      <img id="buyMain" src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/clog_fix_0_01738056-a7b9-4564-8376-e40f84559109.jpg?v=1778752108&width=1000" alt="NEWGRMNTS Wavey Clog">
+    </div>
+    <div class="buy__thumbs" id="buyThumbs"></div>
+    <div class="details">
+      <h3>Details</h3>
+      <div class="details__grid">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M4 14h16M9 4v16M14 4v16"/></svg>
+          Premium build
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M20 13V7a2 2 0 0 0-2-2h-4l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6"/><path d="M16 17h6m-3-3v6"/></svg>
+          Minimal branding
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+          Responsibly made
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+          Limited drops
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buy__panel">
+    <div class="kicker">NEWGRMNTS — Drop 05</div>
+    <h2>Wavey Clog</h2>
+    <div class="buy__rating"><b>★★★★★</b> 4.8/5 · 120+ reviews</div>
+    <div class="buy__price">
+      <span class="now" id="buyNow">€149,95</span>
+      <span class="was" id="buyWas" hidden>€149,95</span>
+      <span class="off" id="buyOff" hidden>You save €90</span>
+    </div>
+
+    <div class="opt-label"><span>Color</span><output id="colorOut">Grey</output></div>
+    <div class="colors">
+      <button class="color-btn active" data-color="grey"><i></i>Grey</button>
+      <button class="color-btn" data-color="beige"><i></i>Beige</button>
+      <button class="color-btn" data-color="army"><i></i>Army Green</button>
+      <button class="color-btn soldout" data-color="pink"><i></i><s>Dusty Pink</s>&nbsp;· sold out</button>
+    </div>
+
+    <div class="opt-label"><span>Size (EU)</span><output id="sizeOut">Pick your size</output></div>
+    <div class="sizes" id="sizes"></div>
+    <p class="size-note">Fits true to size · <b>●</b> = last pairs in this size</p>
+
+    <div class="scarcity">
+      <div class="scarcity__row"><span>Stock — <span id="stockColor">Grey</span></span><b id="stockMsg">Only <span id="stockLeft">34</span> <span id="stockWord">pairs</span> left</b></div>
+      <div class="scarcity__bar"><div class="scarcity__fill" id="stockFill"></div></div>
+      <div id="discountTimer" hidden>
+        <div class="scarcity__label" id="cdLabel">Your 60% OFF expires in</div>
+        <div class="scarcity__time">
+          <span id="cd">10:00</span>
+          <svg viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 5 C 30 1.5, 85 1.5, 118 4"/></svg>
+        </div>
+        <div class="scarcity__after" id="cdAfter">Checkout now to lock in €59,95</div>
+      </div>
+    </div>
+
+    <div class="shipline"><i></i>Ships by <b id="shipDate">—</b></div>
+    <a class="atc" id="atcBtn" href="#buy">
+      Add to cart
+    </a>
+    <div class="usps">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M3 17v-2a2 2 0 0 1 2-2h1v6H5a2 2 0 0 1-2-2z"/><path d="M21 17v-2a2 2 0 0 0-2-2h-1v6h1a2 2 0 0 0 2-2z"/></svg>
+        <span class="u-doodle">World-class customer support</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l4-4m-4 4l4 4M3 8h13a5 5 0 0 1 0 10h-3"/></svg>
+        <span class="u-doodle">14 days easy returns</span>
+      </div>
+    </div>
+
+    <div class="trust-row">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h13v9H1z"/><path d="M14 11h4l3 3v3h-7"/><circle cx="6" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg>
+        <span>Free express<br>shipping</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8.5L12 3 3 8.5v7L12 21l9-5.5v-7z"/><path d="M3 8.5l9 5 9-5"/><path d="M12 13.5V21"/></svg>
+        <span>Ships out in<br>1–2 days</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 1 8 8c0 5.3-8 12-8 12S4 15.3 4 10a8 8 0 0 1 8-8z"/></svg>
+        <span>Live track<br>& trace</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span>Secure<br>checkout</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKBOOK -->
+<section class="lookbook center" id="lookbook">
+  <div class="reveal"><div class="kicker">Lookbook</div></div>
+  <h2 class="reveal">Worn In The <span class="scribble">Wild<svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M3 6 C 32 1.5, 82 1.5, 117 5"/><path d="M22 12 C 52 8.5, 88 8.5, 104 10.5"/></svg></span></h2>
+  <p class="section-sub reveal">Shot in-house. Worn everywhere.</p>
+  <div class="rail">
+    <article class="tcard" style="--rot:-1.4deg">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/3_dd5dccb5-95a3-4d6d-a288-86a36ae1c792.jpg?v=1778751626&width=700" alt="Grey Wavey Clog street fit" loading="lazy">
+      <span class="tcard__label">Grey · street fit</span>
+    </article>
+    <article class="tcard" style="--rot:1.2deg">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/17_b583e0eb-b468-4bab-a7eb-f04d51afe798.jpg?v=1778751626&width=700" alt="Beige Wavey Clog on the doorstep" loading="lazy">
+      <span class="tcard__label">Beige · doorstep</span>
+    </article>
+    <article class="tcard" style="--rot:-1deg">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/2_6ea727f1-e1c2-4cd2-b1ef-4a5a1c686d70.jpg?v=1778751627&width=700" alt="Army Green Wavey Clog with washed denim" loading="lazy">
+      <span class="tcard__label">Army Green · washed denim</span>
+    </article>
+    <article class="tcard" style="--rot:1.5deg">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/25_ebd1b568-d449-4d2b-a22d-be8bdf80e5ed.jpg?v=1778751627&width=700" alt="Beige Wavey Clog with camo pants" loading="lazy">
+      <span class="tcard__label">Beige · camo</span>
+    </article>
+    <article class="tcard" style="--rot:-1.6deg">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/23_9228b35d-9119-46fd-b4f3-a1f832e41122.jpg?v=1778751626&width=700" alt="Grey and Army Wavey Clogs duo" loading="lazy">
+      <span class="tcard__label">Grey × Army</span>
+    </article>
+    <article class="tcard" style="--rot:1.3deg">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/24_962d673f-18b5-46e5-aba2-33041d640fae.jpg?v=1778751626&width=700" alt="Army Wavey Clog with denim shorts" loading="lazy">
+      <span class="tcard__label">Army · shorts season</span>
+    </article>
+    <article class="tcard" style="--rot:-1.2deg">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/46_f0886cd9-f6cb-44fc-95ea-47e01f274609.jpg?v=1778751626&width=700" alt="Dusty Pink Wavey Clog full fit" loading="lazy">
+      <span class="tcard__label">Dusty Pink · sold out</span>
+    </article>
+  </div>
+  <div class="rail-hint">Swipe for more</div>
+</section>
+
+<!-- SPECS -->
+<section class="specs">
+  <div class="specs__inner">
+    <div class="specs__visual reveal" id="specsTilt">
+      <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/22_5cabf14e-805d-4210-bb10-6214c3c0367a.jpg?v=1778751626&width=900" alt="Wavey Clog worn close-up" loading="lazy">
+      <div class="specs__shine"></div>
+      <span class="badge badge--black specs__tag">Sculpted shape</span>
+    </div>
+    <div class="specs__list">
+      <div class="reveal"><div class="kicker">Construction</div></div>
+      <h2 class="reveal">The Wave Is The <span class="scribble">Design<svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M3 6 C 32 1.5, 82 1.5, 117 5"/><path d="M22 12 C 52 8.5, 88 8.5, 104 10.5"/></svg></span></h2>
+      <p class="section-sub reveal">A clog that doesn't look like anyone else's. Sculpted, cushioned, built for the everyday.</p>
+      <div class="sline reveal">
+        <em>01</em>
+        <div><h3>Signature wave silhouette</h3><p>The sculpted wavy upper that sets it apart from every regular clog.</p></div>
+      </div>
+      <div class="sline reveal">
+        <em>02</em>
+        <div><h3>Cushioned footbed</h3><p>Excellent support, all-day comfort. Slip in and forget you're wearing them.</p></div>
+      </div>
+      <div class="sline reveal">
+        <em>03</em>
+        <div><h3>Adjustable strap</h3><p>Lock it in or wear it loose — a secure, personal fit either way.</p></div>
+      </div>
+      <div class="sline reveal">
+        <em>04</em>
+        <div><h3>Durable rubber outsole</h3><p>Grip and long-lasting comfort, built for daily rotation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO REVIEWS -->
+<section class="reviews">
+  <div class="reviews__head">
+    <div>
+      <div class="reveal"><div class="kicker">Verified buyers</div></div>
+      <h2 class="reveal">Real Pairs, Real People</h2>
+    </div>
+    <div class="reviews__score reveal">
+      <div class="big">4.8</div>
+      <div class="stars">★★★★★</div>
+      <div class="count">average from 120+ reviews</div>
+    </div>
+  </div>
+  <div class="reviews__grid">
+    <article class="review reveal">
+      <div class="review__photo"><img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_aiden.jpg?v=1780056925&width=700" alt="Customer photo by Aiden B." loading="lazy"></div>
+      <div class="review__body">
+        <div class="stars">★★★★★</div>
+        <p>"These became my go-to slip-ons instantly. Easy to wear, lightweight and the wave silhouette gets compliments all the time."</p>
+        <div class="review__who">
+          <span class="review__avatar">AB</span>
+          <span>Aiden B. · Netherlands<span class="v">✓ Verified purchase</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="review reveal">
+      <div class="review__photo"><img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_theo_s.jpg?v=1780056927&width=700" alt="Customer photo by Theo S." loading="lazy"></div>
+      <div class="review__body">
+        <div class="stars">★★★★★</div>
+        <p>"Love the futuristic shape. They feel crazy comfortable for all day wear and look fire with baggy fits."</p>
+        <div class="review__who">
+          <span class="review__avatar">TS</span>
+          <span>Theo S. · Germany<span class="v">✓ Verified purchase</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="review reveal">
+      <div class="review__photo"><img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_dylan.jpg?v=1780056928&width=700" alt="Customer photo by Dylan M." loading="lazy"></div>
+      <div class="review__body">
+        <div class="stars">★★★★★</div>
+        <p>"Super impressed with comfort and build. Cushioned feel, breathable and the sculpted design looks even better in person."</p>
+        <div class="review__who">
+          <span class="review__avatar">DM</span>
+          <span>Dylan M. · Belgium<span class="v">✓ Verified purchase</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="review reveal">
+      <div class="review__photo"><img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_levi.jpg?v=1780056929&width=700" alt="Customer photo by Levi Y." loading="lazy"></div>
+      <div class="review__body">
+        <div class="stars">★★★★★</div>
+        <p>"One of my best pickups lately. That rare futuristic streetwear look while still being insanely practical."</p>
+        <div class="review__who">
+          <span class="review__avatar">LY</span>
+          <span>Levi Y. · France<span class="v">✓ Verified purchase</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="review reveal">
+      <div class="review__photo"><img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_theo_h.jpg?v=1780056930&width=700" alt="Customer photo by Theo H." loading="lazy"></div>
+      <div class="review__body">
+        <div class="stars">★★★★★</div>
+        <p>"Unreal in person. Super lightweight, insanely comfortable and the sculpted wave design makes them stand out from regular clogs."</p>
+        <div class="review__who">
+          <span class="review__avatar">TH</span>
+          <span>Theo H. · United Kingdom<span class="v">✓ Verified purchase</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="review reveal">
+      <div class="review__photo"><img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_finn.jpg?v=1780056932&width=700" alt="Customer photo by Finn Q." loading="lazy"></div>
+      <div class="review__body">
+        <div class="stars">★★★★☆</div>
+        <p>"Love how bold these look without sacrificing comfort. Perfect for everyday wear and travel."</p>
+        <div class="review__who">
+          <span class="review__avatar">FQ</span>
+          <span>Finn Q. · Sweden<span class="v">✓ Verified purchase</span></span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="reveal"><div class="kicker">Final run</div></div>
+  <h2 class="reveal">No <span class="scribble">restock<svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M3 6 C 32 1.5, 82 1.5, 117 5"/><path d="M22 12 C 52 8.5, 88 8.5, 104 10.5"/></svg></span>.</h2>
+  <p class="reveal">Dusty Pink already sold out. When your size is gone, it's gone.</p>
+  <div class="reveal">
+    <a class="btn-main" href="#buy">Shop now
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+  <div class="final__note">Free express shipping · Ships out in 1–2 days · Track & trace</div>
+</section>
+
+<!-- BRAND FOOT -->
+<section class="brandfoot">
+  <div class="reveal"><div class="kicker">The label</div></div>
+  <img class="brandfoot__logo reveal" src="https://newgarments.store/cdn/shop/files/Untitled_design_-_2025-12-23T153055.070.png?v=1766500265&width=1400" alt="newgarments™" loading="lazy">
+  <p class="brandfoot__story reveal">NEWGARMENTS is an independent streetwear label. Every silhouette — the Wavey Clog included — is <b>designed in-house</b> and released in small, numbered drops. Our own designs, our own brand — no licensing, no copies.</p>
+  <div class="brandfoot__stars reveal">★★★★★</div>
+  <div class="brandfoot__text reveal"><b>43.600+</b> satisfied customers</div>
+</section>
+
+<footer>
+  <div class="footer__brand">
+    <img class="footer__logo" src="https://newgarments.store/cdn/shop/files/Untitled_design_-_2025-12-23T153055.070.png?v=1766500265&width=360" alt="newgarments™">
+    <p>Independent streetwear label · Designed in-house · Limited drops</p>
+  </div>
+  <nav class="footer__nav" aria-label="Footer links">
+    <a href="https://newgarments.store/pages/about-us" target="_blank" rel="noopener">About</a>
+    <a href="https://newgarments.store/policies/shipping-policy" target="_blank" rel="noopener">Shipping</a>
+    <a href="https://newgarments.store/policies/refund-policy" target="_blank" rel="noopener">Returns &amp; refunds</a>
+    <a href="https://newgarments.store/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a>
+    <a href="https://newgarments.store/policies/terms-of-service" target="_blank" rel="noopener">Terms</a>
+    <a href="https://newgarments.store/pages/contact" target="_blank" rel="noopener">Contact</a>
+  </nav>
+  <div class="footer__legal">
+    <span>© 2026 NEWGARMENTS — Wavey Clog Drop 05</span>
+    <span>Free express shipping · FedEx / DHL · Ships from EU</span>
+  </div>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/clog_fix_0_01738056-a7b9-4564-8376-e40f84559109.jpg?v=1778752108&width=200" alt="" id="stickyImg">
+  <div class="sticky-bar__info">
+    <b>Wavey Clog</b>
+    <span id="stickySel">Grey · pick your size</span>
+  </div>
+  <div class="sticky-bar__price"><span id="stickyNow">€149,95</span><s id="stickyWas" hidden>€149,95</s></div>
+  <a class="btn-bar" id="stickyBuy" href="#buy">Buy now</a>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <img src="https://cdn.shopify.com/s/files/1/0948/8973/8617/files/clog_fix_1_0b0bc303-8edd-478b-bf5e-b906488c5238.jpg?v=1778752107&width=200" alt="" id="toastImg">
+  <div><b id="toastName">Anouk from Rotterdam</b><span id="toastDetail">bought Beige · size 39 — just now</span></div>
+</div>
+
+<script>
+const CDN = 'https://cdn.shopify.com/s/files/1/0948/8973/8617/files/';
+const COLORS = {
+  grey: {
+    name: 'Grey',
+    hero: CDN + 'clog_fix_0_01738056-a7b9-4564-8376-e40f84559109.jpg?v=1778752108',
+    gallery: [
+      CDN + 'clog_fix_0_01738056-a7b9-4564-8376-e40f84559109.jpg?v=1778752108',
+      CDN + '3_dd5dccb5-95a3-4d6d-a288-86a36ae1c792.jpg?v=1778751626',
+      CDN + '23_9228b35d-9119-46fd-b4f3-a1f832e41122.jpg?v=1778751626'
+    ]
+  },
+  beige: {
+    name: 'Beige',
+    hero: CDN + 'clog_fix_1_0b0bc303-8edd-478b-bf5e-b906488c5238.jpg?v=1778752107',
+    gallery: [
+      CDN + 'clog_fix_1_0b0bc303-8edd-478b-bf5e-b906488c5238.jpg?v=1778752107',
+      CDN + '4_5a11d568-75f4-4ab9-ac60-7c16dd793b82.jpg?v=1778751626',
+      CDN + '17_b583e0eb-b468-4bab-a7eb-f04d51afe798.jpg?v=1778751626',
+      CDN + '4_1ded52ff-e66d-4c26-a56a-6706799a864a.jpg?v=1778751626',
+      CDN + '22_5cabf14e-805d-4210-bb10-6214c3c0367a.jpg?v=1778751626'
+    ]
+  },
+  army: {
+    name: 'Army Green',
+    hero: CDN + 'clog_fix_2_fc76f6b2-3647-40da-86af-72c396bf625a.jpg?v=1778752108',
+    gallery: [
+      CDN + 'clog_fix_2_fc76f6b2-3647-40da-86af-72c396bf625a.jpg?v=1778752108',
+      CDN + '5_d1a9157c-4f47-4306-bdb7-92b8a57a9f2b.jpg?v=1778751627',
+      CDN + '2_6ea727f1-e1c2-4cd2-b1ef-4a5a1c686d70.jpg?v=1778751627',
+      CDN + '24_962d673f-18b5-46e5-aba2-33041d640fae.jpg?v=1778751626'
+    ]
+  },
+  pink: {
+    name: 'Dusty Pink',
+    hero: CDN + 'clog_fix_3_01518ba1-b1bb-4989-88c1-fe210be3f5be.jpg?v=1778752107',
+    gallery: [
+      CDN + 'clog_fix_3_01518ba1-b1bb-4989-88c1-fe210be3f5be.jpg?v=1778752107',
+      CDN + '5_f118758e-d9e9-467a-90c5-7ea4bb291858.jpg?v=1778751626',
+      CDN + '46_f0886cd9-f6cb-44fc-95ea-47e01f274609.jpg?v=1778751626',
+      CDN + '16_824d4154-8c95-4fe2-baca-4c3c6fab0dd7.jpg?v=1778751626'
+    ]
+  }
+};
+/* thumbs in gallery: all colorways together */
+const ALL_IMAGES = []
+Object.keys(COLORS).forEach(c => COLORS[c].gallery.forEach(u => ALL_IMAGES.push({ c, url: u })));
+
+const SIZES = [36,37,38,39,40,41,42,43,44,45];
+const SOLD_OUT_COLORS = ['pink'];
+
+/* ---- Shopify cart permalinks per kleur + maat (live variant-IDs) ---- */
+const STORE = 'https://newgarments.store';
+const VARIANTS = {
+  grey: { 36:57352499528057,37:57352499560825,38:57352499593593,39:57352499626361,40:57352499659129,41:57352499691897,42:57352499724665,43:57352499757433,44:57352499790201,45:57352499822969 },
+  beige:{ 36:57352499855737,37:57352499888505,38:57352499921273,39:57352499954041,40:57352499986809,41:57352500019577,42:57352500052345,43:57352500085113,44:57352500117881,45:57352500150649 },
+  army: { 36:57352500183417,37:57352500216185,38:57352500248953,39:57352500281721,40:57352500314489,41:57352500347257,42:57352500380025,43:57352500412793,44:57352500445561,45:57352500478329 }
+};
+function checkoutLink() {
+  if (!state.size || SOLD_OUT_COLORS.includes(state.color)) return null;
+  const id = VARIANTS[state.color][state.size];
+  return id ? `${STORE}/cart/${id}:1` : null;
+}
+/* voorraad per maat, per kleur */
+const SIZE_STOCK = {
+  grey:  { 36:3, 37:4, 38:5, 39:6, 40:4, 41:3, 42:2, 43:2, 44:3, 45:2 },
+  beige: { 36:2, 37:3, 38:4, 39:3, 40:5, 41:2, 42:1, 43:2, 44:2, 45:1 },
+  army:  { 36:1, 37:2, 38:3, 39:4, 40:3, 41:2, 42:2, 43:1, 44:2, 45:1 },
+  pink:  {}
+};
+
+let state = { color: 'grey', size: null };
+let unlocked = localStorage.getItem('ngc_unlocked') === '1';
+
+/* preload hero shots so color swaps are instant */
+Object.values(COLORS).forEach(c => { const i = new Image(); i.src = c.hero + '&width=1100'; });
+
+/* ---- gallery: thumbs of ALL colorways ---- */
+const buyMain = document.getElementById('buyMain');
+const buyThumbs = document.getElementById('buyThumbs');
+function setMain(url) {
+  buyMain.style.opacity = 0;
+  setTimeout(() => { buyMain.src = url + '&width=1000'; buyMain.style.opacity = 1; }, 180);
+}
+ALL_IMAGES.forEach((im, i) => {
+  const b = document.createElement('button');
+  b.className = i === 0 ? 'active' : '';
+  b.innerHTML = `<img src="${im.url}&width=300" alt="${COLORS[im.c].name} photo" loading="lazy"><i class="${im.c}"></i>`;
+  b.addEventListener('click', () => {
+    setMain(im.url);
+    buyThumbs.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  });
+  buyThumbs.appendChild(b);
+});
+
+/* ---- color switch (hero swatches + buy buttons, in sync) ---- */
+const heroImg = document.getElementById('heroImg');
+function isSoldOut(c) { return SOLD_OUT_COLORS.includes(c); }
+function setColor(c) {
+  state.color = c;
+  if (isSoldOut(c)) state.size = null;
+  document.querySelectorAll('.color-btn').forEach(x => x.classList.toggle('active', x.dataset.color === c));
+  document.querySelectorAll('.swatch').forEach(x => x.classList.toggle('active', x.dataset.color === c));
+  document.getElementById('colorOut').textContent =
+    COLORS[c].name + (isSoldOut(c) ? ' — sold out' : '');
+  document.getElementById('heroColorName').innerHTML =
+    isSoldOut(c) ? '<s>' + COLORS[c].name + '</s> · sold out' : COLORS[c].name;
+  document.getElementById('stickyImg').src = COLORS[c].hero + '&width=200';
+  heroImg.style.opacity = 0;
+  setTimeout(() => { heroImg.src = COLORS[c].hero + '&width=1100'; heroImg.style.opacity = 1; }, 200);
+  setMain(COLORS[c].hero);
+  const idx = ALL_IMAGES.findIndex(im => im.url === COLORS[c].hero);
+  buyThumbs.querySelectorAll('button').forEach((x, i) => x.classList.toggle('active', i === idx));
+  updateSizes();
+  renderStock();
+  updateSticky();
+}
+document.querySelectorAll('.color-btn').forEach(btn =>
+  btn.addEventListener('click', () => setColor(btn.dataset.color)));
+document.querySelectorAll('.swatch').forEach(btn =>
+  btn.addEventListener('click', () => setColor(btn.dataset.color)));
+
+/* ---- sizes (voorraad per maat) ---- */
+const sizesEl = document.getElementById('sizes');
+const sizeBtns = {};
+function sizeStock(s) { return SIZE_STOCK[state.color][s] || 0; }
+SIZES.forEach(s => {
+  const b = document.createElement('button');
+  b.className = 'size-btn';
+  b.textContent = s;
+  b.addEventListener('click', () => {
+    if (isSoldOut(state.color)) return;
+    sizesEl.querySelectorAll('.size-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    state.size = s;
+    const n = sizeStock(s);
+    document.getElementById('sizeOut').textContent =
+      'EU ' + s + ' — only ' + n + (n === 1 ? ' pair' : ' pairs') + ' left';
+    renderStock();
+    updateSticky();
+  });
+  sizeBtns[s] = b;
+  sizesEl.appendChild(b);
+});
+function updateSizes() {
+  const out = isSoldOut(state.color);
+  SIZES.forEach(s => {
+    sizeBtns[s].classList.toggle('soldout', out);
+    sizeBtns[s].disabled = out;
+    if (out) sizeBtns[s].classList.remove('active');
+  });
+  document.getElementById('sizeOut').textContent =
+    out ? COLORS[state.color].name + ' is sold out' : (state.size ? 'EU ' + state.size : 'Pick your size');
+}
+function refreshLowDots() {
+  if (isSoldOut(state.color)) return;
+  SIZES.forEach(s => sizeBtns[s].classList.toggle('low', sizeStock(s) <= 2));
+}
+
+/* ---- sticky bar ---- */
+const stickyBar = document.getElementById('stickyBar');
+const heroEl = document.querySelector('.hero');
+const atcBtn = document.getElementById('atcBtn');
+const stickyBuy = document.getElementById('stickyBuy');
+function updateSticky() {
+  const soldout = isSoldOut(state.color);
+  document.getElementById('stickySel').textContent =
+    COLORS[state.color].name + ' · ' + (soldout ? 'sold out' : (state.size ? 'EU ' + state.size : 'pick your size'));
+  atcBtn.classList.toggle('soldout', soldout);
+  if (soldout) {
+    atcBtn.href = '#buy'; stickyBuy.href = '#buy';
+    atcBtn.firstChild.textContent = 'Sold out — ' + COLORS[state.color].name + ' ';
+    stickyBuy.textContent = 'Sold out';
+    return;
+  }
+  if (!unlocked) {
+    atcBtn.href = '#buy'; stickyBuy.href = '#buy';
+    atcBtn.firstChild.textContent = 'Add to cart ';
+    stickyBuy.textContent = 'Add to cart';
+    return;
+  }
+  const link = checkoutLink();
+  if (link) {
+    atcBtn.href = link; stickyBuy.href = link;
+    atcBtn.firstChild.textContent = 'Checkout — ' + COLORS[state.color].name + ' / EU ' + state.size + ' ';
+    stickyBuy.textContent = 'Buy now';
+  } else {
+    atcBtn.href = '#buy'; stickyBuy.href = '#buy';
+    atcBtn.firstChild.textContent = 'Add to cart — €59,95 ';
+    stickyBuy.textContent = 'Buy now';
+  }
+}
+/* ---- prijs-state: locked toont €149,95, unlocked toont de €59,95 deal ---- */
+function applyPriceState() {
+  const heroBadge = document.getElementById('heroSaleBadge');
+  const buyNow = document.getElementById('buyNow'), buyWas = document.getElementById('buyWas'), buyOff = document.getElementById('buyOff');
+  const stickyNow = document.getElementById('stickyNow'), stickyWas = document.getElementById('stickyWas');
+  const tkDeals = document.querySelectorAll('.tk-deal');
+  const dTimer = document.getElementById('discountTimer');
+  const heroPrice = document.getElementById('heroPrice'), heroPriceSub = document.getElementById('heroPriceSub');
+  if (unlocked) {
+    heroBadge.textContent = 'You unlocked 60% off';
+    buyNow.textContent = '€59,95'; buyWas.hidden = false; buyOff.hidden = false;
+    stickyNow.textContent = '€59,95'; stickyWas.hidden = false;
+    heroPrice.textContent = '€59,95';
+    heroPriceSub.innerHTML = '<s>€149,95</s> — 60% off';
+    tkDeals.forEach(s => s.textContent = 'Your 60% OFF is live — checkout now');
+    dTimer.hidden = false; startWinCountdown();
+  } else {
+    heroBadge.textContent = 'Final drop — no restock';
+    buyNow.textContent = '€149,95'; buyWas.hidden = true; buyOff.hidden = true;
+    stickyNow.textContent = '€149,95'; stickyWas.hidden = true;
+    heroPrice.textContent = '€149,95';
+    heroPriceSub.textContent = 'Free express shipping';
+    tkDeals.forEach(s => s.textContent = 'Ships out in 1–2 days');
+    dTimer.hidden = true; if (typeof cdTimer !== 'undefined' && cdTimer) clearInterval(cdTimer);
+  }
+  updateSticky();
+}
+new IntersectionObserver(([e]) => {
+  stickyBar.classList.toggle('show', !e.isIntersecting);
+}, { threshold: 0.05 }).observe(heroEl);
+
+/* ---- guard: eerst scratchen, dan maat, dan checkout ---- */
+function guardCheckout(e) {
+  if (isSoldOut(state.color)) { e.preventDefault(); return; }
+  if (!unlocked) {
+    e.preventDefault();
+    openScratch();
+    return;
+  }
+  if (!state.size) {
+    e.preventDefault();
+    document.getElementById('buy').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    sizesEl.classList.remove('flash'); void sizesEl.offsetWidth; sizesEl.classList.add('flash');
+    document.getElementById('sizeOut').textContent = 'Pick your size first ↑';
+  }
+}
+atcBtn.addEventListener('click', guardCheckout);
+stickyBuy.addEventListener('click', guardCheckout);
+
+/* ---- confetti burst ---- */
+function confetti() {
+  const wrap = document.createElement('div'); wrap.className = 'confetti';
+  const colors = ['#FF4E1B', '#0A0A0A', '#B9B7B2', '#D8C9B4', '#6B7256'];
+  for (let i = 0; i < 90; i++) {
+    const c = document.createElement('i');
+    c.style.left = (5 + i / 90 * 90) + '%';
+    c.style.background = colors[i % colors.length];
+    c.style.animationDuration = (1.6 + (i % 7) * 0.18) + 's';
+    c.style.animationDelay = ((i % 11) * 0.04) + 's';
+    c.style.transform = 'rotate(' + (i * 37 % 360) + 'deg)';
+    wrap.appendChild(c);
+  }
+  document.body.appendChild(wrap);
+  setTimeout(() => wrap.remove(), 4200);
+}
+
+/* ---- scratch card ---- */
+const scModal = document.getElementById('scModal');
+const scCard = document.getElementById('scratchCard');
+const canvas = document.getElementById('scratchCanvas');
+const scClaim = document.getElementById('scratchClaim');
+const scClose = document.getElementById('scClose');
+const scSub = document.getElementById('scSub');
+let scratching = false, revealed = unlocked, lastP = 0, painted = false;
+function paintFoil() {
+  const ctx = canvas.getContext('2d');
+  const r = scCard.getBoundingClientRect();
+  if (r.width < 2) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = r.width * dpr; canvas.height = r.height * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.globalCompositeOperation = 'source-over';
+  const g = ctx.createLinearGradient(0, 0, r.width, r.height);
+  g.addColorStop(0, '#E6B73E'); g.addColorStop(.42, '#F7E596'); g.addColorStop(.55, '#EFD06A'); g.addColorStop(1, '#C9971F');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, r.width, r.height);
+  ctx.fillStyle = 'rgba(255,255,255,.16)';
+  for (let i = -r.height; i < r.width; i += 22) { ctx.save(); ctx.translate(i, 0); ctx.rotate(.3); ctx.fillRect(0, -r.height, 8, r.height * 3); ctx.restore(); }
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillStyle = 'rgba(150,110,20,.30)';
+  ctx.font = '800 ' + Math.round(r.height * .72) + 'px roc, "Arial Black", sans-serif';
+  ctx.save(); ctx.translate(r.width / 2, r.height / 2); ctx.rotate(-.12); ctx.fillText('WIN', 0, 0); ctx.restore();
+  ctx.fillStyle = 'rgba(255,255,255,.9)';
+  ctx.font = '700 ' + Math.round(r.width * .085) + 'px everett, Arial';
+  ctx.fillText('SCRATCH HERE', r.width / 2, r.height / 2);
+  painted = true;
+}
+function ptr(e) {
+  const r = canvas.getBoundingClientRect();
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
+}
+function scratch(e) {
+  if (!scratching || revealed) return;
+  const ctx = canvas.getContext('2d');
+  const p = ptr(e);
+  ctx.globalCompositeOperation = 'destination-out';
+  ctx.beginPath(); ctx.arc(p.x, p.y, 28, 0, Math.PI * 2); ctx.fill();
+  if (performance.now() - lastP > 160) { lastP = performance.now(); checkCleared(); }
+}
+function checkCleared() {
+  const ctx = canvas.getContext('2d');
+  const img = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+  let clear = 0; for (let i = 3; i < img.length; i += 40) { if (img[i] === 0) clear++; }
+  if (clear / (img.length / 40) > 0.45) reveal();
+}
+function reveal() {
+  if (revealed) return; revealed = true; unlocked = true;
+  localStorage.setItem('ngc_unlocked', '1');
+  if (!localStorage.getItem('ngc_win_ts')) localStorage.setItem('ngc_win_ts', Date.now());
+  canvas.classList.add('gone');
+  scCard.classList.add('win');
+  scSub.textContent = 'You won the biggest discount — 60% off, locked for 10 min 🔥';
+  scClaim.hidden = false; requestAnimationFrame(() => scClaim.classList.add('show'));
+  confetti();
+  applyPriceState();
+}
+function openScratch() {
+  if (unlocked || scModal.classList.contains('open')) return;
+  scModal.classList.add('open'); scModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  if (!revealed && !painted) setTimeout(paintFoil, 50);
+}
+function closeScratch() {
+  scModal.classList.remove('open'); scModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+if (canvas) {
+  canvas.addEventListener('pointerdown', e => { scratching = true; try { canvas.setPointerCapture(e.pointerId); } catch (_) {} scratch(e); });
+  canvas.addEventListener('pointermove', scratch);
+  ['pointerup', 'pointercancel'].forEach(ev => canvas.addEventListener(ev, () => { scratching = false; }));
+  scClose.addEventListener('click', closeScratch);
+  scModal.addEventListener('click', e => { if (e.target === scModal) closeScratch(); });
+  scClaim.addEventListener('click', () => { closeScratch(); document.getElementById('buy').scrollIntoView({ behavior: 'smooth' }); });
+  if (revealed) { canvas.classList.add('gone'); scClaim.hidden = false; scClaim.classList.add('show'); scCard.classList.add('win'); scSub.textContent = 'You won 60% off — unlocked 🔥'; }
+}
+/* trigger: open de popup zodra de bezoeker bij het product komt (1x, alleen als nog niet unlocked) */
+if (!unlocked) {
+  let popped = false;
+  new IntersectionObserver(ents => {
+    if (ents[0].isIntersecting && !popped && !unlocked) { popped = true; openScratch(); }
+  }, { threshold: 0.25 }).observe(document.getElementById('buy'));
+}
+
+applyPriceState();
+
+/* ---- 10-minuten discount-timer: start zodra de korting gewonnen is ---- */
+var cdTimer = null;
+var WIN_MS = 10 * 60 * 1000;
+function winRemaining() {
+  var ts = +localStorage.getItem('ngc_win_ts') || 0;
+  if (!ts) return WIN_MS;
+  return Math.max(0, WIN_MS - (Date.now() - ts));
+}
+function startWinCountdown() {
+  var cdEl = document.getElementById('cd');
+  function tick() {
+    var d = winRemaining();
+    var m = String(Math.floor(d / 6e4)).padStart(2, '0');
+    var s = String(Math.floor(d % 6e4 / 1e3)).padStart(2, '0');
+    cdEl.textContent = m + ':' + s;
+    if (d <= 0) document.getElementById('cdAfter').textContent = 'Last chance — checkout now';
+  }
+  tick(); if (cdTimer) clearInterval(cdTimer); cdTimer = setInterval(tick, 1000);
+}
+
+/* ---- ships by: always tomorrow ---- */
+const ship = new Date(); ship.setDate(ship.getDate() + 1);
+document.getElementById('shipDate').textContent =
+  ship.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+/* ---- stock counter: per kleur, en per maat zodra er een gekozen is ---- */
+function colorTotal() {
+  return Object.values(SIZE_STOCK[state.color]).reduce((a, b) => a + b, 0);
+}
+function renderStock() {
+  const chip = document.getElementById('heroStockChip');
+  if (isSoldOut(state.color)) {
+    document.getElementById('stockMsg').textContent = 'Sold out';
+    document.getElementById('stockColor').textContent = COLORS[state.color].name;
+    document.getElementById('stockFill').style.width = '2%';
+    chip.textContent = '⛔ ' + COLORS[state.color].name + ' — sold out';
+    return;
+  }
+  const sizePicked = !!state.size;
+  const n = sizePicked ? sizeStock(state.size) : colorTotal();
+  const label = sizePicked ? COLORS[state.color].name + ' · EU ' + state.size : COLORS[state.color].name;
+  const max = sizePicked ? 8 : 60;
+  chip.innerHTML = '🔥 Only <b id="heroStock">' + colorTotal() + '</b> pairs left';
+  document.getElementById('stockMsg').innerHTML =
+    'Only <span id="stockLeft">' + n + '</span> ' + (n === 1 ? 'pair' : 'pairs') + ' left';
+  document.getElementById('stockColor').textContent = label;
+  document.getElementById('stockFill').style.width = Math.max(5, Math.min(100, n / max * 100)) + '%';
+  refreshLowDots();
+}
+renderStock();
+
+/* ---- live viewers ---- */
+const liveEl = document.getElementById('liveCount');
+setInterval(() => {
+  liveEl.textContent = 31 + Math.floor(Math.random() * 28);
+}, 6000);
+
+/* ---- purchase toasts (sample names, demo social proof) ---- */
+const BUYERS = [
+  ['Maléna from Paris', 'beige', 38], ['Thiago from Lisbon', 'grey', 43],
+  ['Søren from Copenhagen', 'army', 44], ['Alessia from Milan', 'beige', 37],
+  ['Kofi from London', 'grey', 45], ['Anouk from Rotterdam', 'beige', 39],
+  ['Matteo from Zurich', 'army', 42], ['Zofia from Warsaw', 'grey', 38],
+  ['Émile from Lyon', 'army', 41], ['Ingrid from Stockholm', 'beige', 40],
+  ['Luca from Vienna', 'grey', 43], ['Aitana from Madrid', 'beige', 39],
+  ['Jamal from Berlin', 'army', 44], ['Saoirse from Dublin', 'grey', 38],
+  ['Nikolaj from Oslo', 'army', 40], ['Yara from Antwerp', 'beige', 37]
+];
+const toast = document.getElementById('toast');
+let buyerIdx = 0;
+function showToast() {
+  const [name, key, size] = BUYERS[buyerIdx % BUYERS.length]; buyerIdx++;
+  const mins = 1 + Math.floor(Math.random() * 11);
+  document.getElementById('toastName').textContent = name;
+  document.getElementById('toastDetail').textContent = `bought ${COLORS[key].name} · size ${size} — ${mins} min ago`;
+  document.getElementById('toastImg').src = COLORS[key].hero + '&width=200';
+  toast.classList.add('show');
+  if (SIZE_STOCK[key][size] > 1) { SIZE_STOCK[key][size]--; renderStock(); } /* aankoop eet voorraad van die maat */
+  setTimeout(() => toast.classList.remove('show'), 5200);
+}
+setTimeout(showToast, 7000);
+setInterval(showToast, 16000);
+
+/* ---- UGC video rail ---- */
+const VID = 'https://newgarments.store/cdn/shop/videos/c/vp/';
+const POSTER = 'https://newgarments.store/cdn/shop/files/preview_images/';
+const UGC = [
+  ['5a02ac0f549e4660b965482832bfd382', 'HD-1080p-4.8Mbps-85917706', '"the pink ones before they sold out 😭"', '@softgrails · Dusty Pink', '♥ 612K', -1.4],
+  ['97537b61a520437fa013132f4fbea118', 'HD-1080p-3.3Mbps-85917970', '"unboxing my wavey clogs"', '@fitsbymila · Grey', '♥ 1.1M', 1.3],
+  ['b860ccb6a1994b208acdc3bcc75ac6e4', 'HD-1080p-3.3Mbps-85917978', '"the sculpted shape up close"', '@streetfitcheck · Grey', '♥ 487K', -1.1],
+  ['0222c9458d734fe7a92ed779a132b06e', 'HD-1080p-4.8Mbps-85917717', '"on feet — they\'re so easy"', '@dailyrotation · Dusty Pink', '♥ 838K', 1.5],
+  ['a50932499d97427caffba66a71592ce1', 'HD-1080p-3.3Mbps-85917714', '"styling the wavey clog pt. 1"', '@mood.archive · Grey', '♥ 294K', -1.6],
+  ['57c3ac48216c41d08d92e3740d99c428', 'HD-1080p-2.5Mbps-85917725', '"these get so many compliments"', '@y2k.rotation · Dusty Pink', '♥ 729K', 1.2],
+  ['c3757c396cd54ba4b9b97e46549f66be', 'SD-480p-0.9Mbps-85917967', '"wavey clog fit check"', '@transit.fits · Grey', '♥ 351K', -1.3]
+];
+const vidRail = document.getElementById('vidRail');
+UGC.forEach(([id, q, cap, who, views, rot]) => {
+  const card = document.createElement('article');
+  card.className = 'tcard';
+  card.style.setProperty('--rot', rot + 'deg');
+  card.innerHTML =
+    `<video muted loop playsinline preload="none" poster="${POSTER}${id}.thumbnail.0000000000_small.jpg" src="${VID}${id}/${id}.${q}.mp4?v=0"></video>` +
+    `<div class="tcard__overlay"><span class="tcard__views">${views}</span>` +
+    `<div class="tcard__cap">${cap}<span>${who}</span></div></div>`;
+  vidRail.appendChild(card);
+});
+/* autoplay videos when in view, pause when out */
+const vio = new IntersectionObserver(ents => {
+  ents.forEach(en => {
+    const v = en.target;
+    if (en.isIntersecting) { v.play().catch(() => {}); }
+    else v.pause();
+  });
+}, { threshold: 0.4 });
+vidRail.querySelectorAll('video').forEach(v => vio.observe(v));
+
+/* ---- hero parallax (clean, geen 3D drag) ---- */
+const heroFrame = document.getElementById('heroFrame');
+if (matchMedia('(pointer:fine)').matches) {
+  const heroSection = document.querySelector('.hero');
+  heroSection.addEventListener('mousemove', e => {
+    const r = heroSection.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5;
+    const y = (e.clientY - r.top) / r.height - .5;
+    heroFrame.style.transform = `translate(${x * -10}px, ${y * -8}px)`;
+    heroImg.style.transform = `scale(1.06) translate(${x * 14}px, ${y * 10}px)`;
+    document.querySelectorAll('[data-depth]').forEach(el => {
+      const d = +el.dataset.depth;
+      el.style.translate = `${x * d}px ${y * d}px`;
+    });
+  });
+  heroSection.addEventListener('mouseleave', () => {
+    heroFrame.style.transform = '';
+    heroImg.style.transform = '';
+  });
+}
+
+/* ---- specs visual: scroll-gedreven 3D + parallax + hover tilt ---- */
+const specsTilt = document.getElementById('specsTilt');
+const specsImg = specsTilt ? specsTilt.querySelector('img') : null;
+let specsHover = false;
+function specsScrollFX() {
+  if (!specsTilt || specsHover) return;
+  const r = specsTilt.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const p = Math.min(1, Math.max(0, (vh * .9 - r.top) / (vh * .75)));
+  specsTilt.style.transform =
+    `perspective(1000px) rotateY(${(1 - p) * 24}deg) scale(${.9 + p * .1})`;
+  specsTilt.style.opacity = .25 + p * .75;
+  if (specsImg) specsImg.style.transform = `translateY(${(1 - p) * 36}px)`;
+  specsTilt.querySelector('.specs__shine').style.setProperty('--shx', (120 - p * 70) + '%');
+}
+specsScrollFX();
+window.addEventListener('scroll', () => requestAnimationFrame(specsScrollFX), { passive: true });
+window.addEventListener('resize', specsScrollFX);
+if (specsTilt && matchMedia('(pointer:fine)').matches) {
+  specsTilt.addEventListener('mouseenter', () => { specsHover = true; });
+  specsTilt.addEventListener('mousemove', e => {
+    const r = specsTilt.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5;
+    const y = (e.clientY - r.top) / r.height - .5;
+    specsTilt.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale(1)`;
+    specsTilt.querySelector('.specs__shine').style.setProperty('--shx', (50 + x * 120) + '%');
+  });
+  specsTilt.addEventListener('mouseleave', () => {
+    specsHover = false;
+    specsScrollFX();
+  });
+}
+
+/* ---- scroll reveal ---- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal, h2').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
