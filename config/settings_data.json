@@ -149,11 +149,6 @@
         "disabled": false,
         "settings": {}
       },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
       "3668699786016620647": {
         "type": "shopify://apps/easy-advanced-translations/blocks/custom_translation/0a38de1c-4f20-47bc-8f91-b9634136a874",
         "disabled": false,
@@ -167,6 +162,11 @@
       "341186785192672687": {
         "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
         "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": true,
         "settings": {}
       }
     }
