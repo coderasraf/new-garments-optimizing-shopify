@@ -34,7 +34,7 @@
         "custom_nXyhBx": {
           "type": "custom",
           "settings": {
-            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n  <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"/>\n</svg>\nBUY 2 PAIRS GET 30% OFF + FREE GIFT\n</div>\n</div>\n<style>\n.promo-banner{background:#f7f7f7;padding:9px 15px;display:flex;align-items:center;font-family:var(--font-stack-header,var(--font-stack-body));font-weight:700;font-size:12px;letter-spacing:1px;color:#000;justify-content:center;max-width:max-content;margin:10px auto;}\n.promo-banner svg{width:20px;margin-right:9px;}\n.promo-banner-left{display:flex;align-items:center;}\n</style>"
+            "code": "<div class=\"promo-banner\">\n<div class=\"promo-banner-left\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n  <path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"/>\n</svg>\nBUY 2 GET 30% OFF + FREE GIFT + FREE SHIPPING\n</div>\n</div>\n<style>\n.promo-banner{background:#f7f7f7;padding:9px 15px;display:flex;align-items:center;font-family:var(--font-stack-header,var(--font-stack-body));font-weight:700;font-size:12px;letter-spacing:1px;color:#000;justify-content:center;max-width:max-content;margin:10px auto;}\n.promo-banner svg{width:20px;margin-right:9px;}\n.promo-banner-left{display:flex;align-items:center;}\n</style>"
           }
         },
         "buy_buttons": {
@@ -76,7 +76,7 @@
           "type": "tab",
           "settings": {
             "title": "How does the discount work?",
-            "content": "<p>Buy 2 items get an extra 20% OFF</p><p>Buy 3 items get an extra 30% OFF</p><p>Discounts will automatically apply when you add the items to cart!</p>",
+            "content": "<p>Buy 2 items get 30% OFF</p><p>The discount applies automatically when you add 2 items to your cart.</p>",
             "page": ""
           }
         },
@@ -993,7 +993,7 @@
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01TnEebn22TTWUujhBB__4611686018427383025-0-rate.webp?v=1781625100",
             "rating": 5,
-            "review_text": "Fabric texture is unreal and it just looks cool on. Easily my favourite summer piece.",
+            "review_text": "Fabric feels unreal for the price. Fit is perfect and it just looks cool on.",
             "author": "Noor V.",
             "location": "Netherlands"
           }
@@ -1001,11 +1001,11 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN013iaiKd22TTWUKPoiH__4611686018427383025-0-rate.webp?v=1781625101",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01pFI4g81Hg2R6XJ3BE__4611686018427383506-0-rate.webp?v=1781625098",
             "rating": 5,
-            "review_text": "Wore it straight out the box. Heavyweight feel and the leopard trim makes it stand out without trying too hard.",
-            "author": "Liv M.",
-            "location": "Belgium"
+            "review_text": "Goes with everything and the leopard collar is the perfect touch.",
+            "author": "Emma K.",
+            "location": "Germany"
           }
         },
         "pr2": {
@@ -1013,7 +1013,7 @@
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01QULptK1LEKwa7u5yO__4611686018427383891-0-rate.webp?v=1781625100",
             "rating": 5,
-            "review_text": "This thing is fire. Works on everyone — top-tier quality and the fit is perfect.",
+            "review_text": "This is fire ngl. Fits perfect and the quality is way better than i expected.",
             "author": "Mathis L.",
             "location": "France"
           }
@@ -1021,19 +1021,19 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01pFI4g81Hg2R6XJ3BE__4611686018427383506-0-rate.webp?v=1781625098",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01PC415U1DMZ8LTgo80__4611686018427385194-0-rate.webp?v=1781625099",
             "rating": 5,
-            "review_text": "Goes with everything and the leopard collar gives it that extra detail. Such a versatile short sleeve.",
-            "author": "Emma K.",
-            "location": "Germany"
+            "review_text": "Wore it with shorts and boots, compliments all day. Leopard detail goes hard.",
+            "author": "Sofia R.",
+            "location": "Italy"
           }
         },
         "pr4": {
           "type": "review",
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01drI9YV1VkzLxwQJYx__4611686018427384100-0-rate.webp?v=1781625100",
-            "rating": 4,
-            "review_text": "Fits true to size and stays cool in the heat — not stuffy at all. Better quality than I expected.",
+            "rating": 5,
+            "review_text": "True to size and stays cool in summer. Comfy as hell.",
             "author": "Daan B.",
             "location": "Netherlands"
           }
@@ -1041,11 +1041,11 @@
         "pr5": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01PC415U1DMZ8LTgo80__4611686018427385194-0-rate.webp?v=1781625099",
-            "rating": 5,
-            "review_text": "Styled it with shorts and boots and got compliments all day. The leopard detailing is what sells it.",
-            "author": "Sofia R.",
-            "location": "Italy"
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01BT4hgF1wbMdqa7Bgm_livephoto___2206848786326-0-rate_livephoto.webp?v=1781626050",
+            "rating": 4,
+            "review_text": "Solid everyday polo. The collar makes it look way more expensive than it is.",
+            "author": "Lucas W.",
+            "location": "Austria"
           }
         }
       },
@@ -1059,7 +1059,7 @@
       ],
       "settings": {
         "title": "What Our Customers Say",
-        "subtitle": "4.9 ★ · 200+ verified reviews"
+        "subtitle": "4.8 ★ · 200+ verified reviews"
       }
     },
     "countdown_bar": {
