@@ -9,6 +9,21 @@
  */
 {
   "sections": {
+    "countdown_bar": {
+      "type": "pp-custom-liquid-v1-0-0",
+      "settings": {
+        "custom_liquid": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-label\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\"><span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span></span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:#000;color:#fff;padding:12px 0;font-family:var(--font-stack-header,var(--font-stack-body));font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}\n#ng-cd-timer{font-size:15px;letter-spacing:3.5px;font-variant-numeric:tabular-nums;}\n</style>\n<script>\n(function(){var end=1780848489059,d=3600000;function u(){var r=end-Date.now();while(r<=0){end+=d;r=end-Date.now();}var h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);document.getElementById(\"ng-cd-h\").textContent=String(h).padStart(2,\"0\");document.getElementById(\"ng-cd-m\").textContent=String(m).padStart(2,\"0\");document.getElementById(\"ng-cd-s\").textContent=String(s).padStart(2,\"0\");}u();setInterval(u,1000);})();\n</script>\n<style>\n.pagepilot-review-slider .review-cards{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:12px;padding-bottom:10px;}\n.pagepilot-review-slider .review-cards::-webkit-scrollbar{display:none;}\n.pagepilot-review-slider .review-card{scroll-snap-align:start;flex:0 0 85%;max-width:85%;}\n@media(min-width:768px){.pagepilot-review-slider .review-card{flex:0 0 30%;max-width:30%;}}\n</style>",
+        "section_background": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -64,6 +79,14 @@
             "is_tab": true
           }
         },
+        "tab_fit_sizing": {
+          "type": "tab",
+          "settings": {
+            "title": "Fit & Sizing",
+            "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
+            "page": ""
+          }
+        },
         "tab": {
           "type": "tab",
           "settings": {
@@ -92,15 +115,15 @@
           "type": "video_gallery_block",
           "settings": {
             "block_heading": "Newgarments On You",
-            "video_1": "shopify://files/videos/sneaker_creme_closeup_98a737ae-76c9-4f13-8789-3906d9a426fb.mp4",
-            "video_2": "shopify://files/videos/sneaker_creme_floor_7e9e3a2d-ea84-48fe-a123-42d1cd03ee01.mp4",
-            "video_3": "shopify://files/videos/sneaker_black_spring26_377fa9e9-6bea-4d4c-9856-79963043c2c9.mp4",
-            "video_4": "shopify://files/videos/sneaker_creme_onfeet_8c7f52a2-2104-4921-9c4d-8c14aec53878.mp4",
-            "video_5": "shopify://files/videos/sneaker_creme_closeup_98a737ae-76c9-4f13-8789-3906d9a426fb.mp4",
-            "video_6": "shopify://files/videos/sneaker_creme_floor_7e9e3a2d-ea84-48fe-a123-42d1cd03ee01.mp4",
-            "video_7": "shopify://files/videos/sneaker_black_spring26_377fa9e9-6bea-4d4c-9856-79963043c2c9.mp4",
-            "video_8": "shopify://files/videos/sneaker_creme_onfeet_8c7f52a2-2104-4921-9c4d-8c14aec53878.mp4",
-            "video_9": "shopify://files/videos/sneaker_creme_closeup_98a737ae-76c9-4f13-8789-3906d9a426fb.mp4",
+            "video_1": "shopify://files/videos/5b5b313537e3467895f6ca54c14cf199.HD-720p-1.6Mbps-43966754.mp4",
+            "video_2": "shopify://files/videos/50cd77987728418c9495a4009075747b.HD-720p-2.1Mbps-29379280 (1).mp4",
+            "video_3": "shopify://files/videos/1213(3).mov",
+            "video_4": "shopify://files/videos/ss26_outfit3_vertical_ash_pink.mp4",
+            "video_5": "shopify://files/videos/sneaker_creme_floor_7e9e3a2d-ea84-48fe-a123-42d1cd03ee01.mp4",
+            "video_6": "shopify://files/videos/ss26_outfit2_moss_green_v1.mp4",
+            "video_7": "shopify://files/videos/shoe_57ad.mp4",
+            "video_8": "shopify://files/videos/1216 (1).mov",
+            "video_9": "shopify://files/videos/WhatsApp Video 2025-03-11 at 00.51.33_6082a730 (1).mp4",
             "video_10": "shopify://files/videos/sneaker_creme_floor_7e9e3a2d-ea84-48fe-a123-42d1cd03ee01.mp4"
           }
         },
@@ -108,14 +131,6 @@
           "type": "custom",
           "settings": {
             "code": "<section class=\"pdp-details-wrapper\">\n        <h2 class=\"pdp-title-main\">Details</h2>\n        \n        <div class=\"pdp-features-grid\">\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\">\n                        <path d=\"M3 9h18M3 15h18M9 3v18M15 3v18\"/>\n                        <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"1\" opacity=\"0.2\"/>\n                    </svg>\n                </div>\n                Premium Fabric\n            </div>\n\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n                        <path d=\"M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\"/>\n                    </svg>\n                </div>\n                Minimal Branding\n            </div>\n\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\">\n                        <circle cx=\"12\" cy=\"12\" r=\"10\"/>\n                        <path d=\"M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20M2 12h20\"/>\n                    </svg>\n                </div>\n                Responsibly Made\n            </div>\n\n            <div class=\"pdp-feature-node\">\n                <div class=\"pdp-icon-box\">\n                    <svg class=\"pdp-svg-asset\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <polyline points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/>\n                    </svg>\n                </div>\n                Limited Drops\n            </div>\n        </div>\n    </section>\n\n<style>\n        /* Unique namespace prefix 'pdp-' to prevent style bleeding */\n        .pdp-details-wrapper {\n            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Arial, sans-serif;\n            color: #000000;\n            max-width: 500px;\n            padding: 20px;\n        }\n\n        .pdp-title-main {\n            font-size: 24px;\n            font-weight: 700;\n            margin: 0 0 24px 0;\n            letter-spacing: -0.5px;\n        }\n\n        .pdp-features-grid {\n            display: grid;\n            grid-template-columns: repeat(2, 1fr);\n            row-gap: 18px;\n            column-gap: 32px;\n        }\n\n        .pdp-feature-node {\n            display: flex;\n            align-items: center;\n            gap: 12px;\n            font-size: 15px;\n            font-weight: 500;\n            line-height: 1.2;\n        }\n\n        .pdp-icon-box {\n            width: 24px;\n            height: 24px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            flex-shrink: 0;\n        }\n\n        .pdp-svg-asset {\n            width: 100%;\n            height: 100%;\n        }\nh2.pdp-title-main {\n    text-align: left;\n}\nsection.pdp-details-wrapper {\n    padding: 0;\n    margin-top: 30px;\n}\n.pdp-feature-node {\n    display: flex;\n    align-items: center;\n    gap: 6px;\nfont-weight:normal;\n    font-size: 15px;\n    line-height: 1.2;\n}\n    </style>"
-          }
-        },
-        "tab_fit_sizing": {
-          "type": "tab",
-          "settings": {
-            "title": "Fit & Sizing",
-            "content": "<p>━━━━━━━━━━━━━■━━━━━━━━━━━━━</p><p>Falls small          Fits true to size          Falls large</p>",
-            "page": ""
           }
         }
       },
@@ -135,11 +150,11 @@
         "custom_gWtVrK"
       ],
       "custom_css": [
-        ".model_text-destiop {font-size:12px;}",
-        ".collapsibles-wrapper--border-bottom {background:#f7f7f7 !important;}",
-        ".collapsible-trigger-btn--borders {border:none !important;}",
-        ".custom-shipping-container {background:#f7f7f7 !important;}",
-        ".dec-gallery-wrapper {--dec-desktop-items:10;--dec-mobile-items:2.5;}"
+        ".model_text-destiop {font-size: 12px;}",
+        ".collapsibles-wrapper--border-bottom {background: #f7f7f7 !important;}",
+        ".collapsible-trigger-btn--borders {border: none !important;}",
+        ".custom-shipping-container {background: #f7f7f7 !important;}",
+        ".dec-gallery-wrapper {--dec-desktop-items: 10; --dec-mobile-items: 2.5;}"
       ],
       "settings": {
         "sku_enable": false,
@@ -173,6 +188,83 @@
         "mobile_layout": "full",
         "enable_video_looping": true,
         "product_video_style": "muted"
+      }
+    },
+    "photo_reviews": {
+      "type": "photo-reviews",
+      "blocks": {
+        "pr0": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_sneaker_creme_couch_c9a48993-5d8b-46fe-9d53-9b8fad472e78.webp?v=1780745768",
+            "rating": 5,
+            "review_text": "These became my go-to sneakers instantly. The broken denim detail is insane and gets compliments all the time.",
+            "author": "Aiden B.",
+            "location": "Netherlands"
+          }
+        },
+        "pr1": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_sneaker_blue_sitting.webp?v=1780745769",
+            "rating": 5,
+            "review_text": "Love the Sky Blue colorway. Crazy comfortable for all day wear and look fire with white pants.",
+            "author": "Theo S.",
+            "location": "Germany"
+          }
+        },
+        "pr2": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/25_b3837f93-6bc9-479e-b8e3-960f1f0dbffd.jpg?v=1779705982",
+            "rating": 5,
+            "review_text": "Super impressed with comfort and build. The raw denim design looks even better in person. Love styling them with wide leg pants.",
+            "author": "Sophie M.",
+            "location": "Belgium"
+          }
+        },
+        "pr3": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/30_b8385a7a-aaf5-456f-a230-71eea706a725.jpg?v=1779705982",
+            "rating": 5,
+            "review_text": "One of my best pickups lately. Rare deconstructed streetwear look while still being insanely practical.",
+            "author": "Levi Y.",
+            "location": "France"
+          }
+        },
+        "pr4": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/19_aa4ecc86-5ae9-4673-a409-bd1e78f48d7e.jpg?v=1777299846",
+            "rating": 5,
+            "review_text": "Unreal in person. Lightweight, comfortable and the frayed denim details make them stand out.",
+            "author": "Olivia H.",
+            "location": "United Kingdom"
+          }
+        },
+        "pr5": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/13_72a37cdc-7908-41c6-b7e6-eff374c7cfd3.jpg?v=1779701201",
+            "rating": 5,
+            "review_text": "Both the Sky Blue and Creme colorway are fire. Bold look without sacrificing comfort.",
+            "author": "Finn Q.",
+            "location": "Sweden"
+          }
+        }
+      },
+      "block_order": [
+        "pr0",
+        "pr1",
+        "pr2",
+        "pr3",
+        "pr4",
+        "pr5"
+      ],
+      "settings": {
+        "title": "What Our Customers Say",
+        "subtitle": "4.8 ★ average from 120+ reviews"
       }
     },
     "shopable_videos_pe3gBH": {
@@ -982,93 +1074,6 @@
       "name": "Store features",
       "settings": {
         "margin_top": 36,
-        "margin_bottom": 0
-      }
-    },
-    "photo_reviews": {
-      "type": "photo-reviews",
-      "blocks": {
-        "pr0": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_sneaker_creme_couch_c9a48993-5d8b-46fe-9d53-9b8fad472e78.webp?v=1780745768",
-            "rating": 5,
-            "review_text": "These became my go-to sneakers instantly. The broken denim detail is insane and gets compliments all the time.",
-            "author": "Aiden B.",
-            "location": "Netherlands"
-          }
-        },
-        "pr1": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_sneaker_blue_sitting.webp?v=1780745769",
-            "rating": 5,
-            "review_text": "Love the Sky Blue colorway. Crazy comfortable for all day wear and look fire with white pants.",
-            "author": "Theo S.",
-            "location": "Germany"
-          }
-        },
-        "pr2": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/25_b3837f93-6bc9-479e-b8e3-960f1f0dbffd.jpg?v=1779705982",
-            "rating": 5,
-            "review_text": "Super impressed with comfort and build. The raw denim design looks even better in person. Love styling them with wide leg pants.",
-            "author": "Sophie M.",
-            "location": "Belgium"
-          }
-        },
-        "pr3": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/30_b8385a7a-aaf5-456f-a230-71eea706a725.jpg?v=1779705982",
-            "rating": 5,
-            "review_text": "One of my best pickups lately. Rare deconstructed streetwear look while still being insanely practical.",
-            "author": "Levi Y.",
-            "location": "France"
-          }
-        },
-        "pr4": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/19_aa4ecc86-5ae9-4673-a409-bd1e78f48d7e.jpg?v=1777299846",
-            "rating": 5,
-            "review_text": "Unreal in person. Lightweight, comfortable and the frayed denim details make them stand out.",
-            "author": "Olivia H.",
-            "location": "United Kingdom"
-          }
-        },
-        "pr5": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/13_72a37cdc-7908-41c6-b7e6-eff374c7cfd3.jpg?v=1779701201",
-            "rating": 5,
-            "review_text": "Both the Sky Blue and Creme colorway are fire. Bold look without sacrificing comfort.",
-            "author": "Finn Q.",
-            "location": "Sweden"
-          }
-        }
-      },
-      "block_order": [
-        "pr0",
-        "pr1",
-        "pr2",
-        "pr3",
-        "pr4",
-        "pr5"
-      ],
-      "settings": {
-        "title": "What Our Customers Say",
-        "subtitle": "4.8 ★ average from 120+ reviews"
-      }
-    },
-    "countdown_bar": {
-      "type": "pp-custom-liquid-v1-0-0",
-      "settings": {
-        "custom_liquid": "<div id=\"ng-countdown-bar\">\n<span id=\"ng-cd-label\">SALE ENDS IN</span>\n<span id=\"ng-cd-timer\"><span id=\"ng-cd-h\">00</span>:<span id=\"ng-cd-m\">00</span>:<span id=\"ng-cd-s\">00</span></span>\n</div>\n<style>\n#ng-countdown-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:#000;color:#fff;padding:12px 0;font-family:var(--font-stack-header,var(--font-stack-body));font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}\n#ng-cd-timer{font-size:15px;letter-spacing:3.5px;font-variant-numeric:tabular-nums;}\n</style>\n<script>\n(function(){var end=1780848489059,d=3600000;function u(){var r=end-Date.now();while(r<=0){end+=d;r=end-Date.now();}var h=Math.floor(r/3600000),m=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);document.getElementById(\"ng-cd-h\").textContent=String(h).padStart(2,\"0\");document.getElementById(\"ng-cd-m\").textContent=String(m).padStart(2,\"0\");document.getElementById(\"ng-cd-s\").textContent=String(s).padStart(2,\"0\");}u();setInterval(u,1000);})();\n</script>\n<style>\n.pagepilot-review-slider .review-cards{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:12px;padding-bottom:10px;}\n.pagepilot-review-slider .review-cards::-webkit-scrollbar{display:none;}\n.pagepilot-review-slider .review-card{scroll-snap-align:start;flex:0 0 85%;max-width:85%;}\n@media(min-width:768px){.pagepilot-review-slider .review-card{flex:0 0 30%;max-width:30%;}}\n</style>",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "margin_top": 0,
         "margin_bottom": 0
       }
     }
