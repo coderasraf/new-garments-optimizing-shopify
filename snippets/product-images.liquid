@@ -25,6 +25,13 @@
     <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
 
       <div class="product__main-photos" data-aos data-product-single-media-group>
+        {%- if product.tags contains 'no-restock' -%}
+          <div class="ng-no-restock-badge">NO RESTOCK</div>
+        {%- endif -%}
+        <style>
+          .product__main-photos { position: relative; }
+          .ng-no-restock-badge { position: absolute; top: 12px; left: 12px; z-index: 6; background: #e1271b; color: #fff; font-weight: 700; font-size: 12px; letter-spacing: 1px; line-height: 1; padding: 6px 11px; text-transform: uppercase; font-family: var(--font-stack-header, var(--font-stack-body)); box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+        </style>
         <div
           data-product-photos
           data-zoom="{{ product_zoom_enable }}"
