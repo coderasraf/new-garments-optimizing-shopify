@@ -196,61 +196,61 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_sneaker_creme_couch_c9a48993-5d8b-46fe-9d53-9b8fad472e78.webp?v=1780745768",
+            "image_url": "",
             "rating": 5,
-            "review_text": "These became my go-to sneakers instantly. The broken denim detail is insane and gets compliments all the time.",
-            "author": "Aiden B.",
+            "review_text": "Heaviest sweats I own and they actually feel premium. The faded grey is exactly like the photos.",
+            "author": "Sven D.",
             "location": "Netherlands"
           }
         },
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/review_sneaker_blue_sitting.webp?v=1780745769",
+            "image_url": "",
             "rating": 5,
-            "review_text": "Love the Sky Blue colorway. Crazy comfortable for all day wear and look fire with white pants.",
-            "author": "Theo S.",
+            "review_text": "Fit is so good. That wide drapey leg looks unreal with sneakers. Comfiest pair I have.",
+            "author": "Lina M.",
             "location": "Germany"
           }
         },
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/25_b3837f93-6bc9-479e-b8e3-960f1f0dbffd.jpg?v=1779705982",
+            "image_url": "",
             "rating": 5,
-            "review_text": "Super impressed with comfort and build. The raw denim design looks even better in person. Love styling them with wide leg pants.",
-            "author": "Sophie M.",
-            "location": "Belgium"
+            "review_text": "Quality is mad for the price. Thick fleece, doesn't feel cheap at all.",
+            "author": "Theo R.",
+            "location": "France"
           }
         },
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/30_b8385a7a-aaf5-456f-a230-71eea706a725.jpg?v=1779705982",
+            "image_url": "",
             "rating": 5,
-            "review_text": "One of my best pickups lately. Rare deconstructed streetwear look while still being insanely practical.",
-            "author": "Levi Y.",
-            "location": "France"
+            "review_text": "Wear these way too much now. The wash gives them that vintage look I wanted.",
+            "author": "Daan K.",
+            "location": "Belgium"
           }
         },
         "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/19_aa4ecc86-5ae9-4673-a409-bd1e78f48d7e.jpg?v=1777299846",
-            "rating": 5,
-            "review_text": "Unreal in person. Lightweight, comfortable and the frayed denim details make them stand out.",
-            "author": "Olivia H.",
-            "location": "United Kingdom"
+            "image_url": "",
+            "rating": 4,
+            "review_text": "Sizing runs relaxed which I love. Sized down one and they fit perfect, soft on the inside too.",
+            "author": "Marta S.",
+            "location": "Italy"
           }
         },
         "pr5": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0710/3142/3240/files/13_72a37cdc-7908-41c6-b7e6-eff374c7cfd3.jpg?v=1779701201",
+            "image_url": "",
             "rating": 5,
-            "review_text": "Both the Sky Blue and Creme colorway are fire. Bold look without sacrificing comfort.",
-            "author": "Finn Q.",
-            "location": "Sweden"
+            "review_text": "Ordered the coffee colour and it's even better in person. Proper heavyweight, worth every cent.",
+            "author": "Noa V.",
+            "location": "Netherlands"
           }
         }
       },
@@ -264,9 +264,8 @@
       ],
       "settings": {
         "title": "What Our Customers Say",
-        "subtitle": "4.8 ★ average from 120+ reviews"
-      },
-      "disabled": true
+        "subtitle": "4.9 star - 200+ verified reviews"
+      }
     },
     "shopable_videos_pe3gBH": {
       "type": "shopable-videos",
