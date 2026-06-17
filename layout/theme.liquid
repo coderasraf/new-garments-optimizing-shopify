@@ -219,21 +219,35 @@
     var params = new URLSearchParams(window.location.search);
     var topHandles = params.get('top');
     if (!topHandles) return;
-    var handles = topHandles.split(',').map(function(h){ return h.trim().toLowerCase(); });
-    function reorder() {
+
+    var handles = topHandles.split(',').map(function(h) { return
+  h.trim().toLowerCase(); });
+
+    function reorderProducts() {
       var grid = document.querySelector('.grid.grid--uniform');
       if (!grid) return;
-      var cards = Array.prototype.slice.call(grid.children);
+
+      var cards = Array.from(grid.children);
+
       for (var h = handles.length - 1; h >= 0; h--) {
         for (var i = 0; i < cards.length; i++) {
           var links = cards[i].querySelectorAll('a');
           for (var j = 0; j < links.length; j++) {
-            if ((links[j].getAttribute('href')||'').toLowerCase().indexOf(handles[h]) !== -1) { grid.insertBefore(cards[i], grid.firstChild); break; }
+            var href = links[j].getAttribute('href') || '';
+            if (href.indexOf(handles[h]) !== -1) {
+              grid.insertBefore(cards[i], grid.firstChild);
+              break;
+            }
           }
         }
       }
     }
-    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', reorder); } else { reorder(); }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', reorderProducts);
+    } else {
+      setTimeout(reorderProducts, 500);
+    }
   })();
   </script>
 </body>
