@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/c_sand.jpg?v=1782912294",
             "rating": 5,
             "review_text": "So comfy straight out the box, the footbed molds to your foot after a day. Get so many compliments on the flame detail.",
             "author": "Luca V.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/c_green.jpg?v=1782912297",
             "rating": 5,
             "review_text": "Bought the sand ones and honestly they go with everything. Suede feels way more premium than the price.",
             "author": "Emma R.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/c_gray_1.jpg?v=1782912301",
             "rating": 5,
             "review_text": "These are my new daily shoes. Slip them on for the shop, the gym run, everything. True to size for me.",
             "author": "Jonas K.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/c_gray_2.jpg?v=1782912304",
             "rating": 4,
             "review_text": "Really nice quality and the buckle actually holds. Took a day to break in but super comfy now.",
             "author": "Sofia M.",
@@ -236,7 +236,7 @@
         "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/c_life3.jpg?v=1782912307",
             "rating": 5,
             "review_text": "The green colour is unreal in person. Cork sole is proper sturdy, not flimsy at all.",
             "author": "Noah D.",
@@ -535,7 +535,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -551,7 +552,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -689,7 +691,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1076,11 +1079,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "footwear_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Footwear",
+        "subtitle": "Complete the look",
+        "collection": "shoes"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "footwear_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
