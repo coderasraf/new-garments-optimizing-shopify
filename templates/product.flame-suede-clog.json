@@ -196,41 +196,41 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Khaki.png?v=1782912255",
+            "image_url": "",
             "rating": 5,
-            "review_text": "The denim wash is so pretty in person and the little star charms make it. Obsessed.",
-            "author": "Julie R.",
+            "review_text": "So comfy straight out the box, the footbed molds to your foot after a day. Get so many compliments on the flame detail.",
+            "author": "Luca V.",
             "location": "Netherlands"
           }
         },
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/White_7f0c24af-03d6-4f53-a0ce-ef6a0f6ad471.png?v=1782912260",
+            "image_url": "",
             "rating": 5,
-            "review_text": "Perfect size for going out, sits so nice under the arm. Looks way more expensive than it was.",
-            "author": "Océane L.",
-            "location": "France"
+            "review_text": "Bought the sand ones and honestly they go with everything. Suede feels way more premium than the price.",
+            "author": "Emma R.",
+            "location": "Belgium"
           }
         },
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g3_794b2f40-7d03-4b2e-a9ba-737b5e57b574.jpg?v=1782912263",
+            "image_url": "",
             "rating": 5,
-            "review_text": "Got the blue and it goes with literally everything. The buckles and studs are such a nice detail.",
-            "author": "Marta S.",
-            "location": "Spain"
+            "review_text": "These are my new daily shoes. Slip them on for the shop, the gym run, everything. True to size for me.",
+            "author": "Jonas K.",
+            "location": "Germany"
           }
         },
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g1_a5fe0b3f-5e88-4a6c-8097-e5b0406f14db.jpg?v=1782912266",
+            "image_url": "",
             "rating": 4,
-            "review_text": "Really cute and good quality. A touch smaller than expected but perfect as a going-out bag.",
-            "author": "Lea H.",
-            "location": "Germany"
+            "review_text": "Really nice quality and the buckle actually holds. Took a day to break in but super comfy now.",
+            "author": "Sofia M.",
+            "location": "Italy"
           }
         },
         "pr4": {
@@ -238,9 +238,19 @@
           "settings": {
             "image_url": "",
             "rating": 5,
-            "review_text": "This is my third bag from here and the quality keeps surprising me. Love the moto look.",
-            "author": "Fien D.",
-            "location": "Belgium"
+            "review_text": "The green colour is unreal in person. Cork sole is proper sturdy, not flimsy at all.",
+            "author": "Noah D.",
+            "location": "Netherlands"
+          }
+        },
+        "pr5": {
+          "type": "review",
+          "settings": {
+            "image_url": "",
+            "rating": 5,
+            "review_text": "Second pair already, first ones I wore to death over summer. Comfiest slip-ons I own.",
+            "author": "Marta P.",
+            "location": "Spain"
           }
         }
       },
@@ -249,7 +259,8 @@
         "pr1",
         "pr2",
         "pr3",
-        "pr4"
+        "pr4",
+        "pr5"
       ],
       "settings": {
         "title": "What Our Customers Say",
@@ -524,8 +535,7 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      },
-      "disabled": true
+      }
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -541,8 +551,7 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      },
-      "disabled": true
+      }
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -680,8 +689,7 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      },
-      "disabled": true
+      }
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1068,20 +1076,11 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
-    },
-    "bag_slider_auto": {
-      "type": "bag-slider",
-      "settings": {
-        "title": "Shop The Bags",
-        "subtitle": "Complete the look",
-        "collection": "bags"
-      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
-    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
