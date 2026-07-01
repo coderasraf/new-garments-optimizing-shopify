@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Beige.jpg?v=1782911879",
             "rating": 5,
             "review_text": "Such a good everyday bag, fits my laptop and everything. The washed denim look is gorgeous.",
             "author": "Noor B.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Coffee_b9b55f57-49b5-401d-87d4-229764a98f18.jpg?v=1782911882",
             "rating": 5,
             "review_text": "Bigger than I expected in the best way. Goes with every outfit and the buckle detail looks expensive.",
             "author": "Camille D.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Black_231bb763-2c85-4c24-b89a-60da1e0cc5e3.jpg?v=1782911885",
             "rating": 5,
             "review_text": "Got the blue denim one, the wash is so pretty. Roomy and comfy on the shoulder.",
             "author": "Elena V.",
@@ -524,7 +524,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -540,7 +541,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -678,7 +680,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1065,11 +1068,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
