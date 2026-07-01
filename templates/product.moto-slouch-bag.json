@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/731092414903_0.jpg?v=1782826890",
             "rating": 5,
             "review_text": "So so soft and the shape is perfect under the arm. Looks way more luxe than the price.",
             "author": "Emma D.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/731092414903_2.jpg?v=1782826893",
             "rating": 5,
             "review_text": "The little coin pouch is the cutest detail. Wear it with everything.",
             "author": "Chloe M.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/731092414903_3.jpg?v=1782826896",
             "rating": 5,
             "review_text": "Exactly the moto bag I was looking for. Black goes with any fit.",
             "author": "Marta S.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/731092414903_4.jpg?v=1782826898",
             "rating": 5,
             "review_text": "Bigger inside than it looks, holds my phone wallet and keys easy.",
             "author": "Lisa H.",
@@ -524,7 +524,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -540,7 +541,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -678,7 +680,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1065,11 +1068,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",

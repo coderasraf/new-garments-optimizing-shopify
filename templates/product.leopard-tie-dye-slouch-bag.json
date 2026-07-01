@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/688882327445_2.jpg?v=1782826870",
             "rating": 5,
             "review_text": "Obsessed with this bag. The tie-dye looks so much more expensive than it was and it fits everything.",
             "author": "Sofie V.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/688882327445_3.jpg?v=1782826873",
             "rating": 5,
             "review_text": "Perfect slouchy shape, sits so nice under the arm. Goes with every outfit.",
             "author": "Camille L.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/688882327445_4.jpg?v=1782826876",
             "rating": 5,
             "review_text": "The print is gorgeous in person, real Y2K vibe. Got so many compliments already.",
             "author": "Giulia R.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/688882327445_0.jpg?v=1782826879",
             "rating": 4,
             "review_text": "Love the look and it is bigger than I expected. Soft material too.",
             "author": "Lena K.",
@@ -524,7 +524,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -540,7 +541,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -678,7 +680,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1065,11 +1068,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
