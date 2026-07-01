@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Khaki.jpg?v=1782911766",
             "rating": 5,
             "review_text": "The denim wash is so pretty in person and the little star charms make it. Obsessed.",
             "author": "Julie R.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/White_70e40177-e35b-47ce-9df3-3c65bca17474.jpg?v=1782911768",
             "rating": 5,
             "review_text": "Perfect size for going out, sits so nice under the arm. Looks way more expensive than it was.",
             "author": "Océane L.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g3_3c358b1c-3012-4217-8dc2-bfbef1423b88.jpg?v=1782911771",
             "rating": 5,
             "review_text": "Got the blue and it goes with literally everything. The buckles and studs are such a nice detail.",
             "author": "Marta S.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g1_84a7a7f6-2af1-47e6-b675-50da897cbef7.jpg?v=1782911774",
             "rating": 4,
             "review_text": "Really cute and good quality. A touch smaller than expected but perfect as a going-out bag.",
             "author": "Lea H.",
@@ -524,7 +524,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -540,7 +541,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -678,7 +680,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1065,11 +1068,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
