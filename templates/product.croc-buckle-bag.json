@@ -196,9 +196,9 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/blue_0.jpg?v=1781805348",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/black_36bea666-2803-4ee6-8f20-c6b71ef190a5.jpg?v=1781805370",
             "rating": 5,
-            "review_text": "Obsessed with this bag. The studs and little heart mirror are so cute in person.",
+            "review_text": "So glossy and structured, looks designer. The buckle detail is everything.",
             "author": "Emma D.",
             "location": "Netherlands"
           }
@@ -206,9 +206,9 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/pink.jpg?v=1781805351",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/blue.jpg?v=1781805373",
             "rating": 5,
-            "review_text": "Looks way more expensive than it is. The denim one is gorgeous.",
+            "review_text": "The croc texture is gorgeous in person. Blue is stunning.",
             "author": "Chloe M.",
             "location": "France"
           }
@@ -216,9 +216,9 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/black.jpg?v=1781805354",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/white.jpg?v=1781805375",
             "rating": 5,
-            "review_text": "Fits my phone, keys and more. The extra pouch is such a nice touch.",
+            "review_text": "Perfect little shoulder bag, holds more than I expected.",
             "author": "Giulia R.",
             "location": "Italy"
           }
@@ -226,9 +226,9 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/blue_1.jpg?v=1781805356",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g1.jpg?v=1781805378",
             "rating": 4,
-            "review_text": "Really cute and edgy. Straps feel sturdy and the buckles are solid.",
+            "review_text": "Love it. Sleek shape and the strap is comfy crossbody.",
             "author": "Lena K.",
             "location": "Germany"
           }
@@ -236,9 +236,9 @@
         "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/blue_2.jpg?v=1781805359",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g2.jpg?v=1781805380",
             "rating": 5,
-            "review_text": "My new everyday bag. Goes with literally every outfit.",
+            "review_text": "Gets me compliments every time. The white is so clean.",
             "author": "Sofia P.",
             "location": "Spain"
           }
@@ -246,9 +246,9 @@
         "pr5": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/blue_3.jpg?v=1781805362",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g3.jpg?v=1781805383",
             "rating": 5,
-            "review_text": "Exactly like the photos. The pink is the prettiest shade.",
+            "review_text": "Exactly like the pictures, super shiny and well made.",
             "author": "Noor V.",
             "location": "Belgium"
           }

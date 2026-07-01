@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i4/4611686018427387285/O1CN016cSd3r1xtVy1mTgt0_!!4611686018427387285-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01OiV4QO1WLcpgPOKOI__3548922772.webp?v=1781781517",
             "rating": 5,
             "review_text": "Obsessed. It holds so much more than it looks and the print is gorgeous.",
             "author": "Emma D.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i1/4611686018427387550/O1CN01H3L3yP1SHjCUl1bMu_!!4611686018427387550-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN017s4IE21WLcpgFHlrV__3548922772.webp?v=1781781520",
             "rating": 5,
             "review_text": "The y2k vibe is unreal. Goes with every outfit and feels sturdy.",
             "author": "Chloe M.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i3/4611686018427382182/O1CN01qar64J1vm4H813gl7~hdr~_!!4611686018427382182-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01cXXyhX1WLcpgHAqUd__3548922772.webp?v=1781781523",
             "rating": 5,
             "review_text": "Even cuter in person. So many pockets and the straps are comfy.",
             "author": "Giulia R.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i3/4611686018427385310/O1CN01DOhbQV2HLQmiTadYj_!!4611686018427385310-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01F9nuNC1WLcph09UP7__3548922772.webp?v=1781781526",
             "rating": 4,
             "review_text": "Love it. A little slouchy but that's the look, and it's super roomy.",
             "author": "Lena K.",
@@ -236,7 +236,7 @@
         "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i3/4611686018427381912/O1CN01tyZu0k1m65Rglk4hG_!!4611686018427381912-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/O1CN01ozJ1AC1WLcpjq4pQl__3548922772.webp?v=1781781529",
             "rating": 5,
             "review_text": "Perfect everyday bag. Fits my laptop, makeup, everything.",
             "author": "Sofia P.",
@@ -535,7 +535,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -551,7 +552,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -689,7 +691,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1076,11 +1079,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",

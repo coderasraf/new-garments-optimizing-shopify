@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i4/4611686018427382171/O1CN01mapmDP23c0WMgvhOD_!!4611686018427382171-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/champ_front.png?v=1781793430",
             "rating": 5,
             "review_text": "So cute I can't. The cloud shape is adorable and the bow is perfect.",
             "author": "Emma D.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i2/4611686018427382383/O1CN01IwHGYN1T09cflgf8l_!!4611686018427382383-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/white_front.png?v=1781793433",
             "rating": 5,
             "review_text": "Way prettier in person and the chain strap feels premium.",
             "author": "Chloe M.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i4/4611686018427385351/O1CN014tOOht1y1l6CqZ6zx~hdr~_!!4611686018427385351-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/black_front_83a505b7-1c31-4fd1-b52c-09a8bf0480ed.png?v=1781793437",
             "rating": 5,
             "review_text": "Fits more than expected for a little bag. Obsessed.",
             "author": "Giulia R.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i4/4611686018427380848/O1CN01IAgF4m1I16fl1nRvk_!!4611686018427380848-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/champ_34.png?v=1781793441",
             "rating": 4,
             "review_text": "Love the pleated look. Such a statement for the price.",
             "author": "Lena K.",
@@ -236,7 +236,7 @@
         "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i4/4611686018427386685/O1CN01CrsnoK1S9wTEk7MTT_!!4611686018427386685-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/white_34.png?v=1781793445",
             "rating": 5,
             "review_text": "Goes with everything and gets me compliments constantly.",
             "author": "Sofia P.",
@@ -246,7 +246,7 @@
         "pr5": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i1/4611686018427387009/O1CN014sRYOk20LZSTZFqIM_!!4611686018427387009-2-rate.png",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/black_34_9f496919-39bd-464c-8dc4-a16f41a8ceb2.png?v=1781793449",
             "rating": 5,
             "review_text": "Exactly like the photos, soft and so cute.",
             "author": "Noor V.",
@@ -535,7 +535,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -551,7 +552,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -689,7 +691,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1076,11 +1079,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",

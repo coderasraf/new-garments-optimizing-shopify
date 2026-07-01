@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i2/4611686018427385944/O1CN01nwzo6i1eIR9lFR07n_!!4611686018427385944-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/grey_front.png?v=1781793392",
             "rating": 5,
             "review_text": "Obsessed with this. So soft and it holds way more than you'd think.",
             "author": "Emma D.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i4/4611686018427382233/O1CN01gRCBBh1FFM5sHks2C_!!4611686018427382233-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/pink_front.png?v=1781793396",
             "rating": 5,
             "review_text": "The slouchy shape is everything and it goes with every outfit.",
             "author": "Chloe M.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i1/4611686018427386336/O1CN01NvMIx31RTLWxtijGB_!!4611686018427386336-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/black_front.png?v=1781793401",
             "rating": 5,
             "review_text": "Even prettier in person. The grey is the perfect neutral.",
             "author": "Giulia R.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i1/4611686018427384235/O1CN01qcG8XZ1lPUZkD22Pc_!!4611686018427384235-0-rate.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/grey_34.png?v=1781793404",
             "rating": 4,
             "review_text": "Love it. Big and roomy and the knot detail is so cute.",
             "author": "Lena K.",
@@ -236,7 +236,7 @@
         "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i3/4611686018427380134/O1CN019m2iXD29FSd6iu1FB_!!4611686018427380134-0-tbbala.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/pink_34.png?v=1781793408",
             "rating": 5,
             "review_text": "My new everyday bag. Lightweight and looks expensive.",
             "author": "Sofia P.",
@@ -246,7 +246,7 @@
         "pr5": {
           "type": "review",
           "settings": {
-            "image_url": "https://img.alicdn.com/imgextra/i1/4611686018427382873/O1CN01wv9r4h1lkYmIre7yi_!!4611686018427382873-0-tbbala.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/black_34.png?v=1781793411",
             "rating": 5,
             "review_text": "Exactly like the photos. Super soft leather feel.",
             "author": "Noor V.",
@@ -535,7 +535,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -551,7 +552,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -689,7 +691,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1076,11 +1079,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
