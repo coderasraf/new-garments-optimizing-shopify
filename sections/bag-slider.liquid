@@ -1,0 +1,66 @@
+<style>
+.bag-slider { padding: 40px 0; background: #fff; }
+.bag-slider__title { text-align: center; font-size: 1.5em; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.bag-slider__subtitle { text-align: center; font-size: 0.9em; color: #888; margin-bottom: 24px; }
+.bag-slider__track { display: flex; gap: 12px; overflow-x: scroll; padding: 0 16px 12px; -webkit-overflow-scrolling: touch; touch-action: pan-x; scrollbar-width: none; cursor: grab; }
+.bag-slider__track::-webkit-scrollbar { display: none; }
+.bag-slider__card { flex: 0 0 240px; background: #fafafa; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); text-decoration: none; color: inherit; display: block; }
+.bag-slider__img { width: 100%; height: 300px; object-fit: cover; display: block; background: #f0f0f0; }
+.bag-slider__body { padding: 12px 14px 16px; }
+.bag-slider__name { font-size: 13px; font-weight: 600; color: #222; margin-bottom: 4px; line-height: 1.3; }
+.bag-slider__price { font-size: 13px; color: #111; }
+.bag-slider__price s { color: #aaa; font-weight: 400; margin-right: 6px; }
+@media (max-width: 749px) { .bag-slider__card { flex: 0 0 200px; } .bag-slider__img { height: 250px; } }
+</style>
+
+{%- assign col = section.settings.collection -%}
+{%- if col != blank and col.products.size > 0 -%}
+<div class="bag-slider">
+  {% if section.settings.title != blank %}
+    <h2 class="bag-slider__title">{{ section.settings.title }}</h2>
+  {% endif %}
+  {% if section.settings.subtitle != blank %}
+    <p class="bag-slider__subtitle">{{ section.settings.subtitle }}</p>
+  {% endif %}
+  <div class="bag-slider__track">
+    {% for product in col.products %}
+      <a class="bag-slider__card" href="{{ product.url }}">
+        {% if product.featured_image %}
+          <img class="bag-slider__img" src="{{ product.featured_image | image_url: width: 480 }}" alt="{{ product.title | escape }}" loading="lazy">
+        {% endif %}
+        <div class="bag-slider__body">
+          <div class="bag-slider__name">{{ product.title }}</div>
+          <div class="bag-slider__price">
+            {% if product.compare_at_price > product.price %}<s>{{ product.compare_at_price | money }}</s>{% endif %}
+            {{ product.price | money }}
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{%- endif -%}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.bag-slider__track').forEach(function(track){
+    var startX, scrollLeft, down=false;
+    track.addEventListener('mousedown', function(e){ down=true; startX=e.pageX-track.offsetLeft; scrollLeft=track.scrollLeft; });
+    track.addEventListener('mouseleave', function(){ down=false; });
+    track.addEventListener('mouseup', function(){ down=false; });
+    track.addEventListener('mousemove', function(e){ if(!down) return; e.preventDefault(); track.scrollLeft = scrollLeft - ((e.pageX-track.offsetLeft)-startX)*2; });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Bag Slider",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Shop The Bags" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Complete the look" },
+    { "type": "collection", "id": "collection", "label": "Bags collection" }
+  ],
+  "presets": [{ "name": "Bag Slider" }]
+}
+{% endschema %}
