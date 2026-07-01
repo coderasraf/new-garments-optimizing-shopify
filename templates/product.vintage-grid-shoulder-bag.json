@@ -196,7 +196,7 @@
         "pr0": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Brown.jpg?v=1782910024",
             "rating": 5,
             "review_text": "Such a good bag for the price. Looks way more expensive than it was and holds everything I need.",
             "author": "Fleur D.",
@@ -206,7 +206,7 @@
         "pr1": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Olive.jpg?v=1782910026",
             "rating": 5,
             "review_text": "The slouchy shape is exactly what I wanted, sits so nice on the shoulder. Got the brown and the colour is gorgeous.",
             "author": "Chloé M.",
@@ -216,7 +216,7 @@
         "pr2": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/Coffee.jpg?v=1782910029",
             "rating": 5,
             "review_text": "Obsessed with the vintage look. The little pom charm is such a cute touch.",
             "author": "Marta B.",
@@ -226,7 +226,7 @@
         "pr3": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g0.jpg?v=1782910032",
             "rating": 4,
             "review_text": "Really soft material and roomy inside. A bit bigger than I expected but I love it.",
             "author": "Lena K.",
@@ -236,7 +236,7 @@
         "pr4": {
           "type": "review",
           "settings": {
-            "image_url": "",
+            "image_url": "https://cdn.shopify.com/s/files/1/0948/8973/8617/files/g1_416c5fd0-b90c-4707-bc29-e5bb309c762b.jpg?v=1782910035",
             "rating": 5,
             "review_text": "My new everyday bag. Goes with jeans, goes with a going out fit, goes with everything.",
             "author": "Sanne V.",
@@ -524,7 +524,8 @@
         "content_width": 140,
         "border_thickness": 0,
         "lazy": true
-      }
+      },
+      "disabled": true
     },
     "animated_heading_thNfBH": {
       "type": "animated-heading",
@@ -540,7 +541,8 @@
         "alignment_mobile": "center",
         "padding_top": 36,
         "padding_bottom": 32
-      }
+      },
+      "disabled": true
     },
     "shoppable_lookbook_grid_aYpzjr": {
       "type": "shoppable-lookbook-grid",
@@ -678,7 +680,8 @@
         "max_width": 1400,
         "padding_top": 60,
         "padding_bottom": 60
-      }
+      },
+      "disabled": true
     },
     "animated_heading_7JEdNU": {
       "type": "animated-heading",
@@ -1065,11 +1068,20 @@
         "margin_top": 36,
         "margin_bottom": 0
       }
+    },
+    "bag_slider_auto": {
+      "type": "bag-slider",
+      "settings": {
+        "title": "Shop The Bags",
+        "subtitle": "Complete the look",
+        "collection": "bags"
+      }
     }
   },
   "order": [
     "countdown_bar",
     "main",
+    "bag_slider_auto",
     "photo_reviews",
     "shopable_videos_pe3gBH",
     "animated_heading_thNfBH",
