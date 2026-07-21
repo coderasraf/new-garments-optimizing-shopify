@@ -168,6 +168,27 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": true,
         "settings": {}
+      },
+      "11044220117388281364": {
+        "type": "shopify://apps/magistry/blocks/experiments/019eae70-035b-7cdb-a8b2-21c19a4b0ac5",
+        "disabled": false,
+        "settings": {
+          "app_url": "https://app.magistry.io"
+        }
+      },
+      "17673035772091988843": {
+        "type": "shopify://apps/magistry/blocks/shield/019eae70-035b-7cdb-a8b2-21c19a4b0ac5",
+        "disabled": false,
+        "settings": {
+          "app_url": "https://app.magistry.io"
+        }
+      },
+      "6623764067612015000": {
+        "type": "shopify://apps/magistry/blocks/gtag/019eae70-035b-7cdb-a8b2-21c19a4b0ac5",
+        "disabled": false,
+        "settings": {
+          "app_url": "https://app.magistry.io"
+        }
       }
     }
   },
